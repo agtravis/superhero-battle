@@ -1,0 +1,19 @@
+{
+  "name": "superhero-battle",
+  "version": "1.0.0",
+  "description": "collect and battle super-heros",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agtravis/superhero-battle.git"
+  },
+  "author": "agtravis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agtravis/superhero-battle/issues"
+  },
+  "homepage": "https://github.com/agtravis/superhero-battle#readme"
+}
