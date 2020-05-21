@@ -1,7 +1,7 @@
 {
   "name": "superhero-battle",
   "version": "1.0.0",
-  "description": "collect and battle super-heros",
+  "description": "Community for DIY artists",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -11,9 +11,23 @@
     "seed": "node scripts/ClassifiedSeedDB.js && node scripts/UserSeedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "lint": "eslint . \"**/*.js\""
+  },
+  "prettier": {
+    "arrowParens": "avoid"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agtravis/superhero-battle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agtravis/superhero-battle/issues"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
     "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
   },
@@ -24,19 +38,11 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",
+    "localforage": "^1.7.3",
     "mongoose": "^5.9.7",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/agtravis/superhero-battle.git"
-  },
-  "author": "agtravis",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/agtravis/superhero-battle/issues"
-  },
-  "homepage": "https://github.com/agtravis/superhero-battle#readme"
+    "passport-local": "^1.0.0",
+    "react-calendar": "^3.0.1"
+  }
 }

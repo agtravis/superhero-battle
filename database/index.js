@@ -5,7 +5,7 @@ const mongoose = require(`mongoose`);
 mongoose.Promise = global.Promise;
 
 // 27017 is the default mongoDB port
-const uri = `mongodb://localhost:27017/bookityourself`;
+const uri = `mongodb://localhost:27017/superherobattle`;
 
 mongoose
   .connect(uri, {

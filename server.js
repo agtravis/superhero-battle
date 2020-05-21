@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 const express = require(`express`);
 const mongoose = require(`mongoose`);
 const morgan = require(`morgan`);
 const session = require(`express-session`);
-const MongoStore = require(`connect-mongo`)(session);
 const dbConnection = require(`./database`);
+const MongoStore = require(`connect-mongo`)(session);
 const passport = require(`./passport`);
 const app = express();
 const path = require(`path`);
@@ -13,6 +13,7 @@ const portNum = 3001;
 const PORT = process.env.PORT || portNum;
 
 // Route requires
+// const user = require(`./routes/api/user`);
 const routes = require(`./routes`);
 
 // MIDDLEWARE
@@ -32,7 +33,7 @@ mongoose.connect(
 // Sessions
 app.use(
   session({
-    secret: `qioe234!@%r47yq@%@$%ek9&&*87jadbv`, // pick a random string to make the hash that is generated secure
+    secret: `shattered-rocks`, // pick a random string to make the hash that is generated secure
     store: new MongoStore({ mongooseConnection: dbConnection }),
     resave: false, // required
     saveUninitialized: false, // required
@@ -44,6 +45,7 @@ app.use(passport.initialize());
 app.use(passport.session()); // calls the deserializeUser
 
 // Routes
+// app.use(`/user`, user);
 app.use(routes);
 
 if (process.env.NODE_ENV === `production`) {
