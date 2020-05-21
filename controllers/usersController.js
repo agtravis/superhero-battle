@@ -37,6 +37,16 @@ module.exports = {
     };
     res.send(userInfo);
   },
+  userInSession: (req, res) => {
+    console.log(`===== user!!======`);
+    if (req.user) {
+      console.log(req.user);
+      res.json({ user: req.user });
+    } else {
+      console.log(`No user`);
+      res.json({ user: null });
+    }
+  },
   findAll: (req, res) => {
     db.User.find(req.query)
       .populate(`posts`)
