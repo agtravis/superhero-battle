@@ -1,12 +1,3 @@
-/* eslint-disable arrow-parens */
-/* eslint-disable no-magic-numbers */
-/* eslint-disable no-unused-vars */
-/* eslint-disable vars-on-top */
-/* eslint-disable no-var */
-/* eslint-disable prefer-arrow-callback */
-/* eslint-disable curly */
-/* eslint-disable no-shadow */
-/* eslint-disable object-shorthand */
 "use strict";
 
 const express = require(`express`);

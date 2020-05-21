@@ -1,7 +1,3 @@
-/* eslint-disable no-magic-numbers */
-/* eslint-disable arrow-body-style */
-/* eslint-disable arrow-parens */
-/* eslint-disable object-shorthand */
 "use strict";
 
 const mongoose = require(`mongoose`);
