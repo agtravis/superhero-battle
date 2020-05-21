@@ -2,6 +2,7 @@
 
 const User = require(`../database/models/User`);
 const mongoose = require(`mongoose`);
+const passport = require(`../passport`);
 
 const errorResponseCode = 422;
 
@@ -27,6 +28,14 @@ module.exports = {
         });
       }
     });
+  },
+  login: (req, res) => {
+    console.log(`logged in`, req.user);
+    const userInfo = {
+      username: req.user.username,
+      id: req.user._id,
+    };
+    res.send(userInfo);
   },
   findAll: (req, res) => {
     db.User.find(req.query)
