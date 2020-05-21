@@ -1,15 +1,15 @@
 /* eslint-disable prefer-arrow-callback */
 /* eslint-disable object-shorthand */
-'use strict';
+"use strict";
 
-const User = require(`../database/models/user`);
+const User = require(`../database/models/User`);
 const LocalStrategy = require(`passport-local`).Strategy;
 
 const strategy = new LocalStrategy(
   {
     usernameField: `username`, // not necessary, DEFAULT
   },
-  function(username, password, done) {
+  function (username, password, done) {
     User.findOne({ username: username }, (err, user) => {
       if (err) {
         return done(err);
@@ -26,4 +26,3 @@ const strategy = new LocalStrategy(
 );
 
 module.exports = strategy;
-

@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 const passport = require(`passport`);
 const LocalStrategy = require(`./localStrategy`);
-const User = require(`../database/models/user`);
+const User = require(`../database/models/User`);
 
 // called on login, saves the id to session req.session.passport.user = {id:'..'}
 passport.serializeUser((user, done) => {
@@ -15,16 +15,12 @@ passport.serializeUser((user, done) => {
 // user object attaches to the request as req.user
 passport.deserializeUser((id, done) => {
   console.log(`DeserializeUser called`);
-  User.findOne(
-    { _id: id },
-    `username`,
-    (err, user) => {
-      console.log(`*** Deserialize user, user:`);
-      console.log(user);
-      console.log(`--------------`);
-      done(null, user);
-    }
-  );
+  User.findOne({ _id: id }, `username`, (err, user) => {
+    console.log(`*** Deserialize user, user:`);
+    console.log(user);
+    console.log(`--------------`);
+    done(null, user);
+  });
 });
 
 //  Use Strategies

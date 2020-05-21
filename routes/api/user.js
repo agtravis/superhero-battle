@@ -11,7 +11,7 @@
 
 const express = require(`express`);
 const router = express.Router();
-const User = require(`../../database/models/user`);
+const User = require(`../../database/models/User`);
 const passport = require(`../../passport`);
 const mongoose = require(`mongoose`);
 

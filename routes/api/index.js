@@ -5,7 +5,7 @@ const router = require(`express`).Router();
 // const userRoutes = require(`./users`);
 const classifiedRoutes = require(`./classifieds`);
 const userLogin = require(`./user`);
-const User = require(`../../database/models/user`);
+const User = require(`../../database/models/User`);
 
 // table routes
 // router.use(`/users`, userRoutes);
