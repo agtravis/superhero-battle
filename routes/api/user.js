@@ -8,7 +8,10 @@ const mongoose = require(`mongoose`);
 
 const userController = require(`../../controllers/usersController`);
 
-router.route(`/`).post(userController.newUser);
+router
+  .route(`/`)
+  .post(userController.newUser)
+  .get(userController.userInSession);
 
 router.route(`/login`).post(
   (req, res, next) => {
@@ -19,18 +22,6 @@ router.route(`/login`).post(
   passport.authenticate(`local`),
   userController.login
 );
-
-router.get(`/`, (req, res, next) => {
-  console.log(`===== user!!======`);
-  // console.log(req.user);
-  if (req.user) {
-    console.log(req.user);
-    res.json({ user: req.user });
-  } else {
-    console.log(`no user`);
-    res.json({ user: null });
-  }
-});
 
 router.post(`/logout`, (req, res) => {
   if (req.user) {
@@ -147,3 +138,15 @@ module.exports = router;
 //     res.send(userInfo);
 //   }
 // );
+
+// router.get(`/`, (req, res, next) => {
+//   console.log(`===== user!!======`);
+//   // console.log(req.user);
+//   if (req.user) {
+//     console.log(req.user);
+//     res.json({ user: req.user });
+//   } else {
+//     console.log(`no user`);
+//     res.json({ user: null });
+//   }
+// });
