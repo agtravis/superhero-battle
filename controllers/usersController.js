@@ -2,7 +2,6 @@
 
 const User = require(`../database/models/User`);
 const mongoose = require(`mongoose`);
-const passport = require(`../passport`);
 
 const errorResponseCode = 422;
 
@@ -37,6 +36,14 @@ module.exports = {
     };
     res.send(userInfo);
   },
+  logout: (req, res) => {
+    if (req.user) {
+      req.logout();
+      res.send({ msg: `Logging out` });
+    } else {
+      res.send({ msg: `No user to log out` });
+    }
+  },
   userInSession: (req, res) => {
     console.log(`===== user!!======`);
     if (req.user) {
@@ -47,60 +54,65 @@ module.exports = {
       res.json({ user: null });
     }
   },
-  findAll: (req, res) => {
-    db.User.find(req.query)
-      .populate(`posts`)
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(errorResponseCode).json(err));
-  },
   findById: (req, res) => {
-    db.User.findById(req.params.id)
-      .populate(`posts`)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(errorResponseCode).json(err));
-  },
-  create: (req, res) => {
-    db.User.create(req.body)
-      .then(dbModel => res.json(dbModel))
+    User.findById(req.params.id)
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(errorResponseCode).json(err));
   },
   update: (req, res) => {
-    db.User.updateOne(
-      { _id: mongoose.Types.ObjectId(req.params.id) },
-      req.body,
-      { useFindAndModify: false }
-    )
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(errorResponseCode).json(err));
-  },
-  updateNewPost: (req, res) => {
-    db.User.updateOne(
-      { _id: mongoose.Types.ObjectId(req.params.id) },
-      {
-        $push: { posts: req.body.id },
-      }
-    )
-      .populate(`posts`)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(errorResponseCode).json(err));
-  },
-  removePostFromUser: (req, res) => {
-    db.User.updateOne(
-      { _id: mongoose.Types.ObjectId(req.params.id) },
-      {
-        $pull: { posts: mongoose.Types.ObjectId(req.body.id) },
-      }
-    )
-      .populate(`posts`)
-      .then(dbModel => res.json(dbModel))
+    User.updateOne({ _id: mongoose.Types.ObjectId(req.params.id) }, req.body, {
+      useFindAndModify: false,
+    })
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(errorResponseCode).json(err));
   },
   remove: (req, res) => {
-    db.User.findById({ _id: req.params.id })
-      .populate(`posts`)
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
+    User.findById({ _id: req.params.id })
+      .then(dbUser => dbUser.remove())
+      .then(dbUser => res.json(dbUser))
       .catch(err => res.status(errorResponseCode).json(err));
   },
+  findAll: (req, res) => {
+    User.find(req.query)
+      .then(dbUsers => res.json(dbUsers))
+      .catch(err => res.status(errorResponseCode).json(err));
+  },
+  search: (req, res) => {
+    User.find({
+      username: {
+        $regex: req.body.search,
+        $options: `i`,
+      },
+    })
+      .then(dbUsers => res.json(dbUsers))
+      .catch(err => res.json(err));
+  },
 };
+
+// create: (req, res) => {
+//   db.User.create(req.body)
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(errorResponseCode).json(err));
+// },
+// updateNewPost: (req, res) => {
+//   db.User.updateOne(
+//     { _id: mongoose.Types.ObjectId(req.params.id) },
+//     {
+//       $push: { posts: req.body.id },
+//     }
+//   )
+//     .populate(`posts`)
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(errorResponseCode).json(err));
+// },
+// removePostFromUser: (req, res) => {
+//   db.User.updateOne(
+//     { _id: mongoose.Types.ObjectId(req.params.id) },
+//     {
+//       $pull: { posts: mongoose.Types.ObjectId(req.body.id) },
+//     }
+//   )
+//     .populate(`posts`)
+//     .then(dbModel => res.json(dbModel))
+//     .catch(err => res.status(errorResponseCode).json(err));
+// },
