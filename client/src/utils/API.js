@@ -1,7 +1,13 @@
 import axios from "axios";
 
 export default {
-  getUsers() {
-    return axios.get(`/api/users`);
+  getSessionUser() {
+    return axios.get(`/api/user`);
+  },
+  logIn(userCredentials) {
+    return axios.post(`/api/user/login`, userCredentials);
+  },
+  logOut() {
+    return axios.post(`/api/user/logout`);
   },
 };
