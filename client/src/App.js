@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-// import { Redirect, Router } from "react-router-dom";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import NetworkDetector from "./Hoc/NetworkDetector";
 
 import API from "./utils/API";
+
+import Index from "./pages/Index";
+import Home from "./pages/Home";
 
 import Header from "./components/Header";
 
@@ -25,12 +28,9 @@ class App extends Component {
       .then(sessionUser => {
         if (sessionUser.data.user) {
           this.setState({ loggedIn: true, currentUser: sessionUser.data.user });
-          console.log(`user in session`);
         } else {
           this.setState({ loggedIn: false, currentUser: null });
-          console.log(`no user`);
         }
-        console.log(sessionUser.data.user);
       })
       .catch(err => console.error(err));
   };
@@ -44,11 +44,37 @@ class App extends Component {
       window.location.reload();
     }
     return (
-      <Header
-        changeUser={this.changeUser}
-        loggedIn={this.state.loggedIn}
-        currentUser={this.state.currentUser}
-      />
+      <>
+        <Header
+          changeUser={this.changeUser}
+          loggedIn={this.state.loggedIn}
+          currentUser={this.state.currentUser}
+        />
+        <Router>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <Index
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/home"
+              render={() => (
+                <Home
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                />
+              )}
+            />
+          </Switch>
+        </Router>
+      </>
     );
   }
 }
