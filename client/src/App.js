@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Home from "./pages/Home";
 
 import Header from "./components/Header";
+import NavBar from "./components/NavBar";
 
 class App extends Component {
   constructor(props) {
@@ -51,6 +52,7 @@ class App extends Component {
           currentUser={this.state.currentUser}
         />
         <Router>
+          <NavBar loggedIn={this.state.loggedIn} />
           <Switch>
             <Route
               exact
