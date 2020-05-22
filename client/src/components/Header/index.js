@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import Credentials from "../Credentials";
+import ToggleSignIn from "../ToggleSignIn";
+
 import API from "../../utils/API";
 
 class Header extends Component {
@@ -73,41 +76,29 @@ class Header extends Component {
             {" "}
             {!this.state.signUpMode ? (
               <>
-                <form onSubmit={event => this.handleSubmit(event)}>
-                  <input
-                    onChange={event => this.handleChange(event, `username`)}
-                  />
-                  <input
-                    type="password"
-                    onChange={event => this.handleChange(event, `password`)}
-                  />
-                  <button type="submit">Log In</button>
-                </form>
-                <br />
+                <Credentials
+                  handleSubmit={this.handleSubmit}
+                  handleChange={this.handleChange}
+                  buttonName={`Log In!`}
+                />
+                <ToggleSignIn
+                  signUp={this.signUp}
+                  buttonName={`Sign Up`}
+                  text={` for an account!`}
+                />
               </>
-            ) : null}
-            {!this.state.signUpMode ? (
-              <p>
-                Or <button onClick={() => this.signUp()}>Sign Up</button> for an
-                account!
-              </p>
             ) : (
               <>
-                <form onSubmit={event => this.newUserSubmit(event)}>
-                  <input
-                    onChange={event => this.handleChange(event, `username`)}
-                  />
-                  <input
-                    type="password"
-                    onChange={event => this.handleChange(event, `password`)}
-                  />
-                  <button type="submit">Sign Up!</button>
-                </form>
-                <br />
-                <p>
-                  Or <button onClick={() => this.signUp()}>Log In</button> to
-                  your account!
-                </p>
+                <Credentials
+                  handleSubmit={this.newUserSubmit}
+                  handleChange={this.handleChange}
+                  buttonName={`Sign Up!`}
+                />
+                <ToggleSignIn
+                  signUp={this.signUp}
+                  buttonName={`Log In`}
+                  text={` to your account!`}
+                />
               </>
             )}
           </div>
