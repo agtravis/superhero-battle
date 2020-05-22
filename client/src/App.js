@@ -41,7 +41,7 @@ class App extends Component {
 
   render() {
     if (this.state.redirect) {
-      window.location.reload();
+      window.location.href = `/`;
     }
     return (
       <>
