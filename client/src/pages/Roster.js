@@ -1,18 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class Home extends Component {
+// import API from "../utils/API";
+
+class Roster extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      roster: [],
+    };
   }
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
     }
     return (
       <div>
-        <h1>Home</h1>
+        <h1>Roster</h1>
         {this.props.loggedIn ? (
           <p>{this.props.currentUser.username} signed in</p>
         ) : (
@@ -24,4 +29,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Roster;
