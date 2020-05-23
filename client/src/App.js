@@ -18,7 +18,8 @@ class App extends Component {
       redirect: null,
       loggedIn: false,
       currentUser: null,
-      userDetails: null,
+      roster: [],
+      teams: [],
     };
   }
 
@@ -36,7 +37,8 @@ class App extends Component {
           this.setState({
             loggedIn: false,
             currentUser: null,
-            userDetails: null,
+            roster: [],
+            teams: [],
           });
         }
       })
@@ -46,8 +48,7 @@ class App extends Component {
   fillUser = () => {
     API.getUserDetails(this.state.currentUser._id)
       .then(dbUser => {
-        console.log(dbUser.data);
-        this.setState({ userDetails: dbUser.data });
+        this.setState({ roster: dbUser.data.roster, teams: dbUser.data.teams });
       })
       .catch(err => console.error(err));
   };
@@ -86,7 +87,8 @@ class App extends Component {
               render={() => (
                 <Roster
                   loggedIn={this.state.loggedIn}
-                  currentUser={this.state.userDetails}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
                 />
               )}
             />

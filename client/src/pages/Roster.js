@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import SuperHeroAPI from "../utils/SuperHeroAPI";
 // import API from "../utils/API";
 
 class Roster extends Component {
@@ -10,6 +11,14 @@ class Roster extends Component {
       roster: [],
     };
   }
+
+  getFirstTeamMember = () => {
+    SuperHeroAPI.getRandomCharacter()
+      .then(randomCharacter => {
+        console.log(randomCharacter);
+      })
+      .catch(err => console.error(err));
+  };
 
   render() {
     if (!this.props.currentUser) {
@@ -23,6 +32,14 @@ class Roster extends Component {
         ) : (
           <p>nobody signed in</p>
         )}
+        {this.props.roster.length < 1 ? (
+          <div>
+            <p>You do not have anyone in your roster yet!</p>
+            <button onClick={() => this.getFirstTeamMember()}>
+              Click to get your first team member!
+            </button>
+          </div>
+        ) : null}
         <Link to={`/`}>Index</Link>
       </div>
     );
