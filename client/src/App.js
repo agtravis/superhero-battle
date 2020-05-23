@@ -7,6 +7,9 @@ import API from "./utils/API";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Roster from "./pages/Roster";
+import Fight from "./pages/Fight";
+import FightSolo from "./pages/FightSolo";
+import FightTeam from "./pages/FightTeam";
 
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
@@ -86,6 +89,42 @@ class App extends Component {
               path="/roster"
               render={() => (
                 <Roster
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
+                  fillUser={this.fillUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/fight"
+              render={() => (
+                <Fight
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
+                  fillUser={this.fillUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/fightsolo"
+              render={() => (
+                <FightSolo
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
+                  fillUser={this.fillUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/fightteam"
+              render={() => (
+                <FightTeam
                   loggedIn={this.state.loggedIn}
                   currentUser={this.state.currentUser}
                   roster={this.state.roster}
