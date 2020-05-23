@@ -19,4 +19,7 @@ export default {
   addCharacterToRoster(id, characterId) {
     return axios.put(`/api/user/roster/add/${id}`, characterId);
   },
+  removeCharacterFromRoster(id, characterId) {
+    return axios.put(`/api/user/roster/remove/${id}`, characterId);
+  },
 };
