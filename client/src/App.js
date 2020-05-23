@@ -6,6 +6,7 @@ import API from "./utils/API";
 
 import Index from "./pages/Index";
 import Home from "./pages/Home";
+import Roster from "./pages/Roster";
 
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
@@ -17,6 +18,8 @@ class App extends Component {
       redirect: null,
       loggedIn: false,
       currentUser: null,
+      roster: [],
+      teams: [],
     };
   }
 
@@ -29,9 +32,23 @@ class App extends Component {
       .then(sessionUser => {
         if (sessionUser.data.user) {
           this.setState({ loggedIn: true, currentUser: sessionUser.data.user });
+          this.fillUser();
         } else {
-          this.setState({ loggedIn: false, currentUser: null });
+          this.setState({
+            loggedIn: false,
+            currentUser: null,
+            roster: [],
+            teams: [],
+          });
         }
+      })
+      .catch(err => console.error(err));
+  };
+
+  fillUser = () => {
+    API.getUserDetails(this.state.currentUser._id)
+      .then(dbUser => {
+        this.setState({ roster: dbUser.data.roster, teams: dbUser.data.teams });
       })
       .catch(err => console.error(err));
   };
@@ -61,6 +78,17 @@ class App extends Component {
                 <Index
                   loggedIn={this.state.loggedIn}
                   currentUser={this.state.currentUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/roster"
+              render={() => (
+                <Roster
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
                 />
               )}
             />

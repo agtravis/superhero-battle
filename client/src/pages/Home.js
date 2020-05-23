@@ -7,6 +7,9 @@ class Home extends Component {
     this.state = {};
   }
   render() {
+    if (!this.props.currentUser) {
+      window.location.href = `/`;
+    }
     return (
       <div>
         <h1>Home</h1>

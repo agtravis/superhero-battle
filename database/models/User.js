@@ -16,6 +16,7 @@ const userSchema = new Schema({
       ref: `Character`,
     },
   ],
+  pastBattles: [Schema.Types.Mixed],
   status: { type: String, default: `` },
   registered: { type: Date, default: Date.now },
   teams: [
