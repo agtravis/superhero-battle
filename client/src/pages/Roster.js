@@ -9,15 +9,24 @@ class Roster extends Component {
     super(props);
     this.state = {
       roster: [],
+      newCharacter: null,
+      newCharacterLoaded: false,
     };
   }
 
   getFirstTeamMember = () => {
-    SuperHeroAPI.getRandomCharacter()
+    SuperHeroAPI.getRandomNewCharacter()
       .then(randomCharacter => {
-        console.log(randomCharacter);
+        this.setState({
+          newCharacter: randomCharacter.data[0],
+          newCharacterLoaded: true,
+        });
       })
       .catch(err => console.error(err));
+  };
+
+  addToRoster = () => {
+    alert(`you added ${this.state.newCharacter.name} to your roster!`);
   };
 
   render() {
@@ -34,12 +43,28 @@ class Roster extends Component {
         )}
         {this.props.roster.length < 1 ? (
           <div>
-            <p>You do not have anyone in your roster yet!</p>
-            <button onClick={() => this.getFirstTeamMember()}>
-              Click to get your first team member!
-            </button>
+            {!this.state.newCharacterLoaded ? (
+              <>
+                <p>You do not have anyone in your roster yet!</p>
+                <button onClick={() => this.getFirstTeamMember()}>
+                  Click to get your first team member!
+                </button>{" "}
+              </>
+            ) : (
+              <div>
+                <p>{this.state.newCharacter.name}</p>
+                <img
+                  src={this.state.newCharacter.image.url}
+                  alt={this.state.newCharacter.name}
+                />
+                <button onClick={() => this.addToRoster()}>
+                  Add to Roster!
+                </button>
+              </div>
+            )}
           </div>
         ) : null}
+
         <Link to={`/`}>Index</Link>
       </div>
     );

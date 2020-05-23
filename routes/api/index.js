@@ -2,9 +2,11 @@
 
 const router = require(`express`).Router();
 const userLogin = require(`./user`);
+const character = require(`./character.js`);
 const User = require(`../../database/models/User`);
 
 router.use(`/user`, userLogin);
+router.use(`/character`, character);
 
 module.exports = router;
 
