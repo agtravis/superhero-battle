@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import SuperHeroAPI from "../utils/SuperHeroAPI";
-// import API from "../utils/API";
+import API from "../utils/API";
 
 class Roster extends Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class Roster extends Component {
       roster: [],
       newCharacter: null,
       newCharacterLoaded: false,
+      redirect: false,
     };
   }
 
@@ -26,13 +27,24 @@ class Roster extends Component {
   };
 
   addToRoster = () => {
-    alert(`you added ${this.state.newCharacter.name} to your roster!`);
+    API.addCharacterToRoster(this.props.currentUser._id, {
+      characterId: this.state.newCharacter._id,
+    })
+      .then(() => {
+        alert(`you added ${this.state.newCharacter.name} to your roster!`);
+        this.props.fillUser();
+      })
+      .catch(err => console.error(err));
   };
 
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
     }
+    // if (this.state.redirect) {
+    //   return <Redirect to={`/roster`} />;
+    // }
+
     return (
       <div>
         <h1>Roster</h1>
