@@ -16,4 +16,7 @@ export default {
   newUser(signUpDetails) {
     return axios.post(`/api/user`, signUpDetails);
   },
+  addCharacterToRoster(id, characterId) {
+    return axios.put(`/api/user/roster/add/${id}`, characterId);
+  },
 };

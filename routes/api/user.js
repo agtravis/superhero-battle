@@ -34,6 +34,8 @@ router
   .put(userController.update)
   .delete(userController.remove);
 
+router.route(`/roster/add/:id`).put(userController.addCharacter);
+
 module.exports = router;
 
 // when a post is created, use this to push it to the array

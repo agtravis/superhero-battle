@@ -56,6 +56,7 @@ module.exports = {
   },
   findById: (req, res) => {
     User.findById(req.params.id)
+      .populate(`roster`)
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(errorResponseCode).json(err));
   },
@@ -87,7 +88,30 @@ module.exports = {
       .then(dbUsers => res.json(dbUsers))
       .catch(err => res.json(err));
   },
+  addCharacter: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      {
+        $push: { roster: req.body.characterId },
+      }
+    )
+      .populate(`roster`)
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
 };
+
+// router.put(`/post/:id`, (req, res) => {
+//   User.updateOne(
+//     { _id: mongoose.Types.ObjectId(req.params.id) },
+//     {
+//       $push: { posts: req.body.id },
+//     }
+//   )
+//     .populate(`posts`)
+//     .then(dbUser => res.json(dbUser))
+//     .catch(err => res.json(err));
+// });
 
 // create: (req, res) => {
 //   db.User.create(req.body)
