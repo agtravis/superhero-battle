@@ -95,7 +95,16 @@ module.exports = {
         $push: { roster: req.body.characterId },
       }
     )
-      .populate(`roster`)
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
+  removeCharacter: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      {
+        $pull: { roster: req.body.characterId },
+      }
+    )
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
   },

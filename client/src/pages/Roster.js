@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 import API from "../utils/API";
+
+import RosterSlot from "../components/RosterSlot";
 
 class Roster extends Component {
   constructor(props) {
@@ -31,7 +32,16 @@ class Roster extends Component {
       characterId: this.state.newCharacter._id,
     })
       .then(() => {
-        alert(`you added ${this.state.newCharacter.name} to your roster!`);
+        this.props.fillUser();
+      })
+      .catch(err => console.error(err));
+  };
+
+  removeFromRoster = characterId => {
+    API.removeCharacterFromRoster(this.props.currentUser._id, {
+      characterId: characterId,
+    })
+      .then(() => {
         this.props.fillUser();
       })
       .catch(err => console.error(err));
@@ -41,9 +51,6 @@ class Roster extends Component {
     if (!this.props.currentUser) {
       window.location.href = `/`;
     }
-    // if (this.state.redirect) {
-    //   return <Redirect to={`/roster`} />;
-    // }
 
     return (
       <div>
@@ -75,9 +82,16 @@ class Roster extends Component {
               </div>
             )}
           </div>
-        ) : null}
-
-        <Link to={`/`}>Index</Link>
+        ) : (
+          this.props.roster.map((character, index) => (
+            <RosterSlot
+              key={index}
+              index={index}
+              character={character}
+              removeFromRoster={this.removeFromRoster}
+            />
+          ))
+        )}
       </div>
     );
   }
