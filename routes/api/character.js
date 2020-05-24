@@ -9,4 +9,6 @@ const characterController = require(`../../controllers/characterController`);
 
 router.route(`/`).get(characterController.randomCharacter);
 
+router.route(`/searchcharacter`).post(characterController.searchByInheritedId);
+
 module.exports = router;

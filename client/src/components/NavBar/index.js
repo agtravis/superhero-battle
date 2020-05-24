@@ -15,6 +15,8 @@ class NavBar extends Component {
             {` `}
             <Link to={`/profile`}>Profile</Link>
             {` `}
+            <Link to={`/fight`}>Fight</Link>
+            {` `}
             <Link to={`/stats`}>Stats</Link>
             {` `}
             <Link to={`/roster`}>Roster</Link>

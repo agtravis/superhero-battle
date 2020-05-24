@@ -17,7 +17,9 @@ class RosterSlot extends Component {
           borderBottom: `1px dashed black`,
         }}
       >
-        <h3>{this.props.character.name}</h3>
+        <h3>
+          {this.props.index + 1}. {this.props.character.name}
+        </h3>
         <img
           src={this.props.character.image.url}
           alt={this.props.character.name}

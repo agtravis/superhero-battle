@@ -16,4 +16,11 @@ module.exports = {
       .then(dbCharacter => res.json(dbCharacter))
       .catch(err => console.error(err));
   },
+  searchByInheritedId: (req, res) => {
+    Character.find({
+      id: req.body.id,
+    })
+      .then(dbCharacters => res.json(dbCharacters))
+      .catch(err => res.json(err));
+  },
 };

@@ -5,6 +5,9 @@ export default {
   getRandomNewCharacter() {
     return axios.get(`/api/character`);
   },
+  getNewOpponent(id) {
+    return axios.post(`/api/character/searchcharacter`, { id: id });
+  },
 };
 
 //   const randomNumber = Math.floor(Math.random() * 731) + 1;
