@@ -1,10 +1,54 @@
 import React, { Component } from "react";
 
+import SuperHeroAPI from "../utils/SuperHeroAPI";
+
+import fullList from "../utils/characters";
+
 class SoloFight extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      nextOpponent: null,
+    };
   }
+
+  preFightStyleDiv = {
+    border: `1px dashed black`,
+    width: `30%`,
+    height: `500px`,
+    padding: `10px`,
+    margin: `10px`,
+  };
+
+  contenderImageStyle = {
+    width: `80%`,
+  };
+
+  imageContainer = {
+    display: `flex`,
+    justifyContent: `center`,
+  };
+
+  cardHeader = {
+    textAlign: `center`,
+  };
+
+  getNewFighter = () => {
+    const currentRoster = this.props.roster;
+    const inRoster = new Map();
+    for (const character of currentRoster) {
+      inRoster.set(character.id, character.name);
+    }
+    const outRoster = fullList.filter(character => !inRoster.has(character.id));
+    const randomNum = Math.floor(Math.random() * outRoster.length);
+    const nextChallenger = outRoster[randomNum];
+    SuperHeroAPI.getNewOpponent(nextChallenger.id)
+      .then(data => {
+        this.setState({ nextOpponent: data.data[0] });
+      })
+      .catch(err => console.error(err));
+  };
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -12,18 +56,34 @@ class SoloFight extends Component {
     return (
       <div>
         <p>SoloFight</p>
-        <div>
-          {/* multiple columns in this div, 
-          
-          
-          1. choose your enemy - random selection, needs to not be contained in your selection
-          get list from roster loaded into hashmap based on id
-          get list from array in js file, filter based on if the hashmap doesn't exist, only new items come into this new array
-          pick random from array
-          use name to run a query on the database to get id of that character
-          load character into the selection div - don't show stats
-
-          2. choose your fighter from scrollable div, with stats. Click on selection, presents modal, confirm or exit. Once confirmed, fighter replaces selection
+        <div style={{ display: `flex`, justifyContent: `space-around` }}>
+          <div style={this.preFightStyleDiv}>
+            {!this.state.nextOpponent ? (
+              <button onClick={() => this.getNewFighter()}>Get opponent</button>
+            ) : (
+              <>
+                <h3 style={this.cardHeader}>{this.state.nextOpponent.name}</h3>
+                <div style={this.imageContainer}>
+                  <img
+                    src={this.state.nextOpponent.image.url}
+                    alt={this.state.nextOpponent.name}
+                    style={this.contenderImageStyle}
+                  />
+                </div>
+              </>
+            )}
+          </div>
+          <div style={this.preFightStyleDiv}>
+            {!this.state.nextOpponent ? (
+              <button onClick={() => this.getNewFighter()}>
+                First choose your opponent!
+              </button>
+            ) : (
+              <p>Who do you want to fight {this.state.nextOpponent.name}?</p>
+            )}
+          </div>
+          <div style={this.preFightStyleDiv}></div>
+          {/* 2. choose your fighter from scrollable div, with stats. Click on selection, presents modal, confirm or exit. Once confirmed, fighter replaces selection
           
           3. this is just a button that says fight, appears when both other divs have been selected, opens modal for fight to take place in
 */}
