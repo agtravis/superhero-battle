@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import RosterSelectionSlot from "../components/RosterSelectionSlot";
+
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 
 import fullList from "../utils/characters";
@@ -9,6 +11,7 @@ class SoloFight extends Component {
     super(props);
     this.state = {
       nextOpponent: null,
+      contender: null,
     };
   }
 
@@ -49,6 +52,14 @@ class SoloFight extends Component {
       .catch(err => console.error(err));
   };
 
+  getContender = id => {
+    SuperHeroAPI.loadContender(id)
+      .then(data => {
+        this.setState({ contender: data.data });
+      })
+      .catch(err => console.error(err));
+  };
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -62,13 +73,20 @@ class SoloFight extends Component {
               <button onClick={() => this.getNewFighter()}>Get opponent</button>
             ) : (
               <>
-                <h3 style={this.cardHeader}>{this.state.nextOpponent.name}</h3>
+                <div style={this.cardHeader}>
+                  <p>Challenger</p>
+                  <h3>{this.state.nextOpponent.name}</h3>
+                </div>
                 <div style={this.imageContainer}>
-                  <img
-                    src={this.state.nextOpponent.image.url}
-                    alt={this.state.nextOpponent.name}
-                    style={this.contenderImageStyle}
-                  />
+                  {this.state.nextOpponent.image.url ? (
+                    <img
+                      src={this.state.nextOpponent.image.url}
+                      alt={this.state.nextOpponent.name}
+                      style={this.contenderImageStyle}
+                    />
+                  ) : (
+                    <p>No Image on File!</p>
+                  )}
                 </div>
               </>
             )}
@@ -79,7 +97,43 @@ class SoloFight extends Component {
                 First choose your opponent!
               </button>
             ) : (
-              <p>Who do you want to fight {this.state.nextOpponent.name}?</p>
+              <div>
+                {!this.state.contender ? (
+                  <div>
+                    <p>
+                      Who do you want to fight {this.state.nextOpponent.name}?
+                    </p>
+                    <div>
+                      {this.props.roster.map((character, index) => (
+                        <RosterSelectionSlot
+                          key={index}
+                          index={index}
+                          character={character}
+                          getContender={this.getContender}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div>
+                    <div style={this.cardHeader}>
+                      <p>versus</p>
+                      <h3>{this.state.contender.name}!</h3>
+                    </div>
+                    <div style={this.imageContainer}>
+                      {this.state.contender.image.url ? (
+                        <img
+                          src={this.state.contender.image.url}
+                          alt={this.state.contender.name}
+                          style={this.contenderImageStyle}
+                        />
+                      ) : (
+                        <p>No Image on File!</p>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
           </div>
           <div style={this.preFightStyleDiv}></div>
