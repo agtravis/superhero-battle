@@ -8,6 +8,9 @@ export default {
   getNewOpponent(id) {
     return axios.post(`/api/character/searchcharacter`, { id: id });
   },
+  loadContender(id) {
+    return axios.get(`/api/character/${id}`);
+  },
 };
 
 //   const randomNumber = Math.floor(Math.random() * 731) + 1;

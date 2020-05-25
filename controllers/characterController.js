@@ -23,4 +23,9 @@ module.exports = {
       .then(dbCharacters => res.json(dbCharacters))
       .catch(err => res.json(err));
   },
+  getCharacter: (req, res) => {
+    Character.findById(req.params.id)
+      .then(dbCharacter => res.json(dbCharacter))
+      .catch(err => res.json(err));
+  },
 };
