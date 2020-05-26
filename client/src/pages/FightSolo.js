@@ -12,6 +12,7 @@ class SoloFight extends Component {
     this.state = {
       nextOpponent: null,
       contender: null,
+      imageValid: true,
     };
   }
 
@@ -60,6 +61,10 @@ class SoloFight extends Component {
       .catch(err => console.error(err));
   };
 
+  noImage = () => {
+    this.setState({ imageValid: false });
+  };
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -78,11 +83,13 @@ class SoloFight extends Component {
                   <h3>{this.state.nextOpponent.name}</h3>
                 </div>
                 <div style={this.imageContainer}>
-                  {this.state.nextOpponent.image.url ? (
+                  {this.state.nextOpponent.image.url &&
+                  this.state.imageValid ? (
                     <img
                       src={this.state.nextOpponent.image.url}
                       alt={this.state.nextOpponent.name}
                       style={this.contenderImageStyle}
+                      onError={() => this.noImage()}
                     />
                   ) : (
                     <p>No Image on File!</p>
