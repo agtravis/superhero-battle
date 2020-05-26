@@ -19,13 +19,18 @@ class SoloFight extends Component {
   preFightStyleDiv = {
     border: `1px dashed black`,
     width: `30%`,
-    height: `500px`,
+    minHeight: `500px`,
+    height: `auto`,
     padding: `10px`,
     margin: `10px`,
   };
 
   contenderImageStyle = {
-    width: `80%`,
+    display: `block`,
+    maxWidth: `250px`,
+    maxHeight: `400px`,
+    width: `auto`,
+    height: `auto`,
   };
 
   imageContainer = {
