@@ -17,6 +17,8 @@ class FightMode extends Component {
       commenced: false,
       fightOver: false,
       winner: null,
+      attackRating: null,
+      defendRating: null,
     };
   }
 
@@ -42,13 +44,13 @@ class FightMode extends Component {
       strength: 0,
     };
     for (const challenger of this.props.challengers) {
-      Object.keys(challenger.powerstats).forEach(key => {
-        attackingStats[key] += this.convertNullToRandom(challenger[key]);
+      Object.entries(challenger.powerstats).forEach(key => {
+        attackingStats[key[0]] += this.convertNullToRandom(key[1]);
       });
     }
     for (const defender of this.props.defenders) {
-      Object.keys(defender.powerstats).forEach(key => {
-        defendingStats[key] += this.convertNullToRandom(defender[key]);
+      Object.entries(defender.powerstats).forEach(key => {
+        defendingStats[key[0]] += this.convertNullToRandom(key[1]);
       });
     }
     this.setState({
@@ -77,6 +79,7 @@ class FightMode extends Component {
     this.setState({ fightOver: true });
     const attackRating = this.state.attackingStat * Math.random();
     const defendRating = this.state.defendingStat * Math.random();
+    this.setState({ attackRating: attackRating, defendRating: defendRating });
     if (attackRating > defendRating) {
       this.setState({ winner: `attacker` });
       this.attackerWin();
@@ -94,15 +97,6 @@ class FightMode extends Component {
     API.removeManyCharactersFromRoster(this.props.currentUser._id, ids)
       .then(dbUser => {
         console.log(dbUser);
-        // this.setState({
-        //   round: this.state.round + 1,
-        //   attacking: this.state.attackingStat + 1,
-        //   fightStat: null,
-        //   attackingStat: null,
-        //   defendingStat: null,
-        //   commenced: false,
-        //   fightOver: false,
-        // });
       })
       .catch(err => console.error(err));
   };
@@ -113,18 +107,7 @@ class FightMode extends Component {
       ids.push(attacker._id);
     }
     API.addManyCharactersToRoster(this.props.currentUser._id, ids)
-      .then(dbUser => {
-        console.log(dbUser);
-        // this.setState({
-        //   round: this.state.round + 1,
-        //   defending: this.state.attackingStat + 1,
-        //   fightStat: null,
-        //   attackingStat: null,
-        //   defendingStat: null,
-        //   commenced: false,
-        //   fightOver: false,
-        // });
-      })
+      .then(dbUser => {})
       .catch(err => console.error(err));
   };
 
@@ -158,12 +141,14 @@ class FightMode extends Component {
               <button onClick={() => this.fight()}>Fight!</button>
             ) : null}
             <p>
-              Enemy attacked with {this.state.fightStat}:{" "}
-              {this.state.fightOver ? <>{this.state.attackingStat}</> : null}
+              Enemy had {this.state.fightStat}: {this.state.attackingStat} and
+              attacked with{` `}
+              {this.state.fightOver ? <>{this.state.attackRating}</> : null}
             </p>
             <p>
-              You defended with {this.state.fightStat}:{" "}
-              {this.state.fightOver ? <>{this.state.defendingStat} </> : null}
+              You had {this.state.fightStat}: {this.state.defendingStat} and
+              defended with{` `}
+              {this.state.fightOver ? <>{this.state.defendRating} </> : null}
             </p>
             {this.state.winner ? (
               <p>The winner is: {this.state.winner}</p>
