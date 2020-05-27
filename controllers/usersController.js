@@ -98,12 +98,28 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
   },
+  addManyCharacters: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      { $push: { roster: { $each: req.body.ids } } }
+    )
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
   removeCharacter: (req, res) => {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },
       {
         $pull: { roster: req.body.characterId },
       }
+    )
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
+  removeManyCharacters: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      { $pullAll: { roster: req.body.ids } }
     )
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));

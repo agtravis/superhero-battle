@@ -185,6 +185,7 @@ class SoloFight extends Component {
           <FightMode
             challengers={[this.state.nextOpponent]}
             defenders={[this.state.contender]}
+            currentUser={this.props.currentUser}
           />
         )}
       </div>
