@@ -35,8 +35,10 @@ router
   .delete(userController.remove);
 
 router.route(`/roster/add/:id`).put(userController.addCharacter);
+router.route(`/roster/addmany/:id`).put(userController.addManyCharacters);
 
 router.route(`/roster/remove/:id`).put(userController.removeCharacter);
+router.route(`/roster/removemany/:id`).put(userController.removeManyCharacters);
 
 module.exports = router;
 
