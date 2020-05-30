@@ -8,6 +8,7 @@ import fullList from "../utils/characters";
 
 import PreFightDivWrapper from "../components/PreFightDivWrapper";
 import FightMode from "../components/FightMode";
+import FighterTitleCard from "../components/FighterTitleCard";
 
 class SoloFight extends Component {
   constructor(props) {
@@ -15,36 +16,9 @@ class SoloFight extends Component {
     this.state = {
       nextOpponent: null,
       contender: null,
-      imageValid: true,
       fightMode: false,
     };
   }
-
-  preFightStyleDiv = {
-    border: `1px dashed black`,
-    width: `30%`,
-    minHeight: `500px`,
-    height: `auto`,
-    padding: `10px`,
-    margin: `10px`,
-  };
-
-  contenderImageStyle = {
-    display: `block`,
-    maxWidth: `250px`,
-    maxHeight: `400px`,
-    width: `auto`,
-    height: `auto`,
-  };
-
-  imageContainer = {
-    display: `flex`,
-    justifyContent: `center`,
-  };
-
-  cardHeader = {
-    textAlign: `center`,
-  };
 
   getNewFighter = () => {
     const currentRoster = this.props.roster;
@@ -70,10 +44,6 @@ class SoloFight extends Component {
       .catch(err => console.error(err));
   };
 
-  noImage = () => {
-    this.setState({ imageValid: false });
-  };
-
   startFight = () => {
     this.setState({ fightMode: true });
   };
@@ -94,23 +64,10 @@ class SoloFight extends Component {
                 </button>
               ) : (
                 <>
-                  <div style={this.cardHeader}>
-                    <p>Challenger</p>
-                    <h3>{this.state.nextOpponent.name}</h3>
-                  </div>
-                  <div style={this.imageContainer}>
-                    {this.state.nextOpponent.image.url &&
-                    this.state.imageValid ? (
-                      <img
-                        src={this.state.nextOpponent.image.url}
-                        alt={this.state.nextOpponent.name}
-                        style={this.contenderImageStyle}
-                        onError={() => this.noImage()}
-                      />
-                    ) : (
-                      <p>No Image on File!</p>
-                    )}
-                  </div>
+                  <FighterTitleCard
+                    title={`Challenger`}
+                    character={this.state.nextOpponent}
+                  />
                 </>
               )}
             </PreFightDivWrapper>
@@ -140,21 +97,10 @@ class SoloFight extends Component {
                     </div>
                   ) : (
                     <div>
-                      <div style={this.cardHeader}>
-                        <p>versus</p>
-                        <h3>{this.state.contender.name}!</h3>
-                      </div>
-                      <div style={this.imageContainer}>
-                        {this.state.contender.image.url ? (
-                          <img
-                            src={this.state.contender.image.url}
-                            alt={this.state.contender.name}
-                            style={this.contenderImageStyle}
-                          />
-                        ) : (
-                          <p>No Image on File!</p>
-                        )}
-                      </div>
+                      <FighterTitleCard
+                        title={`versus`}
+                        character={this.state.contender}
+                      />
                     </div>
                   )}
                 </div>
