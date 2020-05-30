@@ -5,7 +5,10 @@ import RosterSelectionSlot from "../components/RosterSelectionSlot";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 
 import fullList from "../utils/characters";
+
+import PreFightDivWrapper from "../components/PreFightDivWrapper";
 import FightMode from "../components/FightMode";
+import FighterTitleCard from "../components/FighterTitleCard";
 
 class SoloFight extends Component {
   constructor(props) {
@@ -13,36 +16,9 @@ class SoloFight extends Component {
     this.state = {
       nextOpponent: null,
       contender: null,
-      imageValid: true,
       fightMode: false,
     };
   }
-
-  preFightStyleDiv = {
-    border: `1px dashed black`,
-    width: `30%`,
-    minHeight: `500px`,
-    height: `auto`,
-    padding: `10px`,
-    margin: `10px`,
-  };
-
-  contenderImageStyle = {
-    display: `block`,
-    maxWidth: `250px`,
-    maxHeight: `400px`,
-    width: `auto`,
-    height: `auto`,
-  };
-
-  imageContainer = {
-    display: `flex`,
-    justifyContent: `center`,
-  };
-
-  cardHeader = {
-    textAlign: `center`,
-  };
 
   getNewFighter = () => {
     const currentRoster = this.props.roster;
@@ -68,10 +44,6 @@ class SoloFight extends Component {
       .catch(err => console.error(err));
   };
 
-  noImage = () => {
-    this.setState({ imageValid: false });
-  };
-
   startFight = () => {
     this.setState({ fightMode: true });
   };
@@ -85,34 +57,21 @@ class SoloFight extends Component {
         <p>SoloFight</p>
         {!this.state.fightMode ? (
           <div style={{ display: `flex`, justifyContent: `space-around` }}>
-            <div style={this.preFightStyleDiv}>
+            <PreFightDivWrapper>
               {!this.state.nextOpponent ? (
                 <button onClick={() => this.getNewFighter()}>
                   Get opponent
                 </button>
               ) : (
                 <>
-                  <div style={this.cardHeader}>
-                    <p>Challenger</p>
-                    <h3>{this.state.nextOpponent.name}</h3>
-                  </div>
-                  <div style={this.imageContainer}>
-                    {this.state.nextOpponent.image.url &&
-                    this.state.imageValid ? (
-                      <img
-                        src={this.state.nextOpponent.image.url}
-                        alt={this.state.nextOpponent.name}
-                        style={this.contenderImageStyle}
-                        onError={() => this.noImage()}
-                      />
-                    ) : (
-                      <p>No Image on File!</p>
-                    )}
-                  </div>
+                  <FighterTitleCard
+                    title={`Challenger`}
+                    character={this.state.nextOpponent}
+                  />
                 </>
               )}
-            </div>
-            <div style={this.preFightStyleDiv}>
+            </PreFightDivWrapper>
+            <PreFightDivWrapper>
               {!this.state.nextOpponent ? (
                 <button onClick={() => this.getNewFighter()}>
                   First choose your opponent!
@@ -137,27 +96,16 @@ class SoloFight extends Component {
                     </div>
                   ) : (
                     <div>
-                      <div style={this.cardHeader}>
-                        <p>versus</p>
-                        <h3>{this.state.contender.name}!</h3>
-                      </div>
-                      <div style={this.imageContainer}>
-                        {this.state.contender.image.url ? (
-                          <img
-                            src={this.state.contender.image.url}
-                            alt={this.state.contender.name}
-                            style={this.contenderImageStyle}
-                          />
-                        ) : (
-                          <p>No Image on File!</p>
-                        )}
-                      </div>
+                      <FighterTitleCard
+                        title={`versus`}
+                        character={this.state.contender}
+                      />
                     </div>
                   )}
                 </div>
               )}
-            </div>
-            <div style={this.preFightStyleDiv}>
+            </PreFightDivWrapper>
+            <PreFightDivWrapper>
               <div
                 style={{
                   height: `100%`,
@@ -172,14 +120,7 @@ class SoloFight extends Component {
                   <p>Choose your fighters!</p>
                 )}
               </div>
-            </div>
-            {/* In the fight, user chooses first category, computer chooses second (highest), third is random. best of 3. 
-          each character multiply stat by different random number, compare two results, highest wins
-          win = collect your opponent
-          lose = lose your fighter
-          if all categories are null , random number will be chosen
-          If a category is null, stat is randomly assigned.
-*/}
+            </PreFightDivWrapper>
           </div>
         ) : (
           <FightMode
