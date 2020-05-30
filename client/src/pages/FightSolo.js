@@ -5,6 +5,8 @@ import RosterSelectionSlot from "../components/RosterSelectionSlot";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 
 import fullList from "../utils/characters";
+
+import PreFightDivWrapper from "../components/PreFightDivWrapper";
 import FightMode from "../components/FightMode";
 
 class SoloFight extends Component {
@@ -85,7 +87,7 @@ class SoloFight extends Component {
         <p>SoloFight</p>
         {!this.state.fightMode ? (
           <div style={{ display: `flex`, justifyContent: `space-around` }}>
-            <div style={this.preFightStyleDiv}>
+            <PreFightDivWrapper>
               {!this.state.nextOpponent ? (
                 <button onClick={() => this.getNewFighter()}>
                   Get opponent
@@ -111,8 +113,9 @@ class SoloFight extends Component {
                   </div>
                 </>
               )}
-            </div>
-            <div style={this.preFightStyleDiv}>
+            </PreFightDivWrapper>
+
+            <PreFightDivWrapper>
               {!this.state.nextOpponent ? (
                 <button onClick={() => this.getNewFighter()}>
                   First choose your opponent!
@@ -156,8 +159,8 @@ class SoloFight extends Component {
                   )}
                 </div>
               )}
-            </div>
-            <div style={this.preFightStyleDiv}>
+            </PreFightDivWrapper>
+            <PreFightDivWrapper>
               <div
                 style={{
                   height: `100%`,
@@ -172,14 +175,13 @@ class SoloFight extends Component {
                   <p>Choose your fighters!</p>
                 )}
               </div>
-            </div>
+            </PreFightDivWrapper>
             {/* In the fight, user chooses first category, computer chooses second (highest), third is random. best of 3. 
           each character multiply stat by different random number, compare two results, highest wins
           win = collect your opponent
           lose = lose your fighter
           if all categories are null , random number will be chosen
-          If a category is null, stat is randomly assigned.
-*/}
+          If a category is null, stat is randomly assigned.*/}
           </div>
         ) : (
           <FightMode
