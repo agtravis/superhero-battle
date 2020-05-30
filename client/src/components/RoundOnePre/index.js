@@ -8,7 +8,7 @@ class RoundOnePre extends Component {
   render() {
     return (
       <div>
-        <h3>Round 1!</h3>
+        <h3>Round {this.props.round}!</h3>
         <p>Pick your best ability for the fight:</p>
         <ul>
           {Object.keys(this.props.defendingStats).map((stat, index) => {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import API from "../../utils/API";
 import RoundOnePre from "../RoundOnePre";
+import RoundOnePost from "../RoundOnePost";
 
 class FightMode extends Component {
   constructor(props) {
@@ -117,30 +118,23 @@ class FightMode extends Component {
       <div>
         {this.state.round === 1 && !this.state.commenced ? (
           <RoundOnePre
+            round={this.state.round}
             defendingStats={this.state.defendingStats}
             fightWithThisStat={this.fightWithThisStat}
           />
         ) : null}
         {this.state.round === 1 && this.state.commenced ? (
-          <div>
-            <h3>Round 1 - Fight!</h3>
-            {!this.state.fightOver ? (
-              <button onClick={() => this.fight()}>Fight!</button>
-            ) : null}
-            <p>
-              Enemy had {this.state.fightStat}: {this.state.attackingStat} and
-              attacked with{` `}
-              {this.state.fightOver ? <>{this.state.attackRating}</> : null}
-            </p>
-            <p>
-              You had {this.state.fightStat}: {this.state.defendingStat} and
-              defended with{` `}
-              {this.state.fightOver ? <>{this.state.defendRating} </> : null}
-            </p>
-            {this.state.winner ? (
-              <p>The winner is: {this.state.winner}</p>
-            ) : null}
-          </div>
+          <RoundOnePost
+            round={this.state.round}
+            fightOver={this.state.fightOver}
+            fight={this.fight}
+            fightStat={this.state.fightStat}
+            attackingStat={this.state.attackingStat}
+            attackRating={this.state.attackRating}
+            defendingStat={this.state.defendingStat}
+            defendRating={this.state.defendRating}
+            winner={this.state.winner}
+          />
         ) : null}
       </div>
     );
