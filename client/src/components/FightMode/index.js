@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import API from "../../utils/API";
+import RoundOnePre from "../RoundOnePre";
 
 class FightMode extends Component {
   constructor(props) {
@@ -115,24 +116,10 @@ class FightMode extends Component {
     return (
       <div>
         {this.state.round === 1 && !this.state.commenced ? (
-          <div>
-            <h3>Round 1!</h3>
-            <p>Pick your best ability for the fight:</p>
-            <ul>
-              {Object.keys(this.state.defendingStats).map((stat, index) => {
-                return (
-                  <li key={index} style={{ marginBottom: `5px` }}>
-                    <button
-                      value={stat}
-                      onClick={event => this.fightWithThisStat(event)}
-                    >
-                      {stat}: {this.state.defendingStats[stat]}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          <RoundOnePre
+            defendingStats={this.state.defendingStats}
+            fightWithThisStat={this.fightWithThisStat}
+          />
         ) : null}
         {this.state.round === 1 && this.state.commenced ? (
           <div>
@@ -161,44 +148,3 @@ class FightMode extends Component {
 }
 
 export default FightMode;
-
-// for (const character of this.props.challengers) {
-//   attackingStats.combat += this.convertNullToRandom(
-//     character.powerstats.combat
-//   );
-//   attackingStats.durability += this.convertNullToRandom(
-//     character.powerstats.durability
-//   );
-//   attackingStats.intelligence += this.convertNullToRandom(
-//     character.powerstats.intelligence
-//   );
-//   attackingStats.power += this.convertNullToRandom(
-//     character.powerstats.power
-//   );
-//   attackingStats.speed += this.convertNullToRandom(
-//     character.powerstats.combat
-//   );
-//   attackingStats.strength += this.convertNullToRandom(
-//     character.powerstats.combat
-//   );
-// }
-// for (const character of this.props.defenders) {
-//   defendingStats.combat += this.convertNullToRandom(
-//     character.powerstats.combat
-//   );
-//   defendingStats.durability += this.convertNullToRandom(
-//     character.powerstats.durability
-//   );
-//   defendingStats.intelligence += this.convertNullToRandom(
-//     character.powerstats.intelligence
-//   );
-//   defendingStats.power += this.convertNullToRandom(
-//     character.powerstats.power
-//   );
-//   defendingStats.speed += this.convertNullToRandom(
-//     character.powerstats.combat
-//   );
-//   defendingStats.strength += this.convertNullToRandom(
-//     character.powerstats.combat
-//   );
-// }

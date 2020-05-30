@@ -71,7 +71,6 @@ class SoloFight extends Component {
                 </>
               )}
             </PreFightDivWrapper>
-
             <PreFightDivWrapper>
               {!this.state.nextOpponent ? (
                 <button onClick={() => this.getNewFighter()}>
@@ -122,12 +121,6 @@ class SoloFight extends Component {
                 )}
               </div>
             </PreFightDivWrapper>
-            {/* In the fight, user chooses first category, computer chooses second (highest), third is random. best of 3. 
-          each character multiply stat by different random number, compare two results, highest wins
-          win = collect your opponent
-          lose = lose your fighter
-          if all categories are null , random number will be chosen
-          If a category is null, stat is randomly assigned.*/}
           </div>
         ) : (
           <FightMode
