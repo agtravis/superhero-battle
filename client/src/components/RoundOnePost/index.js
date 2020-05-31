@@ -22,7 +22,12 @@ class RoundOnePost extends Component {
           defended with{` `}
           {this.props.fightOver ? <>{this.props.defendRating} </> : null}
         </p>
-        {this.props.winner ? <p>The winner is: {this.props.winner}</p> : null}
+        {this.props.winner ? (
+          <>
+            <p>The winner of this round is: {this.props.winner}</p>
+            <button onClick={() => this.props.nextRound()}>Next Round!</button>
+          </>
+        ) : null}
       </div>
     );
   }

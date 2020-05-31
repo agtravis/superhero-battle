@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import RoundOnePre from "../RoundOnePre";
 import RoundOnePost from "../RoundOnePost";
+import RoundTwoPre from "../RoundTwoPre";
 
 class FightMode extends Component {
   constructor(props) {
@@ -83,34 +84,54 @@ class FightMode extends Component {
     const defendRating = this.state.defendingStat * Math.random();
     this.setState({ attackRating: attackRating, defendRating: defendRating });
     if (attackRating > defendRating) {
-      this.setState({ winner: `attacker` });
-      this.attackerWin();
+      this.setState({
+        winner: `attacker`,
+        attacking: this.state.attacking + 1,
+      });
+      // this.attackerWin();
     } else {
-      this.setState({ winner: this.props.currentUser.username });
-      this.defenderWin();
+      this.setState({
+        winner: this.props.currentUser.username,
+        defending: this.state.defending + 1,
+      });
+      // this.defenderWin();
     }
+  };
+
+  nextRound = () => {
+    this.setState({
+      round: this.state.round + 1,
+      fightStat: null,
+      attackingStat: null,
+      defendingStat: null,
+      commenced: false,
+      fightOver: false,
+      winner: null,
+      attackRating: null,
+      defendRating: null,
+    });
   };
 
   attackerWin = () => {
-    const ids = [];
-    for (const defender of this.props.defenders) {
-      ids.push(defender._id);
-    }
-    API.removeManyCharactersFromRoster(this.props.currentUser._id, ids)
-      .then(dbUser => {
-        console.log(dbUser);
-      })
-      .catch(err => console.error(err));
+    // const ids = [];
+    // for (const defender of this.props.defenders) {
+    //   ids.push(defender._id);
+    // }
+    // API.removeManyCharactersFromRoster(this.props.currentUser._id, ids)
+    //   .then(dbUser => {
+    //     console.log(dbUser);
+    //   })
+    //   .catch(err => console.error(err));
   };
 
   defenderWin = () => {
-    const ids = [];
-    for (const attacker of this.props.challengers) {
-      ids.push(attacker._id);
-    }
-    API.addManyCharactersToRoster(this.props.currentUser._id, ids)
-      .then(dbUser => {})
-      .catch(err => console.error(err));
+    // const ids = [];
+    // for (const attacker of this.props.challengers) {
+    //   ids.push(attacker._id);
+    // }
+    // API.addManyCharactersToRoster(this.props.currentUser._id, ids)
+    //   .then(dbUser => {})
+    //   .catch(err => console.error(err));
   };
 
   render() {
@@ -134,6 +155,28 @@ class FightMode extends Component {
             defendingStat={this.state.defendingStat}
             defendRating={this.state.defendRating}
             winner={this.state.winner}
+            nextRound={this.nextRound}
+          />
+        ) : null}
+        {this.state.round === 2 && !this.state.commenced ? (
+          <RoundTwoPre
+            round={this.state.round}
+            attackingStats={this.state.attackingStats}
+            fightWithThisStat={this.fightWithThisStat}
+          />
+        ) : null}
+        {this.state.round === 2 && this.state.commenced ? (
+          <RoundOnePost
+            round={this.state.round}
+            fightOver={this.state.fightOver}
+            fight={this.fight}
+            fightStat={this.state.fightStat}
+            attackingStat={this.state.attackingStat}
+            attackRating={this.state.attackRating}
+            defendingStat={this.state.defendingStat}
+            defendRating={this.state.defendRating}
+            winner={this.state.winner}
+            nextRound={this.nextRound}
           />
         ) : null}
       </div>
