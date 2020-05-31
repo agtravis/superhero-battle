@@ -5,6 +5,7 @@ import RoundOnePre from "../RoundOnePre";
 import RoundOnePost from "../RoundOnePost";
 import RoundTwoPre from "../RoundTwoPre";
 import RoundThreePre from "../RoundThreePre";
+import BattleOver from "../BattleOver";
 
 class FightMode extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class FightMode extends Component {
       winner: null,
       attackRating: null,
       defendRating: null,
+      victor: null,
     };
   }
 
@@ -111,28 +113,34 @@ class FightMode extends Component {
       attackRating: null,
       defendRating: null,
     });
+    if (this.state.attacking >= 2) {
+      this.setState({ victor: `challenger` });
+    }
+    if (this.state.defending >= 2) {
+      this.setState({ victor: `defender` });
+    }
   };
 
   attackerWin = () => {
-    // const ids = [];
-    // for (const defender of this.props.defenders) {
-    //   ids.push(defender._id);
-    // }
-    // API.removeManyCharactersFromRoster(this.props.currentUser._id, ids)
-    //   .then(dbUser => {
-    //     console.log(dbUser);
-    //   })
-    //   .catch(err => console.error(err));
+    const ids = [];
+    for (const defender of this.props.defenders) {
+      ids.push(defender._id);
+    }
+    API.removeManyCharactersFromRoster(this.props.currentUser._id, ids)
+      .then(dbUser => {
+        console.log(dbUser);
+      })
+      .catch(err => console.error(err));
   };
 
   defenderWin = () => {
-    // const ids = [];
-    // for (const attacker of this.props.challengers) {
-    //   ids.push(attacker._id);
-    // }
-    // API.addManyCharactersToRoster(this.props.currentUser._id, ids)
-    //   .then(dbUser => {})
-    //   .catch(err => console.error(err));
+    const ids = [];
+    for (const attacker of this.props.challengers) {
+      ids.push(attacker._id);
+    }
+    API.addManyCharactersToRoster(this.props.currentUser._id, ids)
+      .then(dbUser => {})
+      .catch(err => console.error(err));
   };
 
   render() {
@@ -180,14 +188,18 @@ class FightMode extends Component {
             nextRound={this.nextRound}
           />
         ) : null}
-        {this.state.round === 3 && !this.state.commenced ? (
+        {this.state.round === 3 &&
+        !this.state.commenced &&
+        !this.state.victor ? (
           <RoundThreePre
             round={this.state.round}
             attackingStats={this.state.attackingStats}
             fightWithThisStat={this.fightWithThisStat}
           />
         ) : null}
-        {this.state.round === 3 && this.state.commenced ? (
+        {this.state.round === 3 &&
+        this.state.commenced &&
+        !this.state.victor ? (
           <RoundOnePost
             round={this.state.round}
             fightOver={this.state.fightOver}
@@ -200,6 +212,23 @@ class FightMode extends Component {
             winner={this.state.winner}
             nextRound={this.nextRound}
           />
+        ) : null}
+        {this.state.victor ? (
+          <>
+            {this.state.victor === `challenger` ? (
+              <BattleOver
+                rosterFunction={this.attackerWin}
+                winner={`Challenger`}
+                message={`Better luck next time!!!`}
+              />
+            ) : (
+              <BattleOver
+                rosterFunction={this.defenderWin}
+                winner={this.props.currentUser.username}
+                message={`Congratulations, you won!!!`}
+              />
+            )}
+          </>
         ) : null}
       </div>
     );
