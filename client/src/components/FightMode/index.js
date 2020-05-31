@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import RoundOnePre from "../RoundOnePre";
 import RoundOnePost from "../RoundOnePost";
 import RoundTwoPre from "../RoundTwoPre";
+import RoundThreePre from "../RoundThreePre";
 
 class FightMode extends Component {
   constructor(props) {
@@ -166,6 +167,27 @@ class FightMode extends Component {
           />
         ) : null}
         {this.state.round === 2 && this.state.commenced ? (
+          <RoundOnePost
+            round={this.state.round}
+            fightOver={this.state.fightOver}
+            fight={this.fight}
+            fightStat={this.state.fightStat}
+            attackingStat={this.state.attackingStat}
+            attackRating={this.state.attackRating}
+            defendingStat={this.state.defendingStat}
+            defendRating={this.state.defendRating}
+            winner={this.state.winner}
+            nextRound={this.nextRound}
+          />
+        ) : null}
+        {this.state.round === 3 && !this.state.commenced ? (
+          <RoundThreePre
+            round={this.state.round}
+            attackingStats={this.state.attackingStats}
+            fightWithThisStat={this.fightWithThisStat}
+          />
+        ) : null}
+        {this.state.round === 3 && this.state.commenced ? (
           <RoundOnePost
             round={this.state.round}
             fightOver={this.state.fightOver}
