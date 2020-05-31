@@ -25,7 +25,7 @@ class RoundOnePost extends Component {
         {this.props.winner ? (
           <>
             <p>The winner of this round is: {this.props.winner}</p>
-            <button onClick={() => this.props.nextRound()}>Next Round!</button>
+            <button onClick={() => this.props.nextRound()}>Continue!</button>
           </>
         ) : null}
       </div>

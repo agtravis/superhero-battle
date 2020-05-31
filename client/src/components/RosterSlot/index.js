@@ -3,8 +3,15 @@ import React, { Component } from "react";
 class RosterSlot extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      imageValid: true,
+    };
   }
+
+  noImage = () => {
+    this.setState({ imageValid: false });
+  };
+
   render() {
     return (
       <div
@@ -20,11 +27,16 @@ class RosterSlot extends Component {
         <h3>
           {this.props.index + 1}. {this.props.character.name}
         </h3>
-        <img
-          src={this.props.character.image.url}
-          alt={this.props.character.name}
-          style={{ width: `100px`, marginLeft: `5px` }}
-        />
+        {this.props.character.image.url && this.state.imageValid ? (
+          <img
+            src={this.props.character.image.url}
+            alt={this.props.character.name}
+            style={{ width: `100px`, marginLeft: `5px` }}
+            onError={() => this.noImage()}
+          />
+        ) : (
+          <p>No Image on File!</p>
+        )}
         <div style={{ marginRight: `10px` }}>
           <ul>
             <li>
