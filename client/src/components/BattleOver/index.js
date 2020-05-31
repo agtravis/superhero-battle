@@ -11,7 +11,7 @@ class BattleOver extends Component {
   }
 
   continue = () => {
-    alert(`continue`);
+    window.location.href = `/`;
   };
 
   render() {
@@ -21,6 +21,11 @@ class BattleOver extends Component {
         <h3>{this.props.winner}!!</h3>
         <p>{this.props.message}</p>
         <button onClick={() => this.continue()}>Continue!</button>
+        {this.props.winner === `Challenger` ? (
+          <>challenger card</>
+        ) : (
+          <>defender card</>
+        )}
       </div>
     );
   }
