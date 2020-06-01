@@ -30,4 +30,10 @@ export default {
       ids: characterIds,
     });
   },
+  lose(id) {
+    return axios.put(`/api/user/lose/${id}`);
+  },
+  win(id) {
+    return axios.put(`/api/user/win/${id}`);
+  },
 };

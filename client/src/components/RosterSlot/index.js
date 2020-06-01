@@ -25,7 +25,7 @@ class RosterSlot extends Component {
         }}
       >
         <h3>
-          {this.props.index ? `${this.props.index + 1}. ` : null}
+          {this.props.index !== undefined ? `${this.props.index + 1}. ` : null}
           {this.props.character.name}
         </h3>
         {this.props.character.image.url && this.state.imageValid ? (
