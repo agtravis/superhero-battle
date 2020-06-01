@@ -127,9 +127,11 @@ class FightMode extends Component {
       ids.push(defender._id);
     }
     API.removeManyCharactersFromRoster(this.props.currentUser._id, ids)
-      .then(dbUser => {
-        console.log(dbUser);
-      })
+      .then(() =>
+        API.lose(this.props.currentUser._id)
+          .then()
+          .catch(err => console.error(err))
+      )
       .catch(err => console.error(err));
   };
 
@@ -139,7 +141,11 @@ class FightMode extends Component {
       ids.push(attacker._id);
     }
     API.addManyCharactersToRoster(this.props.currentUser._id, ids)
-      .then(dbUser => {})
+      .then(() =>
+        API.win(this.props.currentUser._id)
+          .then()
+          .catch(err => console.error(err))
+      )
       .catch(err => console.error(err));
   };
 
