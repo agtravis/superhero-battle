@@ -220,12 +220,14 @@ class FightMode extends Component {
                 rosterFunction={this.attackerWin}
                 winner={`Challenger`}
                 message={`Better luck next time!!!`}
+                characters={this.props.defenders}
               />
             ) : (
               <BattleOver
                 rosterFunction={this.defenderWin}
                 winner={this.props.currentUser.username}
                 message={`Congratulations, you won!!!`}
+                characters={this.props.challengers}
               />
             )}
           </>

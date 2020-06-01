@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import RosterSlot from "../RosterSlot";
+
 class BattleOver extends Component {
   constructor(props) {
     super(props);
@@ -22,10 +24,17 @@ class BattleOver extends Component {
         <p>{this.props.message}</p>
         <button onClick={() => this.continue()}>Continue!</button>
         {this.props.winner === `Challenger` ? (
-          <>challenger card</>
+          <>
+            <p>These fighters have deserted from your roster:</p>
+          </>
         ) : (
-          <>defender card</>
+          <>
+            <p>Welcome these fighters to your roster:</p>
+          </>
         )}
+        {this.props.characters.map((character, index) => (
+          <RosterSlot key={index} character={character} />
+        ))}
       </div>
     );
   }
