@@ -13,8 +13,13 @@ class Roster extends Component {
       newCharacter: null,
       newCharacterLoaded: false,
       redirect: false,
+      imageValid: true,
     };
   }
+
+  noImage = () => {
+    this.setState({ imageValid: false });
+  };
 
   getFirstTeamMember = () => {
     SuperHeroAPI.getRandomNewCharacter()
@@ -72,10 +77,15 @@ class Roster extends Component {
             ) : (
               <div>
                 <p>{this.state.newCharacter.name}</p>
-                <img
-                  src={this.state.newCharacter.image.url}
-                  alt={this.state.newCharacter.name}
-                />
+                {this.state.newCharacter.image.url && this.state.imageValid ? (
+                  <img
+                    src={this.state.newCharacter.image.url}
+                    alt={this.state.newCharacter.name}
+                    onError={() => this.noImage()}
+                  />
+                ) : (
+                  <p>No Image on File!</p>
+                )}
                 <button onClick={() => this.addToRoster()}>
                   Add to Roster!
                 </button>
