@@ -150,6 +150,14 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
   },
+  logBattle: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      { $push: { pastBattles: req.body.battle } }
+    )
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
 };
 
 // router.put(`/post/:id`, (req, res) => {

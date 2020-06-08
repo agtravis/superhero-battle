@@ -34,6 +34,8 @@ router
   .put(userController.update)
   .delete(userController.remove);
 
+router.route(`/logbattle/:id`).put(userController.logBattle);
+
 router.route(`/roster/add/:id`).put(userController.addCharacter);
 router.route(`/roster/addmany/:id`).put(userController.addManyCharacters);
 

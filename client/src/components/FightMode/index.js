@@ -227,6 +227,9 @@ class FightMode extends Component {
                 winner={`Challenger`}
                 message={`Better luck next time!!!`}
                 characters={this.props.defenders}
+                defenders={this.props.defenders}
+                challengers={this.props.challengers}
+                currentUser={this.props.currentUser}
               />
             ) : (
               <BattleOver
@@ -234,6 +237,9 @@ class FightMode extends Component {
                 winner={this.props.currentUser.username}
                 message={`Congratulations, you won!!!`}
                 characters={this.props.challengers}
+                defenders={this.props.defenders}
+                challengers={this.props.challengers}
+                currentUser={this.props.currentUser}
               />
             )}
           </>
