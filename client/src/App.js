@@ -23,6 +23,7 @@ class App extends Component {
       currentUser: null,
       roster: [],
       teams: [],
+      battles: [],
     };
   }
 
@@ -51,7 +52,11 @@ class App extends Component {
   fillUser = () => {
     API.getUserDetails(this.state.currentUser._id)
       .then(dbUser => {
-        this.setState({ roster: dbUser.data.roster, teams: dbUser.data.teams });
+        this.setState({
+          roster: dbUser.data.roster,
+          teams: dbUser.data.teams,
+          battles: dbUser.data.pastBattles,
+        });
       })
       .catch(err => console.error(err));
   };

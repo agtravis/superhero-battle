@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import API from "../../utils/API";
+
 import RosterSlot from "../RosterSlot";
 
 class BattleOver extends Component {
@@ -10,10 +12,39 @@ class BattleOver extends Component {
 
   componentDidMount() {
     this.props.rosterFunction();
+    this.logBattle();
   }
 
   continue = () => {
     window.location.href = `/`;
+  };
+
+  logBattle = () => {
+    const details = {
+      date: Date.now(),
+      challengers: [],
+      defenders: [],
+      winner: this.props.winner,
+    };
+    for (const challenger of this.props.challengers) {
+      const individualDetails = {
+        id: challenger._id,
+        name: challenger.name,
+        image: challenger.image.url,
+      };
+      details.challengers.push(individualDetails);
+    }
+    for (const defender of this.props.defenders) {
+      const individualDetails = {
+        id: defender._id,
+        name: defender.name,
+        image: defender.image.url,
+      };
+      details.defenders.push(individualDetails);
+    }
+    API.logBattle(this.props.currentUser._id, details)
+      .then(dbUser => console.log(dbUser))
+      .catch(err => console.error(err));
   };
 
   render() {
