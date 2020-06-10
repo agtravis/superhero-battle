@@ -9,9 +9,11 @@ class Index extends Component {
   render() {
     return (
       <div>
-        <h1>landing page</h1>
+        <h1>landing page - Welcome!</h1>
         {this.props.loggedIn ? (
-          <p>{this.props.currentUser.username} signed in</p>
+          <p>
+            Current user: <em>{this.props.currentUser.username}</em>
+          </p>
         ) : (
           <p>nobody signed in</p>
         )}

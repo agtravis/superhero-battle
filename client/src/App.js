@@ -144,6 +144,7 @@ class App extends Component {
                 <Home
                   loggedIn={this.state.loggedIn}
                   currentUser={this.state.currentUser}
+                  battles={this.state.battles}
                 />
               )}
             />
