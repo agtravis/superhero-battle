@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
+import LastBattleBasic from "../components/LastBattleBasic";
 
 class Home extends Component {
   constructor(props) {
@@ -12,13 +13,10 @@ class Home extends Component {
     }
     return (
       <div>
-        <h1>Home</h1>
-        {this.props.loggedIn ? (
-          <p>{this.props.currentUser.username} signed in</p>
-        ) : (
-          <p>nobody signed in</p>
-        )}
-        <Link to={`/`}>Index</Link>
+        <div>
+          <h1>Last Battle:</h1>
+          <LastBattleBasic battles={this.props.battles} />
+        </div>
       </div>
     );
   }

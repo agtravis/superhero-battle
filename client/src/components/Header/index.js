@@ -104,7 +104,9 @@ class Header extends Component {
           </div>
         ) : (
           <div>
-            <p>Currently signed in: {this.props.currentUser.username}</p>
+            <p>
+              Currently signed in: <em>{this.props.currentUser.username}</em>
+            </p>
             <button onClick={() => this.logOut()}>Log Out</button>
           </div>
         )}
