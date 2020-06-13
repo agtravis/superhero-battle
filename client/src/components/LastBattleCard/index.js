@@ -60,7 +60,7 @@ class LastBattleCard extends Component {
               <h2>
                 {" "}
                 You were
-                {this.props.winner === `Challenger`
+                {this.props.battle.winner === `Challenger`
                   ? ` defeated!!!`
                   : ` the victor!!!`}
               </h2>

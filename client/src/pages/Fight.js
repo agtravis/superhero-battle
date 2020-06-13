@@ -13,15 +13,19 @@ class Fight extends Component {
     return (
       <div>
         <h1>Fight</h1>
-        {this.props.loggedIn ? (
-          <p>{this.props.currentUser.username} signed in</p>
+        {this.props.roster.length >= 1 ? (
+          <p>
+            How do you want to fight? <Link to={`/fightsolo`}>Solo Fight</Link>{" "}
+            or <Link to={`/fightteam`}>Team Fight</Link>
+          </p>
         ) : (
-          <p>nobody signed in</p>
+          <div>
+            <p>Nobody in your Roster!</p>
+            <p>
+              Click <Link to={`/roster`}>here</Link> to get a team captain!
+            </p>
+          </div>
         )}
-        <p>
-          How do you want to fight? <Link to={`/fightsolo`}>Solo Fight</Link> or{" "}
-          <Link to={`/fightteam`}>Team Fight</Link>
-        </p>
       </div>
     );
   }

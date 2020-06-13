@@ -86,6 +86,19 @@ class App extends Component {
                 <Index
                   loggedIn={this.state.loggedIn}
                   currentUser={this.state.currentUser}
+                  captain={this.state.roster[0]}
+                  recruit={this.state.roster[this.state.roster.length - 1]}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/home"
+              render={() => (
+                <Home
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  battles={this.state.battles}
                 />
               )}
             />
@@ -134,17 +147,6 @@ class App extends Component {
                   currentUser={this.state.currentUser}
                   roster={this.state.roster}
                   fillUser={this.fillUser}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/home"
-              render={() => (
-                <Home
-                  loggedIn={this.state.loggedIn}
-                  currentUser={this.state.currentUser}
-                  battles={this.state.battles}
                 />
               )}
             />
