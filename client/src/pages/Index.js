@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import IndexPortrait from "../components/IndexPortrait";
 
 class Index extends Component {
   constructor(props) {
@@ -9,15 +9,28 @@ class Index extends Component {
   render() {
     return (
       <div>
-        <h1>landing page - Welcome!</h1>
-        {this.props.loggedIn ? (
-          <p>
-            Current user: <em>{this.props.currentUser.username}</em>
-          </p>
-        ) : (
-          <p>nobody signed in</p>
-        )}
-        <Link to={`/home`}>Home</Link>
+        <h1>
+          Welcome
+          {this.props.loggedIn ? ` ${this.props.currentUser.username}` : null}!
+        </h1>
+        <div style={{ display: `flex`, justifyContent: `space-between` }}>
+          {this.props.captain ? (
+            <IndexPortrait
+              title={`Captain`}
+              image={this.props.captain.image.url}
+              name={this.props.captain.name}
+            />
+          ) : null}
+          {this.props.recruit ? (
+            <IndexPortrait
+              title={`Latest Recruit`}
+              image={this.props.recruit.image.url}
+              name={this.props.recruit.name}
+            />
+          ) : (
+            <IndexPortrait title={false} />
+          )}
+        </div>
       </div>
     );
   }

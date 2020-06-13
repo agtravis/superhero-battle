@@ -70,7 +70,15 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <h1>Superhero Battle</h1>
+        <a
+          href="/"
+          style={{
+            textDecoration: `none`,
+            color: `black`,
+          }}
+        >
+          <h1>Superhero Battle</h1>
+        </a>
         {!this.props.loggedIn ? (
           <div>
             {" "}
