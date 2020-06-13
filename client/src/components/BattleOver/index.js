@@ -43,7 +43,7 @@ class BattleOver extends Component {
       details.defenders.push(individualDetails);
     }
     API.logBattle(this.props.currentUser._id, details)
-      .then(dbUser => console.log(dbUser))
+      .then()
       .catch(err => console.error(err));
   };
 
