@@ -21,18 +21,22 @@ class Header extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.logIn({
+    const userDetails = {
       username: this.state.username,
       password: this.state.password,
-    });
+    };
+    this.resetCredentials();
+    this.logIn(userDetails);
   };
 
   newUserSubmit = event => {
     event.preventDefault();
-    this.signUpUser({
+    const userDetails = {
       username: this.state.username,
       password: this.state.password,
-    });
+    };
+    this.resetCredentials();
+    this.signUpUser(userDetails);
   };
 
   signUpUser = signUpDetails => {
@@ -54,6 +58,7 @@ class Header extends Component {
   };
 
   signUp = () => {
+    this.resetCredentials();
     !this.state.signUpMode
       ? this.setState({
           signUpMode: true,
@@ -65,6 +70,12 @@ class Header extends Component {
 
   changeUser = () => {
     this.props.changeUser();
+  };
+
+  resetCredentials = () => {
+    document.getElementById(`username`).value = ``;
+    document.getElementById(`password`).value = ``;
+    this.setState({ username: ``, password: `` });
   };
 
   render() {
