@@ -13,24 +13,28 @@ class Index extends Component {
           Welcome
           {this.props.loggedIn ? ` ${this.props.currentUser.username}` : null}!
         </h1>
-        <div style={{ display: `flex`, justifyContent: `space-between` }}>
-          {this.props.captain ? (
-            <IndexPortrait
-              title={`Captain`}
-              image={this.props.captain.image.url}
-              name={this.props.captain.name}
-            />
-          ) : null}
-          {this.props.recruit ? (
-            <IndexPortrait
-              title={`Latest Recruit`}
-              image={this.props.recruit.image.url}
-              name={this.props.recruit.name}
-            />
-          ) : (
-            <IndexPortrait title={false} />
-          )}
-        </div>
+        {this.props.loggedIn ? (
+          <div>
+            <div style={{ display: `flex`, justifyContent: `space-between` }}>
+              {this.props.captain ? (
+                <IndexPortrait
+                  title={`Captain`}
+                  image={this.props.captain.image.url}
+                  name={this.props.captain.name}
+                />
+              ) : null}
+              {this.props.recruit ? (
+                <IndexPortrait
+                  title={`Latest Recruit`}
+                  image={this.props.recruit.image.url}
+                  name={this.props.recruit.name}
+                />
+              ) : (
+                <IndexPortrait title={false} />
+              )}
+            </div>
+          </div>
+        ) : null}
       </div>
     );
   }
