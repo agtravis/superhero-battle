@@ -9,10 +9,12 @@ class Credentials extends Component {
     return (
       <form onSubmit={event => this.props.handleSubmit(event)}>
         <input
+          id="username"
           onChange={event => this.props.handleChange(event, `username`)}
           placeholder="username"
         />
         <input
+          id="password"
           type="password"
           onChange={event => this.props.handleChange(event, `password`)}
           placeholder="password"
