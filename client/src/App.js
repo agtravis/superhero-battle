@@ -10,6 +10,7 @@ import Roster from "./pages/Roster";
 import Fight from "./pages/Fight";
 import FightSolo from "./pages/FightSolo";
 import FightTeam from "./pages/FightTeam";
+import Stats from "./pages/Stats";
 
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
@@ -104,18 +105,6 @@ class App extends Component {
             />
             <Route
               exact
-              path="/roster"
-              render={() => (
-                <Roster
-                  loggedIn={this.state.loggedIn}
-                  currentUser={this.state.currentUser}
-                  roster={this.state.roster}
-                  fillUser={this.fillUser}
-                />
-              )}
-            />
-            <Route
-              exact
               path="/fight"
               render={() => (
                 <Fight
@@ -143,6 +132,31 @@ class App extends Component {
               path="/fightteam"
               render={() => (
                 <FightTeam
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
+                  fillUser={this.fillUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/stats"
+              render={() => (
+                <Stats
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
+                  battles={this.state.battles}
+                  // fillUser={this.fillUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/roster"
+              render={() => (
+                <Roster
                   loggedIn={this.state.loggedIn}
                   currentUser={this.state.currentUser}
                   roster={this.state.roster}
