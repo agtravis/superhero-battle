@@ -5,6 +5,13 @@ class Stats extends Component {
     super(props);
     this.state = {};
   }
+
+  cellStyle = {
+    border: `1px solid black`,
+    padding: `.5em`,
+    textAlign: `center`,
+  };
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -16,41 +23,47 @@ class Stats extends Component {
           {this.props.currentUser.username} is a veteran of{" "}
           {this.props.battles.length} fights.
         </h2>
-        <table>
+        <table style={{ borderCollapse: `collapse` }}>
           <tbody>
             <tr>
-              <th>Fights</th>
-              <th>Wins</th>
-              <th>Losses</th>
-              <th>Win %</th>
-              <th>In Roster</th>
-              <th>Recruitment Ratio</th>
+              <th style={this.cellStyle}>Fights</th>
+              <th style={this.cellStyle}>Wins</th>
+              <th style={this.cellStyle}>Losses</th>
+              <th style={this.cellStyle}>Win %</th>
+              <th style={this.cellStyle}>In Roster</th>
+              <th style={this.cellStyle}>Recruitment Ratio</th>
             </tr>
             <tr>
-              <td>{this.props.battles.length}</td>
-              <td>
+              <td style={this.cellStyle}>{this.props.battles.length}</td>
+              <td style={this.cellStyle}>
                 {
                   this.props.battles.filter(
                     battle => battle.winner !== `Challenger`
                   ).length
                 }
               </td>
-              <td>
+              <td style={this.cellStyle}>
                 {
                   this.props.battles.filter(
                     battle => battle.winner === `Challenger`
                   ).length
                 }
               </td>
-              <td>
-                {(this.props.battles.filter(
-                  battle => battle.winner !== `Challenger`
-                ).length /
-                  this.props.battles.length) *
-                  100}
+              <td style={this.cellStyle}>
+                {(
+                  (this.props.battles.filter(
+                    battle => battle.winner !== `Challenger`
+                  ).length /
+                    this.props.battles.length) *
+                  100
+                ).toFixed(2)}
               </td>
-              <td>{this.props.roster.length}</td>
-              <td>{this.props.battles.length / this.props.roster.length}</td>
+              <td style={this.cellStyle}>{this.props.roster.length}</td>
+              <td style={this.cellStyle}>
+                {(this.props.roster.length / this.props.battles.length).toFixed(
+                  2
+                )}
+              </td>
             </tr>
           </tbody>
         </table>
