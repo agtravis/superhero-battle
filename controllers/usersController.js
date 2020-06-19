@@ -150,19 +150,6 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
   },
-  tie: (req, res) => {
-    User.updateOne(
-      { _id: mongoose.Types.ObjectId(req.params.id) },
-      {
-        $inc: {
-          fights: 1,
-          losses: 1,
-        },
-      }
-    )
-      .then(dbUser => res.json(dbUser))
-      .catch(err => res.json(err));
-  },
   logBattle: (req, res) => {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },

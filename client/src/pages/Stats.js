@@ -29,7 +29,6 @@ class Stats extends Component {
               <th style={this.cellStyle}>Fights</th>
               <th style={this.cellStyle}>Wins</th>
               <th style={this.cellStyle}>Losses</th>
-              <th style={this.cellStyle}>Ties</th>
               <th style={this.cellStyle}>Win %</th>
               <th style={this.cellStyle}>In Roster</th>
               <th style={this.cellStyle}>Recruitment Ratio</th>
@@ -39,7 +38,6 @@ class Stats extends Component {
               <td style={this.cellStyle}>{this.props.battles.length}</td>
               <td style={this.cellStyle}>{this.props.record.wins}</td>
               <td style={this.cellStyle}>{this.props.record.losses}</td>
-              <td style={this.cellStyle}>{this.props.record.ties}</td>
               <td style={this.cellStyle}>
                 {this.props.battles.length
                   ? (

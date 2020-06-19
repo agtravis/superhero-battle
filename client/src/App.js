@@ -61,7 +61,6 @@ class App extends Component {
           record: {
             wins: dbUser.data.wins,
             losses: dbUser.data.losses,
-            ties: dbUser.data.ties,
             prestige: dbUser.data.prestige,
           },
         });

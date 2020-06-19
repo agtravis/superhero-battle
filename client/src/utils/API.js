@@ -36,9 +36,6 @@ export default {
   win(id) {
     return axios.put(`/api/user/win/${id}`);
   },
-  tie(id) {
-    return axios.put(`/api/user/tie/${id}`);
-  },
   logBattle(id, battle) {
     return axios.put(`api/user/logbattle/${id}`, { battle: battle });
   },
