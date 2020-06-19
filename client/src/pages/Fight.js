@@ -10,7 +10,7 @@ class Fight extends Component {
   }
 
   componentDidMount() {
-    if (this.props.roster.length === 3) {
+    if (this.props.roster.length >= 731) {
       this.setState({ redirect: `/roster` });
     }
   }

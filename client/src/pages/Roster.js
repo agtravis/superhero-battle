@@ -52,6 +52,14 @@ class Roster extends Component {
       .catch(err => console.error(err));
   };
 
+  prestige = () => {
+    API.prestige(this.props.currentUser._id)
+      .then(() => {
+        this.props.fillUser();
+      })
+      .catch(err => console.error(err));
+  };
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -65,9 +73,14 @@ class Roster extends Component {
         ) : (
           <p>nobody signed in</p>
         )}
-        {this.props.roster.length === 3 ? (
+        {this.props.roster.length >= 731 ? (
           <div>
             <h1>You have filled up your roster!</h1>
+            <p>
+              <button onClick={() => this.prestige()}>Click</button> to
+              Prestige!
+            </p>
+            <p>This will empty your roster but level up your Prestige!</p>
           </div>
         ) : (
           <div>
