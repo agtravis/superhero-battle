@@ -50,19 +50,23 @@ class Stats extends Component {
                 }
               </td>
               <td style={this.cellStyle}>
-                {(
-                  (this.props.battles.filter(
-                    battle => battle.winner !== `Challenger`
-                  ).length /
-                    this.props.battles.length) *
-                  100
-                ).toFixed(2)}
+                {this.props.battles.length
+                  ? (
+                      (this.props.battles.filter(
+                        battle => battle.winner !== `Challenger`
+                      ).length /
+                        this.props.battles.length) *
+                      100
+                    ).toFixed(2)
+                  : `N/A`}
               </td>
               <td style={this.cellStyle}>{this.props.roster.length}</td>
               <td style={this.cellStyle}>
-                {(this.props.roster.length / this.props.battles.length).toFixed(
-                  2
-                )}
+                {this.props.roster.length && this.props.battles.length
+                  ? (
+                      this.props.roster.length / this.props.battles.length
+                    ).toFixed(2)
+                  : `N/A`}
               </td>
             </tr>
           </tbody>
