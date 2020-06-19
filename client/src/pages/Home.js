@@ -14,8 +14,16 @@ class Home extends Component {
     return (
       <div>
         <div>
-          <h1>Last Battle:</h1>
-          <LastBattleBasic battles={this.props.battles} />
+          {this.props.battles.length > 0 ? (
+            <div>
+              <h1>Last Battle:</h1>
+              <LastBattleBasic battles={this.props.battles} />
+            </div>
+          ) : (
+            <div>
+              <h1>You have not fought any battles!</h1>
+            </div>
+          )}
         </div>
       </div>
     );
