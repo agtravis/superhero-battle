@@ -44,6 +44,7 @@ router.route(`/roster/removemany/:id`).put(userController.removeManyCharacters);
 
 router.route(`/lose/:id`).put(userController.lose);
 router.route(`/win/:id`).put(userController.win);
+router.route(`/tie/:id`).put(userController.tie);
 
 module.exports = router;
 
