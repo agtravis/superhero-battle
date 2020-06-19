@@ -29,33 +29,21 @@ class Stats extends Component {
               <th style={this.cellStyle}>Fights</th>
               <th style={this.cellStyle}>Wins</th>
               <th style={this.cellStyle}>Losses</th>
+              <th style={this.cellStyle}>Ties</th>
               <th style={this.cellStyle}>Win %</th>
               <th style={this.cellStyle}>In Roster</th>
               <th style={this.cellStyle}>Recruitment Ratio</th>
+              <th style={this.cellStyle}>Prestige Level</th>
             </tr>
             <tr>
               <td style={this.cellStyle}>{this.props.battles.length}</td>
-              <td style={this.cellStyle}>
-                {
-                  this.props.battles.filter(
-                    battle => battle.winner !== `Challenger`
-                  ).length
-                }
-              </td>
-              <td style={this.cellStyle}>
-                {
-                  this.props.battles.filter(
-                    battle => battle.winner === `Challenger`
-                  ).length
-                }
-              </td>
+              <td style={this.cellStyle}>{this.props.record.wins}</td>
+              <td style={this.cellStyle}>{this.props.record.losses}</td>
+              <td style={this.cellStyle}>{this.props.record.ties}</td>
               <td style={this.cellStyle}>
                 {this.props.battles.length
                   ? (
-                      (this.props.battles.filter(
-                        battle => battle.winner !== `Challenger`
-                      ).length /
-                        this.props.battles.length) *
+                      (this.props.record.wins / this.props.battles.length) *
                       100
                     ).toFixed(2)
                   : `N/A`}
@@ -64,10 +52,13 @@ class Stats extends Component {
               <td style={this.cellStyle}>
                 {this.props.roster.length && this.props.battles.length
                   ? (
-                      this.props.roster.length / this.props.battles.length
+                      this.props.roster.length /
+                      (this.props.battles.length -
+                        731 * this.props.record.prestige)
                     ).toFixed(2)
                   : `N/A`}
               </td>
+              <td style={this.cellStyle}>{this.props.record.prestige}</td>
             </tr>
           </tbody>
         </table>
