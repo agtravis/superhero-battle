@@ -45,6 +45,8 @@ router.route(`/roster/removemany/:id`).put(userController.removeManyCharacters);
 router.route(`/lose/:id`).put(userController.lose);
 router.route(`/win/:id`).put(userController.win);
 
+router.route(`/prestige/:id`).put(userController.prestige);
+
 module.exports = router;
 
 // when a post is created, use this to push it to the array

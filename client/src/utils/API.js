@@ -36,6 +36,9 @@ export default {
   win(id) {
     return axios.put(`/api/user/win/${id}`);
   },
+  prestige(id) {
+    return axios.put(`/api/user/prestige/${id}`);
+  },
   logBattle(id, battle) {
     return axios.put(`api/user/logbattle/${id}`, { battle: battle });
   },
