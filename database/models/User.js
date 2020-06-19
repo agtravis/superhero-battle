@@ -20,6 +20,7 @@ const userSchema = new Schema({
   fights: { type: Number, default: 0 },
   wins: { type: Number, default: 0 },
   losses: { type: Number, default: 0 },
+  prestige: { type: Number, default: 0 },
   status: { type: String, default: `` },
   registered: { type: Date, default: Date.now },
   teams: [

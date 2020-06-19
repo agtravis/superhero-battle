@@ -91,13 +91,11 @@ class FightMode extends Component {
         winner: `attacker`,
         attacking: this.state.attacking + 1,
       });
-      // this.attackerWin();
     } else {
       this.setState({
         winner: this.props.currentUser.username,
         defending: this.state.defending + 1,
       });
-      // this.defenderWin();
     }
   };
 

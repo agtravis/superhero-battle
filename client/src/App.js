@@ -25,6 +25,7 @@ class App extends Component {
       roster: [],
       teams: [],
       battles: [],
+      record: {},
     };
   }
 
@@ -57,6 +58,11 @@ class App extends Component {
           roster: dbUser.data.roster,
           teams: dbUser.data.teams,
           battles: dbUser.data.pastBattles,
+          record: {
+            wins: dbUser.data.wins,
+            losses: dbUser.data.losses,
+            prestige: dbUser.data.prestige,
+          },
         });
       })
       .catch(err => console.error(err));
@@ -148,7 +154,7 @@ class App extends Component {
                   currentUser={this.state.currentUser}
                   roster={this.state.roster}
                   battles={this.state.battles}
-                  // fillUser={this.fillUser}
+                  record={this.state.record}
                 />
               )}
             />
