@@ -1,14 +1,26 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class Fight extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      redirect: null,
+    };
   }
+
+  componentDidMount() {
+    if (this.props.roster.length === 3) {
+      this.setState({ redirect: `/roster` });
+    }
+  }
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
+    }
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />;
     }
     return (
       <div>
