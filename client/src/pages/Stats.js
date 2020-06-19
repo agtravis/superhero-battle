@@ -52,7 +52,7 @@ class Stats extends Component {
               <td style={this.cellStyle}>
                 {this.props.roster.length && this.props.battles.length
                   ? (
-                      this.props.roster.length /
+                      (this.props.roster.length - 1) /
                       (this.props.battles.length -
                         731 * this.props.record.prestige)
                     ).toFixed(2)

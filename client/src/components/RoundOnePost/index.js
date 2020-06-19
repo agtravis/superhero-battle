@@ -15,12 +15,16 @@ class RoundOnePost extends Component {
         <p>
           Enemy had {this.props.fightStat}: {this.props.attackingStat} and
           attacked with{` `}
-          {this.props.fightOver ? <>{this.props.attackRating}</> : null}
+          {this.props.fightOver ? (
+            <>{this.props.attackRating.toFixed(2)}</>
+          ) : null}
         </p>
         <p>
           You had {this.props.fightStat}: {this.props.defendingStat} and
           defended with{` `}
-          {this.props.fightOver ? <>{this.props.defendRating} </> : null}
+          {this.props.fightOver ? (
+            <>{this.props.defendRating.toFixed(2)} </>
+          ) : null}
         </p>
         {this.props.winner ? (
           <>
