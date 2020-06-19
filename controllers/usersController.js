@@ -150,6 +150,21 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
   },
+  prestige: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      {
+        $set: {
+          roster: [],
+        },
+        $inc: {
+          prestige: 1,
+        },
+      }
+    )
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
   logBattle: (req, res) => {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },
