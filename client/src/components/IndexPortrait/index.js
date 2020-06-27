@@ -18,7 +18,9 @@ class IndexPortrait extends Component {
       <div>
         {this.props.title ? (
           <div>
-            <h2>Your {this.props.title}:</h2>
+            <h2>
+              Your {this.props.title}: {this.props.name}
+            </h2>
             <div>
               {this.state.imageValid ? (
                 <div>

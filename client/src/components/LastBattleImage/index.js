@@ -23,7 +23,7 @@ class LastBattleImage extends Component {
             onError={() => this.noImage()}
           />
         ) : (
-          <p>N/A</p>
+          <p>No image on file!</p>
         )}
       </div>
     );
