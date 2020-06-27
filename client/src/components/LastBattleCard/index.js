@@ -25,7 +25,10 @@ class LastBattleCard extends Component {
             <h3>{this.state.date}</h3>
             <div style={{ display: `flex`, justifyContent: `space-between` }}>
               <div>
-                <h4>Challengers</h4>
+                <h4>
+                  Challenger
+                  {this.props.battle.challengers.length > 1 ? `s` : null}
+                </h4>
                 {this.props.battle.challengers.map((challenger, index) => (
                   <p key={index}>{challenger.name}</p>
                 ))}
@@ -42,7 +45,9 @@ class LastBattleCard extends Component {
                 <h1>VS</h1>
               </div>
               <div>
-                <h4>Defenders</h4>
+                <h4>
+                  Defender{this.props.battle.defenders.length > 1 ? `s` : null}
+                </h4>
                 {this.props.battle.defenders.map((defender, index) => (
                   <p key={index}>{defender.name}</p>
                 ))}
