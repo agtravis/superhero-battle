@@ -11,6 +11,7 @@ import Fight from "./pages/Fight";
 import FightSolo from "./pages/FightSolo";
 import FightTeam from "./pages/FightTeam";
 import Stats from "./pages/Stats";
+import Leaderboard from "./pages/Leaderboard";
 
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
@@ -163,6 +164,18 @@ class App extends Component {
               path="/roster"
               render={() => (
                 <Roster
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
+                  fillUser={this.fillUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/leaderboard"
+              render={() => (
+                <Leaderboard
                   loggedIn={this.state.loggedIn}
                   currentUser={this.state.currentUser}
                   roster={this.state.roster}
