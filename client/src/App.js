@@ -178,8 +178,6 @@ class App extends Component {
                 <Leaderboard
                   loggedIn={this.state.loggedIn}
                   currentUser={this.state.currentUser}
-                  roster={this.state.roster}
-                  fillUser={this.fillUser}
                 />
               )}
             />
