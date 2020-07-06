@@ -13,6 +13,7 @@ router
   .get(userController.userInSession);
 
 router.route(`/all`).get(userController.findAll);
+router.route(`/topscorers`).get(userController.getTopScorers);
 
 router.route(`/search`).post(userController.search);
 

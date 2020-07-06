@@ -78,6 +78,16 @@ module.exports = {
       .then(dbUsers => res.json(dbUsers))
       .catch(err => res.status(errorResponseCode).json(err));
   },
+
+  getTopScorers: (req, res) => {
+    User.find(req.query)
+      .sort([
+        [`prestige`, `desc`],
+        [`wins`, `desc`],
+      ])
+      .then(dbUsers => res.json(dbUsers))
+      .catch(err => res.status(errorResponseCode).json(err));
+  },
   search: (req, res) => {
     User.find({
       username: {
