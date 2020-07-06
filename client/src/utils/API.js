@@ -19,6 +19,9 @@ export default {
   getAllUsers() {
     return axios.get(`/api/user/all`);
   },
+  getTopScorers() {
+    return axios.get(`/api/user/topscorers`);
+  },
   addCharacterToRoster(id, characterId) {
     return axios.put(`/api/user/roster/add/${id}`, characterId);
   },
