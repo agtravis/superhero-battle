@@ -14,7 +14,16 @@ class TeamFight extends Component {
       <div>
         <h1>Team Fight</h1>
         {this.props.roster.length >= 3 ? (
-          <p>*TEAM CHOICE COMPONENT*</p>
+          <div>
+            {this.props.teams.length === 3 ? (
+              <p>TEAM DISPLAYS</p>
+            ) : (
+              <p>
+                Your team is short, visit your <Link to={`/teams`}>teams</Link>{" "}
+                page to enlist recruit(s).
+              </p>
+            )}
+          </div>
         ) : (
           <div>
             <p>
