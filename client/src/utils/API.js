@@ -36,6 +36,14 @@ export default {
       ids: characterIds,
     });
   },
+  addToTeam(id, characterId) {
+    return axios.put(`/api/user/team/add/${id}`, { characterId: characterId });
+  },
+  removeFromTeam(id, characterId) {
+    return axios.put(`/api/user/team/remove/${id}`, {
+      characterId: characterId,
+    });
+  },
   lose(id) {
     return axios.put(`/api/user/lose/${id}`);
   },
