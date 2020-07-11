@@ -100,6 +100,24 @@ module.exports = {
       .then(dbUsers => res.json(dbUsers))
       .catch(err => res.json(err));
   },
+  addToTeam: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      { $push: { teams: req.body.characterId } }
+    )
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
+  removeFromTeam: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      {
+        $pull: { teams: req.body.characterId },
+      }
+    )
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
   addCharacter: (req, res) => {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },
