@@ -11,6 +11,7 @@ import Fight from "./pages/Fight";
 import FightSolo from "./pages/FightSolo";
 import FightTeam from "./pages/FightTeam";
 import Stats from "./pages/Stats";
+import Teams from "./pages/Teams";
 import Leaderboard from "./pages/Leaderboard";
 
 import Header from "./components/Header";
@@ -165,6 +166,18 @@ class App extends Component {
               path="/roster"
               render={() => (
                 <Roster
+                  loggedIn={this.state.loggedIn}
+                  currentUser={this.state.currentUser}
+                  roster={this.state.roster}
+                  fillUser={this.fillUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/teams"
+              render={() => (
+                <Teams
                   loggedIn={this.state.loggedIn}
                   currentUser={this.state.currentUser}
                   roster={this.state.roster}
