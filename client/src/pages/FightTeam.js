@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class TeamFight extends Component {
   constructor(props) {
@@ -9,7 +10,23 @@ class TeamFight extends Component {
     if (!this.props.currentUser) {
       window.location.href = `/`;
     }
-    return <p>TeamFight</p>;
+    return (
+      <div>
+        <h1>Team Fight</h1>
+        {this.props.roster.length >= 3 ? (
+          <p>*TEAM CHOICE COMPONENT*</p>
+        ) : (
+          <div>
+            <p>
+              There are not enough fighters in your Roster to complete a team!
+            </p>
+            <p>
+              Go fight <Link to={`/fightsolo`}>solo</Link> to gain recruits!
+            </p>
+          </div>
+        )}
+      </div>
+    );
   }
 }
 
