@@ -84,7 +84,9 @@ module.exports = {
       .sort([
         [`prestige`, `desc`],
         [`wins`, `desc`],
+        [`losses`, `asc`],
       ])
+      .limit(10)
       .then(dbUsers => res.json(dbUsers))
       .catch(err => res.status(errorResponseCode).json(err));
   },
