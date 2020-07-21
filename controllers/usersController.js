@@ -149,7 +149,7 @@ module.exports = {
   removeManyCharacters: (req, res) => {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },
-      { $pullAll: { roster: req.body.ids } }
+      { $pullAll: { roster: req.body.ids, teams: req.body.ids } }
     )
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
