@@ -14,6 +14,9 @@ class Roster extends Component {
       newCharacterLoaded: false,
       redirect: false,
       imageValid: true,
+      cheatTeamIds1: null,
+      cheatTeamIds2: null,
+      cheatTeamIds3: null,
     };
   }
 
@@ -43,13 +46,33 @@ class Roster extends Component {
   };
 
   getTeam = () => {
-    const ids = [
-      `5ec877f5d317d90ab8e068c6`,
-      `5ec877f5d317d90ab8e06893`,
-      `5ec877f5d317d90ab8e06991`,
-    ];
-    API.addManyCharactersToRoster(this.props.currentUser._id, ids)
-      .then(() => this.props.fillUser())
+    SuperHeroAPI.getRandomNewCharacter()
+      .then(randomCharacter => {
+        this.setState({
+          cheatTeamIds1: randomCharacter.data[0]._id,
+        });
+        SuperHeroAPI.getRandomNewCharacter()
+          .then(randomCharacter => {
+            this.setState({
+              cheatTeamIds2: randomCharacter.data[0]._id,
+            });
+            SuperHeroAPI.getRandomNewCharacter()
+              .then(randomCharacter => {
+                this.setState({
+                  cheatTeamIds3: randomCharacter.data[0]._id,
+                });
+                API.addManyCharactersToRoster(this.props.currentUser._id, [
+                  this.state.cheatTeamIds1,
+                  this.state.cheatTeamIds2,
+                  this.state.cheatTeamIds3,
+                ])
+                  .then(() => this.props.fillUser())
+                  .catch(err => console.error(err));
+              })
+              .catch(err => console.error(err));
+          })
+          .catch(err => console.error(err));
+      })
       .catch(err => console.error(err));
   };
 
