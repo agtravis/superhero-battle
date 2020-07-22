@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import API from "../utils/API";
+import SuperHeroAPI from "../utils/SuperHeroAPI";
 
 import PreFightDivWrapper from "../components/PreFightDivWrapper";
 import RosterSelectionSlot from "../components/RosterSelectionSlot";
@@ -16,8 +17,17 @@ class Teams extends Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.teams[0] !== undefined) {
+      SuperHeroAPI.loadContender(this.props.teams[0])
+        .then(character => {
+          this.setState({ slot1: character.data });
+        })
+        .catch(err => console.error(err));
+    }
+  }
+
   getContender = characterId => {
-    // console.log(this.props.currentUser._id, characterId);
     API.addToTeam(this.props.currentUser._id, characterId)
       .then(() => this.props.fillUser())
       .catch(err => console.error(err));
@@ -60,12 +70,23 @@ class Teams extends Component {
                   )}
                 </div>
               ) : (
-                <p
-                  data-id={this.props.teams[0]}
-                  onClick={event => this.removeTeamMember(event)}
-                >
-                  {this.props.teams[0]}
-                </p>
+                <div>
+                  {this.state.slot1 ? (
+                    <p
+                      data-id={this.props.teams[0]}
+                      onClick={event => this.removeTeamMember(event)}
+                    >
+                      {this.state.slot1.name}
+                    </p>
+                  ) : (
+                    <p
+                      data-id={this.props.teams[0]}
+                      onClick={event => this.removeTeamMember(event)}
+                    >
+                      {this.props.teams[0]}
+                    </p>
+                  )}
+                </div>
               )}
             </PreFightDivWrapper>
             <PreFightDivWrapper>2</PreFightDivWrapper>
