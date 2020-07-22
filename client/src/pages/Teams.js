@@ -14,28 +14,43 @@ class Teams extends Component {
       slot1: null,
       slot2: null,
       slot3: null,
+      contender1: null,
     };
   }
 
   componentDidMount() {
     if (this.props.teams[0] !== undefined) {
-      SuperHeroAPI.loadContender(this.props.teams[0])
-        .then(character => {
-          this.setState({ slot1: character.data });
-        })
-        .catch(err => console.error(err));
+      this.loadContender();
     }
   }
 
+  loadContender = () => {
+    SuperHeroAPI.loadContender(this.props.teams[0])
+      .then(character => {
+        this.setState({ contender1: character.data });
+      })
+      .catch(err => console.error(err));
+  };
+
   getContender = characterId => {
     API.addToTeam(this.props.currentUser._id, characterId)
-      .then(() => this.props.fillUser())
+      .then(() => {
+        this.props.fillUser();
+        SuperHeroAPI.loadContender(characterId)
+          .then(character => {
+            this.setState({ contender1: character.data });
+          })
+          .catch(err => console.error(err));
+      })
       .catch(err => console.error(err));
   };
 
   removeTeamMember = event => {
     API.removeFromTeam(this.props.currentUser._id, event.target.dataset.id)
-      .then(() => this.props.fillUser())
+      .then(() => {
+        this.setState({ contender1: null });
+        this.props.fillUser();
+      })
       .catch(err => console.error(err));
   };
 
@@ -71,20 +86,21 @@ class Teams extends Component {
                 </div>
               ) : (
                 <div>
-                  {this.state.slot1 ? (
+                  {this.state.contender1 ? (
                     <p
                       data-id={this.props.teams[0]}
                       onClick={event => this.removeTeamMember(event)}
                     >
-                      {this.state.slot1.name}
+                      {this.state.contender1.name}
                     </p>
                   ) : (
-                    <p
-                      data-id={this.props.teams[0]}
-                      onClick={event => this.removeTeamMember(event)}
-                    >
-                      {this.props.teams[0]}
-                    </p>
+                    <button onClick={() => this.loadContender()}>Reload</button>
+                    // <p
+                    //   data-id={this.props.teams[0]}
+                    //   onClick={event => this.removeTeamMember(event)}
+                    // >
+                    //   {this.props.teams[0]}
+                    // </p>
                   )}
                 </div>
               )}
