@@ -15,30 +15,16 @@ class Teams extends Component {
       slot2: null,
       slot3: null,
       contender1: null,
+      teams: null,
     };
   }
 
-  componentDidMount() {
-    if (this.props.teams[0] !== undefined) {
-      this.loadContender();
-    }
-  }
-
-  loadContender = () => {
-    SuperHeroAPI.loadContender(this.props.teams[0])
-      .then(character => {
-        this.setState({ contender1: character.data });
-      })
-      .catch(err => console.error(err));
-  };
-
   getContender = characterId => {
-    API.addToTeam(this.props.currentUser._id, characterId)
-      .then(() => {
-        this.props.fillUser();
-        SuperHeroAPI.loadContender(characterId)
-          .then(character => {
-            this.setState({ contender1: character.data });
+    SuperHeroAPI.loadContender(characterId)
+      .then(character => {
+        API.addToTeam(this.props.currentUser._id, character.data)
+          .then(() => {
+            this.props.fillUser();
           })
           .catch(err => console.error(err));
       })
@@ -48,7 +34,6 @@ class Teams extends Component {
   removeTeamMember = event => {
     API.removeFromTeam(this.props.currentUser._id, event.target.dataset.id)
       .then(() => {
-        this.setState({ contender1: null });
         this.props.fillUser();
       })
       .catch(err => console.error(err));
@@ -60,7 +45,14 @@ class Teams extends Component {
         {this.props.roster.length >= 3 ? (
           <div style={{ display: `flex`, justifyContent: `space-around` }}>
             <PreFightDivWrapper>
-              {this.props.teams[0] === undefined ? (
+              {this.props.teams[0] ? (
+                <p
+                  data-id={this.props.teams[0]._id}
+                  onClick={event => this.removeTeamMember(event)}
+                >
+                  {this.props.teams[0].name}
+                </p>
+              ) : (
                 <div>
                   {this.state.slot1 === null ? (
                     <button
@@ -82,25 +74,6 @@ class Teams extends Component {
                         ))}
                       </div>
                     </div>
-                  )}
-                </div>
-              ) : (
-                <div>
-                  {this.state.contender1 ? (
-                    <p
-                      data-id={this.props.teams[0]}
-                      onClick={event => this.removeTeamMember(event)}
-                    >
-                      {this.state.contender1.name}
-                    </p>
-                  ) : (
-                    <button onClick={() => this.loadContender()}>Reload</button>
-                    // <p
-                    //   data-id={this.props.teams[0]}
-                    //   onClick={event => this.removeTeamMember(event)}
-                    // >
-                    //   {this.props.teams[0]}
-                    // </p>
                   )}
                 </div>
               )}

@@ -23,12 +23,7 @@ const userSchema = new Schema({
   prestige: { type: Number, default: 0 },
   status: { type: String, default: `` },
   registered: { type: Date, default: Date.now },
-  teams: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: `Character`,
-    },
-  ],
+  teams: [Schema.Types.Mixed],
 });
 
 userSchema.methods = {
