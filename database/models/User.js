@@ -26,7 +26,7 @@ const userSchema = new Schema({
   teams: [
     {
       type: Schema.Types.ObjectId,
-      ref: `Team`,
+      ref: `Character`,
     },
   ],
 });

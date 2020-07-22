@@ -42,6 +42,17 @@ class Roster extends Component {
       .catch(err => console.error(err));
   };
 
+  getTeam = () => {
+    const ids = [
+      `5ec877f5d317d90ab8e068c6`,
+      `5ec877f5d317d90ab8e06893`,
+      `5ec877f5d317d90ab8e06991`,
+    ];
+    API.addManyCharactersToRoster(this.props.currentUser._id, ids)
+      .then(() => this.props.fillUser())
+      .catch(err => console.error(err));
+  };
+
   removeFromRoster = characterId => {
     API.removeCharacterFromRoster(this.props.currentUser._id, {
       characterId: characterId,
@@ -92,6 +103,8 @@ class Roster extends Component {
                     <button onClick={() => this.getFirstTeamMember()}>
                       Click to get your first team member!
                     </button>{" "}
+                    <p>Get full team</p>
+                    <button onClick={() => this.getTeam()}>Cheat!</button>
                   </>
                 ) : (
                   <div>
