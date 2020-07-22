@@ -112,7 +112,7 @@ module.exports = {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },
       {
-        $pull: { teams: req.body.characterId },
+        $pull: { teams: { _id: req.body.characterId } },
       }
     )
       .then(dbUser => res.json(dbUser))
