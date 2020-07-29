@@ -1,18 +1,41 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
+import SuperHeroAPI from "../utils/SuperHeroAPI";
+
+import fullList from "../utils/characters";
+
 import FighterTitleCard from "../components/FighterTitleCard";
 
 class TeamFight extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      opposingTeam: [],
       opposingTeamSelectionMode: false,
       fightMode: false,
     };
   }
 
   getRivals = () => {
-    alert(`getting rivals`);
+    const opposingTeam = [];
+    const currentRoster = this.props.roster;
+    const inRoster = new Map();
+    for (const character of currentRoster) {
+      inRoster.set(character.id, character.name);
+    }
+    const outRoster = fullList.filter(
+      character =>
+        !inRoster.has(character.id) && !opposingTeam.includes(character.id)
+    );
+    const randomNum = Math.floor(Math.random() * outRoster.length);
+    const nextChallenger = outRoster[randomNum];
+    SuperHeroAPI.getNewOpponent(nextChallenger.id)
+      .then(data => {
+        opposingTeam.push(data.data[0]);
+        this.setState({ opposingTeam: opposingTeam });
+      })
+      .catch(err => console.error(err));
   };
 
   render() {
