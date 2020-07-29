@@ -13,9 +13,15 @@ class TeamFight extends Component {
     this.state = {
       opposingTeam: [],
       opposingTeamSelectionMode: false,
+      opposingTeamSelected: false,
       fightMode: false,
     };
   }
+
+  lineUpStyle = {
+    display: `flex`,
+    justifyContent: `space-around`,
+  };
 
   getThreeRandomNums = max => {
     const randomNums = [];
@@ -54,7 +60,11 @@ class TeamFight extends Component {
             SuperHeroAPI.getNewOpponent(outRoster[randomNums[2]].id)
               .then(data => {
                 opposingTeam.push(data.data[0]);
-                this.setState({ opposingTeam: opposingTeam });
+                this.setState({
+                  opposingTeam: opposingTeam,
+                  opposingTeamSelected: true,
+                  opposingTeamSelectionMode: false,
+                });
               })
               .catch(err => console.error(err));
           })
@@ -74,7 +84,8 @@ class TeamFight extends Component {
           <div>
             {this.props.teams.length === 3 ? (
               <div>
-                {this.state.opposingTeamSelectionMode === false ? (
+                {this.state.opposingTeamSelectionMode === false &&
+                this.state.opposingTeamSelected === false ? (
                   <div>
                     <button
                       onClick={() =>
@@ -95,10 +106,45 @@ class TeamFight extends Component {
                   </div>
                 ) : (
                   <div>
-                    <h2>Who Challenges You?</h2>
-                    <button onClick={() => this.getRivals()}>
-                      Click to get rivals!
-                    </button>
+                    {this.state.opposingTeamSelected === false ? (
+                      <div>
+                        <h2>Who Challenges You?</h2>
+                        <button onClick={() => this.getRivals()}>
+                          Click to get rivals!
+                        </button>
+                      </div>
+                    ) : (
+                      <div>
+                        <h2>The Line-Ups are:</h2>
+                        <div style={this.lineUpStyle}>
+                          <div>
+                            {this.props.teams.map((current, index) => {
+                              return (
+                                <FighterTitleCard
+                                  key={index}
+                                  title={`Team #${index + 1}`}
+                                  character={current}
+                                />
+                              );
+                            })}
+                          </div>
+                          <div>
+                            <h1>Vs.</h1>
+                          </div>
+                          <div>
+                            {this.state.opposingTeam.map((current, index) => {
+                              return (
+                                <FighterTitleCard
+                                  key={index}
+                                  title={`Team #${index + 1}`}
+                                  character={current}
+                                />
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
