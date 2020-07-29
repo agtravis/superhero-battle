@@ -5,8 +5,16 @@ import FighterTitleCard from "../components/FighterTitleCard";
 class TeamFight extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      opposingTeamSelectionMode: false,
+      fightMode: false,
+    };
   }
+
+  getRivals = () => {
+    alert(`getting rivals`);
+  };
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -18,16 +26,33 @@ class TeamFight extends Component {
           <div>
             {this.props.teams.length === 3 ? (
               <div>
-                {this.props.teams.map((current, index) => {
-                  return (
-                    <FighterTitleCard
-                      key={index}
-                      title={`Team #${index + 1}`}
-                      character={current}
-                      display={`inline`}
-                    />
-                  );
-                })}
+                {this.state.opposingTeamSelectionMode === false ? (
+                  <div>
+                    <button
+                      onClick={() =>
+                        this.setState({ opposingTeamSelectionMode: true })
+                      }
+                    >
+                      Get Contenders!
+                    </button>
+                    {this.props.teams.map((current, index) => {
+                      return (
+                        <FighterTitleCard
+                          key={index}
+                          title={`Team #${index + 1}`}
+                          character={current}
+                        />
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div>
+                    <h2>Who Challenges You?</h2>
+                    <button onClick={() => this.getRivals()}>
+                      Click to get rivals!
+                    </button>
+                  </div>
+                )}
               </div>
             ) : (
               <p>
