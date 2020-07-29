@@ -18,7 +18,7 @@ class FighterTitleCard extends Component {
   };
 
   contenderImageStyle = {
-    display: `block`,
+    display: this.props.display || `block`,
     maxWidth: `250px`,
     maxHeight: `400px`,
     width: `auto`,

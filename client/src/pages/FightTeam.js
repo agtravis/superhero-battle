@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import FighterTitleCard from "../components/FighterTitleCard";
 
 class TeamFight extends Component {
   constructor(props) {
@@ -16,7 +17,18 @@ class TeamFight extends Component {
         {this.props.roster.length >= 3 ? (
           <div>
             {this.props.teams.length === 3 ? (
-              <p>TEAM DISPLAYS</p>
+              <div>
+                {this.props.teams.map((current, index) => {
+                  return (
+                    <FighterTitleCard
+                      key={index}
+                      title={`Team #${index + 1}`}
+                      character={current}
+                      display={`inline`}
+                    />
+                  );
+                })}
+              </div>
             ) : (
               <p>
                 Your team is short, visit your <Link to={`/teams`}>teams</Link>{" "}
