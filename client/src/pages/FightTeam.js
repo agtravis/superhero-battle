@@ -17,6 +17,22 @@ class TeamFight extends Component {
     };
   }
 
+  getThreeRandomNums = max => {
+    const randomNums = [];
+    const getRandomNum = () => {
+      const randomNum = Math.floor(Math.random() * max);
+      if (randomNums.includes(randomNum)) {
+        return getRandomNum();
+      } else {
+        return randomNum;
+      }
+    };
+    for (let i = 0; i < 3; ++i) {
+      randomNums.push(getRandomNum());
+    }
+    return randomNums;
+  };
+
   getRivals = () => {
     const opposingTeam = [];
     const currentRoster = this.props.roster;
@@ -28,12 +44,21 @@ class TeamFight extends Component {
       character =>
         !inRoster.has(character.id) && !opposingTeam.includes(character.id)
     );
-    const randomNum = Math.floor(Math.random() * outRoster.length);
-    const nextChallenger = outRoster[randomNum];
-    SuperHeroAPI.getNewOpponent(nextChallenger.id)
+    const randomNums = this.getThreeRandomNums(outRoster.length);
+    SuperHeroAPI.getNewOpponent(outRoster[randomNums[0]].id)
       .then(data => {
         opposingTeam.push(data.data[0]);
-        this.setState({ opposingTeam: opposingTeam });
+        SuperHeroAPI.getNewOpponent(outRoster[randomNums[1]].id)
+          .then(data => {
+            opposingTeam.push(data.data[0]);
+            SuperHeroAPI.getNewOpponent(outRoster[randomNums[2]].id)
+              .then(data => {
+                opposingTeam.push(data.data[0]);
+                this.setState({ opposingTeam: opposingTeam });
+              })
+              .catch(err => console.error(err));
+          })
+          .catch(err => console.error(err));
       })
       .catch(err => console.error(err));
   };
