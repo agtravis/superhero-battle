@@ -118,7 +118,8 @@ class Roster extends Component {
           </div>
         ) : (
           <div>
-            {this.props.roster.length < 1 ? (
+            {/*DELETE CHEAT BUTTON / CHANGE TO ONE*/}
+            {this.props.roster.length < 3 ? (
               <div>
                 {!this.state.newCharacterLoaded ? (
                   <>
