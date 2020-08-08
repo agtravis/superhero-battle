@@ -132,6 +132,10 @@ class FightMode extends Component {
               API.emptyTeam(this.props.currentUser._id)
                 .then()
                 .catch(err => console.error(err));
+            } else {
+              API.removeFromTeam(this.props.currentUser._id, ids[0])
+                .then()
+                .catch(err => console.error(err));
             }
           })
           .catch(err => console.error(err))
