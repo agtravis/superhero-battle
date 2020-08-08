@@ -118,6 +118,14 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
   },
+  emptyTeam: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      { $set: { teams: [] } }
+    )
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.json(err));
+  },
   addCharacter: (req, res) => {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },

@@ -44,6 +44,9 @@ export default {
       characterId: characterId,
     });
   },
+  emptyTeam(id) {
+    return axios.put(`/api/user/team/empty/${id}`);
+  },
   lose(id) {
     return axios.put(`/api/user/lose/${id}`);
   },
