@@ -45,6 +45,7 @@ router.route(`/roster/removemany/:id`).put(userController.removeManyCharacters);
 
 router.route(`/team/add/:id`).put(userController.addToTeam);
 router.route(`/team/remove/:id`).put(userController.removeFromTeam);
+router.route(`/team/empty/:id`).put(userController.emptyTeam);
 
 router.route(`/lose/:id`).put(userController.lose);
 router.route(`/win/:id`).put(userController.win);

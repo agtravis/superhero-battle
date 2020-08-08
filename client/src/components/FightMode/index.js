@@ -127,7 +127,13 @@ class FightMode extends Component {
     API.removeManyCharactersFromRoster(this.props.currentUser._id, ids)
       .then(() =>
         API.lose(this.props.currentUser._id)
-          .then()
+          .then(() => {
+            if (this.props.teamFight) {
+              API.emptyTeam(this.props.currentUser._id)
+                .then()
+                .catch(err => console.error(err));
+            }
+          })
           .catch(err => console.error(err))
       )
       .catch(err => console.error(err));

@@ -185,6 +185,7 @@ class TeamFight extends Component {
               challengers={this.state.opposingTeam}
               defenders={this.props.teams}
               currentUser={this.props.currentUser}
+              teamFight={true}
             />
           </div>
         )}
