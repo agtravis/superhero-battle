@@ -2,21 +2,34 @@
 
 const fs = require(`fs`);
 const charactersObject = require(`./characters`);
-
-console.log(charactersObject[0].image.url);
+const open = require('open');
+const request = require('request');
 
 const urlImages = [];
 
-for (let i = 0; i < charactersObject.length - 1; ++i) {
-    urlImages.push(charactersObject[i].image.url);
+for (let i = 0; i < charactersObject.length; ++i) {
+  const filenameSplit = charactersObject[i].image.url.split('/');
+  const filename = filenameSplit[filenameSplit.length - 1]
+  urlImages.push([charactersObject[i].image.url, filename]);
 }
 
-// console.log(urlImages)
+urlImages.sort((a, b) => a[1] > b[1] ? 1 : -1);
 
-
-fs.writeFile('originalUrls.txt', JSON.stringify(urlImages), (err) => {
-    if (err) throw err;
-    console.log('The file has been saved!');
+const download = function (uri, filename, callback) {
+  request.head(uri, function (err, res, body) {
+    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
   });
+};
+
+let i = 0;
+const interval = setInterval(function () {
+  download(urlImages[i][0], 'picturestest/' + urlImages[i][1], function () {
+    console.log('done', urlImages[i][1], `image ${i} of ${urlImages.length}`);
+  });
+  ++i;
+  if (i > urlImages.length - 1) clearInterval(interval);
+}, 1000)
+
+
 
 
