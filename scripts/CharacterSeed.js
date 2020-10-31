@@ -5,7 +5,7 @@ const Character = require(`../database/models/Character`);
 const characters = require(`../characters`);
 
 mongoose.connect(
-  process.env.MONGODB_URI || `mongodb://localhost/superherobattle`,
+  process.env.MONGO_CONNECTION || `mongodb://localhost/superherobattle`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
