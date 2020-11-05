@@ -2,7 +2,6 @@
 
 const fs = require(`fs`);
 const charactersObject = require(`./characters`);
-const open = require('open');
 const request = require('request');
 
 const urlImages = [];
@@ -28,7 +27,7 @@ const interval = setInterval(function () {
   });
   ++i;
   if (i > urlImages.length - 1) clearInterval(interval);
-}, 1000)
+}, 1000);
 
 
 
