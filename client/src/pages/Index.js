@@ -32,6 +32,21 @@ class Index extends Component {
               ) : (
                 <IndexPortrait title={false} />
               )}
+              <IndexPortrait 
+                title={`TEST`}
+                image={`/characterimages/1.jpg`}
+                name={`REAL`}
+              />
+              <IndexPortrait 
+                title={`TEST`}
+                image={`/characterimages/1010.jpg`}
+                name={`NO IMAGE`}
+              />
+              <IndexPortrait 
+                title={`TEST`}
+                image={`/characterimages/2.jpg`}
+                name={`NOT EXIST`}
+              />
             </div>
           </div>
         ) : null}
