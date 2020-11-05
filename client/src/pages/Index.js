@@ -4,8 +4,22 @@ import IndexPortrait from "../components/IndexPortrait";
 class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      imageName: ``,
+      imagePath: `1`,
+    };
   }
+
+
+  handleChange = (event, stateKey) => {
+    this.setState({ [stateKey]: event.target.value });
+  };
+
+  handleClick = () => {
+    this.setState({imagePath: this.state.imageName});
+    this.setState({imageName: ``})
+  }
+
   render() {
     return (
       <div>
@@ -32,11 +46,17 @@ class Index extends Component {
               ) : (
                 <IndexPortrait title={false} />
               )}
+              <div>
               <IndexPortrait 
                 title={`TEST`}
-                image={`/characterimages/1.jpg`}
+                image={`/characterimages/${this.state.imagePath}.jpg`}
                 name={`REAL`}
               />
+              <input
+                onChange={event => this.handleChange(event, `imageName`)}
+              />
+              <button onClick={this.handleClick}>Change image</button>
+              </div>
               <IndexPortrait 
                 title={`TEST`}
                 image={`/characterimages/1010.jpg`}
@@ -47,6 +67,7 @@ class Index extends Component {
                 image={`/characterimages/2.jpg`}
                 name={`NOT EXIST`}
               />
+            
             </div>
           </div>
         ) : null}
