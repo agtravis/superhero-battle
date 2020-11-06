@@ -46,29 +46,6 @@ class Index extends Component {
               ) : (
                 <IndexPortrait title={false} />
               )}
-              {/*following commented out code to text new DB*/}
-              {/*<div>
-              <IndexPortrait 
-                title={`TEST`}
-                image={`/characterimages/${this.state.imagePath}.jpg`}
-                name={`REAL`}
-              />
-              <input
-                onChange={event => this.handleChange(event, `imageName`)}
-              />
-              <button onClick={this.handleClick}>Change image</button>
-              </div>
-              <IndexPortrait 
-                title={`TEST`}
-                image={`/characterimages/1010.jpg`}
-                name={`NO IMAGE`}
-              />
-              <IndexPortrait 
-                title={`TEST`}
-                image={`/characterimages/10060.jpg`}
-                name={`NOT EXIST`}
-              />*/}
-              {/* end comment out */}
             
               </div>
           </div>
