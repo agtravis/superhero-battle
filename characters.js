@@ -39,7 +39,7 @@ module.exports = [
         "Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg",
+      url: "/characterimages/10060.jpg",
     },
   },
   {
@@ -78,7 +78,7 @@ module.exports = [
         "Amon Sur (son), Arin Sur (sister), Thaal Sinestro (brother-in-law), Soranik Natu (niece)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1460.jpg",
+      url: "/characterimages/1460.jpg",
     },
   },
   {
@@ -117,7 +117,7 @@ module.exports = [
       relatives: "Nadia Dornova Blonsky (wife, separated)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1.jpg",
+      url: "/characterimages/1.jpg",
     },
   },
   {
@@ -155,7 +155,7 @@ module.exports = [
       relatives: 'Eternity ("Father")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/181.jpg",
+      url: "/characterimages/181.jpg",
     },
   },
   {
@@ -193,7 +193,7 @@ module.exports = [
       relatives: "Edith Howard (wife, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/956.jpg",
+      url: "/characterimages/956.jpg",
     },
   },
   {
@@ -233,7 +233,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1026.jpg",
+      url: "/characterimages/1026.jpg",
     },
   },
   {
@@ -276,7 +276,7 @@ module.exports = [
         "Alanna Strange (wife); Aleea Strange (daughter); Sardath (father-in-law); Janey Strange (sister); Todd Strange (brother, deceased); Bantteir (mother-in-law); Adam Strange II (descendent)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/626.jpg",
+      url: "/characterimages/626.jpg",
     },
   },
   {
@@ -318,7 +318,7 @@ module.exports = [
         'Harrison Carter (father), Amanda Carter (mother), Margaret "Peggy" Carter (sister)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/167.jpg",
+      url: "/characterimages/167.jpg",
     },
   },
   {
@@ -368,7 +368,7 @@ module.exports = [
         'Mary MacPherran (Titania) (wife); Jerry Sledge (son); Rockwell "Rocky" Davis (Hi-Llite) (cousin)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1448.jpg",
+      url: "/characterimages/1448.jpg",
     },
   },
   {
@@ -409,7 +409,7 @@ module.exports = [
       relatives: "Allison (ex-wife); Terry and Howie (sons)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10255.jpg",
+      url: "/characterimages/10255.jpg",
     },
   },
   {
@@ -452,7 +452,7 @@ module.exports = [
         "Unidentified parents (deceased), Andreas Nord (brother, deceased), Ginetta Lucia Barsalini (wife, deceased), unnamed child (deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/396.jpg",
+      url: "/characterimages/396.jpg",
     },
   },
   {
@@ -494,7 +494,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1358.jpg",
+      url: "/characterimages/1358.jpg",
     },
   },
   {
@@ -529,7 +529,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Formerly Weapon X", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10422.jpg",
+      url: "/characterimages/10422.jpg",
     },
   },
   {
@@ -572,7 +572,7 @@ module.exports = [
         "Harlequin (Molly Mayne-Scott) (wife), Thorn (Rose Canton) (first wife, deceased), Todd Rice (Obsidian, son), Jennie-Lynn Hayden (Jade, daughter, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/698.jpg",
+      url: "/characterimages/698.jpg",
     },
   },
   {
@@ -610,7 +610,7 @@ module.exports = [
       relatives: "Dana Mercer (sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10398.jpg",
+      url: "/characterimages/10398.jpg",
     },
   },
   {
@@ -648,7 +648,7 @@ module.exports = [
       relatives: "Mr. Woolsly, Mrs. Woolsly, sister",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1309.jpg",
+      url: "/characterimages/1309.jpg",
     },
   },
   {
@@ -691,7 +691,7 @@ module.exports = [
         "Jarvis Pennyworth (father, deceased), Wilfred Pennyworth (older brother), Daphne Pennyworth (niece); Bruce Wayne (Batman, legal ward)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/628.jpg",
+      url: "/characterimages/628.jpg",
     },
   },
   {
@@ -729,7 +729,7 @@ module.exports = [
       relatives: "Alien Queen (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10449.jpg",
+      url: "/characterimages/10449.jpg",
     },
   },
   {
@@ -771,7 +771,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/630.jpg",
+      url: "/characterimages/630.jpg",
     },
   },
   {
@@ -814,7 +814,7 @@ module.exports = [
       relatives: "Professor Ivo (creator), Kid Amazo (cyborg offspring)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1390.jpg",
+      url: "/characterimages/1390.jpg",
     },
   },
   {
@@ -855,7 +855,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/184.jpg",
+      url: "/characterimages/184.jpg",
     },
   },
   {
@@ -890,7 +890,7 @@ module.exports = [
     work: { occupation: "Yamagato Industries computer programmer", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1310.jpg",
+      url: "/characterimages/1310.jpg",
     },
   },
   {
@@ -928,7 +928,7 @@ module.exports = [
       relatives: 'Kathy (sister), Connor (son), Twilight ("child")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10431.jpg",
+      url: "/characterimages/10431.jpg",
     },
   },
   {
@@ -978,7 +978,7 @@ module.exports = [
         'Warren Kenneth Worthington Sr. (grandfather, deceased), Warren Kenneth Worthington Jr. (father, deceased), Kathryn Worthington (mother, deceased), Burtram "Burt" Worthington (Dazzler, paternal uncle), unnamed cousin',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/829.jpg",
+      url: "/characterimages/829.jpg",
     },
   },
   {
@@ -1013,7 +1013,7 @@ module.exports = [
     work: { occupation: "-", base: "Chicago, Illinois" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10405.jpg",
+      url: "/characterimages/10405.jpg",
     },
   },
   {
@@ -1052,7 +1052,7 @@ module.exports = [
         "Tito Bohusk (son); Axel Bohusk (son); Kara Bohusk (daughter); three other unidentified children;",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1406.jpg",
+      url: "/characterimages/1406.jpg",
     },
   },
   {
@@ -1087,7 +1087,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1070.jpg",
+      url: "/characterimages/1070.jpg",
     },
   },
   {
@@ -1127,7 +1127,7 @@ module.exports = [
         "Ellen Frazier (wife), Cliff Baker (son), Maxine Baker (daughter), unnamed second daughter, Frank Baker, Jr. (father), Phyllis Baker (mother), unnamed sister, Frank, Sr (grandfather), Teddy (great grandfather), Sherman (great-great grandfather), Jack (great-great-great grandfather), Mary Frazier (mother-in-law), Dudley (uncle-in-law), Annie Cassidy (mother of second daughter), Lucy Cassidy (half-sister of second daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/632.jpg",
+      url: "/characterimages/632.jpg",
     },
   },
   {
@@ -1165,7 +1165,7 @@ module.exports = [
       relatives: "Annihilus is a series of clonal scions",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1307.jpg",
+      url: "/characterimages/1307.jpg",
     },
   },
   {
@@ -1217,7 +1217,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/857.jpg",
+      url: "/characterimages/857.jpg",
     },
   },
   {
@@ -1261,7 +1261,7 @@ module.exports = [
         "Cassandra Eleanor Lang (daughter), Ruth (sister), Carl (brother-in-law), Peggy Rae (ex-wife)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/166.jpg",
+      url: "/characterimages/166.jpg",
     },
   },
   {
@@ -1300,7 +1300,7 @@ module.exports = [
       relatives: 'Monitor ("brother"), The Monitors',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1292.jpg",
+      url: "/characterimages/1292.jpg",
     },
   },
   {
@@ -1335,7 +1335,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1071.jpg",
+      url: "/characterimages/1071.jpg",
     },
   },
   {
@@ -1384,7 +1384,7 @@ module.exports = [
         "Carl Brock (father, estranged), Janine Brock (mother, deceased), Mary Brock (sister), Ann Weying (ex-wife, deceased), Symbiotes' relatives: Toxin Symbiote (current symbiote, former grandson), Venom Symbiote (former symbiote, grandfather, former brother), Agony, Phage, Riot, Lasher (uncles, former sons), Scorn (sister, former niece), Carnage (father, former son), Scream (aunt, former daughter, deceased), Hybrid (uncle, former son, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1485.jpg",
+      url: "/characterimages/1485.jpg",
     },
   },
   {
@@ -1433,7 +1433,7 @@ module.exports = [
       relatives: "Baal of the Crimson Sands (adopted father, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/852.jpg",
+      url: "/characterimages/852.jpg",
     },
   },
   {
@@ -1472,7 +1472,7 @@ module.exports = [
         "Aquaman (Orin/Arthur Curry) (father); Mera (mother); Koryak (half-brother); A.J. (half-brother); Atlan (grandfather); Tom Curry (adoptive grandfather, deceased); Orm Marius (uncle); Kordax (ancestor, deceased); Arthur Joseph Curry (adoptive cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1389.jpg",
+      url: "/characterimages/1389.jpg",
     },
   },
   {
@@ -1515,7 +1515,7 @@ module.exports = [
         "Cerdian (son), Dolphin (wife), Berra (mother), Thar (father), Slizzath (uncle) Donna (grand-daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1395.jpg",
+      url: "/characterimages/1395.jpg",
     },
   },
   {
@@ -1565,7 +1565,7 @@ module.exports = [
         "Koryak (son), Arthur Curry, Jr. (son), A.J. (son), Orm Marius (half-brother), Debbie Perkins (half-sister), Drin (adopted brother), Atlanna (mother), Atlan (father), Atlena (aunt), Porm (adopted mother), Tom Curry (adopted father), Mera (wife), Hila (sister-in-law), Haumond (uncle), Kraken (uncle), Honsu (grandfather), Lorelei (grandmother), Manu (ancestor), Nala (ancestor), Fatima (ancestor), Kalunga (ancestor), Gana (ancestor), Fiona (ancestor), Regin (ancestor), Kordax (ancestor), Bazil (ancestor), Cora (ancestor), Illya (ancestor), Dardanus (ancestor), Alloroc (ancestor), Cole (ancestor), Narmea (ancestor), Orin (ancestor), Loma (ancestor), Shalako (ancestor), Thorvall (ancestor)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/634.jpg",
+      url: "/characterimages/634.jpg",
     },
   },
   {
@@ -1609,7 +1609,7 @@ module.exports = [
         "Rachel Carpenter (daughter), Walter Cornwall (father), Elizabeth Cornwall (mother), Larry Carpenter (ex-husband, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/882.jpg",
+      url: "/characterimages/882.jpg",
     },
   },
   {
@@ -1653,7 +1653,7 @@ module.exports = [
         "Wallace Worthington (paternal ancestor, deceased), Warren Worthington Sr. (paternal grandfather, deceased), Warren Worthington Jr. (father, deceased), Kathryn Worthington (mother, deceased), Burt Worthington (paternal uncle), Mimi (maternal aunt), unnamed distant cousin",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/838.jpg",
+      url: "/characterimages/838.jpg",
     },
   },
   {
@@ -1692,7 +1692,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/832.jpg",
+      url: "/characterimages/832.jpg",
     },
   },
   {
@@ -1732,7 +1732,7 @@ module.exports = [
         "Zeus (father), Hera (mother), Enyo (wife), Deimos, Phobos, Alexander (sons), Neptune, Pluto (uncles), Demeter, Hestia (aunts), Hephaestus (brother), Apollo, Dionysus, Hercules, Hermes(half-brothers), Artemis, Pallas Athena, Venus, (half-sisters)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1118.jpg",
+      url: "/characterimages/1118.jpg",
     },
   },
   {
@@ -1770,7 +1770,7 @@ module.exports = [
       relatives: "Norrin Radd (Silver Surfer, clonal source), Clea (creator)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10132.jpg",
+      url: "/characterimages/10132.jpg",
     },
   },
   {
@@ -1812,7 +1812,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1348.jpg",
+      url: "/characterimages/1348.jpg",
     },
   },
   {
@@ -1851,7 +1851,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1347.jpg",
+      url: "/characterimages/1347.jpg",
     },
   },
   {
@@ -1886,7 +1886,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1014.jpg",
+      url: "/characterimages/1014.jpg",
     },
   },
   {
@@ -1921,7 +1921,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1159.jpg",
+      url: "/characterimages/1159.jpg",
     },
   },
   {
@@ -1972,7 +1972,7 @@ module.exports = [
         "Unidentified parents (deceased), Carl (brother, deceased), Conrad (brother), Lindy (sister, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/878.jpg",
+      url: "/characterimages/878.jpg",
     },
   },
   {
@@ -2007,7 +2007,7 @@ module.exports = [
     work: { occupation: "-", base: "Formely; Hyssa, Metropolis" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10838.jpg",
+      url: "/characterimages/10838.jpg",
     },
   },
   {
@@ -2050,7 +2050,7 @@ module.exports = [
         "Mary James (wife, deceased), Grant Albert Emerson (Damage, son), Albert Rothstein (aka Nuklon / Atom-Smasher, godson)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/934.jpg",
+      url: "/characterimages/934.jpg",
     },
   },
   {
@@ -2085,7 +2085,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1379.jpg",
+      url: "/characterimages/1379.jpg",
     },
   },
   {
@@ -2123,7 +2123,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1180.jpg",
+      url: "/characterimages/1180.jpg",
     },
   },
   {
@@ -2167,7 +2167,7 @@ module.exports = [
         "Jean Loring (ex-wife, deceased), Princess Laethwen (wife, deceased), Danny Palmer (brother, deceased), David Palmer (father), Susan Palmer (mother, deceased), David Palmer (uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/938.jpg",
+      url: "/characterimages/938.jpg",
     },
   },
   {
@@ -2205,7 +2205,7 @@ module.exports = [
       relatives: "Senator Cray (father, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/939.jpg",
+      url: "/characterimages/939.jpg",
     },
   },
   {
@@ -2249,7 +2249,7 @@ module.exports = [
         "Jean-Baptiste Beaubier (father, deceased), unidentified mother (deceased), Jean-Paul Beaubier (Northstar, twin brother) Joanna Beaubier (adopted niece, deceased); Lois and Genevieve Martin (first cousins once removed/adopted parents, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1289.jpg",
+      url: "/characterimages/1289.jpg",
     },
   },
   {
@@ -2291,7 +2291,7 @@ module.exports = [
         "Professor Choi (father); mother (deceased); sister (unnamed); Jia Choi (descendent).",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/940.jpg",
+      url: "/characterimages/940.jpg",
     },
   },
   {
@@ -2342,7 +2342,7 @@ module.exports = [
         "Kurt Wagner (Nightcrawler, son), Nils Styger (Abyss, son), Kiwi Black (son), numberous other offspring (deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1481.jpg",
+      url: "/characterimages/1481.jpg",
     },
   },
   {
@@ -2382,7 +2382,7 @@ module.exports = [
         "Mitchell Lane (father; deceased), Barbara Lane (mother; deceased), Marion Lane (brother; deceased), Gwendolyn Lane (sister; deceased), Chante Coles (wife; deceased), Henry Mitchell Lane (son; deceased), Jenny Lane (Sister-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1532.jpg",
+      url: "/characterimages/1532.jpg",
     },
   },
   {
@@ -2417,7 +2417,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "The Presence", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1012.jpg",
+      url: "/characterimages/1012.jpg",
     },
   },
   {
@@ -2456,7 +2456,7 @@ module.exports = [
       relatives: "King Snake (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/637.jpg",
+      url: "/characterimages/637.jpg",
     },
   },
   {
@@ -2501,7 +2501,7 @@ module.exports = [
         "Maeve Rourke Cassidy (wife, deceased), Thomas (Black Tom, cousin), Theresa Rourke (Siryn, daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/26.jpg",
+      url: "/characterimages/26.jpg",
     },
   },
   {
@@ -2539,7 +2539,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/229.jpg",
+      url: "/characterimages/229.jpg",
     },
   },
   {
@@ -2581,7 +2581,7 @@ module.exports = [
         "James Gordon (father) � Barbara Eileen (mother) � James Gordon, Jr. (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1111.jpg",
+      url: "/characterimages/1111.jpg",
     },
   },
   {
@@ -2620,7 +2620,7 @@ module.exports = [
       relatives: "Katherine Kane (Batwoman I,  Aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/638.jpg",
+      url: "/characterimages/638.jpg",
     },
   },
   {
@@ -2655,7 +2655,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1112.jpg",
+      url: "/characterimages/1112.jpg",
     },
   },
   {
@@ -2698,7 +2698,7 @@ module.exports = [
         "David Cain (father), Lady Shiva (mother), Carolyn (aunt, deceased), Annalea (sibling, deceased), 'The Mad Dog' (sibling)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1113.jpg",
+      url: "/characterimages/1113.jpg",
     },
   },
   {
@@ -2733,7 +2733,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1115.jpg",
+      url: "/characterimages/1115.jpg",
     },
   },
   {
@@ -2777,7 +2777,7 @@ module.exports = [
         "Arthur Brown (The Cluemaster, father), Crystal Brown (mother), unnamed daughter (given up for adoption)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1398.jpg",
+      url: "/characterimages/1398.jpg",
     },
   },
   {
@@ -2821,7 +2821,7 @@ module.exports = [
         "Damian Wayne (son), Dick Grayson (adopted son), Tim Drake (adopted son), Jason Todd (adopted son), Cassandra Cain (adopted ward)\nMartha Wayne (mother, deceased), Thomas Wayne (father, deceased), Alfred Pennyworth (former guardian), Roderick Kane (grandfather, deceased), Elizabeth Kane (grandmother, deceased), Nathan Kane (uncle, deceased), Simon Hurt (ancestor), Wayne Family",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/639.jpg",
+      url: "/characterimages/639.jpg",
     },
   },
   {
@@ -2866,7 +2866,7 @@ module.exports = [
         "Bruce Wayne (biological father), Warren McGinnis (father, deceased), Mary McGinnis (mother), Matt McGinnis (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10441.jpg",
+      url: "/characterimages/10441.jpg",
     },
   },
   {
@@ -2908,7 +2908,7 @@ module.exports = [
         "John Grayson (father, deceased), Mary Grayson (mother, deceased), Bruce Wayne / Batman (adoptive father), Damian Wayne / Robin (foster brother), Jason Todd / Red Hood (adoptive brother), Tim Drake / Red Robin (adoptive brother), Cassandra Cain / Batgirl IV (adoptive sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1496.jpg",
+      url: "/characterimages/1496.jpg",
     },
   },
   {
@@ -2947,7 +2947,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/231.jpg",
+      url: "/characterimages/231.jpg",
     },
   },
   {
@@ -2986,7 +2986,7 @@ module.exports = [
         'Jacob Kane (father), Gabi Kane (mother; deceased), Beth Kane (twin sister), Mary Elizabeth "Bette" Kane (cousin), Catherine Hamilton-Kane (stepmother), Philip Kane (uncle), Kane Family',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10234.jpg",
+      url: "/characterimages/10234.jpg",
     },
   },
   {
@@ -3026,7 +3026,7 @@ module.exports = [
         "Charles (father), Kathy (mother), Angel Salvadore (wife), Tito (son), Axel (son), Kara (daughter), three unidentified children",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/232.jpg",
+      url: "/characterimages/232.jpg",
     },
   },
   {
@@ -3078,7 +3078,7 @@ module.exports = [
         "Sadie McCoy (paternal grandmother), Norton McCoy (father), Edna McCoy (mother), Robert McCoy (paternal great-uncle), John McCoy (uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/27.jpg",
+      url: "/characterimages/27.jpg",
     },
   },
   {
@@ -3130,7 +3130,7 @@ module.exports = [
         "Mark Logan (father, deceased), Marie Logan (mother, deceased), Steve Dayton/Mento (adoptive father), Rita Farr/Elasti-Girl (adoptive mother), Matt Logan (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/640.jpg",
+      url: "/characterimages/640.jpg",
     },
   },
   {
@@ -3165,7 +3165,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1122.jpg",
+      url: "/characterimages/1122.jpg",
     },
   },
   {
@@ -3200,7 +3200,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1365.jpg",
+      url: "/characterimages/1365.jpg",
     },
   },
   {
@@ -3242,7 +3242,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/28.jpg",
+      url: "/characterimages/28.jpg",
     },
   },
   {
@@ -3285,7 +3285,7 @@ module.exports = [
         "Big Breeda (mother), Scott Free (Mister Miricle, husband), Highfather Izaya (father-in-law, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1169.jpg",
+      url: "/characterimages/1169.jpg",
     },
   },
   {
@@ -3320,7 +3320,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "Hit-Girl (daughter)" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1338.jpg",
+      url: "/characterimages/1338.jpg",
     },
   },
   {
@@ -3371,7 +3371,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1293.jpg",
+      url: "/characterimages/1293.jpg",
     },
   },
   {
@@ -3409,7 +3409,7 @@ module.exports = [
       relatives: "Janice Foswell (daughter), unnamed wife",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1038.jpg",
+      url: "/characterimages/1038.jpg",
     },
   },
   {
@@ -3444,7 +3444,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Alphas", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1527.jpg",
+      url: "/characterimages/1527.jpg",
     },
   },
   {
@@ -3479,7 +3479,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1072.jpg",
+      url: "/characterimages/1072.jpg",
     },
   },
   {
@@ -3523,7 +3523,7 @@ module.exports = [
       relatives: "Joseph (father), Marie (mother), Steve (brother, deceased),",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/30.jpg",
+      url: "/characterimages/30.jpg",
     },
   },
   {
@@ -3558,7 +3558,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10648.jpg",
+      url: "/characterimages/10648.jpg",
     },
   },
   {
@@ -3596,7 +3596,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/240.jpg",
+      url: "/characterimages/240.jpg",
     },
   },
   {
@@ -3631,7 +3631,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Ani-Men", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1503.jpg",
+      url: "/characterimages/1503.jpg",
     },
   },
   {
@@ -3666,7 +3666,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Ani-Men", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1504.jpg",
+      url: "/characterimages/1504.jpg",
     },
   },
   {
@@ -3710,7 +3710,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1506.jpg",
+      url: "/characterimages/1506.jpg",
     },
   },
   {
@@ -3756,7 +3756,7 @@ module.exports = [
         "Burnum Bishop (father, deceased), Kadee Bishop (mother, deceased), Shard (sister, deceased), unnamed grandmother, Gateway (great-grandfather), Aliyah Bishop (alternate reality daughter);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/31.jpg",
+      url: "/characterimages/31.jpg",
     },
   },
   {
@@ -3796,7 +3796,7 @@ module.exports = [
         "Bizarro-Lois No. 1 (wife, Pre-Crisis only), Bizarro, Jr. (son, Pre-Crisis only), Bizarro-Lois, Jr. (daughter, Pre-Crisis only)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/642.jpg",
+      url: "/characterimages/642.jpg",
     },
   },
   {
@@ -3831,7 +3831,7 @@ module.exports = [
     work: { occupation: "Cult leader, former monk", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1049.jpg",
+      url: "/characterimages/1049.jpg",
     },
   },
   {
@@ -3874,7 +3874,7 @@ module.exports = [
         "Shiruta (wife, deceased), Gon and Hurut (sons, deceased) Theo Adam (descendant, currently in control of his body), Sarah Primm (descendant, Theo's sister), Adrianna Tomaz (wife. deceased), Amon Tomaz (brother-in-law, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/643.jpg",
+      url: "/characterimages/643.jpg",
     },
   },
   {
@@ -3917,7 +3917,7 @@ module.exports = [
         "Medusa (wife and first cousin), Ahura (son), Agon (father, deceased), Rynda(mother, deceased), Maximus (brother), Crystal (sister-in-law), Gorgon, Karnak, Triton (cousins)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/243.jpg",
+      url: "/characterimages/243.jpg",
     },
   },
   {
@@ -3962,7 +3962,7 @@ module.exports = [
         "Larry Lance (father, deceased), Dinah Drake Lance (Black Canary, mother, deceased); Oliver Queen (Green Arrow, husband); Craig Windrow (ex-husband); Sin (adoptive daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1005.jpg",
+      url: "/characterimages/1005.jpg",
     },
   },
   {
@@ -4004,7 +4004,7 @@ module.exports = [
         "Richard Drake (father), Lawrence Lance (husband), Dinah Laurel Lance (Black Canary, daughter), Oliver Queen (Green Arrow, son-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/644.jpg",
+      url: "/characterimages/644.jpg",
     },
   },
   {
@@ -4046,7 +4046,7 @@ module.exports = [
       relatives: "Walter Hardy (father, deceased), Lydia Hardy (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/32.jpg",
+      url: "/characterimages/32.jpg",
     },
   },
   {
@@ -4088,7 +4088,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10831.jpg",
+      url: "/characterimages/10831.jpg",
     },
   },
   {
@@ -4123,7 +4123,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/245.jpg",
+      url: "/characterimages/245.jpg",
     },
   },
   {
@@ -4163,7 +4163,7 @@ module.exports = [
         "Nathan Garrett (Black Knight II, uncle, deceased); Sir Percy of Scandia (Black Knight), Sir Raston, Eobar Garrington (Black Knights of past eras, ancestors, deceased); Lady Rosamund, Edward, Geoffrey (ancestral relations, presumed deceased); Dafydd ap Iowerth, Arthur Pendragon, Mordred the Evil, Morgan Le Fay (distant ancestral relations)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/246.jpg",
+      url: "/characterimages/246.jpg",
     },
   },
   {
@@ -4207,7 +4207,7 @@ module.exports = [
         "Unnamed father (deceased), Lynn Stewart (ex-wife), Joanna Pierce (niece, deceased), Anissa Pierce (Thunder, daughter), Jennifer Pierce (Lightning, daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1128.jpg",
+      url: "/characterimages/1128.jpg",
     },
   },
   {
@@ -4248,7 +4248,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1106.jpg",
+      url: "/characterimages/1106.jpg",
     },
   },
   {
@@ -4283,7 +4283,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10546.jpg",
+      url: "/characterimages/10546.jpg",
     },
   },
   {
@@ -4335,7 +4335,7 @@ module.exports = [
         "Bashenga (paternal ancestor, deceased), Azzuri the Wise (paternal grandfather, deceased), Nanali (paternal grandmother, deceased), Chanda (paternal grandfather, presumably deceased), T�Chaka (father, deceased), S'Yan (uncle, deceased), N�Yami (mother, deceased), Ramonda (stepmother), Hunter (adopted brother), Jakarra (half-brother), Shuri (sister), Ororo Munroe (wife), Joshua Itobo, Ishanta, Zuni, M'Koni, T'Shan (cousins), Wheeler (cousin by marriage, deceased), Billy Wheeler (1st cousin once removed)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/247.jpg",
+      url: "/characterimages/247.jpg",
     },
   },
   {
@@ -4390,7 +4390,7 @@ module.exports = [
         "Unnamed parents (presumed deceased); Alexi Shostakov (Red Guardian, estranged husband); Vindiktor (alleged brother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/248.jpg",
+      url: "/characterimages/248.jpg",
     },
   },
   {
@@ -4425,7 +4425,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/618.jpg",
+      url: "/characterimages/618.jpg",
     },
   },
   {
@@ -4463,7 +4463,7 @@ module.exports = [
       relatives: "Lilith (Great Grandmother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1507.jpg",
+      url: "/characterimages/1507.jpg",
     },
   },
   {
@@ -4508,7 +4508,7 @@ module.exports = [
         "Silvio Manfredi (Silvermane, father), Caterina Manfredi (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/249.jpg",
+      url: "/characterimages/249.jpg",
     },
   },
   {
@@ -4547,7 +4547,7 @@ module.exports = [
         "Tantalus (father); Nirvana (mother); Pelops (brother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1508.jpg",
+      url: "/characterimages/1508.jpg",
     },
   },
   {
@@ -4589,7 +4589,7 @@ module.exports = [
       relatives: "Tara Brooks (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/33.jpg",
+      url: "/characterimages/33.jpg",
     },
   },
   {
@@ -4627,7 +4627,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/34.jpg",
+      url: "/characterimages/34.jpg",
     },
   },
   {
@@ -4670,7 +4670,7 @@ module.exports = [
         'Roy "Daddy Libido" Washington (father), Angel "Sexy Mutha" Depres (mother)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1349.jpg",
+      url: "/characterimages/1349.jpg",
     },
   },
   {
@@ -4713,7 +4713,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/899.jpg",
+      url: "/characterimages/899.jpg",
     },
   },
   {
@@ -4756,7 +4756,7 @@ module.exports = [
         "Apocalypse (ancestor, deceased);Margaret Slade (ancestor, deceased);Hamilton Slade (distant relative, deceased);Frederick Slade (great-great-grandfather);Ms. Ferguson (great-great-grandmother, deceased);Chamber (distant cousin);Clan Akkaba (relatives)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/35.jpg",
+      url: "/characterimages/35.jpg",
     },
   },
   {
@@ -4791,7 +4791,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/898.jpg",
+      url: "/characterimages/898.jpg",
     },
   },
   {
@@ -4832,7 +4832,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/619.jpg",
+      url: "/characterimages/619.jpg",
     },
   },
   {
@@ -4875,7 +4875,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1119.jpg",
+      url: "/characterimages/1119.jpg",
     },
   },
   {
@@ -4910,7 +4910,7 @@ module.exports = [
     work: { occupation: "Architect, former vigilante", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1509.jpg",
+      url: "/characterimages/1509.jpg",
     },
   },
   {
@@ -4949,7 +4949,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1510.jpg",
+      url: "/characterimages/1510.jpg",
     },
   },
   {
@@ -4985,7 +4985,7 @@ module.exports = [
     work: { occupation: "Former squire", base: "Slorenia" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/186.jpg",
+      url: "/characterimages/186.jpg",
     },
   },
   {
@@ -5023,7 +5023,7 @@ module.exports = [
       relatives: "Danielle Garrett (granddaughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/646.jpg",
+      url: "/characterimages/646.jpg",
     },
   },
   {
@@ -5058,7 +5058,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1010.jpg",
+      url: "/characterimages/1010.jpg",
     },
   },
   {
@@ -5101,7 +5101,7 @@ module.exports = [
       relatives: "Jarvis Kord (uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1008.jpg",
+      url: "/characterimages/1008.jpg",
     },
   },
   {
@@ -5140,7 +5140,7 @@ module.exports = [
         "Alberto Reyes (father); Bianca Reyes (mother); Milagro Reyes (younger sister); Alejandro Reyes (grandfather, deceased); Elena Leal (maternal grandmother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1009.jpg",
+      url: "/characterimages/1009.jpg",
     },
   },
   {
@@ -5181,7 +5181,7 @@ module.exports = [
     work: { occupation: "Bounty Hunter", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10467.jpg",
+      url: "/characterimages/10467.jpg",
     },
   },
   {
@@ -5216,7 +5216,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1340.jpg",
+      url: "/characterimages/1340.jpg",
     },
   },
   {
@@ -5254,7 +5254,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1116.jpg",
+      url: "/characterimages/1116.jpg",
     },
   },
   {
@@ -5301,7 +5301,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/400.jpg",
+      url: "/characterimages/400.jpg",
     },
   },
   {
@@ -5336,7 +5336,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/259.jpg",
+      url: "/characterimages/259.jpg",
     },
   },
   {
@@ -5401,7 +5401,7 @@ module.exports = [
         "Jonar Carter (father), Ellen Carter (mother, deceased), Michelle Carter (aka Goldstar) (twin sister), Rip Hunter (son) · Rani (adopted daughter), Daniel Carter (21st century ancestor), Rose Levin (ancestor)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/647.jpg",
+      url: "/characterimages/647.jpg",
     },
   },
   {
@@ -5436,7 +5436,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/864.jpg",
+      url: "/characterimages/864.jpg",
     },
   },
   {
@@ -5477,7 +5477,7 @@ module.exports = [
       relatives: "No known relatives",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/37.jpg",
+      url: "/characterimages/37.jpg",
     },
   },
   {
@@ -5519,7 +5519,7 @@ module.exports = [
         "Scramble (Lionel Jeffries, brother, deceased), Diamond Lil (wife)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/38.jpg",
+      url: "/characterimages/38.jpg",
     },
   },
   {
@@ -5557,7 +5557,7 @@ module.exports = [
       relatives: "Vril Dox II (son), Brainiac 5 (descendant)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/648.jpg",
+      url: "/characterimages/648.jpg",
     },
   },
   {
@@ -5596,7 +5596,7 @@ module.exports = [
       relatives: "Unnamed mother, Brainiac (ancestor)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1183.jpg",
+      url: "/characterimages/1183.jpg",
     },
   },
   {
@@ -5637,7 +5637,7 @@ module.exports = [
       relatives: "Daniel Drumm (brother deceased), Matilda Drumm (aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/39.jpg",
+      url: "/characterimages/39.jpg",
     },
   },
   {
@@ -5672,7 +5672,7 @@ module.exports = [
     work: { occupation: "Scientist", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10642.jpg",
+      url: "/characterimages/10642.jpg",
     },
   },
   {
@@ -5726,7 +5726,7 @@ module.exports = [
         "Joyce Summers (mother, deceased) ; Hank Summers (father) ; Dawn Summers (sister) ; Celia (cousin, deceased) ; Arlene (aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10430.jpg",
+      url: "/characterimages/10430.jpg",
     },
   },
   {
@@ -5775,7 +5775,7 @@ module.exports = [
       relatives: "Kingmaker (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/624.jpg",
+      url: "/characterimages/624.jpg",
     },
   },
   {
@@ -5810,7 +5810,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1346.jpg",
+      url: "/characterimages/1346.jpg",
     },
   },
   {
@@ -5845,7 +5845,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Teen Titans", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1541.jpg",
+      url: "/characterimages/1541.jpg",
     },
   },
   {
@@ -5898,7 +5898,7 @@ module.exports = [
         "Scott Summers (Cyclops, father), Madelyne Pryor-Summers (Goblin Queen, mother, deceased), Jean Grey (Phoenix, stepmother), Alexander Summers (Havok, uncle), Christopher Summers (Corsair, paternal grandfather), Katherine Anne Summers (paternal grandmother, deceased), Philip Summers (great-grandfather), Deborah Summers (great-grandmother), Jenskot (Aliya, wife, deceased), Tyler (Genesis, son, deceased), Stryfe (clone, deceased), Gabriel Summers (Vulcan, uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/40.jpg",
+      url: "/characterimages/40.jpg",
     },
   },
   {
@@ -5936,7 +5936,7 @@ module.exports = [
       relatives: "Mal Duncan (husband)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1542.jpg",
+      url: "/characterimages/1542.jpg",
     },
   },
   {
@@ -5978,7 +5978,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/271.jpg",
+      url: "/characterimages/271.jpg",
     },
   },
   {
@@ -6013,7 +6013,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Alphas", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1528.jpg",
+      url: "/characterimages/1528.jpg",
     },
   },
   {
@@ -6056,7 +6056,7 @@ module.exports = [
         'Thomas Zebulon (father, deceased), Lucinda (mother), Lucas Bartholemew (uncle), Paige (Husk, sister), Joshua "Jay" (Icarus, brother, deceased), Joelle (sister), Elizabeth (sister), Melody (Aero, sister), Jebediah (brother), Lewis (brother), two other unnamed siblings, Ray Jr. (adopted brother)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/272.jpg",
+      url: "/characterimages/272.jpg",
     },
   },
   {
@@ -6100,7 +6100,7 @@ module.exports = [
         "Joseph (father, deceased), Sara (mother, deceased), Ian Zola (Nomad) (adopted son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/274.jpg",
+      url: "/characterimages/274.jpg",
     },
   },
   {
@@ -6140,7 +6140,7 @@ module.exports = [
         "Angela Adam Eiling (wife, deceased), Peggy Eiling (daughter), Randy Eiling (son), Bette Sans Souci (ex-wife, divorced)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1007.jpg",
+      url: "/characterimages/1007.jpg",
     },
   },
   {
@@ -6190,7 +6190,7 @@ module.exports = [
         "John Braddock (ancestor, possibly grandfather), James Braddock, Sr. (father, deceased), Lady Elizabeth Braddock (mother, deceased), James Braddock, Jr. (brother), Elizabeth Braddock (twin sister), Meggan (wife), William Puceanu (father-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/276.jpg",
+      url: "/characterimages/276.jpg",
     },
   },
   {
@@ -6236,7 +6236,7 @@ module.exports = [
       relatives: "Lisa Snart (sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/653.jpg",
+      url: "/characterimages/653.jpg",
     },
   },
   {
@@ -6274,7 +6274,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/3.jpg",
+      url: "/characterimages/3.jpg",
     },
   },
   {
@@ -6309,7 +6309,7 @@ module.exports = [
     work: { occupation: "Former Superhero; News Reporter", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10399.jpg",
+      url: "/characterimages/10399.jpg",
     },
   },
   {
@@ -6352,7 +6352,7 @@ module.exports = [
       relatives: "Mar-Vell (father-deceased), Elysius (mother-deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/654.jpg",
+      url: "/characterimages/654.jpg",
     },
   },
   {
@@ -6396,7 +6396,7 @@ module.exports = [
         "C.C. Batson (father, deceased), Marilyn Batson (mother, deceased), Ebenezer Batson (uncle), Mary Batson (Mary Marvel, sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/278.jpg",
+      url: "/characterimages/278.jpg",
     },
   },
   {
@@ -6446,7 +6446,7 @@ module.exports = [
         'Marie Danvers (mother), Joseph Danvers, Sr. (father), Joseph Danvers, Jr. (brother), Steve Danvers (brother, deceased), Marcus Immortus (Danvers) ("son", deceased)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/103.jpg",
+      url: "/characterimages/103.jpg",
     },
   },
   {
@@ -6486,7 +6486,7 @@ module.exports = [
         "parents, deceased, Jacob Freeman (granfather, deceased), Timothy Karnes (Sabbac, foster brother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/279.jpg",
+      url: "/characterimages/279.jpg",
     },
   },
   {
@@ -6530,7 +6530,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10443.jpg",
+      url: "/characterimages/10443.jpg",
     },
   },
   {
@@ -6565,7 +6565,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "The Planeteers", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1285.jpg",
+      url: "/characterimages/1285.jpg",
     },
   },
   {
@@ -6605,7 +6605,7 @@ module.exports = [
         'Venom ("father"); Shriek ("wife"); Hybrid, Lasher, Phage, Riot ("brothers"); Agony, Scream ("sisters"); Carrion, Demogoblin, Doppelganger, Toxin ("sons"); Scorn ("Daughter")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/187.jpg",
+      url: "/characterimages/187.jpg",
     },
   },
   {
@@ -6644,7 +6644,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/855.jpg",
+      url: "/characterimages/855.jpg",
     },
   },
   {
@@ -6679,7 +6679,7 @@ module.exports = [
     work: { occupation: "Model", base: "Chicago, Illinois" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/904.jpg",
+      url: "/characterimages/904.jpg",
     },
   },
   {
@@ -6714,7 +6714,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/903.jpg",
+      url: "/characterimages/903.jpg",
     },
   },
   {
@@ -6761,7 +6761,7 @@ module.exports = [
         "Brian Kyle (father, deceased), Maria Kyle (mother, deceased), Maggie Kyle (sister), Helena Kyle (daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/659.jpg",
+      url: "/characterimages/659.jpg",
     },
   },
   {
@@ -6796,7 +6796,7 @@ module.exports = [
     work: { occupation: "Tracker, adventurer", base: "-" },
     connections: { "group-affiliation": "Force Works", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1511.jpg",
+      url: "/characterimages/1511.jpg",
     },
   },
   {
@@ -6834,7 +6834,7 @@ module.exports = [
       relatives: "Zail Haddad (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1512.jpg",
+      url: "/characterimages/1512.jpg",
     },
   },
   {
@@ -6869,7 +6869,7 @@ module.exports = [
     work: { occupation: "Doctor in private practice", base: "Salem Center" },
     connections: { "group-affiliation": "X-Men", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/43.jpg",
+      url: "/characterimages/43.jpg",
     },
   },
   {
@@ -6912,7 +6912,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/44.jpg",
+      url: "/characterimages/44.jpg",
     },
   },
   {
@@ -6963,7 +6963,7 @@ module.exports = [
         "Kravinoff Patriarch (father, deceased), mother (unnamed), Sergei Kravinoff (Kraven I, half-brother, deceased), Vladimir Kravinoff (The Grim Hunter, nephew, deceased), Alyosha Kravinoff (Kraven the Hunter, nephew), Ned Tannengarden (nephew, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/660.jpg",
+      url: "/characterimages/660.jpg",
     },
   },
   {
@@ -7004,7 +7004,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1107.jpg",
+      url: "/characterimages/1107.jpg",
     },
   },
   {
@@ -7042,7 +7042,7 @@ module.exports = [
       relatives: "Claudia Rich (cousin), Debi Domaine (niece)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/661.jpg",
+      url: "/characterimages/661.jpg",
     },
   },
   {
@@ -7081,7 +7081,7 @@ module.exports = [
       relatives: "Priscilla Rich (Cheetah I, aunt), Claudia Rich (aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/925.jpg",
+      url: "/characterimages/925.jpg",
     },
   },
   {
@@ -7128,7 +7128,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/926.jpg",
+      url: "/characterimages/926.jpg",
     },
   },
   {
@@ -7171,7 +7171,7 @@ module.exports = [
       relatives: "Hi-Jaq (daughter), Exile (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1001.jpg",
+      url: "/characterimages/1001.jpg",
     },
   },
   {
@@ -7206,7 +7206,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/954.jpg",
+      url: "/characterimages/954.jpg",
     },
   },
   {
@@ -7248,7 +7248,7 @@ module.exports = [
         "Hank Heywood, Sr. (Commander Steel, grandfather, deceased) � Hank Heywood, Jr. (uncle, deceased) � Hank Heywood III (Steel, cousin, deceased) � Kirk Heywood (brother, deceased), Nicole (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10661.jpg",
+      url: "/characterimages/10661.jpg",
     },
   },
   {
@@ -7290,7 +7290,7 @@ module.exports = [
         "Adoptive parents: Sandra Bennet, Noah Bennet, Biological parents: Meredith Gordon, Nathan Petrelli, Younger adoptive brother: Lyle Bennet,  Younger half brothers: Simon Petrelli, Monty Petrelli",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/941.jpg",
+      url: "/characterimages/941.jpg",
     },
   },
   {
@@ -7332,7 +7332,7 @@ module.exports = [
       relatives: "Dormammu (uncle), Umar (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/45.jpg",
+      url: "/characterimages/45.jpg",
     },
   },
   {
@@ -7373,7 +7373,7 @@ module.exports = [
       relatives: "Smokin' Joe (rumored grandfather)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/46.jpg",
+      url: "/characterimages/46.jpg",
     },
   },
   {
@@ -7412,7 +7412,7 @@ module.exports = [
       relatives: "Beverly (sister, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10396.jpg",
+      url: "/characterimages/10396.jpg",
     },
   },
   {
@@ -7447,7 +7447,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1074.jpg",
+      url: "/characterimages/1074.jpg",
     },
   },
   {
@@ -7482,7 +7482,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1153.jpg",
+      url: "/characterimages/1153.jpg",
     },
   },
   {
@@ -7517,7 +7517,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1182.jpg",
+      url: "/characterimages/1182.jpg",
     },
   },
   {
@@ -7561,7 +7561,7 @@ module.exports = [
         "Grigory Efimovich Rasputin (great-grandfather, deceased), Elena (great-grandmother, deceased), Ivan Rasputin (great-grand uncle, deceased), Grigory Rasputin (grandfather, deceased), Nikolai Rasputin (father, deceased), Alexandra Rasputina (mother, deceased), Vladimir Rasputin (uncle, deceased), unidentified aunt & uncle (deceased), Illyana Nikolievna Rasputina (Magik, sister, deceased), Mikhail Rasputin (brother), Peter Jr. (son), Larissa Mishchenko (cousin, deceased), Konstantin (cousin, deceased), Klara (cousin, deceased), Dimitriy (cousin, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/48.jpg",
+      url: "/characterimages/48.jpg",
     },
   },
   {
@@ -7615,7 +7615,7 @@ module.exports = [
       relatives: "Burt Carlysle (father, deceased), Dorothy Carlysle (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10423.jpg",
+      url: "/characterimages/10423.jpg",
     },
   },
   {
@@ -7657,7 +7657,7 @@ module.exports = [
         "Philip Summers (father), Deborah Summers (mother), Katherine Anne Summers (wife, deceased), Hepzibah (mate), Scott Summers (Cyclops, son), Alexander Summers (Havok, son), Gabriel Summers (Vulcan, son), Madelyne Pryor-Summers (daughter-in-law, deceased), Jean Grey-Summers (Phoenix, daughter-in-law), Nathan Christopher Summers (Cable, grandson), Stryfe (clone grandson, deceased), Tyler Dayspring (Genesis, great-grandson, deceased), Rachel Grey (Marvel Girl, alternate timeline granddaughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/49.jpg",
+      url: "/characterimages/49.jpg",
     },
   },
   {
@@ -7692,7 +7692,7 @@ module.exports = [
     work: { occupation: "Professional criminal", base: "Serpent Citadel" },
     connections: { "group-affiliation": "Serpent Society", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10452.jpg",
+      url: "/characterimages/10452.jpg",
     },
   },
   {
@@ -7731,7 +7731,7 @@ module.exports = [
         "Adam Destine (father), unnamed genie (mother), Albert Destine (brother), Samantha Destine (Argent, sister), William Destine (Cap'n Oz, brother), Kay Cera (Cuckoo, sister), Florence Destine (sister, deceased), Gracie Destine (sister, deceased), Dominic Destine (Hex, brother), Pandora Destine (Imp, sister), Maurice Destine (brother, deceased), Newton Destine (brother), Vincent Destine (brother, deceased), Walter Destine (Wallop, brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/303.jpg",
+      url: "/characterimages/303.jpg",
     },
   },
   {
@@ -7769,7 +7769,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1093.jpg",
+      url: "/characterimages/1093.jpg",
     },
   },
   {
@@ -7809,7 +7809,7 @@ module.exports = [
         "Quelin (father), Ambur (mother), Medusa (sister), Gorgon, Karnak, Triton (cousins), Black Bolt (cousin, brother-in-law), Pietro Maximoff (Quicksilver, estranged husband), Luna (daughter), Ahura (nephew), extensive extended family",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/305.jpg",
+      url: "/characterimages/305.jpg",
     },
   },
   {
@@ -7844,7 +7844,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1066.jpg",
+      url: "/characterimages/1066.jpg",
     },
   },
   {
@@ -7879,7 +7879,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1075.jpg",
+      url: "/characterimages/1075.jpg",
     },
   },
   {
@@ -7919,7 +7919,7 @@ module.exports = [
         "Silas Stone (father), Elinore Stone (mother), Tucker Stone (grandfather), Maude Stone (grandmother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1204.jpg",
+      url: "/characterimages/1204.jpg",
     },
   },
   {
@@ -7965,7 +7965,7 @@ module.exports = [
       relatives: "Terri Henshaw (wife, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/667.jpg",
+      url: "/characterimages/667.jpg",
     },
   },
   {
@@ -8019,7 +8019,7 @@ module.exports = [
         "Oscar Summers (adoptive paternal distant ancestor, deceased); Daniel Summers (paternal distant ancestor, deceased); Amanda Mueller (Black Womb) (paternal distant ancestor); unnamed great-grandfather, deceased; Gloria Dayne (Fontanelle) (paternal distant ancestor); Philip Summers (paternal grandfather); Deborah Summers (paternal grandmother); Christopher Summers (Corsair) (father, deceased); Katherine Ann Summers (mother, deceased); Jack Winters (Jack O'Diamonds) (former foster father); Alexander Summers (Havok) (brother); Gabriel Summers (Vulcan) (brother, deceased); Madelyne Pryor-Summers (Red Queen) (first wife/second wife's clone, deceased); Jean Grey-Summers (Phoenix) (second wife, deceased); Nathan Summers (Cable) (son, deceased); Gailyn Bailey (niece, deceased); Joseph Bailey (nephew, deceased); Adam Neramani (X-Treme) (nephew, alleged half-brother); Hope Summers (adoptive granddaughter); Stryfe (son's clone); Summers and Grey Family Tree (more relatives)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/50.jpg",
+      url: "/characterimages/50.jpg",
     },
   },
   {
@@ -8061,7 +8061,7 @@ module.exports = [
       relatives: "Phillip Ramsey (father), Sheila Ramsey (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/168.jpg",
+      url: "/characterimages/168.jpg",
     },
   },
   {
@@ -8104,7 +8104,7 @@ module.exports = [
         "Melissa Bowen (mother), unnamed father, Phillip Carlisle (stepfather), Father Michael Bowen (uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/51.jpg",
+      url: "/characterimages/51.jpg",
     },
   },
   {
@@ -8139,7 +8139,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1152.jpg",
+      url: "/characterimages/1152.jpg",
     },
   },
   {
@@ -8178,7 +8178,7 @@ module.exports = [
         "Jim Powell and Stephanie Powell (parents), JJ Powell (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1356.jpg",
+      url: "/characterimages/1356.jpg",
     },
   },
   {
@@ -8237,7 +8237,7 @@ module.exports = [
         'Jonathan "Battling Jack" Murdock (Father, deceased), Maggie Murdock (aka Sister Maggie, Mother), Milla Donovan (ex-wife)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/52.jpg",
+      url: "/characterimages/52.jpg",
     },
   },
   {
@@ -8281,7 +8281,7 @@ module.exports = [
         "Michael Powell (father), Grace Powell (mother), Jonathon and Jason Powell (brothers)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/53.jpg",
+      url: "/characterimages/53.jpg",
     },
   },
   {
@@ -8319,7 +8319,7 @@ module.exports = [
       relatives: "Julie Hastings (girlfriend)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1126.jpg",
+      url: "/characterimages/1126.jpg",
     },
   },
   {
@@ -8359,7 +8359,7 @@ module.exports = [
         "Zonuz (father), Izaya (brother), Avia (sister, deceased), Grail (daughter), Kalibak (son), Orion (son), Deathspawn (son), Scot (nephew/adopted son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/668.jpg",
+      url: "/characterimages/668.jpg",
     },
   },
   {
@@ -8394,7 +8394,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/840.jpg",
+      url: "/characterimages/840.jpg",
     },
   },
   {
@@ -8438,7 +8438,7 @@ module.exports = [
         "Nicolai Krylenko a.k.a. Vanguard (brother), Sergi Krylov a.k.a. The Presence (father), Marya Krylova (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/169.jpg",
+      url: "/characterimages/169.jpg",
     },
   },
   {
@@ -8476,7 +8476,7 @@ module.exports = [
       relatives: "Darth Sidious (Master)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10464.jpg",
+      url: "/characterimages/10464.jpg",
     },
   },
   {
@@ -8517,7 +8517,7 @@ module.exports = [
       relatives: "Luke Skywalker (Son), Princess Leia (Daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10444.jpg",
+      url: "/characterimages/10444.jpg",
     },
   },
   {
@@ -8557,7 +8557,7 @@ module.exports = [
         "Robert Parr (Mr Incredible, father), Helen Parr (Elastigirl, mother), Violet Parr(Violet, sister), , Jack-jack (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/824.jpg",
+      url: "/characterimages/824.jpg",
     },
   },
   {
@@ -8595,7 +8595,7 @@ module.exports = [
       relatives: "Dr. Noonian Soong (creator)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10577.jpg",
+      url: "/characterimages/10577.jpg",
     },
   },
   {
@@ -8645,7 +8645,7 @@ module.exports = [
         "Bella Blaire (paternal grandmother), Carter Blaire (father, deceased), Katherine Blaire-Brown (Barbara London, mother), Nicholas Brown (step-father), Lois London (half-sister), Longshot (husband)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1043.jpg",
+      url: "/characterimages/1043.jpg",
     },
   },
   {
@@ -8688,7 +8688,7 @@ module.exports = [
         "Cleveland Brand (twin brother, deceased), Lita Brand (niece), Unnamed parents",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1472.jpg",
+      url: "/characterimages/1472.jpg",
     },
   },
   {
@@ -8742,7 +8742,7 @@ module.exports = [
         'Thomas "Mickey" Wilson (father, deceased); Hailey Wilson (mother, deceased); Gretchen Wilson, Orksa (ex-wives); Evil Deadpool (clone); Widdle Wade (clone)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/835.jpg",
+      url: "/characterimages/835.jpg",
     },
   },
   {
@@ -8781,7 +8781,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/670.jpg",
+      url: "/characterimages/670.jpg",
     },
   },
   {
@@ -8820,7 +8820,7 @@ module.exports = [
       relatives: "Janice (Wife, seperated), Richard (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1304.jpg",
+      url: "/characterimages/1304.jpg",
     },
   },
   {
@@ -8863,7 +8863,7 @@ module.exports = [
         "Wade LaFarge (Ravager III, half-brother, deceased), Adeline Kane (ex-wife, deceased), Grant Wilson (Ravager I, son, deceased), Joseph Wilson (Jericho, son), Rose Wilson (Ravager IV, daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/672.jpg",
+      url: "/characterimages/672.jpg",
     },
   },
   {
@@ -8898,7 +8898,7 @@ module.exports = [
     work: { occupation: "Demonic Redeemer", base: "New York City" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1515.jpg",
+      url: "/characterimages/1515.jpg",
     },
   },
   {
@@ -8933,7 +8933,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1294.jpg",
+      url: "/characterimages/1294.jpg",
     },
   },
   {
@@ -8971,7 +8971,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1404.jpg",
+      url: "/characterimages/1404.jpg",
     },
   },
   {
@@ -9013,7 +9013,7 @@ module.exports = [
         "Niki Sanders (wife), Micah Sanders (son), Paulette Hawkins (mother), Monica Dawson (cousin), Damon Dawson (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/943.jpg",
+      url: "/characterimages/943.jpg",
     },
   },
   {
@@ -9056,7 +9056,7 @@ module.exports = [
       relatives: "Leonard Skivorski (father); Ricky Myers (son);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/54.jpg",
+      url: "/characterimages/54.jpg",
     },
   },
   {
@@ -9096,7 +9096,7 @@ module.exports = [
         "Werner von Doom (father, deceased), Cynthia von Doom (mother, deceased); Kang the Conqueror, his counterparts, and offspring (alleged descendants), Kristoff Vernard (Doctor Doom II, adopted son), Dr Bob Doom (distant cousin), Boris (unofficially adoptive father/guardian), Valeria von Doom (daughter from alternate universe; became baby of Susan Richards and is now called Valeria Richards)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/189.jpg",
+      url: "/characterimages/189.jpg",
     },
   },
   {
@@ -9136,7 +9136,7 @@ module.exports = [
         "unnamed mother (deceased), Mister Fantastic (alleged half-brother), Valeria Richards (alleged niece), Victor von Doom (aka Doctor Doom, adopted father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1018.jpg",
+      url: "/characterimages/1018.jpg",
     },
   },
   {
@@ -9176,7 +9176,7 @@ module.exports = [
         "Inza Cramer (wife), Sven Nelson (father, deceased), Celestine Babcock (mother), Kent Nelson, Jr. (son), Aaron Babcock (uncle), Kent V. Nelson (grand-nephew), Laryn Nelson (great grand-niece)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/676.jpg",
+      url: "/characterimages/676.jpg",
     },
   },
   {
@@ -9227,7 +9227,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/622.jpg",
+      url: "/characterimages/622.jpg",
     },
   },
   {
@@ -9273,7 +9273,7 @@ module.exports = [
         "Eugene (father, deceased), Beverly (mother, deceased), Victor (Khiron, brother, apparently deceased), Donna (sister, deceased), Clea (wife, estranged), Umar (mother-in-law), Orini (father-in-law), Dormammu (uncle-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/55.jpg",
+      url: "/characterimages/55.jpg",
     },
   },
   {
@@ -9324,7 +9324,7 @@ module.exports = [
         "Beatrice (mother), Lazarus (brother), Milo Thurman (husband, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/902.jpg",
+      url: "/characterimages/902.jpg",
     },
   },
   {
@@ -9363,7 +9363,7 @@ module.exports = [
         "Leonardo (brother), Michelangelo (brother), Raphael (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10330.jpg",
+      url: "/characterimages/10330.jpg",
     },
   },
   {
@@ -9407,7 +9407,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/806.jpg",
+      url: "/characterimages/806.jpg",
     },
   },
   {
@@ -9446,7 +9446,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/679.jpg",
+      url: "/characterimages/679.jpg",
     },
   },
   {
@@ -9490,7 +9490,7 @@ module.exports = [
         "Anthropomorpho (creator); Hellspawn, Moonshade, many other doppelgangers (brethren)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1320.jpg",
+      url: "/characterimages/1320.jpg",
     },
   },
   {
@@ -9537,7 +9537,7 @@ module.exports = [
         "Sinifer (parent/genitor), Umar (sister), Clea (niece), Doctor Strange (nephew-in-law), Satannish (alleged offspring)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1359.jpg",
+      url: "/characterimages/1359.jpg",
     },
   },
   {
@@ -9575,7 +9575,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/884.jpg",
+      url: "/characterimages/884.jpg",
     },
   },
   {
@@ -9618,7 +9618,7 @@ module.exports = [
         "Yvette Steckley Douglas (wife, deceased), Heather Douglas (aka Moondragon, daughter), Pamela Douglas (aka Sundragon, niece), Cammille Benally (foster daughter), Venom (former symbiote)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10016.jpg",
+      url: "/characterimages/10016.jpg",
     },
   },
   {
@@ -9653,7 +9653,7 @@ module.exports = [
     work: { occupation: "Inapplicable", base: "Mobile" },
     connections: { "group-affiliation": "-", relatives: "Inapplicable" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/6.jpg",
+      url: "/characterimages/6.jpg",
     },
   },
   {
@@ -9693,7 +9693,7 @@ module.exports = [
         "Robert Parr(Mr Incredible, husband), Violet Parr(Violet, daughter), Dashiell Parr (Dash, son), Jack-jack (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/870.jpg",
+      url: "/characterimages/870.jpg",
     },
   },
   {
@@ -9733,7 +9733,7 @@ module.exports = [
         "Norma Lynn Dillon (ex-wife), Jonathan Dillon (father, deceased), Anita Dillon (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/7.jpg",
+      url: "/characterimages/7.jpg",
     },
   },
   {
@@ -9776,7 +9776,7 @@ module.exports = [
         "Hugo Kostas Natchios (father, deceased), Christina Natchios (mother, deceased), Orestez Natchios (older brother), Demetrios Natchios (Uncle), Alexia Natchios (Aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/625.jpg",
+      url: "/characterimages/625.jpg",
     },
   },
   {
@@ -9811,7 +9811,7 @@ module.exports = [
     work: { occupation: "Agent of the Company", base: "-" },
     connections: { "group-affiliation": "-", relatives: "Bob Bishop (Father)" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1021.jpg",
+      url: "/characterimages/1021.jpg",
     },
   },
   {
@@ -9851,7 +9851,7 @@ module.exports = [
         "Sue Dibny (wife, deceased); Ken Dibny (brother); Jake Dibny (uncle); Jim (uncle-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1381.jpg",
+      url: "/characterimages/1381.jpg",
     },
   },
   {
@@ -9895,7 +9895,7 @@ module.exports = [
         "Winston Frost (father), Hazel Frost (mother), Christian Frost (brother) Adrienne Frost (sister, deceased,) Cordelia Frost (sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/325.jpg",
+      url: "/characterimages/325.jpg",
     },
   },
   {
@@ -9934,7 +9934,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/687.jpg",
+      url: "/characterimages/687.jpg",
     },
   },
   {
@@ -9969,7 +9969,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1155.jpg",
+      url: "/characterimages/1155.jpg",
     },
   },
   {
@@ -10004,7 +10004,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1187.jpg",
+      url: "/characterimages/1187.jpg",
     },
   },
   {
@@ -10047,7 +10047,7 @@ module.exports = [
         "Nathan Hunt (Father), Margaret Hunt (Mother), Donald Hunt (Uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10476.jpg",
+      url: "/characterimages/10476.jpg",
     },
   },
   {
@@ -10086,7 +10086,7 @@ module.exports = [
         "Belial (father), Raan va Daath (mother), Merlin (half Brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10429.jpg",
+      url: "/characterimages/10429.jpg",
     },
   },
   {
@@ -10121,7 +10121,7 @@ module.exports = [
     work: { occupation: "Mercenary, Assasin", base: "-" },
     connections: { "group-affiliation": "Evil Deadpool Corps", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10090.jpg",
+      url: "/characterimages/10090.jpg",
     },
   },
   {
@@ -10156,7 +10156,7 @@ module.exports = [
     work: { occupation: "Crimelord", base: "(Formerly) planet Luq" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1516.jpg",
+      url: "/characterimages/1516.jpg",
     },
   },
   {
@@ -10198,7 +10198,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1517.jpg",
+      url: "/characterimages/1517.jpg",
     },
   },
   {
@@ -10239,7 +10239,7 @@ module.exports = [
       relatives: "Annemarie Cortez (sister, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/24.jpg",
+      url: "/characterimages/24.jpg",
     },
   },
   {
@@ -10289,7 +10289,7 @@ module.exports = [
         "Paul Wilson (father, deceased); Darlene Wilson (mother, deceased); Sarah Wilson (sister), Gideon Wilson (brother); Jim Wilson (nephew, deceased); Jody Casper (nephew)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/56.jpg",
+      url: "/characterimages/56.jpg",
     },
   },
   {
@@ -10324,7 +10324,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Heralds of Galactus", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1051.jpg",
+      url: "/characterimages/1051.jpg",
     },
   },
   {
@@ -10365,7 +10365,7 @@ module.exports = [
       relatives: "Hu-Ul (father, presumably deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1502.jpg",
+      url: "/characterimages/1502.jpg",
     },
   },
   {
@@ -10408,7 +10408,7 @@ module.exports = [
         "Mr. Callasantos (father, first name unrevealed, deceased), Marcella Callasantos (mother, deceased), Lucia Callasantos (Thornn, sister), Matteo Callasantos (brother, deceased), Carolina Callasantos (sister, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/57.jpg",
+      url: "/characterimages/57.jpg",
     },
   },
   {
@@ -10449,7 +10449,7 @@ module.exports = [
       relatives: "Bruce Carter (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1167.jpg",
+      url: "/characterimages/1167.jpg",
     },
   },
   {
@@ -10493,7 +10493,7 @@ module.exports = [
       relatives: "Fraktur (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1518.jpg",
+      url: "/characterimages/1518.jpg",
     },
   },
   {
@@ -10532,7 +10532,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/58.jpg",
+      url: "/characterimages/58.jpg",
     },
   },
   {
@@ -10574,7 +10574,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/59.jpg",
+      url: "/characterimages/59.jpg",
     },
   },
   {
@@ -10617,7 +10617,7 @@ module.exports = [
       relatives: "Bartholomew Jones (father), Nana (grandmother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/60.jpg",
+      url: "/characterimages/60.jpg",
     },
   },
   {
@@ -10659,7 +10659,7 @@ module.exports = [
       relatives: "Alvin Rusch (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/689.jpg",
+      url: "/characterimages/689.jpg",
     },
   },
   {
@@ -10703,7 +10703,7 @@ module.exports = [
         "Edward Raymond (father); Elaine Rockwell (mother, deceased); Felicity Smoak-Raymond (stepmother); Richard Dare (grandfather)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10395.jpg",
+      url: "/characterimages/10395.jpg",
     },
   },
   {
@@ -10741,7 +10741,7 @@ module.exports = [
       relatives: "No known relatives",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/9.jpg",
+      url: "/characterimages/9.jpg",
     },
   },
   {
@@ -10785,7 +10785,7 @@ module.exports = [
         "Joseph Garrick (father), Joan Williams (wife), Arthur Williams (father-in-law), unnamed adopted son (deceased), Bart Allen (Flash II, ward)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/891.jpg",
+      url: "/characterimages/891.jpg",
     },
   },
   {
@@ -10820,7 +10820,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1345.jpg",
+      url: "/characterimages/1345.jpg",
     },
   },
   {
@@ -10865,7 +10865,7 @@ module.exports = [
         "Henry and Nora (parents), Malcolm Thawne (twin), Iris West Allen (wife), Wally West (Flash III, nephew), Don and Dawn Allen (son and daughter), Bart Allen (Flash IV, grandson), Jenni Ognats (granddaughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/892.jpg",
+      url: "/characterimages/892.jpg",
     },
   },
   {
@@ -10912,7 +10912,7 @@ module.exports = [
         "Rudolph and Mary West (parents), Ira West (grandfather), Iris Allen (aunt), Barry Allen (Flash II, uncle), Linda Park West (wife), Jai and Iris West (twin children)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/690.jpg",
+      url: "/characterimages/690.jpg",
     },
   },
   {
@@ -10957,7 +10957,7 @@ module.exports = [
         "Barry Allen (Flash II, grandfather), Iris West Allen (grandmother), Don Allen (father), Meloni Thawne (mother), President Thawne (grandfather), Dawn Allen (aunt), Jenni Ognats (cousin), Thaddeus Thawne (clone), Owen Mercer (half-brother), Max Crandall (guardian)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/893.jpg",
+      url: "/characterimages/893.jpg",
     },
   },
   {
@@ -10995,7 +10995,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "X-Factor", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/62.jpg",
+      url: "/characterimages/62.jpg",
     },
   },
   {
@@ -11045,7 +11045,7 @@ module.exports = [
         "Reed Richards (Mister Fantastic, father), Susan Storm Richards (Invisible Woman, mother), Valeria Richards (sister), Jonathan Storm (Human Torch, uncle), Nathaniel Richards (paternal grandfather), Franklin Storm (maternal grandfather, deceased), Evelyn Richards, Mary Storm (grandmothers (paternal and maternal respectively), deceased), Benjamin J. Grimm (Thing, godfather), Alicia Masters (godmother).",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/63.jpg",
+      url: "/characterimages/63.jpg",
     },
   },
   {
@@ -11086,7 +11086,7 @@ module.exports = [
         "Mary Storm (wife, deceased), Susan Storm Richards (Invisible Woman, daughter), Jonathan Storm (Human Torch, son), Franklin Richards (grandson), Reed Richards (Mister Fantastic, son-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/170.jpg",
+      url: "/characterimages/170.jpg",
     },
   },
   {
@@ -11128,7 +11128,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1108.jpg",
+      url: "/characterimages/1108.jpg",
     },
   },
   {
@@ -11169,7 +11169,7 @@ module.exports = [
       relatives: "Odin (husband), Loki, Thor (foster sons)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/172.jpg",
+      url: "/characterimages/172.jpg",
     },
   },
   {
@@ -11217,7 +11217,7 @@ module.exports = [
       relatives: 'Galan ("father"), Galacta (daughter)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/862.jpg",
+      url: "/characterimages/862.jpg",
     },
   },
   {
@@ -11263,7 +11263,7 @@ module.exports = [
         "Jean-Luc LeBeau (father), Belladonna (aka Bella Donna Boudreaux) (wife, separated)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/64.jpg",
+      url: "/characterimages/64.jpg",
     },
   },
   {
@@ -11310,7 +11310,7 @@ module.exports = [
         "Thanos (foster father), Thane (foster brother), Unnamed former Symbiote",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/65.jpg",
+      url: "/characterimages/65.jpg",
     },
   },
   {
@@ -11345,7 +11345,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1467.jpg",
+      url: "/characterimages/1467.jpg",
     },
   },
   {
@@ -11380,7 +11380,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Alphas", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1526.jpg",
+      url: "/characterimages/1526.jpg",
     },
   },
   {
@@ -11425,7 +11425,7 @@ module.exports = [
         "Nathan Christopher Summers (Cable, adopted father), Aliya Jenskot (mother, deceased), Stryfe (cloned uncle, deceased), Rachel Summers (Marvel Girl, alternate timeline aunt), Scott Summers (Cyclops, grandfather), Madelyne Pryor-Summers (grandmother, deceased), Alexander Summers (Havok, great-uncle), Gabriel Summers (Vulcan, great-uncle), Christopher Summers (Corsair, great-grandfather), Katherine Anne Summers (great-grandmother, deceased), Philip Summers (great-great-grandfather), Deborah Summers (great-great-grandmother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1055.jpg",
+      url: "/characterimages/1055.jpg",
     },
   },
   {
@@ -11468,7 +11468,7 @@ module.exports = [
         'Barton (father, deceased), Clara (mother, deceased), Craig "Crash" Simpson (stepfather, deceased), Mona Simpson (stepmother, deceased), Roxanne Simpson (wife)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/67.jpg",
+      url: "/characterimages/67.jpg",
     },
   },
   {
@@ -11507,7 +11507,7 @@ module.exports = [
         "Barbara Ketch (sister, deceased) Ghost Rider (Johnny Blaze) (brother), Jennifer Kale (distant cousin)  Noble Kale and Naomi Kale (ancestors)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/68.jpg",
+      url: "/characterimages/68.jpg",
     },
   },
   {
@@ -11550,7 +11550,7 @@ module.exports = [
         "Ursa (mate/wife); Lor-Zod (son); Admiral Zod (possible ancestor)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/837.jpg",
+      url: "/characterimages/837.jpg",
     },
   },
   {
@@ -11585,7 +11585,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/858.jpg",
+      url: "/characterimages/858.jpg",
     },
   },
   {
@@ -11620,7 +11620,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/343.jpg",
+      url: "/characterimages/343.jpg",
     },
   },
   {
@@ -11662,7 +11662,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1376.jpg",
+      url: "/characterimages/1376.jpg",
     },
   },
   {
@@ -11707,7 +11707,7 @@ module.exports = [
         "Kubark (Kid Gladiator) (son), Xenith (The Strontian) (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1521.jpg",
+      url: "/characterimages/1521.jpg",
     },
   },
   {
@@ -11750,7 +11750,7 @@ module.exports = [
         "Mister Sinister (creator), Jean Grey (Phoenix, genetic template), Scott Summers (Cyclops, husband), Nathan Christopher Summers (Cable, son), Christopher Summers (Corsair, father-in-law), Alex Summers (Havok, brother-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1054.jpg",
+      url: "/characterimages/1054.jpg",
     },
   },
   {
@@ -11792,7 +11792,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10590.jpg",
+      url: "/characterimages/10590.jpg",
     },
   },
   {
@@ -11830,7 +11830,7 @@ module.exports = [
       relatives: 'Seth (creator), Magog ("brother")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/693.jpg",
+      url: "/characterimages/693.jpg",
     },
   },
   {
@@ -11876,7 +11876,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1284.jpg",
+      url: "/characterimages/1284.jpg",
     },
   },
   {
@@ -11911,7 +11911,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/845.jpg",
+      url: "/characterimages/845.jpg",
     },
   },
   {
@@ -11946,7 +11946,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/847.jpg",
+      url: "/characterimages/847.jpg",
     },
   },
   {
@@ -11981,7 +11981,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/846.jpg",
+      url: "/characterimages/846.jpg",
     },
   },
   {
@@ -12025,7 +12025,7 @@ module.exports = [
       relatives: "Claire Temple (ex-wife)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/879.jpg",
+      url: "/characterimages/879.jpg",
     },
   },
   {
@@ -12064,7 +12064,7 @@ module.exports = [
         "Boka (wife, separated), Gorbzil Mammit (son), Sam Simeon (grandson)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/694.jpg",
+      url: "/characterimages/694.jpg",
     },
   },
   {
@@ -12102,7 +12102,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1344.jpg",
+      url: "/characterimages/1344.jpg",
     },
   },
   {
@@ -12141,7 +12141,7 @@ module.exports = [
       relatives: "Richard Willis (father), Mary Willis (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/74.jpg",
+      url: "/characterimages/74.jpg",
     },
   },
   {
@@ -12176,7 +12176,7 @@ module.exports = [
     work: { occupation: "Bounty Hunter", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10468.jpg",
+      url: "/characterimages/10468.jpg",
     },
   },
   {
@@ -12219,7 +12219,7 @@ module.exports = [
         "Conner Hawke (son); Robert (son); Cissie King (possible daughter); Roy Harper - Red Arrow (adoptive son); Dinah Laurel Lance (wife); Dinah Drake Lance (mother-in-law, deceased); Larry Lance (father-in-law, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/696.jpg",
+      url: "/characterimages/696.jpg",
     },
   },
   {
@@ -12275,7 +12275,7 @@ module.exports = [
         "Alton Osborn, Sr. (paternal great-grandfather, deceased);Alton Osborn, Jr. (paternal grandfather, deceased);Amberson Osborn (father, deceased);Emily Osborn (wife, deceased);Gabriel Stacy (son);Sarah Stacy (daughter);Harry Osborn (Green Goblin II, son);Liz Allan (ex-daughter-in-law);Normie Osborn (grandson);Stanley Osborn (grandson);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/579.jpg",
+      url: "/characterimages/579.jpg",
     },
   },
   {
@@ -12314,7 +12314,7 @@ module.exports = [
         "Liz Allen-Osborn (Wife,) Norman III (son,)Norman Osborn II - Green Goblin (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/25.jpg",
+      url: "/characterimages/25.jpg",
     },
   },
   {
@@ -12350,7 +12350,7 @@ module.exports = [
     work: { occupation: "Psychiatrist", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/351.jpg",
+      url: "/characterimages/351.jpg",
     },
   },
   {
@@ -12393,7 +12393,7 @@ module.exports = [
         "Arnold Urich (father), Mindy Urich (mother), Kenneth Urich (brother), Ben Urich (uncle), Doris Urich (aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/75.jpg",
+      url: "/characterimages/75.jpg",
     },
   },
   {
@@ -12438,7 +12438,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10017.jpg",
+      url: "/characterimages/10017.jpg",
     },
   },
   {
@@ -12479,7 +12479,7 @@ module.exports = [
       relatives: "Vindicator II (Heather Hudson), wife",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/76.jpg",
+      url: "/characterimages/76.jpg",
     },
   },
   {
@@ -12522,7 +12522,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/700.jpg",
+      url: "/characterimages/700.jpg",
     },
   },
   {
@@ -12562,7 +12562,7 @@ module.exports = [
         'Martin H. "Marty" Jordan (father, deceased), Jessica Jordan (mother, deceased), Jim Jordan (younger brother), Jack Jordan (older brother, deceased), Jan Jordan (sister-in-law, deceased), Helen Jordan (neice), Larry Jordan (Air Wave I - cousin, deceased), Hal Jordan (Air Wave II - cousin)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/697.jpg",
+      url: "/characterimages/697.jpg",
     },
   },
   {
@@ -12597,7 +12597,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10456.jpg",
+      url: "/characterimages/10456.jpg",
     },
   },
   {
@@ -12632,7 +12632,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1109.jpg",
+      url: "/characterimages/1109.jpg",
     },
   },
   {
@@ -12679,7 +12679,7 @@ module.exports = [
         "Barry Quinzel (brother), Sharon Quinzel (mother), Nick Quinzel (father), Jenny Quinzel (niece), Nicky Quinzel (nephew)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/701.jpg",
+      url: "/characterimages/701.jpg",
     },
   },
   {
@@ -12723,7 +12723,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10878.jpg",
+      url: "/characterimages/10878.jpg",
     },
   },
   {
@@ -12763,7 +12763,7 @@ module.exports = [
         "Don Hall (brother, deceased), Irwin Hall (father), Rae Penfield (mother), James Penfield (uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1382.jpg",
+      url: "/characterimages/1382.jpg",
     },
   },
   {
@@ -12810,7 +12810,7 @@ module.exports = [
         "Harold Barton (father, deceased), Edith Barton (mother, deceased), Bernard Barton (brother, deceased), Barbara Morse (wife, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/73.jpg",
+      url: "/characterimages/73.jpg",
     },
   },
   {
@@ -12853,7 +12853,7 @@ module.exports = [
         "Derek Bishop (father); Eleanor Bishop (mother, deceased); Susan Bishop (sister);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10043.jpg",
+      url: "/characterimages/10043.jpg",
     },
   },
   {
@@ -12897,7 +12897,7 @@ module.exports = [
         "Oscar Summers (adoptive paternal distant ancestor, deceased), Daniel Summers (paternal distant ancestor, deceased), Amanda Mueller (Black Womb) (paternal distant ancestor), unnamed paternal great-grandfather, deceased, Gloria Dayne (Fontanelle) (paternal distant ancestor), Philip Summers (paternal grandfather), Deborah Summers (paternal grandmother), Christopher Summers (Corsair) (father, deceased), Katherine Summers (mother, deceased), Andrew Blanding (adoptive father), Joanna Blanding (adoptive mother), Scott Summers (Cyclops) (brother), Gabriel Summers (Vulcan) (brother, deceased), Ahmet Abdol (Living Monolith) (\"brother\" via X-Gene transfer), Haley Blanding (adoptive sister), Todd Blanding (adoptive brother, deceased), Madelyne Pryor-Summers (Red Queen) (sister-in-law/clone of second sister-in-law, deceased), Jean Grey-Summers (Phoenix) (sister-in-law, deceased), Cal'syee Neramani (Deathbird) (sister-in-law), Nathan Summers (Cable) (nephew), Adam Neramani (X-Treme) (nephew, alleged half-brother), Aliya Dayspring (Jenskot) (niece, deceased), Hope Summers (niece, deceased), Madelyne Pryor (Earth-1298) (Marvel Woman) (alternate reality wife), Scott Summers (Earth-1298) (alternate reality son), Rachel Grey (Marvel Girl) (alternate reality niece), Rachel Summers (Mother Askani) (alternate reality niece, deceased), Nathaniel Grey (X-Man) (alternate reality nephew), Stryfe (nephew's clone, deceased), Tyler Dayspring (Genesis) (great-nephew, deceased), Hope Summers (adoptive great-niece), Janet van Dyne (Wasp) (wife), Katie Summers (daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/77.jpg",
+      url: "/characterimages/77.jpg",
     },
   },
   {
@@ -12945,7 +12945,7 @@ module.exports = [
         'Michael Saunders (father, deceased); Trina Saunders (mother, deceased); Cyril "Speed" Saunders (grandfather); Mia Saunders (daughter); Shiera Hall (Hawkgirl, great-aunt, deceased); Carter Hall (Hawkman, great-uncle); Hector Hall (Dr. Fate, 2nd cousin); Northwind (cousin through adoption); Hippolyta Hall (Fury, cousin through marriage); Sandman (Daniel Hall, 3rd cousin), Death, Destiny, Destruction, Delirium, Desire (3rd cousins)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/703.jpg",
+      url: "/characterimages/703.jpg",
     },
   },
   {
@@ -12985,7 +12985,7 @@ module.exports = [
         "Shiera Sanders Hall (wife, deceased; soul currently inhabiting the body of Kendra Saunders), Hector Hall (son, deceased), Daniel Hall (grandson), Lyta Trevor Hall (daughter-in-law, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/839.jpg",
+      url: "/characterimages/839.jpg",
     },
   },
   {
@@ -13026,7 +13026,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/702.jpg",
+      url: "/characterimages/702.jpg",
     },
   },
   {
@@ -13061,7 +13061,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1129.jpg",
+      url: "/characterimages/1129.jpg",
     },
   },
   {
@@ -13096,7 +13096,7 @@ module.exports = [
     work: { occupation: "Police Officer", base: "Detroit; Thanagar" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1130.jpg",
+      url: "/characterimages/1130.jpg",
     },
   },
   {
@@ -13135,7 +13135,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/705.jpg",
+      url: "/characterimages/705.jpg",
     },
   },
   {
@@ -13177,7 +13177,7 @@ module.exports = [
       relatives: "Loki (father), Thor (Uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10835.jpg",
+      url: "/characterimages/10835.jpg",
     },
   },
   {
@@ -13217,7 +13217,7 @@ module.exports = [
         "Catherine Tanner-Tremaine (mother, deceased), two unnamed maternal half-siblings (deceased), Professor Trevor Bruttenholm (foster father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/813.jpg",
+      url: "/characterimages/813.jpg",
     },
   },
   {
@@ -13260,7 +13260,7 @@ module.exports = [
         'Joshua Walker (father), Dorothy Walker (mother, deceased), Sophia (maternal aunt), Bea (step-mother), Mickey Walker (brother), Robert "Buzz" Baxter (aka Mad-Dog, ex-husband), Daimon Hellstrom (aka Hellstorm, ex-husband), Percy Walker',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/79.jpg",
+      url: "/characterimages/79.jpg",
     },
   },
   {
@@ -13316,7 +13316,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/78.jpg",
+      url: "/characterimages/78.jpg",
     },
   },
   {
@@ -13355,7 +13355,7 @@ module.exports = [
         "Kaito Nakamura (deceased), Ishi Nakamura (deceased), Kimiko Nakamura (older sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/947.jpg",
+      url: "/characterimages/947.jpg",
     },
   },
   {
@@ -13408,7 +13408,7 @@ module.exports = [
         "Hellcat (Patricia Walker, wife, deceased), Marduk Kurios (father (and son), aka Satan), Victoria Wingate Hellstrom (mother, deceased), Satana (sister), Jaine Cutter (consort)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/80.jpg",
+      url: "/characterimages/80.jpg",
     },
   },
   {
@@ -13443,7 +13443,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1336.jpg",
+      url: "/characterimages/1336.jpg",
     },
   },
   {
@@ -13481,7 +13481,7 @@ module.exports = [
       relatives: "Daniel Kingsley (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/896.jpg",
+      url: "/characterimages/896.jpg",
     },
   },
   {
@@ -13522,7 +13522,7 @@ module.exports = [
       relatives: "M, Emplate, St. Croix Twins",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/931.jpg",
+      url: "/characterimages/931.jpg",
     },
   },
   {
@@ -13568,7 +13568,7 @@ module.exports = [
         "Louise Spalding (mother, deceased), unknown biological father, Mrs. Spalding (maternal grandmother), Cable (adoptive father, deceased), Hope (adoptive mother, deceased), Cyclops (adoptive grandfather), Red Queen / Phoenix (adoptive grandmothers, deceased?), X-Man (adoptive uncle), Marvel Girl (adoptive aunt), Havok (adoptive granduncle), Vulcan (adoptive granduncle, deceased), Deathbird (adoptive grandaunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1351.jpg",
+      url: "/characterimages/1351.jpg",
     },
   },
   {
@@ -13619,7 +13619,7 @@ module.exports = [
         "(according to one account) Ronald (father), Henrietta (mother), Theresa (sister), Orville (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/82.jpg",
+      url: "/characterimages/82.jpg",
     },
   },
   {
@@ -13672,7 +13672,7 @@ module.exports = [
         "Betty Ross Talbot Banner (wife), Brian Banner (father, apparently deceased), Rebecca Banner (mother, deceased), Morris Walters (uncle), Elaine Banner Walters (aunt, deceased), Jennifer Walters (She-Hulk, cousin), Thaddeus E. 'Thunderbolt' Ross (father",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/83.jpg",
+      url: "/characterimages/83.jpg",
     },
   },
   {
@@ -13711,7 +13711,7 @@ module.exports = [
         "Susan Richards - Invisible Woman (sister), Franklin Richards (nephew), Reed Richards - Mister Fantastic (brother-in-law) Lyja (ex-wife)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/362.jpg",
+      url: "/characterimages/362.jpg",
     },
   },
   {
@@ -13754,7 +13754,7 @@ module.exports = [
         "Giuseppe Bertinelli (great-grandfather; deceased), Alfredo Bertinelli (grandfather; deceased), Franco Bertinelli (father; deceased), Maria Panessa Bertinelli (mother; deceased), Santo Cassamento (biological father; deceased), Pino Bertinelli (brother; deceased), Freddy Caldone (cousin; deceased), Tomaso Panessa (uncle), Graziella Panessa (aunt), Monica Simonetta Panessa (cousin), Claudio Panessa (cousin; deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/707.jpg",
+      url: "/characterimages/707.jpg",
     },
   },
   {
@@ -13797,7 +13797,7 @@ module.exports = [
         "Thomas Zebulon Guthrie (father,deceased),Lucinda Guthrie (mother),Samuel Zachery Guthrie (brother,Cannonball),Joshua 'Jay' Guthrie (brother,Icarus),Joella Guthrie (sister),Elizabeth Guthrie (sister),Melody Guthrie (sister),Jeb Guthrie (brother),Lewis Guth",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/84.jpg",
+      url: "/characterimages/84.jpg",
     },
   },
   {
@@ -13845,7 +13845,7 @@ module.exports = [
         'Unnamed mother, Derek Washington (brother, deceased), Hybrid ("former symbiote", defused)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10493.jpg",
+      url: "/characterimages/10493.jpg",
     },
   },
   {
@@ -13887,7 +13887,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1451.jpg",
+      url: "/characterimages/1451.jpg",
     },
   },
   {
@@ -13929,7 +13929,7 @@ module.exports = [
       relatives: "Mr. and Mrs. Hamilton (foster parents)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1286.jpg",
+      url: "/characterimages/1286.jpg",
     },
   },
   {
@@ -13979,7 +13979,7 @@ module.exports = [
         "William Robert Drake (father), Madeline Beatrice Bass Drake (mother), Mary (cousin), Joel (cousin), Anne (aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/816.jpg",
+      url: "/characterimages/816.jpg",
     },
   },
   {
@@ -14023,7 +14023,7 @@ module.exports = [
         "Don Allen (father), Meloni Thawne (mother), Barry Allen (grandfather), Iris West-Allen (grandmother), President Thawne (grandfather), Captain Boomerang (Owen Mercer) (half-brother), Allen Family",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/895.jpg",
+      url: "/characterimages/895.jpg",
     },
   },
   {
@@ -14058,7 +14058,7 @@ module.exports = [
     work: { occupation: "Archaeologist", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10560.jpg",
+      url: "/characterimages/10560.jpg",
     },
   },
   {
@@ -14096,7 +14096,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/708.jpg",
+      url: "/characterimages/708.jpg",
     },
   },
   {
@@ -14134,7 +14134,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10337.jpg",
+      url: "/characterimages/10337.jpg",
     },
   },
   {
@@ -14178,7 +14178,7 @@ module.exports = [
         'Reed Richards (Mister Fantastic, husband), Franklin Richards (son), Valeria Richards (daughter), Johnny Storm (Human Torch, brother), Franklin Storm (father, deceased), Mary Storm (mother, deceased), Marygay Jewel Dinkins (aunt), "Bones" (cousin), Evelyn Richards (mother-in-law, deceased), Nathaniel Richards (father-in-law), Cassandra Richards (Warlord, mother-in-law, deceased), unnamed child of Nathaniel Richards (brother-in-law), Tara Richards (Huntara, sister-in-law), Kristoff Vernard (alleged brother-in-law), Lyja (sister-in-law)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/620.jpg",
+      url: "/characterimages/620.jpg",
     },
   },
   {
@@ -14228,7 +14228,7 @@ module.exports = [
         "Wendell Rand-K'ai (father, deceased), Heather Duncan Rand (mother, deceased), Yu-Ti (adopted uncle), Miranda Rand-K'ai (half-sister), Lord Tuan (adopted paternal grandfather, deceased), Lady Ming (adopted paternal grandmother, deceased), Thomas Duncan (maternal grandfather)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1120.jpg",
+      url: "/characterimages/1120.jpg",
     },
   },
   {
@@ -14279,7 +14279,7 @@ module.exports = [
         "Howard Anthony Stark (father, deceased), Maria Stark (mother, deceased), Morgan Stark (cousin), Isaac Stark (ancestor)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/85.jpg",
+      url: "/characterimages/85.jpg",
     },
   },
   {
@@ -14318,7 +14318,7 @@ module.exports = [
         "Zebediah (father, deceased), unnamed mother (deceased), Ezekiel Stane (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/886.jpg",
+      url: "/characterimages/886.jpg",
     },
   },
   {
@@ -14360,7 +14360,7 @@ module.exports = [
       relatives: "Amon Tomaz (brother, deceased), Black Adam (husband)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1164.jpg",
+      url: "/characterimages/1164.jpg",
     },
   },
   {
@@ -14395,7 +14395,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1203.jpg",
+      url: "/characterimages/1203.jpg",
     },
   },
   {
@@ -14433,7 +14433,7 @@ module.exports = [
       relatives: "Philip (father, deceased), Marie (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/86.jpg",
+      url: "/characterimages/86.jpg",
     },
   },
   {
@@ -14473,7 +14473,7 @@ module.exports = [
         "Robert Parr(Mr Incredible, father), Helen Parr (Elastigirl, mother), Violet Parr(Violet, sister), Dashiell Parr (Dash, brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/871.jpg",
+      url: "/characterimages/871.jpg",
     },
   },
   {
@@ -14512,7 +14512,7 @@ module.exports = [
       relatives: "Andrew Bond (father), Monique Delacroix (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10404.jpg",
+      url: "/characterimages/10404.jpg",
     },
   },
   {
@@ -14551,7 +14551,7 @@ module.exports = [
         "Winona Kirk (mother), George Kirk (father), George Samuel Kirk (brother), Michele Suzanne Kirk (sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10565.jpg",
+      url: "/characterimages/10565.jpg",
     },
   },
   {
@@ -14586,7 +14586,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10563.jpg",
+      url: "/characterimages/10563.jpg",
     },
   },
   {
@@ -14621,7 +14621,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10477.jpg",
+      url: "/characterimages/10477.jpg",
     },
   },
   {
@@ -14664,7 +14664,7 @@ module.exports = [
         "Rachel Summers (daughter from an alternate universe), X-Man (son from an alternate universe), Cyclops (ex-husband), Havok (former brother-in-law), Corsair (former father-in-law), Madelyne Pryor (clone), Cable (adoptive/biological son), Stryfe (cloned biological son), Genesis (grandson)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/814.jpg",
+      url: "/characterimages/814.jpg",
     },
   },
   {
@@ -14706,7 +14706,7 @@ module.exports = [
         "Maurice Picard (father), Yvette Picard (mother), Robert Picard (brother), Shinzon (clone)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10567.jpg",
+      url: "/characterimages/10567.jpg",
     },
   },
   {
@@ -14745,7 +14745,7 @@ module.exports = [
         "Andrew Jackson Kale (brother, deceased), Joshua Kale (grandfather, deceased), Naomi Kale (aunt), Johnny Blaze ( Ghost Rider ), Barbara and Daniel Ketch (cousins); Illyana Kale, Noble and pastor Kale, Magdalena (ancestors)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1321.jpg",
+      url: "/characterimages/1321.jpg",
     },
   },
   {
@@ -14780,7 +14780,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10544.jpg",
+      url: "/characterimages/10544.jpg",
     },
   },
   {
@@ -14815,7 +14815,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "Sara Cruz (sister)" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10650.jpg",
+      url: "/characterimages/10650.jpg",
     },
   },
   {
@@ -14859,7 +14859,7 @@ module.exports = [
         "unnamed mother (deceased); Dave Cambell (father, deceased); Phillip Cambell (brother, deceased); unnamed adoptive mother; unnamed adoptive father; unnamed adoptive sister; Jenny (adoptive aunt); Luke Cage (husband); Danielle Cage (daughter);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10403.jpg",
+      url: "/characterimages/10403.jpg",
     },
   },
   {
@@ -14897,7 +14897,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/887.jpg",
+      url: "/characterimages/887.jpg",
     },
   },
   {
@@ -14936,7 +14936,7 @@ module.exports = [
         "Stephanie Powell (wife), Daphne Powell (duaghter) and JJ Powell (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1354.jpg",
+      url: "/characterimages/1354.jpg",
     },
   },
   {
@@ -14975,7 +14975,7 @@ module.exports = [
         "Jim Powell and Stephanie Powell (parents), Daphne Powell (sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1357.jpg",
+      url: "/characterimages/1357.jpg",
     },
   },
   {
@@ -15010,7 +15010,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1029.jpg",
+      url: "/characterimages/1029.jpg",
     },
   },
   {
@@ -15049,7 +15049,7 @@ module.exports = [
         "Thomas Constantine (father, deceased), Cheryl Constantine (sister, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/718.jpg",
+      url: "/characterimages/718.jpg",
     },
   },
   {
@@ -15092,7 +15092,7 @@ module.exports = [
         "Roy Stewart (grandfather, deceased), Addie Stewart (grandmother, deceased), Loretta Stewart (aunt, deceased), Katma Tui (wife, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/873.jpg",
+      url: "/characterimages/873.jpg",
     },
   },
   {
@@ -15133,7 +15133,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1314.jpg",
+      url: "/characterimages/1314.jpg",
     },
   },
   {
@@ -15171,7 +15171,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1121.jpg",
+      url: "/characterimages/1121.jpg",
     },
   },
   {
@@ -15218,7 +15218,7 @@ module.exports = [
         "Jeannie (wife, deceased); Unborn son (deceased); Melvin Reipan (cousin, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/719.jpg",
+      url: "/characterimages/719.jpg",
     },
   },
   {
@@ -15259,7 +15259,7 @@ module.exports = [
       relatives: "Dr. and Mrs. Lee (parents, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/87.jpg",
+      url: "/characterimages/87.jpg",
     },
   },
   {
@@ -15297,7 +15297,7 @@ module.exports = [
       relatives: "Rico Dredd (brother), Judge Kraken (clone), Vienna (niece),",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1163.jpg",
+      url: "/characterimages/1163.jpg",
     },
   },
   {
@@ -15341,7 +15341,7 @@ module.exports = [
         "Kurt Marko (father, deceased), Marjorie Marko (mother, deceased), Sharon Xavier (step-mother, deceased), Charles Xavier (Professor X, step-brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/826.jpg",
+      url: "/characterimages/826.jpg",
     },
   },
   {
@@ -15379,7 +15379,7 @@ module.exports = [
       relatives: "Robert (father, deceased), Jane (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1323.jpg",
+      url: "/characterimages/1323.jpg",
     },
   },
   {
@@ -15418,7 +15418,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10002.jpg",
+      url: "/characterimages/10002.jpg",
     },
   },
   {
@@ -15468,7 +15468,7 @@ module.exports = [
         "Jerzy Astroyevicht (aka Jerry Astrovik; paternal grandfather); Katerina Astroyevicht (aka Katerina Astrovik; paternal grandmother); Arnold Astrovik (father, deceased); Norma Astrovik (mother);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/88.jpg",
+      url: "/characterimages/88.jpg",
     },
   },
   {
@@ -15503,7 +15503,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10562.jpg",
+      url: "/characterimages/10562.jpg",
     },
   },
   {
@@ -15538,7 +15538,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10643.jpg",
+      url: "/characterimages/10643.jpg",
     },
   },
   {
@@ -15587,7 +15587,7 @@ module.exports = [
         "Cassandra Richards, their unnamed son, and matriarch of the Eyriennes; Tara Richards, Reed Richards ( Mister Fantastic ), Franklin Richards, Valeria Richards (all ancestors); various Eyriennes (common ancestry); Victor Von Doom (Doctor Doom, alleged ancestor); Ramades (son), Marcus Kang I-XXIII (sons, deceased); Immortus, Iron Lad, and numerous other alternate dimensional counterparts and their offspring",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1053.jpg",
+      url: "/characterimages/1053.jpg",
     },
   },
   {
@@ -15625,7 +15625,7 @@ module.exports = [
       relatives: "Edward Janeway (father), Gretchen Janeway (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10581.jpg",
+      url: "/characterimages/10581.jpg",
     },
   },
   {
@@ -15660,7 +15660,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10484.jpg",
+      url: "/characterimages/10484.jpg",
     },
   },
   {
@@ -15710,7 +15710,7 @@ module.exports = [
         "Mrs. Levin (mother), Devlin Levin (alternate future son), Ben Tennyson (Ben 10, best friend), Harvey Hackett (Stepfather), Gwen Tennyson(girlfriend)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1408.jpg",
+      url: "/characterimages/1408.jpg",
     },
   },
   {
@@ -15748,7 +15748,7 @@ module.exports = [
       relatives: "Mother (unnamed, deceased), Father (unnamed)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1158.jpg",
+      url: "/characterimages/1158.jpg",
     },
   },
   {
@@ -15787,7 +15787,7 @@ module.exports = [
         "Rudolph and Mary West (parents), Ira West (grandfather), Iris Allen (aunt), Barry Allen (uncle), Linda Park West (wife), Jai and Iris West (twin children)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/722.jpg",
+      url: "/characterimages/722.jpg",
     },
   },
   {
@@ -15822,7 +15822,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/894.jpg",
+      url: "/characterimages/894.jpg",
     },
   },
   {
@@ -15860,7 +15860,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/723.jpg",
+      url: "/characterimages/723.jpg",
     },
   },
   {
@@ -15895,7 +15895,7 @@ module.exports = [
     work: { occupation: "Scientist", base: "Pittsburgh" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10508.jpg",
+      url: "/characterimages/10508.jpg",
     },
   },
   {
@@ -15941,7 +15941,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1428.jpg",
+      url: "/characterimages/1428.jpg",
     },
   },
   {
@@ -15976,7 +15976,7 @@ module.exports = [
     work: { occupation: "-", base: "Skull Island" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10591.jpg",
+      url: "/characterimages/10591.jpg",
     },
   },
   {
@@ -16011,7 +16011,7 @@ module.exports = [
     work: { occupation: "Professional Criminal", base: "Honolulu, Hawaii" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10512.jpg",
+      url: "/characterimages/10512.jpg",
     },
   },
   {
@@ -16056,7 +16056,7 @@ module.exports = [
         "Anatoly Fyskov (ancestor); Vanessa Fisk (wife, deceased); Rose (Richard Fisk) (son, deceased);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/623.jpg",
+      url: "/characterimages/623.jpg",
     },
   },
   {
@@ -16095,7 +16095,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1539.jpg",
+      url: "/characterimages/1539.jpg",
     },
   },
   {
@@ -16130,7 +16130,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1343.jpg",
+      url: "/characterimages/1343.jpg",
     },
   },
   {
@@ -16169,7 +16169,7 @@ module.exports = [
         "Sergei Kravinoff (Kraven the Hunter, father, deceased), unidentified mother, Vladimir Kravinoff (Grim Hunter, half-brother, deceased), Nedrocci Tannengarden (half-brother, deceased), Dmitri Smerdyakov",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1034.jpg",
+      url: "/characterimages/1034.jpg",
     },
   },
   {
@@ -16212,7 +16212,7 @@ module.exports = [
         'Nikolai & Anna Makarova Kravinoff (parents, deceased), Dmitri Smerdyakov (Chameleon, half-brother), Vladimir Kravinoff (Grim Hunter, son, deceased), Aloysha "Al" Kravinoff (Kraven II, son), Ned Tannengarden (son, deceased)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1033.jpg",
+      url: "/characterimages/1033.jpg",
     },
   },
   {
@@ -16247,7 +16247,7 @@ module.exports = [
     work: { occupation: "-", base: "Smallville, Kansas" },
     connections: { "group-affiliation": "Superman", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/725.jpg",
+      url: "/characterimages/725.jpg",
     },
   },
   {
@@ -16297,7 +16297,7 @@ module.exports = [
         'Aaron Rayner (father), Maura Rayner (mother, deceased), Zachary Rayner (uncle, deceased), Roderick "Snowy" Rayner (grandfather, deceased), unnamed maternal great-grandfather (deceased), Kathleen (aunt), Cary Wren (descendant)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1409.jpg",
+      url: "/characterimages/1409.jpg",
     },
   },
   {
@@ -16336,7 +16336,7 @@ module.exports = [
         "Han Solo (Father), Princess Leia (Mother), Luke Skywalker (Uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10559.jpg",
+      url: "/characterimages/10559.jpg",
     },
   },
   {
@@ -16371,7 +16371,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1170.jpg",
+      url: "/characterimages/1170.jpg",
     },
   },
   {
@@ -16411,7 +16411,7 @@ module.exports = [
         "Kenji Oyama (Lord Dark Wind, father, deceased), two unnamed brothers (deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/810.jpg",
+      url: "/characterimages/810.jpg",
     },
   },
   {
@@ -16450,7 +16450,7 @@ module.exports = [
       relatives: "Annalee (foster mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/834.jpg",
+      url: "/characterimages/834.jpg",
     },
   },
   {
@@ -16485,7 +16485,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Leader of Freehold", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/885.jpg",
+      url: "/characterimages/885.jpg",
     },
   },
   {
@@ -16542,7 +16542,7 @@ module.exports = [
         "Charles Graymalkin (paternal collateral ancestor), Marcia Graymalkin (paternal collateral ancestor), Jonas Graymalkin (paternal collateral ancestor), Brian Xavier (paternal grandfather), Sharon Xavier (paternal grandmother), Kurt Marko (paternal step-grandfather), Cain Marko (paternal step-uncle), Cassandra Nova Xavier (paternal aunt), Charles Xavier (father), Gabrielle Haller (mother), Daniel Shomron (stepfather), Xavier Family (paternal relatives), Ruth Aldine (lover/current body)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10651.jpg",
+      url: "/characterimages/10651.jpg",
     },
   },
   {
@@ -16581,7 +16581,7 @@ module.exports = [
         "Donatello (brother), Michelangelo (brother), Raphael (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10327.jpg",
+      url: "/characterimages/10327.jpg",
     },
   },
   {
@@ -16621,7 +16621,7 @@ module.exports = [
         "Casey and Elaine Griggs (foster parents, deceased),\nLena Luthor (sister pre-Crisis; daughter post-Crisis),\nElizabeth Perske (ex-wife),\nPerry J. White Jr. (son, deceased),\nContessa Erica Alexandra del Portenza (wife, assumed deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/727.jpg",
+      url: "/characterimages/727.jpg",
     },
   },
   {
@@ -16660,7 +16660,7 @@ module.exports = [
         "Unnamd parents, Garth Ranzz (Lightning Lad, twin brother); Mekt Ranzz (older brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1178.jpg",
+      url: "/characterimages/1178.jpg",
     },
   },
   {
@@ -16698,7 +16698,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1177.jpg",
+      url: "/characterimages/1177.jpg",
     },
   },
   {
@@ -16738,7 +16738,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1179.jpg",
+      url: "/characterimages/1179.jpg",
     },
   },
   {
@@ -16773,7 +16773,7 @@ module.exports = [
     work: { occupation: "Robot", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1037.jpg",
+      url: "/characterimages/1037.jpg",
     },
   },
   {
@@ -16816,7 +16816,7 @@ module.exports = [
       relatives: "One-Above-All (creator)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10523.jpg",
+      url: "/characterimages/10523.jpg",
     },
   },
   {
@@ -16851,7 +16851,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "B.P.R.D.", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/868.jpg",
+      url: "/characterimages/868.jpg",
     },
   },
   {
@@ -16889,7 +16889,7 @@ module.exports = [
       relatives: "Martha (wife, deceased), Billy (son), unnamed sister",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/11.jpg",
+      url: "/characterimages/11.jpg",
     },
   },
   {
@@ -16937,7 +16937,7 @@ module.exports = [
       relatives: "Slobo (clone)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1127.jpg",
+      url: "/characterimages/1127.jpg",
     },
   },
   {
@@ -16990,7 +16990,7 @@ module.exports = [
         "Laufey (father, deceased), Farbauti (mother, deceased), Sigyn (wife, deceased), Odin (foster father, deceased), Frigga (foster mother, deceased), Thor, Vidar (foster brothers, deceased), Hela,Fenris (Wolf), Jordmungand (Midgard Serpent) (children, deceased), Arkin (cousin, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/928.jpg",
+      url: "/characterimages/928.jpg",
     },
   },
   {
@@ -17034,7 +17034,7 @@ module.exports = [
         "Arize (creator), Alison Blaire (Dazzler) (wife), Gaveedra Seven (Shatterstar) (alleged son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1531.jpg",
+      url: "/characterimages/1531.jpg",
     },
   },
   {
@@ -17084,7 +17084,7 @@ module.exports = [
         "Jessica Jones (wife), James Leonard Lucas (father), Esther (mother, deceased), James Jr. (Coldfire, brother), unnamed daughter",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/269.jpg",
+      url: "/characterimages/269.jpg",
     },
   },
   {
@@ -17122,7 +17122,7 @@ module.exports = [
       relatives: "Unnamed father (estranged), Mary Campbell",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1311.jpg",
+      url: "/characterimages/1311.jpg",
     },
   },
   {
@@ -17162,7 +17162,7 @@ module.exports = [
         "Darth Vader (father), Princes Leia (Sister), Yoda (Master), Obi-Wan Kenobi (Master)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10447.jpg",
+      url: "/characterimages/10447.jpg",
     },
   },
   {
@@ -17201,7 +17201,7 @@ module.exports = [
         "Quicksilver (Pietro Maximoff, father), Magneto (grandfather), Crystal (mother), Scarlet Witch, (aunt), Polaris (aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/933.jpg",
+      url: "/characterimages/933.jpg",
     },
   },
   {
@@ -17242,7 +17242,7 @@ module.exports = [
         "Johnny Storm - Human Torch (ex-husband), Susan Storm - Invisible Woman (ex-sister-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1017.jpg",
+      url: "/characterimages/1017.jpg",
     },
   },
   {
@@ -17286,7 +17286,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/370.jpg",
+      url: "/characterimages/370.jpg",
     },
   },
   {
@@ -17327,7 +17327,7 @@ module.exports = [
       relatives: "Dr. Able Stack, 'father'",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/90.jpg",
+      url: "/characterimages/90.jpg",
     },
   },
   {
@@ -17378,7 +17378,7 @@ module.exports = [
         "Magda (wife, deceased), Anya (daughter, deceased), Pietro Maximoff (Quicksilver, son), Wanda Maximoff (Scarlet Witch, daughter), Lorna Dane (Polaris, daughter), Joseph (clone, deceased), Luna (granddaughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/12.jpg",
+      url: "/characterimages/12.jpg",
     },
   },
   {
@@ -17417,7 +17417,7 @@ module.exports = [
       relatives: "Franklin Delano Roosevelt (great-grandfather, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1324.jpg",
+      url: "/characterimages/1324.jpg",
     },
   },
   {
@@ -17455,7 +17455,7 @@ module.exports = [
       relatives: "Warlock (son, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1297.jpg",
+      url: "/characterimages/1297.jpg",
     },
   },
   {
@@ -17490,7 +17490,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10889.jpg",
+      url: "/characterimages/10889.jpg",
     },
   },
   {
@@ -17529,7 +17529,7 @@ module.exports = [
         "Francine Langstrom (wife), Rebecca Elizabeth Langtrom (daughter); Aaron Langstrom (son); Britt Langstrom (sister); Ted Friedel (brother-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/731.jpg",
+      url: "/characterimages/731.jpg",
     },
   },
   {
@@ -17569,7 +17569,7 @@ module.exports = [
       relatives: "Ellen Brandt (ex-wife) Job Burke (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/382.jpg",
+      url: "/characterimages/382.jpg",
     },
   },
   {
@@ -17614,7 +17614,7 @@ module.exports = [
         "J. Jonah (father), Joan (mother, deceased), Marla Madison (stepmother), David (paternal grandfather, presumed deceased), Betty (paternal grandmother, presumed deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/91.jpg",
+      url: "/characterimages/91.jpg",
     },
   },
   {
@@ -17665,7 +17665,7 @@ module.exports = [
         "Unidentified father, mother, paternal aunt (all deceased). Mei-Ling (fianc�e, deceased), Temujin (son), Genghis Khan (alleged ancestor, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1175.jpg",
+      url: "/characterimages/1175.jpg",
     },
   },
   {
@@ -17714,7 +17714,7 @@ module.exports = [
         "Libra (Gustav Brandt) (father), Lau Brandt (mother), Cotati possessing Jacques Duquesne (husband), Quoi (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/384.jpg",
+      url: "/characterimages/384.jpg",
     },
   },
   {
@@ -17758,7 +17758,7 @@ module.exports = [
         "M'yrnn J'onzz (father, deceased); Sha'sheen J'onzz (mother, deceased); M'yri'ah (wife, deceased); K'hym (daughter, deceased); Ma'alefa'ak (twin brother); D'all (father-in-law, deceased); J'ahrl J'onzz (ancestor, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/733.jpg",
+      url: "/characterimages/733.jpg",
     },
   },
   {
@@ -17808,7 +17808,7 @@ module.exports = [
         "Scott Summers (Cyclops, alternate timeline father, deceased in own time), Jean Grey-Summers (Phoenix, alternate timeline mother, deceased in own time), Alex Summers (Havok, alternate timeline uncle), Franklin Richards (alternate future husband), Jonathan Reed Richards (Hyperstorm, alternate future son), David Richards (alternate future son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/94.jpg",
+      url: "/characterimages/94.jpg",
     },
   },
   {
@@ -17843,7 +17843,7 @@ module.exports = [
     work: { occupation: "-", base: "Toronto, Canada" },
     connections: { "group-affiliation": "Team Epic", relatives: "Deceased" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/958.jpg",
+      url: "/characterimages/958.jpg",
     },
   },
   {
@@ -17881,7 +17881,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1110.jpg",
+      url: "/characterimages/1110.jpg",
     },
   },
   {
@@ -17920,7 +17920,7 @@ module.exports = [
         "Superman (genetic template via Superboy), Lex Luthor (genetic Template via Superboy), Superboy (genetic template)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1459.jpg",
+      url: "/characterimages/1459.jpg",
     },
   },
   {
@@ -17961,7 +17961,7 @@ module.exports = [
       relatives: "Maury Parkman (father), Janice Parkman (ex-wife)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/948.jpg",
+      url: "/characterimages/948.jpg",
     },
   },
   {
@@ -18001,7 +18001,7 @@ module.exports = [
         "Robert Bradley (Frank Johnson, father), Marion Bradley (Rose Johnson, mother), Catherine Bradley (Jennifer Johnson, sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/257.jpg",
+      url: "/characterimages/257.jpg",
     },
   },
   {
@@ -18042,7 +18042,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1168.jpg",
+      url: "/characterimages/1168.jpg",
     },
   },
   {
@@ -18080,7 +18080,7 @@ module.exports = [
       relatives: "Alejandro (twin brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/944.jpg",
+      url: "/characterimages/944.jpg",
     },
   },
   {
@@ -18119,7 +18119,7 @@ module.exports = [
         "Kobar, La (maternal grandparents), Azur (maternal aunt), Mander (maternal uncle-by-marriage), Quelin (father), Ambur (mother), Crystal (sister), Black Bolt (husband, second cousin), Ahura (son), Karnak (cousin), Triton (cousin), Psynapse (second cousin), Maximus (brother-in-law, second cousin), Ronan the Accuser (brother-in-law), Quicksilver (ex-brother-in-law), Luna (niece)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/96.jpg",
+      url: "/characterimages/96.jpg",
     },
   },
   {
@@ -18166,7 +18166,7 @@ module.exports = [
         "Martin Louis Smith (father), Mandy Smith (step-mother), Wanda Jo Bialowsky-Smith (step-mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/258.jpg",
+      url: "/characterimages/258.jpg",
     },
   },
   {
@@ -18222,7 +18222,7 @@ module.exports = [
         "Blackheart (son), Mephista (daughter); presumptive relationship to other Hell-lords; quasi-paternal relationship to Mikal Drakonmegas (Hellfire) and Daimon (Hellstorm) and Satana Hellstrom; formerly engaged to unidentified demoness",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1322.jpg",
+      url: "/characterimages/1322.jpg",
     },
   },
   {
@@ -18264,7 +18264,7 @@ module.exports = [
         "Aquaman (husband); Aquababy (son, deceased); A.J. (son); Siren (Hila, twin sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1388.jpg",
+      url: "/characterimages/1388.jpg",
     },
   },
   {
@@ -18305,7 +18305,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/737.jpg",
+      url: "/characterimages/737.jpg",
     },
   },
   {
@@ -18345,7 +18345,7 @@ module.exports = [
         "Unnamed parents (deceased), Sapphire Stagg Mason (wife), Joseph (son), Simon Stagg (father-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/738.jpg",
+      url: "/characterimages/738.jpg",
     },
   },
   {
@@ -18380,7 +18380,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1333.jpg",
+      url: "/characterimages/1333.jpg",
     },
   },
   {
@@ -18418,7 +18418,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "New Gods", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/841.jpg",
+      url: "/characterimages/841.jpg",
     },
   },
   {
@@ -18457,7 +18457,7 @@ module.exports = [
         "Niki Sanders (Mother), DL Hawkins (Father), Paulette Hawkins (paternal grandmother), Hal Sanders (maternal grandfather), Nana Dawson (Guardian)\nNana Dawson (Great-aunt), Monica Dawson (Cousin), Damon Dawson (Cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/951.jpg",
+      url: "/characterimages/951.jpg",
     },
   },
   {
@@ -18495,7 +18495,7 @@ module.exports = [
       relatives: "Leonardo (brother), Donatello (brother), Raphael (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10329.jpg",
+      url: "/characterimages/10329.jpg",
     },
   },
   {
@@ -18536,7 +18536,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1181.jpg",
+      url: "/characterimages/1181.jpg",
     },
   },
   {
@@ -18575,7 +18575,7 @@ module.exports = [
       relatives: "Ronald Rankin (father, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/97.jpg",
+      url: "/characterimages/97.jpg",
     },
   },
   {
@@ -18610,7 +18610,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/881.jpg",
+      url: "/characterimages/881.jpg",
     },
   },
   {
@@ -18645,7 +18645,7 @@ module.exports = [
     work: { occupation: "-", base: "Dalten Towers, Metropolis" },
     connections: { "group-affiliation": "Birds of Prey", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1114.jpg",
+      url: "/characterimages/1114.jpg",
     },
   },
   {
@@ -18687,7 +18687,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "Teen Titans", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1394.jpg",
+      url: "/characterimages/1394.jpg",
     },
   },
   {
@@ -18726,7 +18726,7 @@ module.exports = [
         "Nathaniai (father), Evelyn (mother, deceased), Susan Storm - Invisible Woman (wife), Franklin (son), Johnny Storm - Human Torch (brother-inlaw), Cassandra (stepmother, deceased), Immortus (father's descendant, see Immortus, Kang, Rama-Tut).",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/408.jpg",
+      url: "/characterimages/408.jpg",
     },
   },
   {
@@ -18765,7 +18765,7 @@ module.exports = [
         "Nora Fries (wife, deceased, then resurrected as Lazara), Charles (Father) and Lorraine Fries (Mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/742.jpg",
+      url: "/characterimages/742.jpg",
     },
   },
   {
@@ -18808,7 +18808,7 @@ module.exports = [
         "Eson (father, deceased), Peter Quill (Star-Lord, son), Victoria (daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10633.jpg",
+      url: "/characterimages/10633.jpg",
     },
   },
   {
@@ -18843,7 +18843,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/744.jpg",
+      url: "/characterimages/744.jpg",
     },
   },
   {
@@ -18900,7 +18900,7 @@ module.exports = [
         'Rebecca Essex (wife, deceased), Adam Stanislaus Essex (son, deceased), N2 (creation, deceased), Madelyne Pryor (creation, deceased), Claudine Renko (clone "daughter")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/856.jpg",
+      url: "/characterimages/856.jpg",
     },
   },
   {
@@ -18935,7 +18935,7 @@ module.exports = [
     work: { occupation: "Serial Killer", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1486.jpg",
+      url: "/characterimages/1486.jpg",
     },
   },
   {
@@ -18985,7 +18985,7 @@ module.exports = [
         "Susan Morse (mother); Ben Morse (brother); Hawkeye (Clint Barton) (ex-husband)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1328.jpg",
+      url: "/characterimages/1328.jpg",
     },
   },
   {
@@ -19028,7 +19028,7 @@ module.exports = [
         "M.O.D.O.K. Superior (clone), Head Case (son), Number None (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10438.jpg",
+      url: "/characterimages/10438.jpg",
     },
   },
   {
@@ -19063,7 +19063,7 @@ module.exports = [
     work: { occupation: "Green Lantern", base: "Sector 2261" },
     connections: { "group-affiliation": "Green Lantern Corps", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1432.jpg",
+      url: "/characterimages/1432.jpg",
     },
   },
   {
@@ -19106,7 +19106,7 @@ module.exports = [
         "formerly Maya Herrera, formerly Mira Shenoy, Chandra Suresh (deceased), Unnamed mother, Shanti Suresh",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1313.jpg",
+      url: "/characterimages/1313.jpg",
     },
   },
   {
@@ -19141,7 +19141,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1061.jpg",
+      url: "/characterimages/1061.jpg",
     },
   },
   {
@@ -19184,7 +19184,7 @@ module.exports = [
         "Doris Raxton (mother), Liz Allan Osborn (step-sister), Harry Osborn (Green Goblin II , step-brother-in-law, deceased), Norman Osborn Jr. (Green Goblin I, step-nephew)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/411.jpg",
+      url: "/characterimages/411.jpg",
     },
   },
   {
@@ -19228,7 +19228,7 @@ module.exports = [
         "Angela Adams (wife, deceased), Margaret Eiling (daughter), Randall Eiling (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1006.jpg",
+      url: "/characterimages/1006.jpg",
     },
   },
   {
@@ -19267,7 +19267,7 @@ module.exports = [
         "Nana Dawson (Grandmother), Damon (brother), DL Hawkins (cousin), Niki Sanders (cousin-in-law once removed), Micah Sanders (second cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/942.jpg",
+      url: "/characterimages/942.jpg",
     },
   },
   {
@@ -19319,7 +19319,7 @@ module.exports = [
         "Shadowknight (Randall Spector) (brother, deceased), Elias (father, deceased), Seth Phalkon (alleged great-great-grandfather)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/415.jpg",
+      url: "/characterimages/415.jpg",
     },
   },
   {
@@ -19362,7 +19362,7 @@ module.exports = [
         "Karl August Sofen (father), Marion Sofen (mother), unnamed maternal grandparents (only mentioned )",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/100.jpg",
+      url: "/characterimages/100.jpg",
     },
   },
   {
@@ -19397,7 +19397,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1171.jpg",
+      url: "/characterimages/1171.jpg",
     },
   },
   {
@@ -19436,7 +19436,7 @@ module.exports = [
       relatives: "Unnamed mother (deceased), Unnamed father",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/102.jpg",
+      url: "/characterimages/102.jpg",
     },
   },
   {
@@ -19479,7 +19479,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1020.jpg",
+      url: "/characterimages/1020.jpg",
     },
   },
   {
@@ -19514,7 +19514,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10794.jpg",
+      url: "/characterimages/10794.jpg",
     },
   },
   {
@@ -19553,7 +19553,7 @@ module.exports = [
         "Helen Parr (Elastigirl, wife), Violet Parr(Violet, daughter), Dashiell Parr (Dash, son), Jack-jack (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/869.jpg",
+      url: "/characterimages/869.jpg",
     },
   },
   {
@@ -19596,7 +19596,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/897.jpg",
+      url: "/characterimages/897.jpg",
     },
   },
   {
@@ -19639,7 +19639,7 @@ module.exports = [
         "Dr. Daniel Madrox (father, deceased), Joan Madrox (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/104.jpg",
+      url: "/characterimages/104.jpg",
     },
   },
   {
@@ -19688,7 +19688,7 @@ module.exports = [
         "Henrietta Beck (mother), Elmore Beck (father), Vincent (uncle), Maguire Beck (Jack O'Lantern) (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1039.jpg",
+      url: "/characterimages/1039.jpg",
     },
   },
   {
@@ -19733,7 +19733,7 @@ module.exports = [
         "Rogue (unofficial foster daughter), Ralph Brickman (husband), Gloria Brickman (daughter), Graydon Creed (son, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/817.jpg",
+      url: "/characterimages/817.jpg",
     },
   },
   {
@@ -19790,7 +19790,7 @@ module.exports = [
         "Elanna (maternal ancestor), Tanas (maternal ancestor), Zartra (maternal ancestor), Orrek (maternal distant relative), Stegor (maternal ancestor), Kamuu (maternal ancestor), Harran (maternal ancestor), Kalen (maternal ancestor), Ossem (maternal ancestor), Balaal (maternal ancestor), Thallo (maternal ancestor), Immanu (maternal great-grandfather-in-law, deceased), Thakorr (maternal grandfather, deceased), Korra (maternal grandmother), Wa-Korr (grandfather-in-law, presumed deceased), Wathan (father-in-law, presumed deceased), Tom Smallwood (father-in-law), Gladys Smallwood (mother-in-law), Zarina (maternal aunt), Namora's father (uncle), Daka (maternal uncle), Brynn (aunt-by-marriage/step-grandmother), Fen (mother, deceased), Leonard McKenzie (father, deceased), Experiment N2 (clone), Lawrence McKenzie (paternal half-brother), Dorma (wife / distant cousin, deceased), Marrina (wife), three unnamed children (by Marrina), Kamar (son, deceased), Black Moray (Leon McKenzie) (paternal half-nephew), Llyron McKenzie (paternal great-nephew), Dan Smallwood (brother-in-law), Namora (maternal cousin), Beemer (maternal cousin), Bobo (maternal cousin), Byrrahna (maternal cousin), Namita (maternal cousin), Daro (maternal cousin), Dara (maternal cousin), Seth (maternal cousin), Argus (maternal cousin), Arkus (maternal cousin), Byrrah (maternal cousin), Namorita (maternal 1st cousin once removed).",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/137.jpg",
+      url: "/characterimages/137.jpg",
     },
   },
   {
@@ -19825,7 +19825,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/105.jpg",
+      url: "/characterimages/105.jpg",
     },
   },
   {
@@ -19865,7 +19865,7 @@ module.exports = [
         'Namor (cousin), Talan (husband, deceased), Namorita ("daughter" cloned)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1364.jpg",
+      url: "/characterimages/1364.jpg",
     },
   },
   {
@@ -19908,7 +19908,7 @@ module.exports = [
         "Namora (mother); Talan (father, deceased); Namor, Byrrah, Dara, Arkus (first cousins once removed); Fen (great-aunt, deceased); Thakorr (great-grandfather, deceased); Korra (great-grandmother, presumed deceased); large extended family; Betty Prentiss (legal guardian, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/106.jpg",
+      url: "/characterimages/106.jpg",
     },
   },
   {
@@ -19943,7 +19943,7 @@ module.exports = [
     work: { occupation: "-", base: "Konohagakure" },
     connections: { "group-affiliation": "Team 7", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1540.jpg",
+      url: "/characterimages/1540.jpg",
     },
   },
   {
@@ -19986,7 +19986,7 @@ module.exports = [
         "Angela Petrelli (mother), unnamed father (deceased), Peter Petrelli (younger brother), Simon Petrelli (son), Monty Petrelli (son), Claire Bennet (daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/949.jpg",
+      url: "/characterimages/949.jpg",
     },
   },
   {
@@ -20025,7 +20025,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10632.jpg",
+      url: "/characterimages/10632.jpg",
     },
   },
   {
@@ -20060,7 +20060,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10556.jpg",
+      url: "/characterimages/10556.jpg",
     },
   },
   {
@@ -20104,7 +20104,7 @@ module.exports = [
         "Jack Fury (father, deceased);\nunnamed mother;\nunnamed stepmother (deceased);\nDawn Fury (half-sister);\nJake Fury (half-brother);\nMikel Fury (son, deceased);\nJerry Sapristi (cousin);\nTina Sapristi (cousin by marriage);\nErnesto, Pietro, Giovanni, Maria, Rosa and Gabriella (1st cousins once removed);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/326.jpg",
+      url: "/characterimages/326.jpg",
     },
   },
   {
@@ -20147,7 +20147,7 @@ module.exports = [
         "Eric Wagner (father, deceased), Margali Szardos (foster mother), Jimaine Szardos (Daytripper, alias Amanda Sefton, foster sister), Stefan Szardos (foster brother, deceased), Mystique (mother), Graydon Creed (half-brother, deceased).",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/107.jpg",
+      url: "/characterimages/107.jpg",
     },
   },
   {
@@ -20204,7 +20204,7 @@ module.exports = [
         "John Grayson (father, deceased), Mary Grayson (mother, deceased), Bruce Wayne / Batman (adoptive father), Damian Wayne / Robin (foster brother), Jason Todd / Red Hood (adoptive brother), Tim Drake / Red Robin (adoptive brother), Cassandra Cain / Batgirl IV (adoptive sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/851.jpg",
+      url: "/characterimages/851.jpg",
     },
   },
   {
@@ -20247,7 +20247,7 @@ module.exports = [
         "DL Hawkins (husband), Hal Sanders (father), Micah Sanders (son), Jessica Sanders (sister,deceased), Monica Dawson (cousin-in-law), Damon Dawson (cousin-in-law), Paulette Hawkins (mother-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/952.jpg",
+      url: "/characterimages/952.jpg",
     },
   },
   {
@@ -20282,7 +20282,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Alphas", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1529.jpg",
+      url: "/characterimages/1529.jpg",
     },
   },
   {
@@ -20317,7 +20317,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Watchmen", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1059.jpg",
+      url: "/characterimages/1059.jpg",
     },
   },
   {
@@ -20361,7 +20361,7 @@ module.exports = [
         "Jean-Baptiste Beaubier (father, deceased), unnamed mother (deceased), Louis Martin (adoptive father, deceased), unnamed adoptive mother (deceased), Jeanne-Marie Beaubier (Aurora, sister), Joanne Beaubier (adopted daughter, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1287.jpg",
+      url: "/characterimages/1287.jpg",
     },
   },
   {
@@ -20412,7 +20412,7 @@ module.exports = [
         "Charles Rider (Father), Gloria Rider (Mother), Robbie Rider (Brother) , Ralph Rider (Uncle, deceased) , Ellen (aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/109.jpg",
+      url: "/characterimages/109.jpg",
     },
   },
   {
@@ -20452,7 +20452,7 @@ module.exports = [
         '"Thomas Raye" (Phineas T. Horton, stepfather, deceased), Thomas Raymond (Toro, possible biological father); Lanette Raye (mother)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10313.jpg",
+      url: "/characterimages/10313.jpg",
     },
   },
   {
@@ -20504,7 +20504,7 @@ module.exports = [
         "Buri (Tiwaz) (paternal grandfather), Bolthorn (maternal grandfather), Bor Burison (father, deceased), Bestla (mother), Mimir Burison (paternal uncle), Njord (paternal uncle), Vili, Ve, Cul (brothers), Frigga (wife), Freyr (father-in-law), Gullveig (sister-in-law), Thor (son by Jord), Vidar (son by Grid), Balder (son by Frigga), Tyr, Hermod (allegedly sons by Frigga), Angela (daughter by Frigga), Laussa (daughter by Frigga and Surtur), Loki (foster son), Hoder (nephew), Skadi (niece)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10388.jpg",
+      url: "/characterimages/10388.jpg",
     },
   },
   {
@@ -20539,7 +20539,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1298.jpg",
+      url: "/characterimages/1298.jpg",
     },
   },
   {
@@ -20578,7 +20578,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/208.jpg",
+      url: "/characterimages/208.jpg",
     },
   },
   {
@@ -20617,7 +20617,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "Team Epic", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1003.jpg",
+      url: "/characterimages/1003.jpg",
     },
   },
   {
@@ -20652,7 +20652,7 @@ module.exports = [
     work: { occupation: "Superhero, Sensei", base: "Z-City" },
     connections: { "group-affiliation": "-", relatives: "Genos (partner)" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10522.jpg",
+      url: "/characterimages/10522.jpg",
     },
   },
   {
@@ -20690,7 +20690,7 @@ module.exports = [
       relatives: "Living Tribunal (creation)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10374.jpg",
+      url: "/characterimages/10374.jpg",
     },
   },
   {
@@ -20739,7 +20739,7 @@ module.exports = [
       relatives: "Professor Charles Xavier (fusee, deceased); Magneto (fusee)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/13.jpg",
+      url: "/characterimages/13.jpg",
     },
   },
   {
@@ -20786,7 +20786,7 @@ module.exports = [
         "Roger C. Gordon (father, deceased); Thelma (mother, deceased); James Gordon (uncle/adoptive father); Barbara Eileen Gordon (aunt/adoptive mother); James Gordon Jr. (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/749.jpg",
+      url: "/characterimages/749.jpg",
     },
   },
   {
@@ -20824,7 +20824,7 @@ module.exports = [
       relatives: "Isis (Sister, deceased), Black Adam (Brother-in-Law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1165.jpg",
+      url: "/characterimages/1165.jpg",
     },
   },
   {
@@ -20862,7 +20862,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/866.jpg",
+      url: "/characterimages/866.jpg",
     },
   },
   {
@@ -20901,7 +20901,7 @@ module.exports = [
         "Friedrich Werner Veidt (father), Ingrid Renata Veidt (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1063.jpg",
+      url: "/characterimages/1063.jpg",
     },
   },
   {
@@ -20936,7 +20936,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10479.jpg",
+      url: "/characterimages/10479.jpg",
     },
   },
   {
@@ -20971,7 +20971,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/929.jpg",
+      url: "/characterimages/929.jpg",
     },
   },
   {
@@ -21006,7 +21006,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/930.jpg",
+      url: "/characterimages/930.jpg",
     },
   },
   {
@@ -21041,7 +21041,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Darkseid", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10806.jpg",
+      url: "/characterimages/10806.jpg",
     },
   },
   {
@@ -21084,7 +21084,7 @@ module.exports = [
       relatives: "Justin Baldwin (father), Madeline Naylor (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/900.jpg",
+      url: "/characterimages/900.jpg",
     },
   },
   {
@@ -21123,7 +21123,7 @@ module.exports = [
         "Miranda Cobblepot (Aunt), Miranda (Mother, deceased), Father (deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/753.jpg",
+      url: "/characterimages/753.jpg",
     },
   },
   {
@@ -21158,7 +21158,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/889.jpg",
+      url: "/characterimages/889.jpg",
     },
   },
   {
@@ -21193,7 +21193,7 @@ module.exports = [
     work: { occupation: "-", base: "United Planets, Bgztl" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1184.jpg",
+      url: "/characterimages/1184.jpg",
     },
   },
   {
@@ -21236,7 +21236,7 @@ module.exports = [
         "Rachel Summers (daughter from an alternate universe), X-Man (son from an alternate universe), Cyclops (ex-husband), Havok (former brother-in-law), Corsair (former father-in-law), Madelyne Pryor (clone), Cable (adoptive/biological son), Stryfe (cloned biological son), Genesis (grandson)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/828.jpg",
+      url: "/characterimages/828.jpg",
     },
   },
   {
@@ -21279,7 +21279,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10487.jpg",
+      url: "/characterimages/10487.jpg",
     },
   },
   {
@@ -21314,7 +21314,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1299.jpg",
+      url: "/characterimages/1299.jpg",
     },
   },
   {
@@ -21353,7 +21353,7 @@ module.exports = [
       relatives: "Offspring (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/756.jpg",
+      url: "/characterimages/756.jpg",
     },
   },
   {
@@ -21396,7 +21396,7 @@ module.exports = [
         "Nathaniel Adam (Captain Atom,husband), Margaret Eiling (step-daughter), Randall Eiling (step-son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1176.jpg",
+      url: "/characterimages/1176.jpg",
     },
   },
   {
@@ -21435,7 +21435,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/757.jpg",
+      url: "/characterimages/757.jpg",
     },
   },
   {
@@ -21487,7 +21487,7 @@ module.exports = [
         "Joseph (father's clone/paternal uncle, deceased), Magneto (father), Magda Lehnsherr (step-mother, deceased), Zaladane (sister, status uncertain), Anya Lehnsherr (paternal half-sister, deceased), Scarlet Witch (paternal half-sister), Quicksilver (paternal half-brother), Nightcrawler (half-brother-in-law), Vision (half-brother-in-law), Crystal (half-sister-in-law), Nocturne (half-niece), Speed (half-nephew), Wiccan (half-nephew), Luna Maximoff (half-niece)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1046.jpg",
+      url: "/characterimages/1046.jpg",
     },
   },
   {
@@ -21527,7 +21527,7 @@ module.exports = [
         "Zor-L (father, deceased), Allura (mother, deceased), Jor-L (uncle, deceased), Lora (aunt, deceased), Kal-L (Earth-Two Superman, cousin and adopted father, deceased), Earth-Two Lois Lane (adopted mother, deceased), Equinox (son, deceased), Kara Zor-El (alternate universe version)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/758.jpg",
+      url: "/characterimages/758.jpg",
     },
   },
   {
@@ -21562,7 +21562,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1016.jpg",
+      url: "/characterimages/1016.jpg",
     },
   },
   {
@@ -21597,7 +21597,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10448.jpg",
+      url: "/characterimages/10448.jpg",
     },
   },
   {
@@ -21642,7 +21642,7 @@ module.exports = [
         "Brian Xavier (father, deceased), Sharon Xavier (mother, deceased), Cassandra Nova (sister), Kurt Marko (stepfather, deceased), Cain Marko (Juggernaut, stepbrother), Lilandra (ex-wife), David Charles Haller (Legion, son, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/113.jpg",
+      url: "/characterimages/113.jpg",
     },
   },
   {
@@ -21682,7 +21682,7 @@ module.exports = [
         "Robern Thawne (brother), Malcolm Thawne (Cobalt Blue) (distant ancestor), President Thawne, Meloni Thawne, Bart Allen, Owen Mercer (descendants) - see Allen Family for complete family tree",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/766.jpg",
+      url: "/characterimages/766.jpg",
     },
   },
   {
@@ -21727,7 +21727,7 @@ module.exports = [
         "John Braddock (ancestor, possibly grandfather); Sir James Braddock (father, deceased); Lady Elizabeth Braddock (mother, deceased); Brian Braddock (Captain Britain) (twin brother); Jamie Braddock (brother, deceased); Meggan Braddock (sister-in-law);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/114.jpg",
+      url: "/characterimages/114.jpg",
     },
   },
   {
@@ -21791,7 +21791,7 @@ module.exports = [
         "Maria Castle (Wife, deceased), Christie Castle (Daughter, deceased), Frank Castle Junior (Son, deceased), Mario Castle (Father, deceased), Louisa Castle (Mother, deceased), Rocco Castiglione (Uncle, deceased), Esmerelda Castiglione (Aunt, deceased), Michael Castle (Brother, stillborn, deceased).",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/112.jpg",
+      url: "/characterimages/112.jpg",
     },
   },
   {
@@ -21835,7 +21835,7 @@ module.exports = [
         "Melanie Killgrave (ex-wife); Persuasion (Kara Killgrave) (daughter); Joe (son); Shallah (daughter); Connor (son); Jamie (son); Unnamed daughter",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10451.jpg",
+      url: "/characterimages/10451.jpg",
     },
   },
   {
@@ -21878,7 +21878,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/853.jpg",
+      url: "/characterimages/853.jpg",
     },
   },
   {
@@ -21913,7 +21913,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10578.jpg",
+      url: "/characterimages/10578.jpg",
     },
   },
   {
@@ -21948,7 +21948,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1157.jpg",
+      url: "/characterimages/1157.jpg",
     },
   },
   {
@@ -21989,7 +21989,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/760.jpg",
+      url: "/characterimages/760.jpg",
     },
   },
   {
@@ -22034,7 +22034,7 @@ module.exports = [
         "Wanda Maximoff (Scarlet Witch, sister), Magnus (Magneto, father), Magda (mother, deceased), Django Maximoff (adoptive father), Marya Maximoff (adoptive mother, deceased), Crystal (wife), Maximoff, Luna (daughter), Medusa (sister-in-law), Black Bolt, Gorgon, Karnak, Triton, Maximus (cousins by marriage), Vision (ex-brother-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/115.jpg",
+      url: "/characterimages/115.jpg",
     },
   },
   {
@@ -22069,7 +22069,7 @@ module.exports = [
     work: { occupation: "-", base: "X-Mansion" },
     connections: { "group-affiliation": "Corsairs", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/830.jpg",
+      url: "/characterimages/830.jpg",
     },
   },
   {
@@ -22111,7 +22111,7 @@ module.exports = [
         "The Sensei (father), White Ghost (Dusan al Ghul) (son), Talia al Ghul (daughter), Nyssa Raatko (daughter), Robin V (Damian Wayne) (grandson)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/761.jpg",
+      url: "/characterimages/761.jpg",
     },
   },
   {
@@ -22146,7 +22146,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Alphas", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1530.jpg",
+      url: "/characterimages/1530.jpg",
     },
   },
   {
@@ -22185,7 +22185,7 @@ module.exports = [
         "R. Rambo (father), Marie Drago (mother), Col. Sam Trautman (close-friend, father-figure, trainer, best-friend until death)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10475.jpg",
+      url: "/characterimages/10475.jpg",
     },
   },
   {
@@ -22224,7 +22224,7 @@ module.exports = [
         "Leonardo (brother), Donatello (brother), Michelangelo (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10328.jpg",
+      url: "/characterimages/10328.jpg",
     },
   },
   {
@@ -22263,7 +22263,7 @@ module.exports = [
         "Trigon (father), Angela Roth (mother, deceased), Gluttony, Greed, Lust, Wrath, Envy, Sloth (half-brothers, status unknown)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/764.jpg",
+      url: "/characterimages/764.jpg",
     },
   },
   {
@@ -22306,7 +22306,7 @@ module.exports = [
         "Happy Terrill (father), Nadine Terrill (mother), Joshua Terrill (Spitfire, brother), Thomas Terrill (uncle/foster father, deceased), Hank Terrill (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10204.jpg",
+      url: "/characterimages/10204.jpg",
     },
   },
   {
@@ -22349,7 +22349,7 @@ module.exports = [
       relatives: "William Scott (aka Razor-Fist III, brother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/935.jpg",
+      url: "/characterimages/935.jpg",
     },
   },
   {
@@ -22394,7 +22394,7 @@ module.exports = [
         'Roy William Harper, Sr. (father, deceased); Brave Bow (adoptive father, deceased); Oliver "Ollie" Queen (Green Arrow - adoptive father); Jim Harper (Guardian- great-uncle); Lian Harper (daughter), Vandal Savage (ancestor)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1013.jpg",
+      url: "/characterimages/1013.jpg",
     },
   },
   {
@@ -22433,7 +22433,7 @@ module.exports = [
         "Willis Todd (father, deceased); Sheila Haywood (mother, deceased); Catherine Ann Todd (adoptive mother, deceased), Bruce Wayne (adoptive father), Dick Grayson and Tim Drake (adoptive brothers)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/932.jpg",
+      url: "/characterimages/932.jpg",
     },
   },
   {
@@ -22472,7 +22472,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1342.jpg",
+      url: "/characterimages/1342.jpg",
     },
   },
   {
@@ -22507,7 +22507,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "Johnny G (father)" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1337.jpg",
+      url: "/characterimages/1337.jpg",
     },
   },
   {
@@ -22553,7 +22553,7 @@ module.exports = [
         "Jack Drake (father, deceased), Janet Drake (mother, deceased), Dana Winters Drake (step-mother, status unknown), Bruce Wayne (adoptive father), Damian Wayne (adoptive brother), Dick Grayson (adoptive brother), Jason Todd (adoptive brother), Cassandra Cain (adoptive sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10009.jpg",
+      url: "/characterimages/10009.jpg",
     },
   },
   {
@@ -22604,7 +22604,7 @@ module.exports = [
         "Hermann Shmidt (father, deceased), Martha Shmidt (mother, deceased), Sinthea Shmidt (Mother Superior/Sin, daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1392.jpg",
+      url: "/characterimages/1392.jpg",
     },
   },
   {
@@ -22651,7 +22651,7 @@ module.exports = [
         'T.O. Morrow (creator/father),Red Volcano (brother; deceased), Red Inferno (brother; deceased), Red Torpedo (sister; deceased), Tomorrow Woman ("sister"), Kathy Sutton (wife), Traya Sutton (adoptive daughter)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1149.jpg",
+      url: "/characterimages/1149.jpg",
     },
   },
   {
@@ -22686,7 +22686,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1092.jpg",
+      url: "/characterimages/1092.jpg",
     },
   },
   {
@@ -22721,7 +22721,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1151.jpg",
+      url: "/characterimages/1151.jpg",
     },
   },
   {
@@ -22756,7 +22756,7 @@ module.exports = [
     work: { occupation: "Scavenger", base: "Jakku" },
     connections: { "group-affiliation": "Resistence", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10561.jpg",
+      url: "/characterimages/10561.jpg",
     },
   },
   {
@@ -22791,7 +22791,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1081.jpg",
+      url: "/characterimages/1081.jpg",
     },
   },
   {
@@ -22833,7 +22833,7 @@ module.exports = [
         "Miriam Sytsevich (mother, deceased), Alexia (niece, lastname unrevealed), unnamed grandmother",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/15.jpg",
+      url: "/characterimages/15.jpg",
     },
   },
   {
@@ -22875,7 +22875,7 @@ module.exports = [
         "Richard Flag, Sr. (father, deceased); Richard Flag III (son); Karin Grace (mother of child)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1352.jpg",
+      url: "/characterimages/1352.jpg",
     },
   },
   {
@@ -22910,7 +22910,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/768.jpg",
+      url: "/characterimages/768.jpg",
     },
   },
   {
@@ -22958,7 +22958,7 @@ module.exports = [
         "Michael Carter, (Booster Gold, father),  Unknown (mother), Jonar Carter (grandfather), Ellen Carter (grandmother, deceased), Michelle Carter (Goldstar) (aunt), Daniel Carter (21st century ancestor), Rose Levin (ancestor), Dan Hunter (cousin),",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10543.jpg",
+      url: "/characterimages/10543.jpg",
     },
   },
   {
@@ -22993,7 +22993,7 @@ module.exports = [
     work: { occupation: "Adventurer, formerly prostitute.", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1291.jpg",
+      url: "/characterimages/1291.jpg",
     },
   },
   {
@@ -23037,7 +23037,7 @@ module.exports = [
         "John Grayson (father), Mary Grayson (mother), Bruce Wayne (adoptive father), Damian Wayne (adoptive brother), Jason Todd (adoptive brother), Tim Drake (adoptive brother), Cassandra Cain (adoptive sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/850.jpg",
+      url: "/characterimages/850.jpg",
     },
   },
   {
@@ -23085,7 +23085,7 @@ module.exports = [
         "Willis Todd (father), Sheila Haywood (mother), Catherine Todd (step-mother), Bruce Wayne (Batman, adoptive father), Damian Wayne (Robin V, adoptive brother), Dick Grayson (Robin I, adoptive brother), Timothy Drake (Robin III, adoptive brother), Cassandra Cain (Batgirl IV, adoptive sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/849.jpg",
+      url: "/characterimages/849.jpg",
     },
   },
   {
@@ -23128,7 +23128,7 @@ module.exports = [
         "Jack Drake (father, deceased), Janet Drake (mother, deceased), Dana Winters Drake (step-mother, status unknown), Bruce Wayne (Batman, adoptive father), Damian Wayne (Robin V, adoptive brother), Dick Grayson (Robin I, adoptive brother), Jason Todd (Robin II, adoptive brother), Cassandra Cain (Batgirl IV, adoptive sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/769.jpg",
+      url: "/characterimages/769.jpg",
     },
   },
   {
@@ -23163,7 +23163,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10394.jpg",
+      url: "/characterimages/10394.jpg",
     },
   },
   {
@@ -23207,7 +23207,7 @@ module.exports = [
       relatives: "Lylla (mate)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10010.jpg",
+      url: "/characterimages/10010.jpg",
     },
   },
   {
@@ -23256,7 +23256,7 @@ module.exports = [
         "Owen (father), Priscilla (mother), Carrie (aunt), Raven Darkh�lme (Mystique, foster mother), Kurt Wagner (Nightcrawler, foster brother), Graydon Creed (foster brother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/831.jpg",
+      url: "/characterimages/831.jpg",
     },
   },
   {
@@ -23296,7 +23296,7 @@ module.exports = [
         "Talia al Ghul (mother),\nBruce Wayne (Batman, father),\nRa's Al Ghul (maternal grandfather),\nMelisande (maternal grandmother),\nThomas Wayne (paternal grandfather),\nMartha Wayne (paternal grandmother),\nSensei (great-grandfather),\nSimon Hurt (ancestor),\nNyssa Raatko (aunt, deceased),\nDusan al Ghul (White Ghost, uncle, deceased),\nRichard Grayson (Nightwing, adoptive brother),\nTim Drake (Red Robin, adoptive brother),\nCassandra Cain (Batgirl IV, adoptive sister),\nJason Todd (Red Hood, adoptive brother), \nPatrick Wayne (great-grandfather, deceased); \nCharles Wayne (great-great-grandfather, deceased);\nConstance Wayne (great-great-grandmother, deceased); \nAlan Wayne (ancestor, deceased); \nSolomon Wayne (ancestor, deceased); \nDarius Wayne (ancestor, deceased); \nJoshua Wayne (ancestor, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1473.jpg",
+      url: "/characterimages/1473.jpg",
     },
   },
   {
@@ -23353,7 +23353,7 @@ module.exports = [
         "Harold Barton (father), Edith Barton (mother), Charles Bernard \"Barney\" Barton (brother), Barbara Morse 'Bobbi' Barton (Mockingbird, wife), Brett Barton (ancestor), Mack Barton (ancestor); all deceased",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1202.jpg",
+      url: "/characterimages/1202.jpg",
     },
   },
   {
@@ -23388,7 +23388,7 @@ module.exports = [
     work: { occupation: "Vigilante, former garment worker", base: "-" },
     connections: { "group-affiliation": "Crimebusters", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/771.jpg",
+      url: "/characterimages/771.jpg",
     },
   },
   {
@@ -23429,7 +23429,7 @@ module.exports = [
       relatives: "Grayden Creed (son; deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/17.jpg",
+      url: "/characterimages/17.jpg",
     },
   },
   {
@@ -23468,7 +23468,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/117.jpg",
+      url: "/characterimages/117.jpg",
     },
   },
   {
@@ -23507,7 +23507,7 @@ module.exports = [
       relatives: "Mrs. Baker (mother), unidentified cousin",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/621.jpg",
+      url: "/characterimages/621.jpg",
     },
   },
   {
@@ -23551,7 +23551,7 @@ module.exports = [
         "Veronica Langkowsi (ex-wife), unidentified son, Lillian von Loont (Gilded Lily, great-aunt, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/863.jpg",
+      url: "/characterimages/863.jpg",
     },
   },
   {
@@ -23594,7 +23594,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10849.jpg",
+      url: "/characterimages/10849.jpg",
     },
   },
   {
@@ -23633,7 +23633,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1117.jpg",
+      url: "/characterimages/1117.jpg",
     },
   },
   {
@@ -23668,7 +23668,7 @@ module.exports = [
     work: { occupation: "Special Professional Criminal", base: "Gotham City" },
     connections: { "group-affiliation": "Injustice Gang", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/819.jpg",
+      url: "/characterimages/819.jpg",
     },
   },
   {
@@ -23708,7 +23708,7 @@ module.exports = [
         "Peter Parker (clone of), May Parker (Aunt), Ben Parker (Uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/174.jpg",
+      url: "/characterimages/174.jpg",
     },
   },
   {
@@ -23747,7 +23747,7 @@ module.exports = [
         "Miles Warren (creator), Peter Parker (Spider-Man, genetic template), Ben Reilly (Scarlet Spider, fellow clone, deceased), Spidercide (fellow clone, allegedly deceased), Guardian (fellow clone, deceased), Jack (fellow clone, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1536.jpg",
+      url: "/characterimages/1536.jpg",
     },
   },
   {
@@ -23797,7 +23797,7 @@ module.exports = [
         "Pietro (Quicksilver, twin brother), Magnus (Magneto, father), Magda Lehnsherr (mother, deceased), Anya (half-sister, deceased), Lorna Dane (Polaris, half-sister), Vision (estranged husband), Django Maximoff (foster father, deceased), Marya Maximoff (foster mother, deceased), Crystal (sister-in-law), Luna (niece), Tommy & Billy (reincarnated sons), Talia Wagner (Nocturne, alternate reality daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/444.jpg",
+      url: "/characterimages/444.jpg",
     },
   },
   {
@@ -23837,7 +23837,7 @@ module.exports = [
       relatives: "Vincent Coll (grandfather, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1123.jpg",
+      url: "/characterimages/1123.jpg",
     },
   },
   {
@@ -23880,7 +23880,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1041.jpg",
+      url: "/characterimages/1041.jpg",
     },
   },
   {
@@ -23915,7 +23915,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1482.jpg",
+      url: "/characterimages/1482.jpg",
     },
   },
   {
@@ -23964,7 +23964,7 @@ module.exports = [
       relatives: "Lindy Reynolds (wife, deceased), Mrs. Reynolds (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/447.jpg",
+      url: "/characterimages/447.jpg",
     },
   },
   {
@@ -24013,7 +24013,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/121.jpg",
+      url: "/characterimages/121.jpg",
     },
   },
   {
@@ -24048,7 +24048,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1195.jpg",
+      url: "/characterimages/1195.jpg",
     },
   },
   {
@@ -24092,7 +24092,7 @@ module.exports = [
         "Kate (maternal great-grandmother), Samuel Prydeman (paternal grandfather, deceased), Chava Rosanoff (paternal great-aunt, deceased), Mr. Rosanoff (paternal great-uncle, apparently deceased), Nina (aunt), Carmen Pryde (father, deceased), Theresa Pryde (mother), Kenny (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/122.jpg",
+      url: "/characterimages/122.jpg",
     },
   },
   {
@@ -24134,7 +24134,7 @@ module.exports = [
         "Fu Manchu, father; unnamed mother; Fah Lo Suee, (half-sister); Whispering Shadow (half-brother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/454.jpg",
+      url: "/characterimages/454.jpg",
     },
   },
   {
@@ -24172,7 +24172,7 @@ module.exports = [
       relatives: "Longshot (father), Dazzler (mother), Mojo V",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/124.jpg",
+      url: "/characterimages/124.jpg",
     },
   },
   {
@@ -24215,7 +24215,7 @@ module.exports = [
       relatives: "Bruce Banner (Hulk, cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/125.jpg",
+      url: "/characterimages/125.jpg",
     },
   },
   {
@@ -24259,7 +24259,7 @@ module.exports = [
         "Jack Ventura (father, deceased), Mrs. Ventura (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/461.jpg",
+      url: "/characterimages/461.jpg",
     },
   },
   {
@@ -24301,7 +24301,7 @@ module.exports = [
       relatives: "Mr. & Mrs. Schultz (parents)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/19.jpg",
+      url: "/characterimages/19.jpg",
     },
   },
   {
@@ -24344,7 +24344,7 @@ module.exports = [
         "Carnage (adopted husband), Carrion (Malcolm McBride) and Demogoblin (adopted sons), Doppelganger (adopted pet)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1319.jpg",
+      url: "/characterimages/1319.jpg",
     },
   },
   {
@@ -24382,7 +24382,7 @@ module.exports = [
       relatives: "Heimdall (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1533.jpg",
+      url: "/characterimages/1533.jpg",
     },
   },
   {
@@ -24427,7 +24427,7 @@ module.exports = [
         "Albert Moon. Sr. (father, estranged), unnamed mother (estranged), Albert Moon, Jr. (brother, estranged), Spider-Man (Peter Parker, bit by same spider)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10495.jpg",
+      url: "/characterimages/10495.jpg",
     },
   },
   {
@@ -24465,7 +24465,7 @@ module.exports = [
       relatives: "Silk Spectre II (daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1057.jpg",
+      url: "/characterimages/1057.jpg",
     },
   },
   {
@@ -24500,7 +24500,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1188.jpg",
+      url: "/characterimages/1188.jpg",
     },
   },
   {
@@ -24538,7 +24538,7 @@ module.exports = [
       relatives: "Silk Spectre I (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1058.jpg",
+      url: "/characterimages/1058.jpg",
     },
   },
   {
@@ -24581,7 +24581,7 @@ module.exports = [
         "Jartran Radd (father, deceased), Elmar Radd (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/127.jpg",
+      url: "/characterimages/127.jpg",
     },
   },
   {
@@ -24624,7 +24624,7 @@ module.exports = [
         'Jaime Santiago (father), Peliali (mother), Edwin Jarvis ("uncle")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1019.jpg",
+      url: "/characterimages/1019.jpg",
     },
   },
   {
@@ -24663,7 +24663,7 @@ module.exports = [
         "Sira Baz (sister), Farid Amar (nephew), Nazir Amar (brother in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10649.jpg",
+      url: "/characterimages/10649.jpg",
     },
   },
   {
@@ -24712,7 +24712,7 @@ module.exports = [
         "Witch Queen (sister, pre-Crisis), Soranik Natu (daughter), Arin Sur (wife, deceased), Abin Sur (brother-in-law, deceased), Amon Sur (nephew)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/781.jpg",
+      url: "/characterimages/781.jpg",
     },
   },
   {
@@ -24750,7 +24750,7 @@ module.exports = [
       relatives: "Mera (twin sister), Aquaman (brother-in-law)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1387.jpg",
+      url: "/characterimages/1387.jpg",
     },
   },
   {
@@ -24785,7 +24785,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1386.jpg",
+      url: "/characterimages/1386.jpg",
     },
   },
   {
@@ -24828,7 +24828,7 @@ module.exports = [
         "Sean Cassidy (Banshee, father), Maeve Rourke (mother, deceased), Black Tom Cassidy (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/833.jpg",
+      url: "/characterimages/833.jpg",
     },
   },
   {
@@ -24874,7 +24874,7 @@ module.exports = [
         "Morris Walters (granduncle), Elaine Banner-Walters (paternal grandaunt, deceased), Brian Banner (paternal grandfather, deceased), Rebecca Banner (paternal grandmother, deceased), She-Hulk (1st cousin once removed), Hulk (father), Caiera the Oldstrong (mother, deceased), Hiro-Kala (Twin brother), Lyra (half-sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1341.jpg",
+      url: "/characterimages/1341.jpg",
     },
   },
   {
@@ -24909,7 +24909,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10437.jpg",
+      url: "/characterimages/10437.jpg",
     },
   },
   {
@@ -24952,7 +24952,7 @@ module.exports = [
         "Hodiak (grandfather), Nelvanna (mother), Richard Lawrence Easton (father, deceased), Michael Twoyoungmen (Shaman, foster father), Douglas Thompson (husband, deceased), unnamed son (deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/130.jpg",
+      url: "/characterimages/130.jpg",
     },
   },
   {
@@ -24992,7 +24992,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1166.jpg",
+      url: "/characterimages/1166.jpg",
     },
   },
   {
@@ -25032,7 +25032,7 @@ module.exports = [
         "Unnamed wife (deceased); Karin Rykel (possible descendant, deceased); Chrissie Cavendish (possible descendant)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/782.jpg",
+      url: "/characterimages/782.jpg",
     },
   },
   {
@@ -25071,7 +25071,7 @@ module.exports = [
       relatives: "Mimi Gold (mother), Mr. Gold (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/131.jpg",
+      url: "/characterimages/131.jpg",
     },
   },
   {
@@ -25106,7 +25106,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Galactic Heroes", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1505.jpg",
+      url: "/characterimages/1505.jpg",
     },
   },
   {
@@ -25145,7 +25145,7 @@ module.exports = [
       relatives: "Wanda (widow), Cyan (widow's daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/842.jpg",
+      url: "/characterimages/842.jpg",
     },
   },
   {
@@ -25188,7 +25188,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/784.jpg",
+      url: "/characterimages/784.jpg",
     },
   },
   {
@@ -25230,7 +25230,7 @@ module.exports = [
       relatives: "Maddie Baldwin (mother), Justin Baldwin (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/132.jpg",
+      url: "/characterimages/132.jpg",
     },
   },
   {
@@ -25269,7 +25269,7 @@ module.exports = [
         "Moira Queen (mother, deceased), Robert Queen (foster father, deceased), Walter Steele (step-father, formerly), Malcolm Merlyn (biological father), Oliver Queen (Green Arrow, half-brother), Tommy Merlyn (half-brother, deceased), William Clayton (nephew)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10558.jpg",
+      url: "/characterimages/10558.jpg",
     },
   },
   {
@@ -25304,7 +25304,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1015.jpg",
+      url: "/characterimages/1015.jpg",
     },
   },
   {
@@ -25339,7 +25339,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/957.jpg",
+      url: "/characterimages/957.jpg",
     },
   },
   {
@@ -25374,7 +25374,7 @@ module.exports = [
     work: { occupation: "-", base: "New York City, New York" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/480.jpg",
+      url: "/characterimages/480.jpg",
     },
   },
   {
@@ -25413,7 +25413,7 @@ module.exports = [
       relatives: "George Stacy (father), Helen Stacy (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10507.jpg",
+      url: "/characterimages/10507.jpg",
     },
   },
   {
@@ -25472,7 +25472,7 @@ module.exports = [
         "Richard Parker (father, deceased), Mary Parker(mother, deceased), Benjamin Parker (uncle, deceased), May Parker (aunt), Mary Jane Watson-Parker (wife), May Parker (daughter, allegedly deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/133.jpg",
+      url: "/characterimages/133.jpg",
     },
   },
   {
@@ -25510,7 +25510,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/479.jpg",
+      url: "/characterimages/479.jpg",
     },
   },
   {
@@ -25545,7 +25545,7 @@ module.exports = [
     work: { occupation: "Student, adventurer, vigilante", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10647.jpg",
+      url: "/characterimages/10647.jpg",
     },
   },
   {
@@ -25592,7 +25592,7 @@ module.exports = [
       relatives: "Jonathan (father, deceased), Merriem (mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/481.jpg",
+      url: "/characterimages/481.jpg",
     },
   },
   {
@@ -25632,7 +25632,7 @@ module.exports = [
         "Jeremy Franklin (father, deceased), Bernice Franklin (mother, deceased), J. Jonah Jameson (foster father), Marla Madison (foster mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/482.jpg",
+      url: "/characterimages/482.jpg",
     },
   },
   {
@@ -25673,7 +25673,7 @@ module.exports = [
       relatives: "Cassandra Webb (aka Madame Web, grandmother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/883.jpg",
+      url: "/characterimages/883.jpg",
     },
   },
   {
@@ -25708,7 +25708,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10566.jpg",
+      url: "/characterimages/10566.jpg",
     },
   },
   {
@@ -25743,7 +25743,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/483.jpg",
+      url: "/characterimages/483.jpg",
     },
   },
   {
@@ -25782,7 +25782,7 @@ module.exports = [
         "Mr. Daniels (father), Vivian Munroe-Daniels (mother), Storm (maternal aunt)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1455.jpg",
+      url: "/characterimages/1455.jpg",
     },
   },
   {
@@ -25817,7 +25817,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/485.jpg",
+      url: "/characterimages/485.jpg",
     },
   },
   {
@@ -25860,7 +25860,7 @@ module.exports = [
         "Eson (grandfather, deceased), Gareth (great-uncle, deceased), Jason of Sparta (father), Meredith Quill (mother, deceased), Victoria (half-sister), Kip Holm (adopted brother), Sandy (adopted sister in-law), Alain (adopted niece), Rhys, Robyn (adopted nephews), Kitty Pryde (fiance), Unnamed former Symbiote",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10015.jpg",
+      url: "/characterimages/10015.jpg",
     },
   },
   {
@@ -25898,7 +25898,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1052.jpg",
+      url: "/characterimages/1052.jpg",
     },
   },
   {
@@ -25942,7 +25942,7 @@ module.exports = [
         "King Myand'r (father), Queen Luand'r (mother), Queen Komand'r (sister, Blackfire), Ryand'r (brother), Prince Karras (husband, deceased), Ph'yzzon (husband, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/786.jpg",
+      url: "/characterimages/786.jpg",
     },
   },
   {
@@ -25985,7 +25985,7 @@ module.exports = [
         "Barbara Whitmore-Dugan (mother); Sam Kurtis (father, deceased); Pat Dugan (S.T.R.I.P.E., Stepfather); Mike Dugan (stepbrother); Patricia Dugan (sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1326.jpg",
+      url: "/characterimages/1326.jpg",
     },
   },
   {
@@ -26028,7 +26028,7 @@ module.exports = [
         "Robert Hawkins (father), Jean Hawkins (mother), Sharon Hawkins (sister), Homer Hawkins (grandfather), Teshom� Hawkins (uncle, deceased),",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1471.jpg",
+      url: "/characterimages/1471.jpg",
     },
   },
   {
@@ -26070,7 +26070,7 @@ module.exports = [
         "Mrs. Irons (mother, deceased), Mr. Irons (father, deceased), Maternal Grandmother (deceased), maternal grandfather (deceased), Butter (grandfather), Bess (grandmother, deceased), Clay Irons (brother), Jemahl Irons (nephew), Blondell Irons (sister-in-law), Natasha Irons (Starlight, niece), Paco (nephew), Tyke (former foster nephew)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1383.jpg",
+      url: "/characterimages/1383.jpg",
     },
   },
   {
@@ -26112,7 +26112,7 @@ module.exports = [
         "Jim Powell (husband), Daphne Powell (daughter), JJ Powell (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1355.jpg",
+      url: "/characterimages/1355.jpg",
     },
   },
   {
@@ -26147,7 +26147,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10653.jpg",
+      url: "/characterimages/10653.jpg",
     },
   },
   {
@@ -26205,7 +26205,7 @@ module.exports = [
         "Ayesha of Balobedu (ancestor), Ashake of Egypt (ancestor), Ashake of Mero� (ancestor), unnamed ancestor, Harriet Munroe (paternal grandmother), unnamed paternal grandfather, unnamed maternal grandmother, David Munroe (father, deceased), N'Dar� Munroe (mother, deceased), Ainet (unofficial foster mother), Achmed El Gib�r (unofficial foster father), Colonel Shetani (maternal uncle), unnamed paternal aunt (deceased), David Munroe, Jr. (cousin), Munroe Family (relatives), Black Panther (T'Challa) (ex-husband, marriage annulled)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/135.jpg",
+      url: "/characterimages/135.jpg",
     },
   },
   {
@@ -26240,7 +26240,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10539.jpg",
+      url: "/characterimages/10539.jpg",
     },
   },
   {
@@ -26288,7 +26288,7 @@ module.exports = [
         "Emmanuel da Costa (father, deceased), Nina da Costa (mother), Reignfire (genetic copy, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/138.jpg",
+      url: "/characterimages/138.jpg",
     },
   },
   {
@@ -26334,7 +26334,7 @@ module.exports = [
         "Superman (Kryptonian genetic template), Lex Luthor (Human genetic template), Match (clone)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/789.jpg",
+      url: "/characterimages/789.jpg",
     },
   },
   {
@@ -26380,7 +26380,7 @@ module.exports = [
         "Jor-El (father; deceased); Lara (mother, deceased); Jerry Kent (adoptive father); Naomi Kent (adoptive mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1535.jpg",
+      url: "/characterimages/1535.jpg",
     },
   },
   {
@@ -26436,7 +26436,7 @@ module.exports = [
         "Zor-El (father), Allura In-Ze (mother), Jor-El II (uncle, deceased), Lara Lor-Van (aunt, deceased), Kal-El (Superman,Clark Kent, cousin), Lois Lane (cousin-in-law), Jonathan Kent (adopted uncle), Martha Kent (adopted aunt), Kon-El (Superboy, Conner Kent, clone cousin, deceased), Nim-El (uncle), Dondra Klu-Ta (aunt), Don-El (cousin), Jor-El I (praternal grandfather, deceased), Nimda An-Dor (paternal grandmother, deceased), Lar-Van (maternal grandfather, deceased), Lara Rok-Var (maternal grandmother, deceased), Val-El, Sul-El, Tala-El, Hatu-El, Gam-El (ancestors, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/790.jpg",
+      url: "/characterimages/790.jpg",
     },
   },
   {
@@ -26487,7 +26487,7 @@ module.exports = [
         "Lois Lane (wife), Jor-El (father, deceased), Lara (mother, deceased), Jonathan Kent (adoptive father), Martha Kent (adoptive mother), Seyg-El (paternal grandfather, deceased), Zor-El (uncle, deceased), Alura (aunt, deceased), Supergirl (Kara Zor-El, cousin), Superboy (Kon-El/Conner Kent, partial clone)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/791.jpg",
+      url: "/characterimages/791.jpg",
     },
   },
   {
@@ -26533,7 +26533,7 @@ module.exports = [
         "Larry Holland (father, deceased); Alice Holland (mother, deceased); Edward Holland (brother); Linda Holland (first wife, deceased); Abigail Holland (second wife); Tef� Holland (daughter); Gregori Arcane (father-in-law, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/792.jpg",
+      url: "/characterimages/792.jpg",
     },
   },
   {
@@ -26575,7 +26575,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10428.jpg",
+      url: "/characterimages/10428.jpg",
     },
   },
   {
@@ -26619,7 +26619,7 @@ module.exports = [
       relatives: "Virginia Gray (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/953.jpg",
+      url: "/characterimages/953.jpg",
     },
   },
   {
@@ -26658,7 +26658,7 @@ module.exports = [
         "Stan Thomas (father), Ida Thomas (mother), Kim Ho Twae (adopted sister)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/175.jpg",
+      url: "/characterimages/175.jpg",
     },
   },
   {
@@ -26693,7 +26693,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "Skynet", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10411.jpg",
+      url: "/characterimages/10411.jpg",
     },
   },
   {
@@ -26728,7 +26728,7 @@ module.exports = [
     work: { occupation: "Assassin", base: "-" },
     connections: { "group-affiliation": "Skynet", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10409.jpg",
+      url: "/characterimages/10409.jpg",
     },
   },
   {
@@ -26763,7 +26763,7 @@ module.exports = [
     work: { occupation: "Assassin", base: "-" },
     connections: { "group-affiliation": "Skynet", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10410.jpg",
+      url: "/characterimages/10410.jpg",
     },
   },
   {
@@ -26798,7 +26798,7 @@ module.exports = [
     work: { occupation: "Assassin / Genesis Overseer", base: "-" },
     connections: { "group-affiliation": "Skynet", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10412.jpg",
+      url: "/characterimages/10412.jpg",
     },
   },
   {
@@ -26841,7 +26841,7 @@ module.exports = [
         "Mercedes Merced (wife), Jeanne Foucault (Finesse, alleged daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/21.jpg",
+      url: "/characterimages/21.jpg",
     },
   },
   {
@@ -26880,7 +26880,7 @@ module.exports = [
         "Tito Bohusk (son); Axel Bohusk (son); Kara Bohusk (daughter); three other unidentified children;",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1407.jpg",
+      url: "/characterimages/1407.jpg",
     },
   },
   {
@@ -26922,7 +26922,7 @@ module.exports = [
         'A\'Lars (father): Sui-San (mother, deceased; Eros (brother);Kronos (paternal Grandfather, deceased); Daina (paternal grandmother, deceased); Zuras (uncle, deceased); Thena (cousin); Gamora (foster daughter);Nebula (alleged granddaughter); Rot ("child" by Death);',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1305.jpg",
+      url: "/characterimages/1305.jpg",
     },
   },
   {
@@ -26960,7 +26960,7 @@ module.exports = [
       relatives: "Trip Faraday (son), Dana Thompson-Faraday (wife)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1375.jpg",
+      url: "/characterimages/1375.jpg",
     },
   },
   {
@@ -27001,7 +27001,7 @@ module.exports = [
       relatives: 'Silk Spectre (Laurel "Laurie" Juspeczyk) (daughter)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1062.jpg",
+      url: "/characterimages/1062.jpg",
     },
   },
   {
@@ -27045,7 +27045,7 @@ module.exports = [
         "Daniel (father, deceased), Elsie (mother, deceased), Daniel Jr. (brother, deceased), Jacob ('Jake,' uncle), Alyce (aunt, deceased), Pentunia ('Penny,' aunt, Jacob's second wife)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/139.jpg",
+      url: "/characterimages/139.jpg",
     },
   },
   {
@@ -27092,7 +27092,7 @@ module.exports = [
         "Odin (father), Gaea (mother), Frigga (step-mother), Loki (step-brother), Vidar (half-brother), Buri (paternal great-grandfather), Bolthorn (maternal great grandfather), Bor (grandfather), Bestla (grandmother), Vili (uncle), Ve (uncle), Sigyn (former sister-in-law), Hela (alleged niece), Jormungand (alleged nephew), Fernis Wolf (alleged nephew)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/140.jpg",
+      url: "/characterimages/140.jpg",
     },
   },
   {
@@ -27147,7 +27147,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1296.jpg",
+      url: "/characterimages/1296.jpg",
     },
   },
   {
@@ -27190,7 +27190,7 @@ module.exports = [
         "Unidentified grandfather (deceased), Neal Proudstar (father, deceased), Maria Proudstar (mother, deceased), James Proudstar (Warpath, brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/611.jpg",
+      url: "/characterimages/611.jpg",
     },
   },
   {
@@ -27225,7 +27225,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/927.jpg",
+      url: "/characterimages/927.jpg",
     },
   },
   {
@@ -27263,7 +27263,7 @@ module.exports = [
       relatives: "Sanjit (brother,deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/141.jpg",
+      url: "/characterimages/141.jpg",
     },
   },
   {
@@ -27308,7 +27308,7 @@ module.exports = [
         "Marcy Masterson Steele (wife, divorced), Kevin Masterson (son)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/177.jpg",
+      url: "/characterimages/177.jpg",
     },
   },
   {
@@ -27351,7 +27351,7 @@ module.exports = [
         "Superia (alleged ancestor), Arkon (consort) Lyra (alternate reality daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/508.jpg",
+      url: "/characterimages/508.jpg",
     },
   },
   {
@@ -27391,7 +27391,7 @@ module.exports = [
         "Diane Newell (sister); Mara (wife, deceased); Walter Newell (brother-in-law);",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10047.jpg",
+      url: "/characterimages/10047.jpg",
     },
   },
   {
@@ -27433,7 +27433,7 @@ module.exports = [
         "Mr. Grant (father), Mrs. Grant (mother, deceased), William Nelson (husband, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/42.jpg",
+      url: "/characterimages/42.jpg",
     },
   },
   {
@@ -27475,7 +27475,7 @@ module.exports = [
         "Deborah Watts Mason (wife, deceased), Rick Mason (aka Agent, son, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1036.jpg",
+      url: "/characterimages/1036.jpg",
     },
   },
   {
@@ -27510,7 +27510,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1154.jpg",
+      url: "/characterimages/1154.jpg",
     },
   },
   {
@@ -27549,7 +27549,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1125.jpg",
+      url: "/characterimages/1125.jpg",
     },
   },
   {
@@ -27588,7 +27588,7 @@ module.exports = [
         'Gina Mulligan (wife), Edward Mulligan (son), Mr. Mulligan (father), Mrs. Mulligan (mother), Carnage ("father"), Venom ("grandfather")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/848.jpg",
+      url: "/characterimages/848.jpg",
     },
   },
   {
@@ -27642,7 +27642,7 @@ module.exports = [
         "Carl Brock (father, estranged), Janine Brock (mother, deceased), Mary Brock (sister), Ann Weying (ex-wife, deceased), Symbiotes' relatives: Anti-Venom Symbiote (former symbiote, uncle and former brother, deceased), Venom Symbiote (former symbiote, grandfather, former brother), Agony, Phage, Riot, Lasher (uncles, former sons), Scorn (sister, former niece), Carnage (father, former son), Scream (aunt, former daughter, deceased), Hybrid (uncle, former son, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10494.jpg",
+      url: "/characterimages/10494.jpg",
     },
   },
   {
@@ -27685,7 +27685,7 @@ module.exports = [
         "Niki Sanders (estranged triplet sister, deceased), Barbara (estranged triplet sister), W. Strauss (father), Rebecca Rosenthal (mother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1312.jpg",
+      url: "/characterimages/1312.jpg",
     },
   },
   {
@@ -27723,7 +27723,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1468.jpg",
+      url: "/characterimages/1468.jpg",
     },
   },
   {
@@ -27769,7 +27769,7 @@ module.exports = [
       relatives: "Belial (son), Ruskoff (son), Suge (son), Raven (daughter)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10703.jpg",
+      url: "/characterimages/10703.jpg",
     },
   },
   {
@@ -27807,7 +27807,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1185.jpg",
+      url: "/characterimages/1185.jpg",
     },
   },
   {
@@ -27847,7 +27847,7 @@ module.exports = [
         "Mander, Azur (parents, deceased), Karnak (brother, deceased), Magnar, Zeta (paternal grandparents), Kobar, La (maternal grandparents), Rynda (paternal aunt), Ambur (maternal aunt) ,Black Bolt, Maximus, Medusa, Crystal (cousins)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/513.jpg",
+      url: "/characterimages/513.jpg",
     },
   },
   {
@@ -27889,7 +27889,7 @@ module.exports = [
         "Duela Dent (Daughter), Gilda Dent (Wife), Poison Ivy (Fianc�e), Rachel Dawes (Girlfriend)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/802.jpg",
+      url: "/characterimages/802.jpg",
     },
   },
   {
@@ -27927,7 +27927,7 @@ module.exports = [
       relatives: "Toby Sherman (father)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1295.jpg",
+      url: "/characterimages/1295.jpg",
     },
   },
   {
@@ -27982,7 +27982,7 @@ module.exports = [
         'Hank Pym (Yellowjacket, creator, "father"), Janet Van Dyne (Wasp, regarded by Ultron as "mother" due to marriage to Pym), Jocasta (creation, former mate), Alkhema (creation, former mate, deactivated), Vision (creation, "son"), Victor Mancha (creation, son), Rex (creation, pet, deactivated), Robos & Bio-Synthezoids (creations of Alkhema, "grandchildren";, destroyed); Simon Williams (Wonder Man), Eric Williams (Grim Reaper) & Wanda Maximoff (Scarlet Witch), all regarded by Ultron as part of his "extended family" due to their familial connections with the Vision',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1339.jpg",
+      url: "/characterimages/1339.jpg",
     },
   },
   {
@@ -28017,7 +28017,7 @@ module.exports = [
     work: { occupation: "Monarch", base: "-" },
     connections: { "group-affiliation": "Giants of Jotunheim", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1484.jpg",
+      url: "/characterimages/1484.jpg",
     },
   },
   {
@@ -28056,7 +28056,7 @@ module.exports = [
       relatives: "Phil (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/145.jpg",
+      url: "/characterimages/145.jpg",
     },
   },
   {
@@ -28099,7 +28099,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/147.jpg",
+      url: "/characterimages/147.jpg",
     },
   },
   {
@@ -28142,7 +28142,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1105.jpg",
+      url: "/characterimages/1105.jpg",
     },
   },
   {
@@ -28177,7 +28177,7 @@ module.exports = [
     work: { occupation: "Vigilante, Superhero", base: "Toronto" },
     connections: { "group-affiliation": "Team Epic", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1004.jpg",
+      url: "/characterimages/1004.jpg",
     },
   },
   {
@@ -28226,7 +28226,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1206.jpg",
+      url: "/characterimages/1206.jpg",
     },
   },
   {
@@ -28270,7 +28270,7 @@ module.exports = [
         "Eddie Brock: Carl Brock (father), Jamie Brock (mother), Anne Weying (She-Venom, ex wife, deceased); Venom symbiote: Carnage (bonded to Cletus Kasidy, 1st generation offspring), five forced offspring - one independant (bonded to Donna, last name unrevealed, 1st generation offspring), four forming a composite symbiote (Hybrid (bonded to Scott Washington, 1st generation offspring), Toxin (bonded to Patrick Mulligan, 2nd generation offspring)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/22.jpg",
+      url: "/characterimages/22.jpg",
     },
   },
   {
@@ -28309,7 +28309,7 @@ module.exports = [
         "Vincente Paolo Fortunato (father), unidentified mother (deceased), Giacomo Fortunato (Jimmy-Six, brother), Anna Fortunato (sister), Mary Fortunato (sister-in-law), James Fortunato (nephew), other unidentified neices or nephews",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1124.jpg",
+      url: "/characterimages/1124.jpg",
     },
   },
   {
@@ -28353,7 +28353,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1042.jpg",
+      url: "/characterimages/1042.jpg",
     },
   },
   {
@@ -28389,7 +28389,7 @@ module.exports = [
     work: { occupation: "Conqueror; Adventurer", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10618.jpg",
+      url: "/characterimages/10618.jpg",
     },
   },
   {
@@ -28431,7 +28431,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/149.jpg",
+      url: "/characterimages/149.jpg",
     },
   },
   {
@@ -28469,7 +28469,7 @@ module.exports = [
       relatives: "Rapture (Armando Ramon, brother), Dante Ramon (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10509.jpg",
+      url: "/characterimages/10509.jpg",
     },
   },
   {
@@ -28510,7 +28510,7 @@ module.exports = [
       relatives: "Guardian, husband",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/150.jpg",
+      url: "/characterimages/150.jpg",
     },
   },
   {
@@ -28545,7 +28545,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/530.jpg",
+      url: "/characterimages/530.jpg",
     },
   },
   {
@@ -28580,7 +28580,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1064.jpg",
+      url: "/characterimages/1064.jpg",
     },
   },
   {
@@ -28623,7 +28623,7 @@ module.exports = [
         "Robert Parr (Mr Incredible, father), Helen Parr (Elastigirl, mother), Dashiel Parr(Dash, brother), Jack-jack (brother)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/825.jpg",
+      url: "/characterimages/825.jpg",
     },
   },
   {
@@ -28667,7 +28667,7 @@ module.exports = [
         'Wanda Maximoff (Scarlet Witch, ex-wife), Thomas Shepherd (Speed, son), William Kaplan (Wiccan, son), Ultron ("father"), Henry Pym (Ant-Man, "grandfather"), Pietro Maximoff (Quicksilver, ex-brother-in-law), Erik Magnus Lensher (Magneto, ex-father-in-law), Jocasta (fellow creation, "sister"), Simon Williams (Wonder Man, "brother"), Victor Mancha (fellow creation, half brother), Alkhema (fellow creation, "stepmother")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/532.jpg",
+      url: "/characterimages/532.jpg",
     },
   },
   {
@@ -28702,7 +28702,7 @@ module.exports = [
     work: { occupation: "Adventurer", base: "Avengers Mansion, New York City" },
     connections: { "group-affiliation": "Avengers", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/151.jpg",
+      url: "/characterimages/151.jpg",
     },
   },
   {
@@ -28742,7 +28742,7 @@ module.exports = [
         "Reverend Richard Jiwe (father, deceased), Jeanne-Mari Jiwe (mother, deceased), General Mustapha Maksai (uncle, deceased), Tantu (ancestor)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10109.jpg",
+      url: "/characterimages/10109.jpg",
     },
   },
   {
@@ -28781,7 +28781,7 @@ module.exports = [
         "Philip Summers (grandfather), Deborah Summers (grandmother), Christopher Summers (Father), Katherine Anne Summers (Mother), Scott Summers (Cyclops, brother), Alexander Summers (Havok, brother), Jean Grey-Summers (Phoenix, sister-in-law, deceased), Madelyne Pryor-Summers (ex-sister-in-law, deceased), Nathan Christopher Summers (Cable, nephew), Aliya Jenskot (niece-in-law, deceased), Tyler Dayspring (Genesis, grandnephew, deceased), Stryfe (clone nephew, deceased), Rachel Summers (Marvel Girl, alternate timeline niece)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/854.jpg",
+      url: "/characterimages/854.jpg",
     },
   },
   {
@@ -28823,7 +28823,7 @@ module.exports = [
         "Marcus (brother, possibly deceased), Malachi Toomes (nephew, deceased), Valeria Toomes (daughter), unnamed son, Ramona (daughter-in-law), unnamed grandson",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1031.jpg",
+      url: "/characterimages/1031.jpg",
     },
   },
   {
@@ -28861,7 +28861,7 @@ module.exports = [
       relatives: "Humbert Carpenter (uncle)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10058.jpg",
+      url: "/characterimages/10058.jpg",
     },
   },
   {
@@ -28905,7 +28905,7 @@ module.exports = [
         "David Rhodes (father), Roberta Rhodes (mother), Jeanette Rhodes (sister, deceased), Josh (uncle, last name unrevealed), unnamed alleged son",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/536.jpg",
+      url: "/characterimages/536.jpg",
     },
   },
   {
@@ -28949,7 +28949,7 @@ module.exports = [
       relatives: "Joseph (father), Marie (mother), Steve (brother, deceased),",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/153.jpg",
+      url: "/characterimages/153.jpg",
     },
   },
   {
@@ -28991,7 +28991,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/154.jpg",
+      url: "/characterimages/154.jpg",
     },
   },
   {
@@ -29031,7 +29031,7 @@ module.exports = [
         "Thunderbird (John Proudstar, brother, deceased), Maria Proudstar (mother, deceased), Neal Proudstar (father, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/541.jpg",
+      url: "/characterimages/541.jpg",
     },
   },
   {
@@ -29074,7 +29074,7 @@ module.exports = [
         'Vernon Van Dyne (father, deceased), unnamed mother (deceased), Henry "Hank" Pym (ex-husband)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/155.jpg",
+      url: "/characterimages/155.jpg",
     },
   },
   {
@@ -29113,7 +29113,7 @@ module.exports = [
       relatives: "Ikor (father); Aron (nephew); Qyre, Zoma (cousins)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/516.jpg",
+      url: "/characterimages/516.jpg",
     },
   },
   {
@@ -29151,7 +29151,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1353.jpg",
+      url: "/characterimages/1353.jpg",
     },
   },
   {
@@ -29186,7 +29186,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1318.jpg",
+      url: "/characterimages/1318.jpg",
     },
   },
   {
@@ -29221,7 +29221,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10542.jpg",
+      url: "/characterimages/10542.jpg",
     },
   },
   {
@@ -29266,7 +29266,7 @@ module.exports = [
         "Winston (father), Hazel (mother), Cordelia (sister), Adrienne (sister, deceased), Christian (brother), Steven (brother-in-law, deceased), Jocasta (cousin)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/157.jpg",
+      url: "/characterimages/157.jpg",
     },
   },
   {
@@ -29304,7 +29304,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1186.jpg",
+      url: "/characterimages/1186.jpg",
     },
   },
   {
@@ -29349,7 +29349,7 @@ module.exports = [
         "George M. Barnes (father, deceased), Winifred C. Barnes (mother, deceased), Rebecca P. Barnes Proctor (sister), Ida (aunt, presumed deceased), Mr. Proctor (brother-in-law), unidentified niece and nephew, Scott Proctor (grandnephew), Kimberly Proctor (grandniece)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10027.jpg",
+      url: "/characterimages/10027.jpg",
     },
   },
   {
@@ -29390,7 +29390,7 @@ module.exports = [
       relatives: "Unnamed parents deceased",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/159.jpg",
+      url: "/characterimages/159.jpg",
     },
   },
   {
@@ -29434,7 +29434,7 @@ module.exports = [
         "Reverand Craig (father), Moira MacTaggert (surrogate mother, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/160.jpg",
+      url: "/characterimages/160.jpg",
     },
   },
   {
@@ -29492,7 +29492,7 @@ module.exports = [
         "John Howlett Sr. (father, deceased), Elizabeth Howlett (mother, deceased), John Howlett Jr. (brother, allegedly deceased), Viper (ex-wife), Amiko (foster daughter), Erista (son), X-23 (clone)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/161.jpg",
+      url: "/characterimages/161.jpg",
     },
   },
   {
@@ -29536,7 +29536,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1497.jpg",
+      url: "/characterimages/1497.jpg",
     },
   },
   {
@@ -29579,7 +29579,7 @@ module.exports = [
         "Sanford (father, deceased) Martha (mother), Eric (alias the Grim Reaper, brother, deceased), Vision II ('brother')",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/162.jpg",
+      url: "/characterimages/162.jpg",
     },
   },
   {
@@ -29630,7 +29630,7 @@ module.exports = [
         "Queen Hippolyta (mother, deceased), Donna Troy (Troia) (magically-created duplicate)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/807.jpg",
+      url: "/characterimages/807.jpg",
     },
   },
   {
@@ -29665,7 +29665,7 @@ module.exports = [
     work: { occupation: "-", base: "-" },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1290.jpg",
+      url: "/characterimages/1290.jpg",
     },
   },
   {
@@ -29708,7 +29708,7 @@ module.exports = [
         "Will Wingfoot (father, deceased), Chief Silent Fox (grandfather, deceased)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/164.jpg",
+      url: "/characterimages/164.jpg",
     },
   },
   {
@@ -29759,7 +29759,7 @@ module.exports = [
         "Sarah Kinney (surrogate mother, deceased), James Howlett (Wolverine, genetic progenitor)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/565.jpg",
+      url: "/characterimages/565.jpg",
     },
   },
   {
@@ -29802,7 +29802,7 @@ module.exports = [
         "Scott Summers of Earth-295 (Cyclops, genetic template), Jean Grey of Earth-295 (genetic template)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1150.jpg",
+      url: "/characterimages/1150.jpg",
     },
   },
   {
@@ -29841,7 +29841,7 @@ module.exports = [
     },
     connections: { "group-affiliation": "-", relatives: "-" },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/23.jpg",
+      url: "/characterimages/23.jpg",
     },
   },
   {
@@ -29886,7 +29886,7 @@ module.exports = [
         'Maria Trovaya (first wife, deceased), Janet Van Dyne a.k.a. The Wasp (second wife, divorced), Ultron (creation, "son"), Jocasta ("first daughter-in-law"), Alkhema ("second daughter-in-law"), Vision ("grandson"), Scarlet Witch (former granddaughter-in-law), Victor Mancha ("grandson")',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/70.jpg",
+      url: "/characterimages/70.jpg",
     },
   },
   {
@@ -29928,7 +29928,7 @@ module.exports = [
       relatives: "-",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/178.jpg",
+      url: "/characterimages/178.jpg",
     },
   },
   {
@@ -29967,7 +29967,7 @@ module.exports = [
         "Utgard-Loki, Loki, and the race of Frost Giants (descendants)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/179.jpg",
+      url: "/characterimages/179.jpg",
     },
   },
   {
@@ -30007,7 +30007,7 @@ module.exports = [
         "Master: N'Kata Del Gormo, Apprentices: Dooku, Cin Drallig, Ikrit, Rahm Kota, Ki-Adi-Mundi, Oppo Rancisis, Luke Skywalker",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/10454.jpg",
+      url: "/characterimages/10454.jpg",
     },
   },
   {
@@ -30047,7 +30047,7 @@ module.exports = [
         'Giovanni "John" Zatara (father, deceased), Sindella (mother, deceased), Leonardo da Vinci (paternal ancestor, deceased)',
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/809.jpg",
+      url: "/characterimages/809.jpg",
     },
   },
   {
@@ -30086,7 +30086,7 @@ module.exports = [
       relatives: "Ashley Zolomon (ex-wife)",
     },
     image: {
-      url: "https://www.superherodb.com/pictures2/portraits/10/100/1384.jpg",
+      url: "/characterimages/1384.jpg",
     },
   },
 ];
