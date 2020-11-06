@@ -46,7 +46,8 @@ class Index extends Component {
               ) : (
                 <IndexPortrait title={false} />
               )}
-              <div>
+              {/*following commented out code to text new DB*/}
+              {/*<div>
               <IndexPortrait 
                 title={`TEST`}
                 image={`/characterimages/${this.state.imagePath}.jpg`}
@@ -64,11 +65,12 @@ class Index extends Component {
               />
               <IndexPortrait 
                 title={`TEST`}
-                image={`/characterimages/2.jpg`}
+                image={`/characterimages/10060.jpg`}
                 name={`NOT EXIST`}
-              />
+              />*/}
+              {/* end comment out */}
             
-            </div>
+              </div>
           </div>
         ) : null}
       </div>
