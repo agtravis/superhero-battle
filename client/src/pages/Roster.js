@@ -118,8 +118,8 @@ class Roster extends Component {
           </div>
         ) : (
           <div>
-            {/*DELETE CHEAT BUTTON / CHANGE TO ONE*/}
-            {this.props.roster.length < 3 ? (
+            {/*DELETE CHEAT BUTTON */}
+            {this.props.roster.length < 1 ? (
               <div>
                 {!this.state.newCharacterLoaded ? (
                   <>
@@ -128,7 +128,9 @@ class Roster extends Component {
                       Click to get your first team member!
                     </button>{" "}
                     <p>Get full team</p>
-                    <button onClick={() => this.getTeam()}>Cheat!</button>
+                    {this.props.roster.length < 3 ?
+                    <button onClick={() => this.getTeam()}>Cheat!</button> : null
+                    }
                   </>
                 ) : (
                   <div>
