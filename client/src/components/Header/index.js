@@ -41,7 +41,11 @@ class Header extends Component {
 
   signUpUser = signUpDetails => {
     API.newUser(signUpDetails)
-      .then(() => this.signUp())
+      .then(() => {
+        this.signUp();
+        this.logIn(signUpDetails);
+      }
+        )
       .catch(err => console.error(err));
   };
 
@@ -94,7 +98,7 @@ class Header extends Component {
           <div>
             {" "}
             {!this.state.signUpMode ? (
-              <>
+              <div>
                 <Credentials
                   handleSubmit={this.handleSubmit}
                   handleChange={this.handleChange}
@@ -105,9 +109,9 @@ class Header extends Component {
                   buttonName={`Sign Up`}
                   text={` for an account!`}
                 />
-              </>
+              </div>
             ) : (
-              <>
+              <div>
                 <Credentials
                   handleSubmit={this.newUserSubmit}
                   handleChange={this.handleChange}
@@ -118,7 +122,7 @@ class Header extends Component {
                   buttonName={`Log In`}
                   text={` to your account!`}
                 />
-              </>
+              </div>
             )}
           </div>
         ) : (
