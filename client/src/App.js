@@ -79,7 +79,7 @@ class App extends Component {
       window.location.href = `/`;
     }
     return (
-      <>
+      <div>
         <Header
           changeUser={this.changeUser}
           loggedIn={this.state.loggedIn}
@@ -198,7 +198,7 @@ class App extends Component {
             />
           </Switch>
         </Router>
-      </>
+      </div>
     );
   }
 }

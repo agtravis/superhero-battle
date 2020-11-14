@@ -12,6 +12,7 @@ class Header extends Component {
       username: ``,
       password: ``,
       signUpMode: false,
+      modalType: ``,
     };
   }
 
@@ -44,14 +45,16 @@ class Header extends Component {
       .then(() => {
         this.signUp();
         this.logIn(signUpDetails);
-      }
-        )
+      })
       .catch(err => console.error(err));
   };
 
   logIn = signInDetails => {
     API.logIn(signInDetails)
-      .then(() => this.changeUser())
+      .then(() => {
+        this.setState({ modalType: `` });
+        this.changeUser();
+      })
       .catch(err => console.error(err));
   };
 
@@ -82,19 +85,76 @@ class Header extends Component {
     this.setState({ username: ``, password: `` });
   };
 
+  showModal = type => {
+    this.state.modalType === type
+      ? this.setState({ modalType: `` })
+      : this.setState({ modalType: type });
+  };
+
   render() {
     return (
       <div>
-        <a
-          href="/"
-          style={{
-            textDecoration: `none`,
-            color: `black`,
-          }}
-        >
-          <h1>Superhero Battle</h1>
-        </a>
+        <div>
+          <a
+            href="/"
+            style={{
+              textDecoration: `none`,
+              color: `black`,
+            }}
+          >
+            <h1>Superhero Battle</h1>
+          </a>
+        </div>
         {!this.props.loggedIn ? (
+          <div>
+            <p>
+              <span
+                style={{
+                  textDecoration: `underline`,
+                  color: `blue`,
+                  cursor: `pointer`,
+                }}
+                onClick={() => this.showModal(`login`)}
+              >
+                Log in
+              </span>{" "}
+              <span
+                style={{
+                  textDecoration: `underline`,
+                  color: `blue`,
+                  cursor: `pointer`,
+                }}
+                onClick={() => this.showModal(`signup`)}
+              >
+                Sign up
+              </span>
+            </p>
+            {this.state.modalType === `signup` && (
+              <Credentials
+                handleSubmit={this.newUserSubmit}
+                handleChange={this.handleChange}
+                buttonName={`Sign Up!`}
+              />
+            )}
+            {this.state.modalType === `login` && (
+              <Credentials
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                buttonName={`Log In!`}
+              />
+            )}
+          </div>
+        ) : (
+          <div>
+            <p>
+              Currently signed in: <em>{this.props.currentUser.username}</em>
+            </p>
+            <button onClick={() => this.logOut()}>Log Out</button>
+          </div>
+        )}
+
+        {/* log in sign up old code */}
+        {/*{!this.props.loggedIn ? (
           <div>
             {" "}
             {!this.state.signUpMode ? (
@@ -132,7 +192,7 @@ class Header extends Component {
             </p>
             <button onClick={() => this.logOut()}>Log Out</button>
           </div>
-        )}
+        )}*/}
       </div>
     );
   }
