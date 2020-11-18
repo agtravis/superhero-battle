@@ -1,4 +1,4 @@
-export default {
+const colors = {
   primary: `#e2b340`,
   secondary: `#5b5194`,
   black: `#222`,
@@ -8,3 +8,5 @@ export default {
   danger: `#aa1515`,
   dark: `#333`,
 };
+
+export default colors;

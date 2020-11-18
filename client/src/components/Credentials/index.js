@@ -7,7 +7,10 @@ class Credentials extends Component {
   }
   render() {
     return (
-      <form onSubmit={event => this.props.handleSubmit(event)}>
+      <form
+        onSubmit={event => this.props.handleSubmit(event)}
+        style={{ borderTop: `solid black 1px` }}
+      >
         <input
           id="username"
           onChange={event => this.props.handleChange(event, `username`)}

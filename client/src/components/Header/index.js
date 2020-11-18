@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
+import colors from "../../config/colors";
+
 import Credentials from "../Credentials";
-import ToggleSignIn from "../ToggleSignIn";
 
 import API from "../../utils/API";
 
@@ -20,7 +21,7 @@ class Header extends Component {
     this.setState({ [stateKey]: event.target.value });
   };
 
-  handleSubmit = event => {
+  logInSubmit = event => {
     event.preventDefault();
     const userDetails = {
       username: this.state.username,
@@ -43,7 +44,6 @@ class Header extends Component {
   signUpUser = signUpDetails => {
     API.newUser(signUpDetails)
       .then(() => {
-        this.signUp();
         this.logIn(signUpDetails);
       })
       .catch(err => console.error(err));
@@ -53,30 +53,15 @@ class Header extends Component {
     API.logIn(signInDetails)
       .then(() => {
         this.setState({ modalType: `` });
-        this.changeUser();
+        this.props.changeUser();
       })
       .catch(err => console.error(err));
   };
 
   logOut = () => {
     API.logOut()
-      .then(() => this.changeUser())
+      .then(() => this.props.changeUser())
       .catch(err => console.error(err));
-  };
-
-  signUp = () => {
-    this.resetCredentials();
-    !this.state.signUpMode
-      ? this.setState({
-          signUpMode: true,
-        })
-      : this.setState({
-          signUpMode: false,
-        });
-  };
-
-  changeUser = () => {
-    this.props.changeUser();
   };
 
   resetCredentials = () => {
@@ -91,9 +76,28 @@ class Header extends Component {
       : this.setState({ modalType: type });
   };
 
+  styles = {
+    header: {
+      backgroundColor: colors.primary,
+      display: `flex`,
+      justifyContent: `space-between`,
+      padding: `10px 20px`,
+    },
+    headerTitleText: {
+      color: colors.black,
+    },
+  };
+
   render() {
     return (
-      <div>
+      <div style={this.styles.header}>
+        <div>
+          <img
+            src={`/spiderman_mcfarlane.png`}
+            alt={`spider-man`}
+            height={120}
+          />
+        </div>
         <div>
           <a
             href="/"
@@ -102,97 +106,58 @@ class Header extends Component {
               color: `black`,
             }}
           >
-            <h1>Superhero Battle</h1>
+            <h1 style={this.styles.headerTitleText}>Superhero Battle</h1>
           </a>
         </div>
-        {!this.props.loggedIn ? (
-          <div>
-            <p>
-              <span
-                style={{
-                  textDecoration: `underline`,
-                  color: `blue`,
-                  cursor: `pointer`,
-                }}
-                onClick={() => this.showModal(`login`)}
-              >
-                Log in
-              </span>{" "}
-              <span
-                style={{
-                  textDecoration: `underline`,
-                  color: `blue`,
-                  cursor: `pointer`,
-                }}
-                onClick={() => this.showModal(`signup`)}
-              >
-                Sign up
-              </span>
-            </p>
-            {this.state.modalType === `signup` && (
-              <Credentials
-                handleSubmit={this.newUserSubmit}
-                handleChange={this.handleChange}
-                buttonName={`Sign Up!`}
-              />
-            )}
-            {this.state.modalType === `login` && (
-              <Credentials
-                handleSubmit={this.handleSubmit}
-                handleChange={this.handleChange}
-                buttonName={`Log In!`}
-              />
-            )}
-          </div>
-        ) : (
-          <div>
-            <p>
-              Currently signed in: <em>{this.props.currentUser.username}</em>
-            </p>
-            <button onClick={() => this.logOut()}>Log Out</button>
-          </div>
-        )}
-
-        {/* log in sign up old code */}
-        {/*{!this.props.loggedIn ? (
-          <div>
-            {" "}
-            {!this.state.signUpMode ? (
-              <div>
-                <Credentials
-                  handleSubmit={this.handleSubmit}
-                  handleChange={this.handleChange}
-                  buttonName={`Log In!`}
-                />
-                <ToggleSignIn
-                  signUp={this.signUp}
-                  buttonName={`Sign Up`}
-                  text={` for an account!`}
-                />
-              </div>
-            ) : (
-              <div>
+        <div>
+          {!this.props.loggedIn ? (
+            <div>
+              <p>
+                <span
+                  style={{
+                    textDecoration: `underline`,
+                    color: `blue`,
+                    cursor: `pointer`,
+                  }}
+                  onClick={() => this.showModal(`login`)}
+                >
+                  Log in
+                </span>{" "}
+                <span
+                  style={{
+                    textDecoration: `underline`,
+                    color: `blue`,
+                    cursor: `pointer`,
+                  }}
+                  onClick={() => this.showModal(`signup`)}
+                >
+                  Sign up
+                </span>
+              </p>
+              {this.state.modalType === `signup` && (
                 <Credentials
                   handleSubmit={this.newUserSubmit}
                   handleChange={this.handleChange}
                   buttonName={`Sign Up!`}
                 />
-                <ToggleSignIn
-                  signUp={this.signUp}
-                  buttonName={`Log In`}
-                  text={` to your account!`}
+              )}
+              {this.state.modalType === `login` && (
+                <Credentials
+                  handleSubmit={this.logInSubmit}
+                  handleChange={this.handleChange}
+                  buttonName={`Log In!`}
                 />
-              </div>
-            )}
-          </div>
-        ) : (
-          <div>
-            <p>
-              Currently signed in: <em>{this.props.currentUser.username}</em>
-            </p>
-            <button onClick={() => this.logOut()}>Log Out</button>
-          </div>
-        )}*/}
+              )}
+            </div>
+          ) : (
+            <div>
+              <p>
+                Currently signed in: <em>{this.props.currentUser.username}</em>
+              </p>
+              <button onClick={() => this.logOut()}>Log Out</button>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
