@@ -74,11 +74,21 @@ class Header extends Component {
 
   toggle = type => {
     if (type === `login` && !this.state.showLogIn) {
-      this.setState({ showLogIn: true, showSignUp: false });
+      if (!this.state.showSignUp) {
+        this.setState({ showLogIn: true });
+      } else {
+        this.setState({ showSignUp: false });
+        setTimeout(() => this.setState({ showLogIn: true }), 1100);
+      }
     } else if (type === `login` && this.state.showLogIn) {
       this.setState({ showLogIn: false });
     } else if (type === `signup` && !this.state.showSignUp) {
-      this.setState({ showSignUp: true, showLogIn: false });
+      if (!this.state.showLogIn) {
+        this.setState({ showSignUp: true });
+      } else {
+        this.setState({ showLogIn: false });
+        setTimeout(() => this.setState({ showSignUp: true }), 1100);
+      }
     } else if (type === `signup` && this.state.showSignUp) {
       this.setState({ showSignUp: false });
     } else {
