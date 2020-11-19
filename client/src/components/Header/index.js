@@ -12,8 +12,10 @@ class Header extends Component {
     this.state = {
       username: ``,
       password: ``,
-      signUpMode: false,
-      modalType: ``,
+      showLogIn: false,
+      showSignUp: false,
+      // signUpMode: false,
+      // modalType: ``,
     };
   }
 
@@ -70,10 +72,18 @@ class Header extends Component {
     this.setState({ username: ``, password: `` });
   };
 
-  showModal = type => {
-    this.state.modalType === type
-      ? this.setState({ modalType: `` })
-      : this.setState({ modalType: type });
+  toggle = type => {
+    if (type === `login` && !this.state.showLogIn) {
+      this.setState({ showLogIn: true, showSignUp: false });
+    } else if (type === `login` && this.state.showLogIn) {
+      this.setState({ showLogIn: false });
+    } else if (type === `signup` && !this.state.showSignUp) {
+      this.setState({ showSignUp: true, showLogIn: false });
+    } else if (type === `signup` && this.state.showSignUp) {
+      this.setState({ showSignUp: false });
+    } else {
+      console.log(`nothing`);
+    }
   };
 
   styles = {
@@ -86,68 +96,52 @@ class Header extends Component {
     headerTitleText: {
       color: colors.black,
     },
+    signUpLogInLink: {
+      textDecoration: `underline`,
+      color: `blue`,
+      cursor: `pointer`,
+    },
   };
 
   render() {
     return (
-      <div style={this.styles.header}>
-        <div>
-          <img
-            src={`/spiderman_mcfarlane.png`}
-            alt={`spider-man`}
-            height={120}
-          />
-        </div>
-        <div>
-          <a
-            href="/"
-            style={{
-              textDecoration: `none`,
-              color: `black`,
-            }}
-          >
-            <h1 style={this.styles.headerTitleText}>Superhero Battle</h1>
-          </a>
-        </div>
-        <div>
+      <div>
+        <div style={this.styles.header}>
+          <div>
+            <img
+              src={`/spiderman_mcfarlane.png`}
+              alt={`spider-man`}
+              height={120}
+            />
+          </div>
+          <div>
+            <a
+              href="/"
+              style={{
+                textDecoration: `none`,
+                color: `black`,
+              }}
+            >
+              <h1 style={this.styles.headerTitleText}>Superhero Battle</h1>
+            </a>
+          </div>
           {!this.props.loggedIn ? (
             <div>
               <p>
-                <span
-                  style={{
-                    textDecoration: `underline`,
-                    color: `blue`,
-                    cursor: `pointer`,
-                  }}
-                  onClick={() => this.showModal(`login`)}
+                <button
+                  style={this.styles.signUpLogInLink}
+                  value={`login`}
+                  onClick={() => this.toggle(`login`)}
                 >
                   Log in
-                </span>{" "}
-                <span
-                  style={{
-                    textDecoration: `underline`,
-                    color: `blue`,
-                    cursor: `pointer`,
-                  }}
-                  onClick={() => this.showModal(`signup`)}
+                </button>{" "}
+                <button
+                  style={this.styles.signUpLogInLink}
+                  onClick={() => this.toggle(`signup`)}
                 >
                   Sign up
-                </span>
+                </button>
               </p>
-              {this.state.modalType === `signup` && (
-                <Credentials
-                  handleSubmit={this.newUserSubmit}
-                  handleChange={this.handleChange}
-                  buttonName={`Sign Up!`}
-                />
-              )}
-              {this.state.modalType === `login` && (
-                <Credentials
-                  handleSubmit={this.logInSubmit}
-                  handleChange={this.handleChange}
-                  buttonName={`Log In!`}
-                />
-              )}
             </div>
           ) : (
             <div>
@@ -157,6 +151,24 @@ class Header extends Component {
               <button onClick={() => this.logOut()}>Log Out</button>
             </div>
           )}
+        </div>
+        <div>
+          <div>
+            {this.state.showSignUp && (
+              <Credentials
+                handleSubmit={this.newUserSubmit}
+                handleChange={this.handleChange}
+                buttonName={`Sign Up!`}
+              />
+            )}
+            {this.state.showLogIn && (
+              <Credentials
+                handleSubmit={this.logInSubmit}
+                handleChange={this.handleChange}
+                buttonName={`Log In!`}
+              />
+            )}
+          </div>
         </div>
       </div>
     );
