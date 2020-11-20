@@ -1,3 +1,8 @@
+:root {
+  --log-in-start-point: -60px;
+  --log-in-speed: 0.3s;
+}
+
 #header-container {
   position: relative;
 }
@@ -11,25 +16,25 @@
 }
 .login-form {
   position: absolute;
-  margin-top: -40px;
+  margin-top: var(--log-in-start-point);
 }
 .signup-form {
   position: absolute;
-  margin-top: -40px;
+  margin-top: var(--log-in-start-point);
 }
 .translate {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: var(--log-in-speed);
+  -moz-transition: var(--log-in-speed);
+  -ms-transition: var(--log-in-speed);
+  -o-transition: var(--log-in-speed);
+  transition: var(--log-in-speed);
   margin-top: 0px;
 }
 .translateBack {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
-  margin-top: -40px;
+  -webkit-transition: var(--log-in-speed);
+  -moz-transition: var(--log-in-speed);
+  -ms-transition: var(--log-in-speed);
+  -o-transition: var(--log-in-speed);
+  transition: var(--log-in-speed);
+  margin-top: var(--log-in-start-point);
 }
