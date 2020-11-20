@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      .container {
+        position: relative;
+      }
+      .box-signin {
+        margin: 30px;
+        height: 30px;
+        width: 190px;
+        background-color: blue;
+        position: absolute;
+        top: 140px;
+        margin-bottom: -130px;
+        z-index: 2;
+      }
+      .box-login {
+        margin: 30px;
+        height: 30px;
+        width: 180px;
+        background-color: green;
+        position: absolute;
+        top: 140px;
+        margin-bottom: -130px;
+        z-index: 3;
+      }
+      .box-header {
+        margin: 30px;
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        position: relative;
+        z-index: 1;
+      }
+      .box-content {
+        margin: 30px;
+        height: 200px;
+        width: 200px;
+        background-color: yellow;
+      }
+      .horizTranslate {
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        margin-top: 60px;
+      }
+      .horizTranslateBack {
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Pure Javascript</h3>
+    <div class="container">
+      <div class="box-header">
+        <button class="toggleButtonSignIn" value="play">Play Sign In</button>
+        <button class="returnButtonSignIn" value="return">Return</button>
+        <br />
+        <button class="toggleButtonLogIn" value="play">Play Log In</button>
+        <button class="returnButtonLogIn" value="return">Return</button>
+      </div>
+      <div class="box-login">log in stuff</div>
+      <div class="box-signin">sign in stuff</div>
+      <div class="box-content"></div>
+    </div>
+
+    <script>
+      var boxOne = document.getElementsByClassName("box-signin")[0];
+      var boxTwo = document.getElementsByClassName("box-login")[0];
+
+      const switchToSignIn = () => {};
+
+      document.getElementsByClassName(
+        "toggleButtonSignIn"
+      )[0].onclick = function () {
+        if (boxTwo.classList.contains("horizTranslate")) {
+          boxTwo.classList.add("horizTranslateBack");
+          boxTwo.classList.remove("horizTranslate");
+          setTimeout(() => {
+            boxOne.classList.remove("horizTranslateBack");
+            boxOne.classList.add("horizTranslate");
+          }, 1100);
+        } else {
+          boxOne.classList.remove("horizTranslateBack");
+          boxOne.classList.add("horizTranslate");
+        }
+      };
+
+      document.getElementsByClassName(
+        "toggleButtonLogIn"
+      )[0].onclick = function () {
+        if (boxOne.classList.contains("horizTranslate")) {
+          boxOne.classList.add("horizTranslateBack");
+          boxOne.classList.remove("horizTranslate");
+          setTimeout(() => {
+            boxTwo.classList.remove("horizTranslateBack");
+            boxTwo.classList.add("horizTranslate");
+          }, 1100);
+        } else {
+          boxTwo.classList.remove("horizTranslateBack");
+          boxTwo.classList.add("horizTranslate");
+        }
+      };
+
+      //   document.getElementsByClassName(
+      //     "toggleButtonLogIn"
+      //   )[0].onclick = function () {
+      //     boxTwo.classList.remove("horizTranslateBack");
+      //     boxTwo.classList.add("horizTranslate");
+      //   };
+
+      document.getElementsByClassName(
+        "returnButtonSignIn"
+      )[0].onclick = function () {
+        boxOne.classList.add("horizTranslateBack");
+        boxOne.classList.remove("horizTranslate");
+      };
+
+      document.getElementsByClassName(
+        "returnButtonLogIn"
+      )[0].onclick = function () {
+        boxTwo.classList.add("horizTranslateBack");
+        boxTwo.classList.remove("horizTranslate");
+      };
+    </script>
+  </body>
+</html>
