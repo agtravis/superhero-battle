@@ -1,0 +1,35 @@
+#header-container {
+  position: relative;
+}
+.box-header {
+  margin: 30px;
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  position: relative;
+  z-index: 1;
+}
+.login-form {
+  position: absolute;
+  margin-top: -40px;
+}
+.signup-form {
+  position: absolute;
+  margin-top: -40px;
+}
+.translate {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  margin-top: 0px;
+}
+.translateBack {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  margin-top: -40px;
+}

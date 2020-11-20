@@ -9,29 +9,25 @@ class Credentials extends Component {
   }
   render() {
     return (
-      <form
-        onSubmit={event => this.props.handleSubmit(event)}
-        style={{
-          backgroundColor: colors.primary,
-          position: `relative`,
-          // top: -20,
-          // top: this.props.buttonName === `Sign Up!` ? -20 : 0,
-          top: this.props.buttonName !== `Sign Up!` ? 20 : 0,
-        }}
+      <div
+        className={`${this.props.id}-form`}
+        style={{ width: `100%`, backgroundColor: colors.primary }}
       >
-        <input
-          id="username"
-          onChange={event => this.props.handleChange(event, `username`)}
-          placeholder="username"
-        />
-        <input
-          id="password"
-          type="password"
-          onChange={event => this.props.handleChange(event, `password`)}
-          placeholder="password"
-        />
-        <button type="submit">{this.props.buttonName}</button>
-      </form>
+        <form onSubmit={event => this.props.handleSubmit(event)}>
+          <input
+            id={`${this.props.id}-username`}
+            onChange={event => this.props.handleChange(event, `username`)}
+            placeholder="username"
+          />
+          <input
+            id={`${this.props.id}-password`}
+            type="password"
+            onChange={event => this.props.handleChange(event, `password`)}
+            placeholder="password"
+          />
+          <button type="submit">{this.props.buttonName}</button>
+        </form>
+      </div>
     );
   }
 }
