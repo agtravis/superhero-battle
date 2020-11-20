@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import colors from "../../config/colors";
+
 class Credentials extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +11,13 @@ class Credentials extends Component {
     return (
       <form
         onSubmit={event => this.props.handleSubmit(event)}
-        style={{ borderTop: `solid black 1px` }}
+        style={{
+          backgroundColor: colors.primary,
+          position: `relative`,
+          // top: -20,
+          // top: this.props.buttonName === `Sign Up!` ? -20 : 0,
+          top: this.props.buttonName !== `Sign Up!` ? 20 : 0,
+        }}
       >
         <input
           id="username"

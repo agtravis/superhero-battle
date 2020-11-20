@@ -8,9 +8,9 @@ class NavBar extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{ marginTop: `50px` }}>
         {this.props.loggedIn ? (
-          <>
+          <div>
             <Link to={`/home`}>Home</Link>
             {` `}
             <Link to={`/profile`}>Profile</Link>
@@ -28,7 +28,7 @@ class NavBar extends Component {
             <Link to={`/search`}>Search</Link>
             {` `}
             <Link to={`/settings`}>Settings</Link>
-          </>
+          </div>
         ) : (
           <Link to={`/about`}>About SuperHero Battle</Link>
         )}
