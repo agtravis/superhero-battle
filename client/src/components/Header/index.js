@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Spring, Transition, animated } from "react-spring/renderprops";
 
 import colors from "../../config/colors";
 
@@ -14,8 +15,6 @@ class Header extends Component {
       password: ``,
       showLogIn: false,
       showSignUp: false,
-      // signUpMode: false,
-      // modalType: ``,
     };
   }
 
@@ -101,7 +100,10 @@ class Header extends Component {
       backgroundColor: colors.primary,
       display: `flex`,
       justifyContent: `space-between`,
+      // marginBottom: `50px`,
       padding: `10px 20px`,
+      position: `relative`,
+      zIndex: 1,
     },
     headerTitleText: {
       color: colors.black,
@@ -164,12 +166,98 @@ class Header extends Component {
         </div>
         <div>
           <div>
-            {this.state.showSignUp && (
+            <Spring
+              native
+              force
+              config={{ tension: 2000, friction: 100, precision: 1 }}
+              from={{
+                marginTop: this.state.showSignUp ? -50 : 0,
+                opacity: this.state.showSignUp ? 0 : 1,
+              }}
+              to={{
+                marginTop: this.state.showSignUp ? 0 : -50,
+                opacity: this.state.showSignUp ? 1 : 0,
+              }}
+            >
+              {props => (
+                <animated.div style={props}>
+                  <Credentials
+                    handleSubmit={this.newUserSubmit}
+                    handleChange={this.handleChange}
+                    buttonName={`Sign Up!`}
+                  />
+                </animated.div>
+              )}
+            </Spring>
+            <Spring
+              native
+              force
+              config={{ tension: 2000, friction: 100, precision: 1 }}
+              from={{
+                marginTop: this.state.showLogIn ? -50 : 0,
+                opacity: this.state.showLogIn ? 0 : 1,
+              }}
+              to={{
+                marginTop: this.state.showLogIn ? 0 : -50,
+                opacity: this.state.showLogIn ? 1 : 0,
+              }}
+            >
+              {props => (
+                <animated.div style={props}>
+                  <Credentials
+                    handleSubmit={this.logInSubmit}
+                    handleChange={this.handleChange}
+                    buttonName={`Log In!`}
+                  />
+                </animated.div>
+              )}
+            </Spring>
+            {/*<Transition
+              native
+              items={this.state.showSignUp}
+              from={{ marginTop: -150 }}
+              enter={{ marginTop: 0 }}
+              leave={{ marginTop: -150 }}
+            >
+              {show =>
+                show &&
+                (props => (
+                  <animated.div style={props}>
+                    <Credentials
+                      handleSubmit={this.newUserSubmit}
+                      handleChange={this.handleChange}
+                      buttonName={`Sign Up!`}
+                    />
+                  </animated.div>
+                ))
+              }
+            </Transition>*/}
+            {/*<Transition
+              native
+              items={this.state.showLogIn}
+              from={{ marginTop: -150 }}
+              enter={{ marginTop: 0 }}
+              leave={{ marginTop: -150 }}
+            >
+              {show =>
+                show &&
+                (props => (
+                  <animated.div style={props}>
+                    <Credentials
+                      handleSubmit={this.logInSubmit}
+                      handleChange={this.handleChange}
+                      buttonName={`Log In!`}
+                    />
+                  </animated.div>
+                ))
+              }
+            </Transition>*/}
+            {/*{this.state.showSignUp && (
               <Credentials
                 handleSubmit={this.newUserSubmit}
                 handleChange={this.handleChange}
                 buttonName={`Sign Up!`}
-              />
+            />
             )}
             {this.state.showLogIn && (
               <Credentials
@@ -177,7 +265,7 @@ class Header extends Component {
                 handleChange={this.handleChange}
                 buttonName={`Log In!`}
               />
-            )}
+            )}*/}
           </div>
         </div>
       </div>
