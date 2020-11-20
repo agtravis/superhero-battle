@@ -64,10 +64,10 @@
     <h3>Pure Javascript</h3>
     <div class="container">
       <div class="box-header">
-        <button class="toggleButtonSignIn" value="play">Play Sign In</button>
+        <button class="showButtonSignIn" value="play">Play Sign In</button>
         <button class="returnButtonSignIn" value="return">Return</button>
         <br />
-        <button class="toggleButtonLogIn" value="play">Play Log In</button>
+        <button class="showButtonLogIn" value="play">Play Log In</button>
         <button class="returnButtonLogIn" value="return">Return</button>
       </div>
       <div class="box-login">log in stuff</div>
@@ -76,62 +76,62 @@
     </div>
 
     <script>
-      var boxOne = document.getElementsByClassName("box-signin")[0];
-      var boxTwo = document.getElementsByClassName("box-login")[0];
+      var signInBox = document.getElementsByClassName("box-signin")[0];
+      var logInBox = document.getElementsByClassName("box-login")[0];
 
-      const switchToSignIn = () => {};
+      const showSignIn = () => {
+        signInBox.classList.remove("horizTranslateBack");
+        signInBox.classList.add("horizTranslate");
+      };
+      const showLogIn = () => {
+        logInBox.classList.remove("horizTranslateBack");
+        logInBox.classList.add("horizTranslate");
+      };
+      const hideSignIn = () => {
+        signInBox.classList.add("horizTranslateBack");
+        signInBox.classList.remove("horizTranslate");
+      };
+      const hideLogIn = () => {
+        logInBox.classList.add("horizTranslateBack");
+        logInBox.classList.remove("horizTranslate");
+      };
 
       document.getElementsByClassName(
-        "toggleButtonSignIn"
+        "showButtonSignIn"
       )[0].onclick = function () {
-        if (boxTwo.classList.contains("horizTranslate")) {
-          boxTwo.classList.add("horizTranslateBack");
-          boxTwo.classList.remove("horizTranslate");
+        if (logInBox.classList.contains("horizTranslate")) {
+          hideLogIn();
           setTimeout(() => {
-            boxOne.classList.remove("horizTranslateBack");
-            boxOne.classList.add("horizTranslate");
+            showSignIn();
           }, 1100);
         } else {
-          boxOne.classList.remove("horizTranslateBack");
-          boxOne.classList.add("horizTranslate");
+          showSignIn();
         }
       };
 
       document.getElementsByClassName(
-        "toggleButtonLogIn"
+        "showButtonLogIn"
       )[0].onclick = function () {
-        if (boxOne.classList.contains("horizTranslate")) {
-          boxOne.classList.add("horizTranslateBack");
-          boxOne.classList.remove("horizTranslate");
+        if (signInBox.classList.contains("horizTranslate")) {
+          hideSignIn();
           setTimeout(() => {
-            boxTwo.classList.remove("horizTranslateBack");
-            boxTwo.classList.add("horizTranslate");
+            showLogIn();
           }, 1100);
         } else {
-          boxTwo.classList.remove("horizTranslateBack");
-          boxTwo.classList.add("horizTranslate");
+          showLogIn();
         }
       };
-
-      //   document.getElementsByClassName(
-      //     "toggleButtonLogIn"
-      //   )[0].onclick = function () {
-      //     boxTwo.classList.remove("horizTranslateBack");
-      //     boxTwo.classList.add("horizTranslate");
-      //   };
 
       document.getElementsByClassName(
         "returnButtonSignIn"
       )[0].onclick = function () {
-        boxOne.classList.add("horizTranslateBack");
-        boxOne.classList.remove("horizTranslate");
+        hideSignIn();
       };
 
       document.getElementsByClassName(
         "returnButtonLogIn"
       )[0].onclick = function () {
-        boxTwo.classList.add("horizTranslateBack");
-        boxTwo.classList.remove("horizTranslate");
+        hideLogIn();
       };
     </script>
   </body>
