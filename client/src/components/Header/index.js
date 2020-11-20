@@ -75,7 +75,7 @@ class Header extends Component {
     this.resetCredentials(`signup`);
     if (this.state.showSignUp) {
       this.showSignUp();
-      setTimeout(() => this.showLogInLogic(), 1100);
+      setTimeout(() => this.showLogInLogic(), 400);
     } else {
       this.showLogInLogic();
     }
@@ -85,7 +85,7 @@ class Header extends Component {
     this.resetCredentials(`login`);
     if (this.state.showLogIn) {
       this.showLogIn();
-      setTimeout(() => this.showSignUpLogic(), 1100);
+      setTimeout(() => this.showSignUpLogic(), 400);
     } else {
       this.showSignUpLogic();
     }
