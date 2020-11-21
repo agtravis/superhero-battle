@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Breakpoint } from "react-socks";
+
 import "./style.css";
 
 import colors from "../../config/colors";
@@ -153,11 +155,13 @@ class Header extends Component {
       <div id={`header-container`}>
         <div style={this.styles.header}>
           <div>
-            <img
-              src={`/spiderman_mcfarlane.png`}
-              alt={`spider-man`}
-              height={120}
-            />
+            <Breakpoint medium up>
+              <img
+                src={`/spiderman_mcfarlane.png`}
+                alt={`spider-man`}
+                height={120}
+              />
+            </Breakpoint>
           </div>
           <div>
             <a
@@ -167,9 +171,16 @@ class Header extends Component {
                 color: `black`,
               }}
             >
-              <h1 style={this.styles.headerTitleText} id={`title`}>
-                Superhero Battle
-              </h1>
+              <Breakpoint medium up>
+                <h1 style={this.styles.headerTitleText} id={`title`}>
+                  Superhero Battle
+                </h1>
+              </Breakpoint>
+              <Breakpoint small down>
+                <h4 style={this.styles.headerTitleText} id={`title`}>
+                  Superhero Battle
+                </h4>
+              </Breakpoint>
             </a>
           </div>
           {!this.props.loggedIn ? (
