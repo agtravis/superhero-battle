@@ -95,6 +95,11 @@ class Header extends Component {
     } else {
       this.showLogInLogic();
     }
+    setTimeout(() => {
+      if (document.getElementById(`login-username`)) {
+        document.getElementById(`login-username`).focus();
+      }
+    }, 500);
   };
 
   showLogInMobile = () => {
@@ -102,6 +107,12 @@ class Header extends Component {
       this.setState({ showSignUpMobile: false });
     }
     this.setState({ showLogInMobile: !this.state.showLogInMobile });
+
+    setTimeout(() => {
+      if (document.getElementById(`login-username-mobile`)) {
+        document.getElementById(`login-username-mobile`).focus();
+      }
+    }, 500);
   };
 
   showSignUpMobile = () => {
@@ -109,6 +120,11 @@ class Header extends Component {
       this.setState({ showLogInMobile: false });
     }
     this.setState({ showSignUpMobile: !this.state.showSignUpMobile });
+    setTimeout(() => {
+      if (document.getElementById(`signup-username-mobile`)) {
+        document.getElementById(`signup-username-mobile`).focus();
+      }
+    }, 500);
   };
 
   showSignUp = () => {
@@ -119,6 +135,11 @@ class Header extends Component {
     } else {
       this.showSignUpLogic();
     }
+    setTimeout(() => {
+      if (document.getElementById(`signup-username`)) {
+        document.getElementById(`signup-username`).focus();
+      }
+    }, 500);
   };
 
   showLogInLogic = () => {
