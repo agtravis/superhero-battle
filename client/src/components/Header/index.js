@@ -6,6 +6,7 @@ import "./style.css";
 import colors from "../../config/colors";
 
 import Credentials from "../Credentials";
+import CredentialsMobile from "../CredentialsMobile";
 
 import API from "../../utils/API";
 
@@ -17,6 +18,8 @@ class Header extends Component {
       password: ``,
       showLogIn: false,
       showSignUp: false,
+      showLogInMobile: false,
+      showSignUpMobile: false,
     };
   }
 
@@ -55,7 +58,13 @@ class Header extends Component {
   logIn = signInDetails => {
     API.logIn(signInDetails)
       .then(() => {
-        this.setState({ modalType: `` });
+        if (this.state.showLogIn) {
+          this.showLogIn();
+        }
+        if (this.state.showSignUp) {
+          this.showSignUp();
+        }
+        this.setState({ showSignUpMobile: false, showLogInMobile: false });
         this.props.changeUser();
       })
       .catch(err => console.error(err));
@@ -68,8 +77,13 @@ class Header extends Component {
   };
 
   resetCredentials = mode => {
-    document.getElementById(`${mode}-username`).value = ``;
-    document.getElementById(`${mode}-password`).value = ``;
+    if (document.getElementById(`${mode}-username`)) {
+      document.getElementById(`${mode}-username`).value = ``;
+      document.getElementById(`${mode}-password`).value = ``;
+    } else if (document.getElementById(`${mode}-username-mobile`)) {
+      document.getElementById(`${mode}-username-mobile`).value = ``;
+      document.getElementById(`${mode}-password-mobile`).value = ``;
+    }
     this.setState({ username: ``, password: `` });
   };
 
@@ -81,6 +95,20 @@ class Header extends Component {
     } else {
       this.showLogInLogic();
     }
+  };
+
+  showLogInMobile = () => {
+    if (this.state.showSignUpMobile) {
+      this.setState({ showSignUpMobile: false });
+    }
+    this.setState({ showLogInMobile: !this.state.showLogInMobile });
+  };
+
+  showSignUpMobile = () => {
+    if (this.state.showLogInMobile) {
+      this.setState({ showLogInMobile: false });
+    }
+    this.setState({ showSignUpMobile: !this.state.showSignUpMobile });
   };
 
   showSignUp = () => {
@@ -185,10 +213,9 @@ class Header extends Component {
           </div>
           {!this.props.loggedIn ? (
             <div>
-              <p>
+              <Breakpoint medium up>
                 <button
                   style={this.styles.signUpLogInLink}
-                  value={`login`}
                   onClick={() => this.showLogIn()}
                 >
                   Log in
@@ -199,7 +226,21 @@ class Header extends Component {
                 >
                   Sign up
                 </button>
-              </p>
+              </Breakpoint>
+              <Breakpoint small down>
+                <button
+                  style={this.styles.signUpLogInLinkMobile}
+                  onClick={() => this.showLogInMobile()}
+                >
+                  Log in
+                </button>{" "}
+                <button
+                  style={this.styles.signUpLogInLinkMobile}
+                  onClick={() => this.showSignUpMobile()}
+                >
+                  Sign up
+                </button>
+              </Breakpoint>
             </div>
           ) : (
             <div>
@@ -210,22 +251,44 @@ class Header extends Component {
             </div>
           )}
         </div>
-        <div id={`login`}>
-          <Credentials
-            handleSubmit={this.logInSubmit}
-            handleChange={this.handleChange}
-            buttonName={`Log In!`}
-            id={`login`}
-          />
-        </div>
-        <div id={`signup`}>
-          <Credentials
-            handleSubmit={this.newUserSubmit}
-            handleChange={this.handleChange}
-            buttonName={`Sign Up!`}
-            id={`signup`}
-          />
-        </div>
+        <Breakpoint medium up>
+          <div id={`login`}>
+            <Credentials
+              handleSubmit={this.logInSubmit}
+              handleChange={this.handleChange}
+              buttonName={`Log In!`}
+              id={`login`}
+            />
+          </div>
+          <div id={`signup`}>
+            <Credentials
+              handleSubmit={this.newUserSubmit}
+              handleChange={this.handleChange}
+              buttonName={`Sign Up!`}
+              id={`signup`}
+            />
+          </div>
+        </Breakpoint>
+        <Breakpoint small down>
+          <div style={{ position: `relative` }}>
+            {this.state.showLogInMobile && (
+              <CredentialsMobile
+                handleSubmit={this.logInSubmit}
+                handleChange={this.handleChange}
+                buttonName={`Log In!`}
+                id={`login`}
+              />
+            )}
+            {this.state.showSignUpMobile && (
+              <CredentialsMobile
+                handleSubmit={this.newUserSubmit}
+                handleChange={this.handleChange}
+                buttonName={`Sign Up!`}
+                id={`signup`}
+              />
+            )}
+          </div>
+        </Breakpoint>
       </div>
     );
   }
