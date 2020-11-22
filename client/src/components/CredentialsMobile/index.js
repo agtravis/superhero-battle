@@ -21,7 +21,7 @@ class Credentials extends Component {
           border: `solid 5px ${colors.primary}`,
           borderRadius: `15px`,
           position: `absolute`,
-          top: 100,
+          top: 25,
           left: window.innerWidth / 2 - 100,
           boxShadow: `0px 0px 40px grey`,
           backgroundColor: colors.white,
