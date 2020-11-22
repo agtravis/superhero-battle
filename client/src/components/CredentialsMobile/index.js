@@ -20,7 +20,7 @@ class Credentials extends Component {
           height: `210px`,
           border: `solid 5px ${colors.primary}`,
           borderRadius: `15px`,
-          position: `absolute`,
+          position: `fixed`,
           top: window.innerHeight / 2 - 250,
           left: window.innerWidth / 2 - 100,
           boxShadow: `0px 0px 40px grey`,
