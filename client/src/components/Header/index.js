@@ -107,12 +107,6 @@ class Header extends Component {
       this.setState({ showSignUpMobile: false });
     }
     this.setState({ showLogInMobile: !this.state.showLogInMobile });
-
-    setTimeout(() => {
-      if (document.getElementById(`login-username-mobile`)) {
-        document.getElementById(`login-username-mobile`).focus();
-      }
-    }, 500);
   };
 
   showSignUpMobile = () => {
@@ -120,11 +114,6 @@ class Header extends Component {
       this.setState({ showLogInMobile: false });
     }
     this.setState({ showSignUpMobile: !this.state.showSignUpMobile });
-    setTimeout(() => {
-      if (document.getElementById(`signup-username-mobile`)) {
-        document.getElementById(`signup-username-mobile`).focus();
-      }
-    }, 500);
   };
 
   showSignUp = () => {
@@ -180,6 +169,8 @@ class Header extends Component {
     this.setState({ showSignUp: !this.state.showSignUp });
   };
 
+  title = `Superhero Battle`;
+
   styles = {
     header: {
       backgroundColor: colors.primary,
@@ -221,14 +212,10 @@ class Header extends Component {
               }}
             >
               <Breakpoint medium up>
-                <h1 style={this.styles.headerTitleText} id={`title`}>
-                  Superhero Battle
-                </h1>
+                <h1 style={this.styles.headerTitleText}>{this.title}</h1>
               </Breakpoint>
               <Breakpoint small down>
-                <h4 style={this.styles.headerTitleText} id={`title`}>
-                  Superhero Battle
-                </h4>
+                <h4 style={this.styles.headerTitleText}>{this.title}</h4>
               </Breakpoint>
             </a>
           </div>
