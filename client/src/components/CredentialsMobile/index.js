@@ -7,6 +7,11 @@ class Credentials extends Component {
     super(props);
     this.state = {};
   }
+
+  componentDidMount() {
+    document.getElementById(`${this.props.id}-username-mobile`).focus();
+  }
+
   render() {
     return (
       <div
@@ -16,9 +21,10 @@ class Credentials extends Component {
           border: `solid 5px ${colors.primary}`,
           borderRadius: `15px`,
           position: `absolute`,
-          top: window.innerHeight / 2 - 100,
+          top: window.innerHeight / 2 - 250,
           left: window.innerWidth / 2 - 100,
           boxShadow: `0px 0px 40px grey`,
+          backgroundColor: colors.white,
         }}
       >
         <form onSubmit={event => this.props.handleSubmit(event)}>
@@ -36,7 +42,9 @@ class Credentials extends Component {
                 style={{ width: `100px` }}
                 id={`${this.props.id}-username-mobile`}
                 onChange={event => this.props.handleChange(event, `username`)}
-                placeholder="username"
+                placeholder={`username`}
+                autoCapitalize={`none`}
+                autoCorrect={`off`}
               />
             </div>
             <div>
