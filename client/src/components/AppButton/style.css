@@ -1,0 +1,11 @@
+.appButton {
+  border: 2px solid var(--danger);
+  border-radius: 3px;
+  color: var(--mediumDanger);
+  background-color: var(--lightDanger);
+  /* font-weight: bold; */
+}
+.appButton:hover {
+  background-color: var(--danger);
+  color: var(--lightDanger);
+}

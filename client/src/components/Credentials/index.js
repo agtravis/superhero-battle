@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import AppButton from "../AppButton";
+
 import colors from "../../config/colors";
 
 class Credentials extends Component {
@@ -12,22 +14,40 @@ class Credentials extends Component {
     return (
       <div
         className={`${this.props.id}-form`}
-        style={{ width: `100%`, backgroundColor: colors.primary }}
+        style={{
+          width: `100%`,
+          backgroundColor: colors.primary,
+          display: `flex`,
+          justifyContent: `center`,
+          paddingBottom: `5px`,
+        }}
       >
-        <form onSubmit={event => this.props.handleSubmit(event)}>
-          <input
-            id={`${this.props.id}-username`}
-            onChange={event => this.props.handleChange(event, `username`)}
-            placeholder="username"
-          />
-          <input
-            id={`${this.props.id}-password`}
-            type="password"
-            onChange={event => this.props.handleChange(event, `password`)}
-            placeholder="password"
-          />
-          <button type="submit">{this.props.buttonName}</button>
-        </form>
+        <div style={{ width: `40%` }}>
+          <form onSubmit={event => this.props.handleSubmit(event)}>
+            <div
+              style={{
+                display: `flex`,
+                flexDirection: `row`,
+                justifyContent: `space-around`,
+              }}
+            >
+              <input
+                id={`${this.props.id}-username`}
+                onChange={event => this.props.handleChange(event, `username`)}
+                placeholder="username"
+              />
+              <input
+                id={`${this.props.id}-password`}
+                type="password"
+                onChange={event => this.props.handleChange(event, `password`)}
+                placeholder="password"
+              />
+              <AppButton width={80} type="submit">
+                {this.props.buttonName}
+              </AppButton>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
