@@ -7,6 +7,7 @@ import colors from "../../config/colors";
 
 import Credentials from "../Credentials";
 import CredentialsMobile from "../CredentialsMobile";
+import AppButton from "../AppButton";
 
 import API from "../../utils/API";
 
@@ -176,17 +177,14 @@ class Header extends Component {
       backgroundColor: colors.primary,
       display: `flex`,
       justifyContent: `space-between`,
+      alignItems: `center`,
       padding: `10px 20px`,
       position: `relative`,
       zIndex: 1,
     },
     headerTitleText: {
+      fontFamily: `Impact, Charcoal, sans-serif`,
       color: colors.black,
-    },
-    signUpLogInLink: {
-      textDecoration: `underline`,
-      color: `blue`,
-      cursor: `pointer`,
     },
   };
 
@@ -221,33 +219,27 @@ class Header extends Component {
           </div>
           {!this.props.loggedIn ? (
             <div>
-              <Breakpoint medium up>
-                <button
-                  style={this.styles.signUpLogInLink}
-                  onClick={() => this.showLogIn()}
-                >
-                  Log in
-                </button>{" "}
-                <button
-                  style={this.styles.signUpLogInLink}
-                  onClick={() => this.showSignUp()}
-                >
-                  Sign up
-                </button>
+              <Breakpoint
+                medium
+                up
+                style={{ display: `flex`, flexDirection: `row` }}
+              >
+                <AppButton onClick={() => this.showLogIn()}>Log In</AppButton>
+                <div style={{ width: `10px` }}></div>
+                <AppButton onClick={() => this.showSignUp()}>Sign Up</AppButton>
               </Breakpoint>
-              <Breakpoint small down>
-                <button
-                  style={this.styles.signUpLogInLinkMobile}
-                  onClick={() => this.showLogInMobile()}
-                >
-                  Log in
-                </button>{" "}
-                <button
-                  style={this.styles.signUpLogInLinkMobile}
-                  onClick={() => this.showSignUpMobile()}
-                >
-                  Sign up
-                </button>
+              <Breakpoint
+                small
+                down
+                style={{ display: `flex`, flexDirection: `row` }}
+              >
+                <AppButton onClick={() => this.showLogInMobile()}>
+                  Log In
+                </AppButton>
+                {` `}
+                <AppButton onClick={() => this.showSignUpMobile()}>
+                  Sign Up
+                </AppButton>
               </Breakpoint>
             </div>
           ) : (
@@ -255,7 +247,7 @@ class Header extends Component {
               <p>
                 Currently signed in: <em>{this.props.currentUser.username}</em>
               </p>
-              <button onClick={() => this.logOut()}>Log Out</button>
+              <AppButton onClick={() => this.logOut()}>Log Out</AppButton>
             </div>
           )}
         </div>
