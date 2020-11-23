@@ -5,9 +5,7 @@ import "./style.css";
 class AppLink extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      hover: false,
-    };
+    this.state = {};
   }
 
   render() {

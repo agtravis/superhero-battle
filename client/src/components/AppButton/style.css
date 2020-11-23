@@ -1,7 +1,7 @@
 .appButton {
   border: 2px solid var(--danger);
   border-radius: 3px;
-  color: var(--mediumDanger);
+  color: var(--danger);
   background-color: var(--lightDanger);
   /* font-weight: bold; */
 }
