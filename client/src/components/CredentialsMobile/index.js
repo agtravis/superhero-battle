@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import colors from "../../config/colors";
 import AppLink from "../AppLink";
+import AppInput from "../AppInput";
 
 class Credentials extends Component {
   constructor(props) {
@@ -49,22 +50,24 @@ class Credentials extends Component {
             }}
           >
             <div>
-              <input
+              <AppInput
+                fieldName={`username`}
                 style={{ width: `100px` }}
                 id={`${this.props.id}-username-mobile`}
-                onChange={event => this.props.handleChange(event, `username`)}
+                handleChange={this.props.handleChange}
                 placeholder={`username`}
                 autoCapitalize={`none`}
                 autoCorrect={`off`}
               />
             </div>
             <div>
-              <input
+              <AppInput
+                fieldName={`password`}
                 style={{ width: `100px` }}
                 id={`${this.props.id}-password-mobile`}
-                type="password"
-                onChange={event => this.props.handleChange(event, `password`)}
-                placeholder="password"
+                type={`password`}
+                handleChange={this.props.handleChange}
+                placeholder={`password`}
               />
             </div>
             <div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import AppButton from "../AppButton";
 import AppLink from "../AppLink";
+import AppInput from "../AppInput";
 
 import colors from "../../config/colors";
 
@@ -32,15 +33,17 @@ class Credentials extends Component {
                 justifyContent: `space-around`,
               }}
             >
-              <input
+              <AppInput
+                fieldName={`username`}
                 id={`${this.props.id}-username`}
-                onChange={event => this.props.handleChange(event, `username`)}
+                handleChange={this.props.handleChange}
                 placeholder="username"
               />
-              <input
+              <AppInput
+                fieldName={`password`}
                 id={`${this.props.id}-password`}
                 type="password"
-                onChange={event => this.props.handleChange(event, `password`)}
+                handleChange={this.props.handleChange}
                 placeholder="password"
               />
               <div
