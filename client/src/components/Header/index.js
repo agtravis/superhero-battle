@@ -8,6 +8,7 @@ import colors from "../../config/colors";
 import Credentials from "../Credentials";
 import CredentialsMobile from "../CredentialsMobile";
 import AppButton from "../AppButton";
+import AppLink from "../AppLink";
 
 import API from "../../utils/API";
 
@@ -87,6 +88,21 @@ class Header extends Component {
     }
     this.setState({ username: ``, password: `` });
   };
+
+  // hideAllModals = () => {
+  //   if (this.state.showSignUp) {
+  //     this.showSignUpLogic();
+  //   }
+  //   if (this.state.showSignUpMobile) {
+  //     this.showSignUpMobile();
+  //   }
+  //   if (this.state.ShowLogIn) {
+  //     this.ShowLogInLogic();
+  //   }
+  //   if (this.state.ShowLogInMobile) {
+  //     this.ShowLogInMobile();
+  //   }
+  // };
 
   showLogIn = () => {
     this.resetCredentials(`signup`);
@@ -226,20 +242,26 @@ class Header extends Component {
               >
                 <AppButton onClick={() => this.showLogIn()}>Log In</AppButton>
                 <div style={{ width: `10px` }}></div>
-                <AppButton onClick={() => this.showSignUp()}>Sign Up</AppButton>
+                <div style={{ padding: `2px` }}>
+                  <AppLink onClick={() => this.showSignUp()}>Sign Up</AppLink>
+                </div>
               </Breakpoint>
-              <Breakpoint
-                small
-                down
-                style={{ display: `flex`, flexDirection: `row` }}
-              >
-                <AppButton onClick={() => this.showLogInMobile()}>
-                  Log In
-                </AppButton>
-                {` `}
-                <AppButton onClick={() => this.showSignUpMobile()}>
-                  Sign Up
-                </AppButton>
+              <Breakpoint small down>
+                <div
+                  style={{
+                    display: `flex`,
+                    flexDirection: `row`,
+                    paddingTop: `8px`,
+                  }}
+                >
+                  <AppLink onClick={() => this.showLogInMobile()}>
+                    Log In
+                  </AppLink>
+                  <div style={{ width: `10px` }}></div>
+                  <AppLink onClick={() => this.showSignUpMobile()}>
+                    Sign Up
+                  </AppLink>
+                </div>
               </Breakpoint>
             </div>
           ) : (
@@ -256,6 +278,7 @@ class Header extends Component {
             <Credentials
               handleSubmit={this.logInSubmit}
               handleChange={this.handleChange}
+              close={this.showLogIn}
               buttonName={`Log In!`}
               id={`login`}
             />
@@ -264,6 +287,7 @@ class Header extends Component {
             <Credentials
               handleSubmit={this.newUserSubmit}
               handleChange={this.handleChange}
+              close={this.showSignUp}
               buttonName={`Sign Up!`}
               id={`signup`}
             />
@@ -275,6 +299,7 @@ class Header extends Component {
               <CredentialsMobile
                 handleSubmit={this.logInSubmit}
                 handleChange={this.handleChange}
+                close={this.showLogInMobile}
                 buttonName={`Log In!`}
                 id={`login`}
               />
@@ -283,6 +308,7 @@ class Header extends Component {
               <CredentialsMobile
                 handleSubmit={this.newUserSubmit}
                 handleChange={this.handleChange}
+                close={this.showSignUpMobile}
                 buttonName={`Sign Up!`}
                 id={`signup`}
               />

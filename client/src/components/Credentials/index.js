@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import AppButton from "../AppButton";
+import AppLink from "../AppLink";
 
 import colors from "../../config/colors";
 
@@ -22,7 +23,7 @@ class Credentials extends Component {
           paddingBottom: `5px`,
         }}
       >
-        <div style={{ width: `40%` }}>
+        <div style={{ width: `60%` }}>
           <form onSubmit={event => this.props.handleSubmit(event)}>
             <div
               style={{
@@ -42,9 +43,21 @@ class Credentials extends Component {
                 onChange={event => this.props.handleChange(event, `password`)}
                 placeholder="password"
               />
-              <AppButton width={80} type="submit">
-                {this.props.buttonName}
-              </AppButton>
+              <div
+                style={{
+                  display: `flex`,
+                  flexDirection: `row`,
+                  paddingTop: `5px`,
+                }}
+              >
+                <AppButton width={80} type="submit">
+                  {this.props.buttonName}
+                </AppButton>
+                <div style={{ width: `10px` }}></div>
+                <div style={{ paddingTop: `3px` }}>
+                  <AppLink onClick={this.props.close}>hide</AppLink>
+                </div>
+              </div>
             </div>
           </form>
         </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import colors from "../../config/colors";
+import AppLink from "../AppLink";
 
 class Credentials extends Component {
   constructor(props) {
@@ -27,6 +28,16 @@ class Credentials extends Component {
           backgroundColor: colors.white,
         }}
       >
+        <div
+          style={{
+            textAlign: `right`,
+            fontWeight: `bold`,
+            fontSize: `1.5rem`,
+            paddingRight: `7px`,
+          }}
+        >
+          <AppLink onClick={this.props.close}>X</AppLink>
+        </div>
         <form onSubmit={event => this.props.handleSubmit(event)}>
           <div
             style={{
