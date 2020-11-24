@@ -36,7 +36,6 @@ class Header extends Component {
       username: this.state.username,
       password: this.state.password,
     };
-    this.resetCredentials(`login`);
     this.logIn(userDetails);
   };
 
@@ -67,23 +66,37 @@ class Header extends Component {
         ) {
           this.setState({ error: `` });
           API.logIn(signInDetails)
-            .then(() => {
-              if (this.state.showLogIn) {
-                this.showLogIn();
+            .then(response => {
+              if (response.status === 200) {
+                this.setState({ error: `` });
+                if (this.state.showLogIn) {
+                  this.showLogIn();
+                }
+                if (this.state.showSignUp) {
+                  this.showSignUp();
+                }
+                this.setState({
+                  showSignUpMobile: false,
+                  showLogInMobile: false,
+                });
+                this.resetCredentials(`login`);
+                this.props.changeUser();
               }
-              if (this.state.showSignUp) {
-                this.showSignUp();
-              }
-              this.setState({
-                showSignUpMobile: false,
-                showLogInMobile: false,
-              });
-              this.props.changeUser();
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+              this.setState({ error: `passworddoesnotmatch` });
+              const password = document.getElementById(`login-password`)
+                ? document.getElementById(`login-password`)
+                : document.getElementById(`login-password-mobile`);
+              password.value = ``;
+              password.focus();
+            });
         } else {
-          console.log(`failure`);
           this.setState({ error: `userdoesnotexist` });
+          const username = document.getElementById(`login-username`)
+            ? document.getElementById(`login-username`)
+            : document.getElementById(`login-username-mobile`);
+          username.focus();
         }
       })
       .catch(err => console.error(err));
@@ -288,6 +301,7 @@ class Header extends Component {
           </div>
           <div id={`signup`}>
             <Credentials
+              error={this.state.error}
               handleSubmit={this.newUserSubmit}
               handleChange={this.handleChange}
               close={this.showSignUp}
@@ -300,6 +314,7 @@ class Header extends Component {
           <div style={{ position: `relative` }}>
             {this.state.showLogInMobile && (
               <CredentialsMobile
+                error={this.state.error}
                 handleSubmit={this.logInSubmit}
                 handleChange={this.handleChange}
                 close={this.showLogInMobile}
@@ -309,6 +324,7 @@ class Header extends Component {
             )}
             {this.state.showSignUpMobile && (
               <CredentialsMobile
+                error={this.state.error}
                 handleSubmit={this.newUserSubmit}
                 handleChange={this.handleChange}
                 close={this.showSignUpMobile}
