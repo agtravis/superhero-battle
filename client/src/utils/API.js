@@ -19,6 +19,9 @@ export default {
   getAllUsers() {
     return axios.get(`/api/user/all`);
   },
+  findOneUserByName(username) {
+    return axios.post(`/api/user/findone`, username);
+  },
   getTopScorers() {
     return axios.get(`/api/user/topscorers`);
   },

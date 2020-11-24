@@ -34,12 +34,18 @@ class Credentials extends Component {
               }}
             >
               <AppInput
+                error={this.props.error === `userdoesnotexist` ? true : false}
+                errorMessage={`User does not exist`}
                 fieldName={`username`}
                 id={`${this.props.id}-username`}
                 handleChange={this.props.handleChange}
                 placeholder="username"
               />
               <AppInput
+                error={
+                  this.props.error === `passworddoesnotmatch` ? true : false
+                }
+                errorMessage={`Password does not match`}
                 fieldName={`password`}
                 id={`${this.props.id}-password`}
                 type="password"

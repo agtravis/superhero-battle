@@ -22,6 +22,7 @@ class Header extends Component {
       showSignUp: false,
       showLogInMobile: false,
       showSignUpMobile: false,
+      error: ``,
     };
   }
 
@@ -58,16 +59,32 @@ class Header extends Component {
   };
 
   logIn = signInDetails => {
-    API.logIn(signInDetails)
-      .then(() => {
-        if (this.state.showLogIn) {
-          this.showLogIn();
+    API.findOneUserByName({ search: signInDetails.username })
+      .then(data => {
+        if (
+          data.data.length > 0 &&
+          signInDetails.username === data.data[0].username
+        ) {
+          this.setState({ error: `` });
+          API.logIn(signInDetails)
+            .then(() => {
+              if (this.state.showLogIn) {
+                this.showLogIn();
+              }
+              if (this.state.showSignUp) {
+                this.showSignUp();
+              }
+              this.setState({
+                showSignUpMobile: false,
+                showLogInMobile: false,
+              });
+              this.props.changeUser();
+            })
+            .catch(err => console.error(err));
+        } else {
+          console.log(`failure`);
+          this.setState({ error: `userdoesnotexist` });
         }
-        if (this.state.showSignUp) {
-          this.showSignUp();
-        }
-        this.setState({ showSignUpMobile: false, showLogInMobile: false });
-        this.props.changeUser();
       })
       .catch(err => console.error(err));
   };
@@ -88,21 +105,6 @@ class Header extends Component {
     }
     this.setState({ username: ``, password: `` });
   };
-
-  // hideAllModals = () => {
-  //   if (this.state.showSignUp) {
-  //     this.showSignUpLogic();
-  //   }
-  //   if (this.state.showSignUpMobile) {
-  //     this.showSignUpMobile();
-  //   }
-  //   if (this.state.ShowLogIn) {
-  //     this.ShowLogInLogic();
-  //   }
-  //   if (this.state.ShowLogInMobile) {
-  //     this.ShowLogInMobile();
-  //   }
-  // };
 
   showLogIn = () => {
     this.resetCredentials(`signup`);
@@ -276,6 +278,7 @@ class Header extends Component {
         <Breakpoint medium up>
           <div id={`login`}>
             <Credentials
+              error={this.state.error}
               handleSubmit={this.logInSubmit}
               handleChange={this.handleChange}
               close={this.showLogIn}
