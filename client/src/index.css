@@ -1,5 +1,6 @@
 :root {
   --primary: #e2b340;
+  --mediumPrimary: #f2dca6;
   --lightPrimary: #fcf6e9;
   --darkPrimary: #59430d;
   --secondary: #5b5194;
@@ -18,5 +19,5 @@ body {
   padding: 0;
   font-family: Tahoma, Geneva, sans-serif;
   color: var(--black);
-  background-color: var(--white);
+  background-color: var(--lightPrimary);
 }

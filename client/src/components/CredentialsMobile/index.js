@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import colors from "../../config/colors";
 import AppLink from "../AppLink";
 import AppInput from "../AppInput";
+import AppButton from "../AppButton";
 
 class Credentials extends Component {
   constructor(props) {
@@ -19,14 +20,14 @@ class Credentials extends Component {
       <div
         style={{
           width: `200px`,
-          height: `210px`,
+          // height: `250px`,
           border: `solid 5px ${colors.primary}`,
           borderRadius: `15px`,
           position: `absolute`,
           top: 25,
           left: window.innerWidth / 2 - 100,
           boxShadow: `0px 0px 40px grey`,
-          backgroundColor: colors.white,
+          backgroundColor: colors.mediumPrimary,
         }}
       >
         <div
@@ -71,9 +72,9 @@ class Credentials extends Component {
               />
             </div>
             <div>
-              <button style={{ width: `100px` }} type="submit">
+              <AppButton style={{ width: `100px` }} type="submit">
                 {this.props.buttonName}
-              </button>
+              </AppButton>
             </div>
           </div>
         </form>
