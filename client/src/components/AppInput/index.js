@@ -16,7 +16,9 @@ class AppInput extends Component {
         <input
           style={{
             backgroundColor: colors.lightPrimary,
-            border: `2px solid ${colors.darkPrimary}`,
+            border: `2px solid ${
+              this.props.error ? `red` : colors.darkPrimary
+            }`,
             borderRadius: `50px`,
             outline: `none`,
             color: colors.darkPrimary,
@@ -33,6 +35,7 @@ class AppInput extends Component {
           autoCapitalize={this.props.autoCapitalize}
           autoCorrect={this.props.autoCorrect}
         />
+        {this.props.error && <p>{this.props.errorMessage}</p>}
       </div>
     );
   }
