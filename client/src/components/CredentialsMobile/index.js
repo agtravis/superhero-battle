@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import colors from "../../config/colors";
 import AppLink from "../AppLink";
 import AppInput from "../AppInput";
-import AppButton from "../AppButton";
 
 class Credentials extends Component {
   constructor(props) {
@@ -20,7 +19,6 @@ class Credentials extends Component {
       <div
         style={{
           width: `200px`,
-          // height: `250px`,
           border: `solid 5px ${colors.primary}`,
           borderRadius: `15px`,
           position: `absolute`,
@@ -36,6 +34,7 @@ class Credentials extends Component {
             fontWeight: `bold`,
             fontSize: `1.5rem`,
             paddingRight: `7px`,
+            marginBottom: `-15px`,
           }}
         >
           <AppLink onClick={this.props.close}>X</AppLink>
@@ -47,12 +46,13 @@ class Credentials extends Component {
                 display: `flex`,
                 flexDirection: `column`,
                 alignItems: `center`,
-                height: `200px`,
+                height: `100px`,
                 justifyContent: `space-around`,
               }}
             >
               <div>
                 <AppInput
+                  mode={`mobile`}
                   error={
                     this.props.error === `userdoesnotexist` ||
                     this.props.fieldIncomplete === `nousername`
@@ -75,6 +75,7 @@ class Credentials extends Component {
               </div>
               <div>
                 <AppInput
+                  mode={`mobile`}
                   error={
                     this.props.error === `passworddoesnotmatch` ||
                     this.props.fieldIncomplete === `nopassword`
@@ -94,10 +95,14 @@ class Credentials extends Component {
                   placeholder={`password`}
                 />
               </div>
-              <div>
-                <AppButton style={{ width: `100px` }} type="submit">
+              <div style={{ marginTop: `10px` }}>
+                <AppLink
+                  style={{ width: `100px` }}
+                  type="submit"
+                  onClick={event => this.props.handleSubmit(event)}
+                >
                   {this.props.buttonName}
-                </AppButton>
+                </AppLink>
               </div>
             </div>
           )}
@@ -107,12 +112,13 @@ class Credentials extends Component {
                 display: `flex`,
                 flexDirection: `column`,
                 alignItems: `center`,
-                height: `200px`,
+                height: `100px`,
                 justifyContent: `space-around`,
               }}
             >
               <div>
                 <AppInput
+                  mode={`mobile`}
                   error={
                     this.props.error === `useralreadyexists` ||
                     this.props.fieldIncomplete === `nousername`
@@ -135,6 +141,7 @@ class Credentials extends Component {
               </div>
               <div>
                 <AppInput
+                  mode={`mobile`}
                   error={
                     this.props.error === `regexfail` ||
                     this.props.fieldIncomplete === `nopassword`
@@ -154,10 +161,14 @@ class Credentials extends Component {
                   placeholder={`password`}
                 />
               </div>
-              <div>
-                <AppButton style={{ width: `100px` }} type="submit">
+              <div style={{ marginTop: `10px` }}>
+                <AppLink
+                  style={{ width: `100px` }}
+                  type="submit"
+                  onClick={event => this.props.handleSubmit(event)}
+                >
                   {this.props.buttonName}
-                </AppButton>
+                </AppLink>
               </div>
             </div>
           )}
