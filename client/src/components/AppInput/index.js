@@ -16,13 +16,15 @@ class AppInput extends Component {
         <input
           style={{
             backgroundColor: colors.lightPrimary,
-            border: `2px solid ${
-              this.props.error ? `red` : colors.darkPrimary
-            }`,
+            border:
+              this.props.mode === `mobile`
+                ? `1px solid ${this.props.error ? `red` : colors.darkPrimary}`
+                : `2px solid ${this.props.error ? `red` : colors.darkPrimary}`,
             borderRadius: `50px`,
             outline: `none`,
             color: colors.darkPrimary,
-            padding: `5px`,
+            fontSize: this.props.mode === `mobile` ? `.5rem` : `inherit`,
+            padding: `3px`,
             textAlign: `center`,
             ...this.props.style,
           }}
