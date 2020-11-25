@@ -84,6 +84,7 @@ class Header extends Component {
             ? document.getElementById(`signup-password`)
             : document.getElementById(`signup-password-mobile`);
           password.value = ``;
+          this.setState({ password: `` });
           username.focus();
         } else {
           API.newUser(signUpDetails)
