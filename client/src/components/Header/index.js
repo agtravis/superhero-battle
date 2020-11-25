@@ -46,16 +46,55 @@ class Header extends Component {
       username: this.state.username,
       password: this.state.password,
     };
-    this.resetCredentials(`signup`);
     this.signUpUser(userDetails);
   };
 
   signUpUser = signUpDetails => {
-    API.newUser(signUpDetails)
-      .then(() => {
-        this.logIn(signUpDetails);
-      })
-      .catch(err => console.error(err));
+    this.setState({ error: ``, fieldIncomplete: `` });
+    if (signUpDetails.username.length === 0) {
+      this.setState({ fieldIncomplete: `nousername` });
+      const username = document.getElementById(`signup-username`)
+        ? document.getElementById(`signup-username`)
+        : document.getElementById(`signup-username-mobile`);
+      username.focus();
+    } else if (signUpDetails.password.length < 4) {
+      // } else if (
+      //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/.test(
+      //     signUpDetails.password
+      //   ) === false
+      // ) {
+      this.setState({ error: `regexfail` });
+      const password = document.getElementById(`signup-password`)
+        ? document.getElementById(`signup-password`)
+        : document.getElementById(`signup-password-mobile`);
+      password.value = ``;
+      password.focus();
+    } else {
+      console.log(`hey hey kids!`);
+      API.findOneUserByName({ search: signUpDetails.username }).then(data => {
+        if (
+          data.data.length > 0 &&
+          signUpDetails.username === data.data[0].username
+        ) {
+          this.setState({ error: `useralreadyexists` });
+          const username = document.getElementById(`signup-username`)
+            ? document.getElementById(`signup-username`)
+            : document.getElementById(`signup-username-mobile`);
+          const password = document.getElementById(`signup-password`)
+            ? document.getElementById(`signup-password`)
+            : document.getElementById(`signup-password-mobile`);
+          password.value = ``;
+          username.focus();
+        } else {
+          API.newUser(signUpDetails)
+            .then(() => {
+              this.resetCredentials(`signup`);
+              this.logIn(signUpDetails);
+            })
+            .catch(err => console.error(err));
+        }
+      });
+    }
   };
 
   logIn = signInDetails => {
@@ -124,7 +163,12 @@ class Header extends Component {
       document.getElementById(`${mode}-username-mobile`).value = ``;
       document.getElementById(`${mode}-password-mobile`).value = ``;
     }
-    this.setState({ username: ``, password: `` });
+    this.setState({
+      username: ``,
+      password: ``,
+      error: ``,
+      fieldIncomplete: ``,
+    });
   };
 
   showLogIn = () => {
