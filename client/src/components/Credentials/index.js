@@ -21,7 +21,7 @@ class Credentials extends Component {
           backgroundColor: colors.primary,
           display: `flex`,
           justifyContent: `center`,
-          paddingBottom: `5px`,
+          paddingBottom: `8px`,
         }}
       >
         <div style={{ width: `60%` }}>
@@ -34,8 +34,17 @@ class Credentials extends Component {
               }}
             >
               <AppInput
-                error={this.props.error === `userdoesnotexist` ? true : false}
-                errorMessage={`User does not exist`}
+                error={
+                  this.props.error === `userdoesnotexist` ||
+                  this.props.fieldIncomplete === `nousername`
+                    ? true
+                    : false
+                }
+                errorMessage={
+                  this.props.error
+                    ? `User does not exist`
+                    : `Please enter a username`
+                }
                 fieldName={`username`}
                 id={`${this.props.id}-username`}
                 handleChange={this.props.handleChange}
@@ -43,9 +52,16 @@ class Credentials extends Component {
               />
               <AppInput
                 error={
-                  this.props.error === `passworddoesnotmatch` ? true : false
+                  this.props.error === `passworddoesnotmatch` ||
+                  this.props.fieldIncomplete === `nopassword`
+                    ? true
+                    : false
                 }
-                errorMessage={`Password does not match`}
+                errorMessage={
+                  this.props.error
+                    ? `Password does not match`
+                    : `Please enter a password`
+                }
                 fieldName={`password`}
                 id={`${this.props.id}-password`}
                 type="password"

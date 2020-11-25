@@ -23,6 +23,7 @@ class Header extends Component {
       showLogInMobile: false,
       showSignUpMobile: false,
       error: ``,
+      fieldIncomplete: ``,
     };
   }
 
@@ -58,48 +59,55 @@ class Header extends Component {
   };
 
   logIn = signInDetails => {
-    API.findOneUserByName({ search: signInDetails.username })
-      .then(data => {
-        if (
-          data.data.length > 0 &&
-          signInDetails.username === data.data[0].username
-        ) {
-          this.setState({ error: `` });
-          API.logIn(signInDetails)
-            .then(response => {
-              if (response.status === 200) {
-                this.setState({ error: `` });
-                if (this.state.showLogIn) {
-                  this.showLogIn();
+    this.setState({ error: ``, fieldIncomplete: `` });
+    if (signInDetails.username.length === 0) {
+      this.setState({ fieldIncomplete: `nousername` });
+    } else if (signInDetails.password.length === 0) {
+      this.setState({ fieldIncomplete: `nopassword` });
+    } else {
+      API.findOneUserByName({ search: signInDetails.username })
+        .then(data => {
+          if (
+            data.data.length > 0 &&
+            signInDetails.username === data.data[0].username
+          ) {
+            this.setState({ error: `` });
+            API.logIn(signInDetails)
+              .then(response => {
+                if (response.status === 200) {
+                  this.setState({ error: `` });
+                  if (this.state.showLogIn) {
+                    this.showLogIn();
+                  }
+                  if (this.state.showSignUp) {
+                    this.showSignUp();
+                  }
+                  this.setState({
+                    showSignUpMobile: false,
+                    showLogInMobile: false,
+                  });
+                  this.resetCredentials(`login`);
+                  this.props.changeUser();
                 }
-                if (this.state.showSignUp) {
-                  this.showSignUp();
-                }
-                this.setState({
-                  showSignUpMobile: false,
-                  showLogInMobile: false,
-                });
-                this.resetCredentials(`login`);
-                this.props.changeUser();
-              }
-            })
-            .catch(err => {
-              this.setState({ error: `passworddoesnotmatch` });
-              const password = document.getElementById(`login-password`)
-                ? document.getElementById(`login-password`)
-                : document.getElementById(`login-password-mobile`);
-              password.value = ``;
-              password.focus();
-            });
-        } else {
-          this.setState({ error: `userdoesnotexist` });
-          const username = document.getElementById(`login-username`)
-            ? document.getElementById(`login-username`)
-            : document.getElementById(`login-username-mobile`);
-          username.focus();
-        }
-      })
-      .catch(err => console.error(err));
+              })
+              .catch(err => {
+                this.setState({ error: `passworddoesnotmatch` });
+                const password = document.getElementById(`login-password`)
+                  ? document.getElementById(`login-password`)
+                  : document.getElementById(`login-password-mobile`);
+                password.value = ``;
+                password.focus();
+              });
+          } else {
+            this.setState({ error: `userdoesnotexist` });
+            const username = document.getElementById(`login-username`)
+              ? document.getElementById(`login-username`)
+              : document.getElementById(`login-username-mobile`);
+            username.focus();
+          }
+        })
+        .catch(err => console.error(err));
+    }
   };
 
   logOut = () => {
@@ -291,6 +299,7 @@ class Header extends Component {
         <Breakpoint medium up>
           <div id={`login`}>
             <Credentials
+              fieldIncomplete={this.state.fieldIncomplete}
               error={this.state.error}
               handleSubmit={this.logInSubmit}
               handleChange={this.handleChange}
@@ -301,6 +310,7 @@ class Header extends Component {
           </div>
           <div id={`signup`}>
             <Credentials
+              fieldIncomplete={this.state.fieldIncomplete}
               error={this.state.error}
               handleSubmit={this.newUserSubmit}
               handleChange={this.handleChange}
@@ -314,6 +324,7 @@ class Header extends Component {
           <div style={{ position: `relative` }}>
             {this.state.showLogInMobile && (
               <CredentialsMobile
+                fieldIncomplete={this.state.fieldIncomplete}
                 error={this.state.error}
                 handleSubmit={this.logInSubmit}
                 handleChange={this.handleChange}
@@ -324,6 +335,7 @@ class Header extends Component {
             )}
             {this.state.showSignUpMobile && (
               <CredentialsMobile
+                fieldIncomplete={this.state.fieldIncomplete}
                 error={this.state.error}
                 handleSubmit={this.newUserSubmit}
                 handleChange={this.handleChange}

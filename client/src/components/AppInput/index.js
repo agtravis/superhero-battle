@@ -35,7 +35,26 @@ class AppInput extends Component {
           autoCapitalize={this.props.autoCapitalize}
           autoCorrect={this.props.autoCorrect}
         />
-        {this.props.error && <p>{this.props.errorMessage}</p>}
+        <div
+          style={{
+            position: `relative`,
+            display: `flex`,
+            justifyContent: `center`,
+            textAlign: `center`,
+          }}
+        >
+          {this.props.error && (
+            <p
+              style={{
+                position: `absolute`,
+                fontSize: `.6rem`,
+                color: `red`,
+              }}
+            >
+              {this.props.errorMessage}
+            </p>
+          )}
+        </div>
       </div>
     );
   }
