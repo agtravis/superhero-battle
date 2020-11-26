@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import "./style.css";
-
 import colors from "../../config/colors";
 
 class AppInput extends Component {

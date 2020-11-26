@@ -73,7 +73,7 @@ class Credentials extends Component {
                   style={{
                     display: `flex`,
                     flexDirection: `row`,
-                    paddingTop: `5px`,
+                    paddingTop: `2px`,
                   }}
                 >
                   <AppButton width={80} type="submit">
@@ -133,7 +133,7 @@ class Credentials extends Component {
                   style={{
                     display: `flex`,
                     flexDirection: `row`,
-                    paddingTop: `5px`,
+                    paddingTop: `2px`,
                   }}
                 >
                   <AppButton width={80} type="submit">

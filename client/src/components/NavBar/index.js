@@ -8,7 +8,13 @@ class NavBar extends Component {
   }
   render() {
     return (
-      <div style={{ marginTop: `50px` }}>
+      <div
+        style={
+          {
+            // marginTop: `50px`,
+          }
+        }
+      >
         {this.props.loggedIn ? (
           <div>
             <Link to={`/home`}>Home</Link>

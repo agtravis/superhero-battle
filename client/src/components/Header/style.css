@@ -1,19 +1,12 @@
 :root {
   --log-in-start-point: -60px;
   --log-in-speed: 0.3s;
+  --body-start-point: 0px;
 }
 
 #header-container {
   position: relative;
 }
-/* .box-header {
-  margin: 30px;
-  height: 200px;
-  width: 200px;
-  background-color: red;
-  position: relative;
-  z-index: 1;
-} */
 .login-form {
   position: absolute;
   margin-top: var(--log-in-start-point);
@@ -37,4 +30,20 @@
   -o-transition: var(--log-in-speed);
   transition: var(--log-in-speed);
   margin-top: var(--log-in-start-point);
+}
+.translateBody {
+  -webkit-transition: var(--log-in-speed);
+  -moz-transition: var(--log-in-speed);
+  -ms-transition: var(--log-in-speed);
+  -o-transition: var(--log-in-speed);
+  transition: var(--log-in-speed);
+  margin-top: 60px;
+}
+.translateBodyBack {
+  -webkit-transition: var(--log-in-speed);
+  -moz-transition: var(--log-in-speed);
+  -ms-transition: var(--log-in-speed);
+  -o-transition: var(--log-in-speed);
+  transition: var(--log-in-speed);
+  margin-top: var(--body-start-point);
 }
