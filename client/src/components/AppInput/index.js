@@ -8,6 +8,12 @@ class AppInput extends Component {
     this.state = {};
   }
 
+  handleKeyUp = event => {
+    if (event.key === `Enter` && this.props.type === `password`) {
+      this.props.handleSubmit(event);
+    }
+  };
+
   render() {
     return (
       <div>
@@ -30,6 +36,7 @@ class AppInput extends Component {
           onChange={event =>
             this.props.handleChange(event, this.props.fieldName)
           }
+          onKeyUp={event => this.handleKeyUp(event)}
           type={this.props.type}
           placeholder={this.props.placeholder}
           autoCapitalize={this.props.autoCapitalize}

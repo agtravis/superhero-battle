@@ -93,6 +93,7 @@ class Credentials extends Component {
                   type={`password`}
                   handleChange={this.props.handleChange}
                   placeholder={`password`}
+                  handleSubmit={this.props.handleSubmit}
                 />
               </div>
               <div style={{ marginTop: `10px` }}>
@@ -159,6 +160,7 @@ class Credentials extends Component {
                   type={`password`}
                   handleChange={this.props.handleChange}
                   placeholder={`password`}
+                  handleSubmit={this.props.handleSubmit}
                 />
               </div>
               <div style={{ marginTop: `10px` }}>

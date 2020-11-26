@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Breakpoint } from "react-socks";
 import { Link } from "react-router-dom";
 
 class NavBar extends Component {
@@ -6,37 +7,78 @@ class NavBar extends Component {
     super(props);
     this.state = {};
   }
+
+  pageLinks = [
+    {
+      name: `Home`,
+      to: `/home`,
+    },
+    {
+      name: `Profile`,
+      to: `/profile`,
+    },
+    {
+      name: `Fight`,
+      to: `/fight`,
+    },
+    {
+      name: `Stats`,
+      to: `/stats`,
+    },
+    {
+      name: `Roster`,
+      to: `/roster`,
+    },
+    {
+      name: `Teams`,
+      to: `/teams`,
+    },
+    {
+      name: `Leader Board`,
+      to: `/leaderboard`,
+    },
+    {
+      name: `Search`,
+      to: `/search`,
+    },
+    {
+      name: `Settings`,
+      to: `/settings`,
+    },
+  ];
+
   render() {
     return (
-      <div
-        style={
-          {
-            // marginTop: `50px`,
-          }
-        }
-      >
+      <div style={{}}>
         {this.props.loggedIn ? (
           <div>
-            <Link to={`/home`}>Home</Link>
-            {` `}
-            <Link to={`/profile`}>Profile</Link>
-            {` `}
-            <Link to={`/fight`}>Fight</Link>
-            {` `}
-            <Link to={`/stats`}>Stats</Link>
-            {` `}
-            <Link to={`/roster`}>Roster</Link>
-            {` `}
-            <Link to={`/teams`}>Teams</Link>
-            {` `}
-            <Link to={`/leaderboard`}>Leader Board</Link>
-            {` `}
-            <Link to={`/search`}>Search</Link>
-            {` `}
-            <Link to={`/settings`}>Settings</Link>
+            <Breakpoint medium up>
+              <div style={{ display: `flex`, flexDirection: `row` }}>
+                {this.pageLinks.map((pageLink, index) => (
+                  <div key={index} style={{ margin: `0 5px` }}>
+                    <Link to={pageLink.to}>{pageLink.name}</Link>
+                  </div>
+                ))}
+              </div>
+            </Breakpoint>
+            <Breakpoint small down>
+              <div style={{ display: `flex`, flexDirection: `column` }}>
+                {this.pageLinks.map((pageLink, index) => (
+                  <div key={index} style={{ margin: `5px 0` }}>
+                    <Link to={pageLink.to}>{pageLink.name}</Link>
+                  </div>
+                ))}
+              </div>
+            </Breakpoint>
           </div>
         ) : (
-          <Link to={`/about`}>About SuperHero Battle</Link>
+          <div>
+            <Breakpoint medium up>
+              <Link to={`/about`}>About SuperHero Battle</Link>
+            </Breakpoint>
+
+            <Breakpoint small down></Breakpoint>
+          </div>
         )}
       </div>
     );
