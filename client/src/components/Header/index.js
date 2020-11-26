@@ -22,6 +22,7 @@ class Header extends Component {
       showSignUp: false,
       showLogInMobile: false,
       showSignUpMobile: false,
+      showNav: false,
       error: ``,
       fieldIncomplete: ``,
     };
@@ -255,6 +256,18 @@ class Header extends Component {
     this.setState({ showSignUp: !this.state.showSignUp });
   };
 
+  showNav = () => {
+    const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
+    if (!navMobile.classList.contains(`translateNavMobile`)) {
+      navMobile.classList.add(`translateNavMobile`);
+      navMobile.classList.remove(`translateNavMobileBack`);
+    } else {
+      navMobile.classList.add(`translateNavMobileBack`);
+      navMobile.classList.remove(`translateNavMobile`);
+    }
+    // this.setState({ showNav: !this.state.showNav });
+  };
+
   title = `Superhero Battle`;
 
   styles = {
@@ -287,20 +300,33 @@ class Header extends Component {
             </Breakpoint>
           </div>
           <div>
-            <a
-              href="/"
-              style={{
-                textDecoration: `none`,
-                color: `black`,
-              }}
-            >
-              <Breakpoint medium up>
+            <Breakpoint medium up>
+              <a
+                href="/"
+                style={{
+                  textDecoration: `none`,
+                  color: `black`,
+                }}
+              >
                 <h1 style={this.styles.headerTitleText}>{this.title}</h1>
-              </Breakpoint>
-              <Breakpoint small down>
+              </a>
+            </Breakpoint>
+            <Breakpoint small down>
+              <a
+                href="/"
+                style={{
+                  textDecoration: `none`,
+                  color: `black`,
+                }}
+              >
                 <h4 style={this.styles.headerTitleText}>{this.title}</h4>
-              </Breakpoint>
-            </a>
+              </a>
+              <div style={{ position: `relative` }}>
+                <div onClick={this.showNav} style={{ position: `absolute` }}>
+                  <p>show nav</p>
+                </div>
+              </div>
+            </Breakpoint>
           </div>
           {!this.props.loggedIn ? (
             <div>

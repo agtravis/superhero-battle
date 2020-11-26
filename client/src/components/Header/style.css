@@ -2,6 +2,7 @@
   --log-in-start-point: -60px;
   --log-in-speed: 0.3s;
   --body-start-point: 0px;
+  --nav-bar-start-point: -400px;
 }
 
 #header-container {
@@ -46,4 +47,23 @@
   -o-transition: var(--log-in-speed);
   transition: var(--log-in-speed);
   margin-top: var(--body-start-point);
+}
+.nav-mobile {
+  margin-top: var(--nav-bar-start-point);
+}
+.translateNavMobile {
+  -webkit-transition: var(--log-in-speed);
+  -moz-transition: var(--log-in-speed);
+  -ms-transition: var(--log-in-speed);
+  -o-transition: var(--log-in-speed);
+  transition: var(--log-in-speed);
+  margin-top: 0;
+}
+.translateNavMobileBack {
+  -webkit-transition: var(--log-in-speed);
+  -moz-transition: var(--log-in-speed);
+  -ms-transition: var(--log-in-speed);
+  -o-transition: var(--log-in-speed);
+  transition: var(--log-in-speed);
+  margin-top: var(--nav-bar-start-point);
 }
