@@ -335,10 +335,32 @@ class Header extends Component {
             </div>
           ) : (
             <div>
-              <p>
-                Currently signed in: <em>{this.props.currentUser.username}</em>
-              </p>
-              <AppButton onClick={() => this.logOut()}>Log Out</AppButton>
+              <Breakpoint medium up>
+                <p>
+                  Currently signed in:{` `}
+                  <em>{this.props.currentUser.username}</em>
+                </p>
+                <div style={{ display: `flex`, justifyContent: `flex-end` }}>
+                  <AppButton onClick={() => this.logOut()}>Log Out</AppButton>
+                </div>
+              </Breakpoint>
+              <Breakpoint small down>
+                <div style={{ marginBottom: `-10px` }}>
+                  <p style={{ fontSize: `.8rem` }}>
+                    Currently signed in:{` `}
+                    <em>{this.props.currentUser.username}</em>
+                  </p>
+                </div>
+                <div
+                  style={{
+                    display: `flex`,
+                    justifyContent: `flex-end`,
+                    marginTop: `-10px`,
+                  }}
+                >
+                  <AppLink onClick={() => this.logOut()}>Log Out</AppLink>
+                </div>
+              </Breakpoint>
             </div>
           )}
         </div>
