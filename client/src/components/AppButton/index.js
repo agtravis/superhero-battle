@@ -14,7 +14,7 @@ class AppButton extends Component {
     return (
       <div>
         <button
-          style={{ transform: this.props.transform, width: this.props.width }}
+          style={{ width: this.props.width }}
           className={`appButton`}
           onClick={this.props.onClick}
         >

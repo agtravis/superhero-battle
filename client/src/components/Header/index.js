@@ -216,40 +216,41 @@ class Header extends Component {
     }, 500);
   };
 
-  showLogInLogic = () => {
-    if (!this.state.showLogIn) {
-      document
-        .getElementsByClassName(`login-form`)[0]
-        .classList.remove(`translateBack`);
-      document
-        .getElementsByClassName(`login-form`)[0]
-        .classList.add(`translate`);
+  slideBody = isCredentialsShowing => {
+    const body = document.getElementsByClassName(`main-body`)[0];
+    if (!isCredentialsShowing) {
+      body.classList.remove(`translateBodyBack`);
+      body.classList.add(`translateBody`);
     } else {
-      document
-        .getElementsByClassName(`login-form`)[0]
-        .classList.remove(`translate`);
-      document
-        .getElementsByClassName(`login-form`)[0]
-        .classList.add(`translateBack`);
+      body.classList.add(`translateBodyBack`);
+      body.classList.remove(`translateBody`);
+    }
+  };
+
+  showLogInLogic = () => {
+    const logInForm = document.getElementsByClassName(`login-form`)[0];
+    if (!this.state.showLogIn) {
+      logInForm.classList.remove(`translateBack`);
+      logInForm.classList.add(`translate`);
+      this.slideBody(false);
+    } else {
+      logInForm.classList.remove(`translate`);
+      logInForm.classList.add(`translateBack`);
+      this.slideBody(true);
     }
     this.setState({ showLogIn: !this.state.showLogIn });
   };
 
   showSignUpLogic = () => {
+    const signUpForm = document.getElementsByClassName(`signup-form`)[0];
     if (!this.state.showSignUp) {
-      document
-        .getElementsByClassName(`signup-form`)[0]
-        .classList.remove(`translateBack`);
-      document
-        .getElementsByClassName(`signup-form`)[0]
-        .classList.add(`translate`);
+      signUpForm.classList.remove(`translateBack`);
+      signUpForm.classList.add(`translate`);
+      this.slideBody(false);
     } else {
-      document
-        .getElementsByClassName(`signup-form`)[0]
-        .classList.remove(`translate`);
-      document
-        .getElementsByClassName(`signup-form`)[0]
-        .classList.add(`translateBack`);
+      signUpForm.classList.remove(`translate`);
+      signUpForm.classList.add(`translateBack`);
+      this.slideBody(true);
     }
     this.setState({ showSignUp: !this.state.showSignUp });
   };
