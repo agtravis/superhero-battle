@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Breakpoint } from "react-socks";
 import { Link } from "react-router-dom";
 
+import colors from "../../config/colors";
+
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -47,13 +49,26 @@ class NavBar extends Component {
     },
   ];
 
+  hideNav = () => {
+    const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
+    if (navMobile.classList.contains(`translateNavMobile`)) {
+      navMobile.classList.add(`translateNavMobileBack`);
+      navMobile.classList.remove(`translateNavMobile`);
+    }
+  };
+
   render() {
     return (
       <div style={{}}>
         {this.props.loggedIn ? (
-          <div>
+          <div onClick={this.hideNav}>
             <Breakpoint medium up>
-              <div style={{ display: `flex`, flexDirection: `row` }}>
+              <div
+                style={{
+                  display: `flex`,
+                  flexDirection: `row`,
+                }}
+              >
                 {this.pageLinks.map((pageLink, index) => (
                   <div key={index} style={{ margin: `0 5px` }}>
                     <Link to={pageLink.to}>{pageLink.name}</Link>
@@ -62,12 +77,25 @@ class NavBar extends Component {
               </div>
             </Breakpoint>
             <Breakpoint small down>
-              <div style={{ display: `flex`, flexDirection: `column` }}>
-                {this.pageLinks.map((pageLink, index) => (
-                  <div key={index} style={{ margin: `5px 0` }}>
-                    <Link to={pageLink.to}>{pageLink.name}</Link>
-                  </div>
-                ))}
+              <div style={{ position: `relative` }}>
+                <div
+                  className={`nav-mobile`}
+                  style={{
+                    backgroundColor: colors.mediumGrey,
+                    display: `flex`,
+                    flexDirection: `column`,
+                    position: `absolute`,
+                    left: `0`,
+                    height: `auto`,
+                    width: window.innerWidth,
+                  }}
+                >
+                  {this.pageLinks.map((pageLink, index) => (
+                    <div key={index} style={{ margin: `5px 0` }}>
+                      <Link to={pageLink.to}>{pageLink.name}</Link>
+                    </div>
+                  ))}
+                </div>
               </div>
             </Breakpoint>
           </div>
@@ -77,7 +105,9 @@ class NavBar extends Component {
               <Link to={`/about`}>About SuperHero Battle</Link>
             </Breakpoint>
 
-            <Breakpoint small down></Breakpoint>
+            <Breakpoint small down>
+              <Link to={`/about`}>About SuperHero Battle</Link>
+            </Breakpoint>
           </div>
         )}
       </div>
