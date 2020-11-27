@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { Breakpoint } from "react-socks";
 import { Link } from "react-router-dom";
 
+import API from "../../utils/API";
+
 import colors from "../../config/colors";
+
+import NavLinkMobile from "../NavLinkMobile";
 
 class NavBar extends Component {
   constructor(props) {
@@ -11,6 +15,10 @@ class NavBar extends Component {
   }
 
   pageLinks = [
+    {
+      name: `Landing Page`,
+      to: `/`,
+    },
     {
       name: `Home`,
       to: `/home`,
@@ -49,6 +57,12 @@ class NavBar extends Component {
     },
   ];
 
+  logOut = () => {
+    API.logOut()
+      .then(() => this.props.changeUser())
+      .catch(err => console.error(err));
+  };
+
   hideNav = () => {
     if (document.getElementsByClassName(`nav-mobile`)[0]) {
       const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
@@ -83,7 +97,8 @@ class NavBar extends Component {
                 <div
                   className={`nav-mobile`}
                   style={{
-                    backgroundColor: colors.mediumGrey,
+                    backgroundColor: colors.mediumPrimary,
+                    borderBottom: `2px solid ${colors.secondary}`,
                     display: `flex`,
                     flexDirection: `column`,
                     position: `absolute`,
@@ -94,9 +109,32 @@ class NavBar extends Component {
                 >
                   {this.pageLinks.map((pageLink, index) => (
                     <div key={index} style={{ margin: `5px 0` }}>
-                      <Link to={pageLink.to}>{pageLink.name}</Link>
+                      <NavLinkMobile
+                        index={index}
+                        length={this.pageLinks.length}
+                        to={pageLink.to}
+                        username={this.props.currentUser.username}
+                      >
+                        {pageLink.name}
+                      </NavLinkMobile>
                     </div>
                   ))}
+                  <div
+                    onClick={this.logOut}
+                    style={{
+                      color: colors.secondary,
+                      textAlign: `center`,
+                      display: `flex`,
+                      justifyContent: `center`,
+                      paddingTop: `3px, 0`,
+                      fontWeight: `bold`,
+                      cursor: `pointer`,
+                    }}
+                  >
+                    <p style={{ marginBottom: `5px` }}>
+                      Log Out {this.props.currentUser.username}
+                    </p>
+                  </div>
                 </div>
               </div>
             </Breakpoint>

@@ -89,7 +89,11 @@ class App extends Component {
           />
           <Router>
             <div className={`main-body`}>
-              <NavBar loggedIn={this.state.loggedIn} />
+              <NavBar
+                currentUser={this.state.currentUser}
+                loggedIn={this.state.loggedIn}
+                changeUser={this.changeUser}
+              />
               <Switch>
                 <Route
                   exact

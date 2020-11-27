@@ -12,6 +12,8 @@ import AppLink from "../AppLink";
 
 import API from "../../utils/API";
 
+import { FaBars } from "react-icons/fa";
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -257,15 +259,16 @@ class Header extends Component {
   };
 
   showNav = () => {
-    const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
-    if (!navMobile.classList.contains(`translateNavMobile`)) {
-      navMobile.classList.add(`translateNavMobile`);
-      navMobile.classList.remove(`translateNavMobileBack`);
-    } else {
-      navMobile.classList.add(`translateNavMobileBack`);
-      navMobile.classList.remove(`translateNavMobile`);
+    if (document.getElementsByClassName(`nav-mobile`)[0]) {
+      const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
+      if (!navMobile.classList.contains(`translateNavMobile`)) {
+        navMobile.classList.add(`translateNavMobile`);
+        navMobile.classList.remove(`translateNavMobileBack`);
+      } else {
+        navMobile.classList.add(`translateNavMobileBack`);
+        navMobile.classList.remove(`translateNavMobile`);
+      }
     }
-    // this.setState({ showNav: !this.state.showNav });
   };
 
   title = `Superhero Battle`;
@@ -301,29 +304,20 @@ class Header extends Component {
           </div>
           <div>
             <Breakpoint medium up>
-              <a
-                href="/"
-                style={{
-                  textDecoration: `none`,
-                  color: `black`,
-                }}
-              >
-                <h1 style={this.styles.headerTitleText}>{this.title}</h1>
-              </a>
+              <h1 style={this.styles.headerTitleText}>{this.title}</h1>
             </Breakpoint>
             <Breakpoint small down>
-              <a
-                href="/"
-                style={{
-                  textDecoration: `none`,
-                  color: `black`,
-                }}
-              >
-                <h4 style={this.styles.headerTitleText}>{this.title}</h4>
-              </a>
-              <div style={{ position: `relative` }}>
-                <div onClick={this.showNav} style={{ position: `absolute` }}>
-                  <p>show nav</p>
+              <div id={`header-and-menu`} style={{ position: `relative` }}>
+                {this.props.loggedIn && (
+                  <div
+                    onClick={this.showNav}
+                    style={{ position: `absolute`, left: `-30px` }}
+                  >
+                    <FaBars />
+                  </div>
+                )}
+                <div>
+                  <h4 style={this.styles.headerTitleText}>{this.title}</h4>
                 </div>
               </div>
             </Breakpoint>
@@ -363,28 +357,10 @@ class Header extends Component {
             <div>
               <Breakpoint medium up>
                 <p>
-                  Currently signed in:{` `}
                   <em>{this.props.currentUser.username}</em>
                 </p>
                 <div style={{ display: `flex`, justifyContent: `flex-end` }}>
                   <AppButton onClick={() => this.logOut()}>Log Out</AppButton>
-                </div>
-              </Breakpoint>
-              <Breakpoint small down>
-                <div style={{ marginBottom: `-10px` }}>
-                  <p style={{ fontSize: `.8rem` }}>
-                    Currently signed in:{` `}
-                    <em>{this.props.currentUser.username}</em>
-                  </p>
-                </div>
-                <div
-                  style={{
-                    display: `flex`,
-                    justifyContent: `flex-end`,
-                    marginTop: `-10px`,
-                  }}
-                >
-                  <AppLink onClick={() => this.logOut()}>Log Out</AppLink>
                 </div>
               </Breakpoint>
             </div>
