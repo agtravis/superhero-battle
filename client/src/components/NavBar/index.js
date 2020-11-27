@@ -50,10 +50,12 @@ class NavBar extends Component {
   ];
 
   hideNav = () => {
-    const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
-    if (navMobile.classList.contains(`translateNavMobile`)) {
-      navMobile.classList.add(`translateNavMobileBack`);
-      navMobile.classList.remove(`translateNavMobile`);
+    if (document.getElementsByClassName(`nav-mobile`)[0]) {
+      const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
+      if (navMobile.classList.contains(`translateNavMobile`)) {
+        navMobile.classList.add(`translateNavMobileBack`);
+        navMobile.classList.remove(`translateNavMobile`);
+      }
     }
   };
 
