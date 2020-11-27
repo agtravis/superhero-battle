@@ -311,7 +311,7 @@ class Header extends Component {
                 {this.props.loggedIn && (
                   <div
                     onClick={this.showNav}
-                    style={{ position: `absolute`, left: `-50%` }}
+                    style={{ position: `absolute`, left: `-40%` }}
                   >
                     <FaBars />
                   </div>
