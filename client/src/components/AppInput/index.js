@@ -3,63 +3,73 @@ import React, { Component } from "react";
 import colors from "../../config/colors";
 
 class AppInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   handleKeyUp = event => {
-    if (event.key === `Enter` && this.props.type === `password`) {
+    if (
+      event.key === `Enter` &&
+      (this.props.fieldName === `password` ||
+        this.props.fieldName === `username`)
+    ) {
       this.props.handleSubmit(event);
     }
+  };
+
+  styles = {
+    errorContainer: {
+      display: `flex`,
+      justifyContent: `center`,
+      position: `relative`,
+      textAlign: `center`,
+    },
+    errorText: {
+      color: `red`,
+      fontSize: `.6rem`,
+      position: `absolute`,
+    },
+    input: {
+      backgroundColor: colors.lightPrimary,
+      borderRadius: `50px`,
+      color: colors.darkPrimary,
+      fontSize: this.props.mode === `mobile` ? `.5rem` : `inherit`,
+      outline: `none`,
+      padding: `3px`,
+      textAlign: `center`,
+      ...this.props.style,
+    },
   };
 
   render() {
     return (
       <div>
         <input
-          style={{
-            backgroundColor: colors.lightPrimary,
-            border:
-              this.props.mode === `mobile`
-                ? `1px solid ${this.props.error ? `red` : colors.darkPrimary}`
-                : `2px solid ${this.props.error ? `red` : colors.darkPrimary}`,
-            borderRadius: `50px`,
-            outline: `none`,
-            color: colors.darkPrimary,
-            fontSize: this.props.mode === `mobile` ? `.5rem` : `inherit`,
-            padding: `3px`,
-            textAlign: `center`,
-            ...this.props.style,
-          }}
+          autoCapitalize={this.props.autoCapitalize}
+          autoCorrect={this.props.autoCorrect}
           id={`${this.props.id}`}
+          onKeyUp={
+            this.props.mode === `mobile`
+              ? event => this.handleKeyUp(event)
+              : null
+          }
           onChange={event =>
             this.props.handleChange(event, this.props.fieldName)
           }
-          onKeyUp={event => this.handleKeyUp(event)}
-          type={this.props.type}
           placeholder={this.props.placeholder}
-          autoCapitalize={this.props.autoCapitalize}
-          autoCorrect={this.props.autoCorrect}
+          style={{
+            ...this.styles.input,
+            border: `${this.props.mode === `mobile` ? 1 : 2}px solid ${
+              this.props.error ? `red` : colors.darkPrimary
+            }`,
+          }}
+          type={this.props.type}
         />
         <div
           style={{
-            position: `relative`,
-            display: `flex`,
-            justifyContent: `center`,
-            textAlign: `center`,
+            ...this.styles.errorContainer,
+            height:
+              this.props.error && this.props.mode === `mobile` ? `25px` : `0`,
           }}
         >
           {this.props.error && (
-            <p
-              style={{
-                position: `absolute`,
-                fontSize: `.6rem`,
-                color: `red`,
-              }}
-            >
-              {this.props.errorMessage}
-            </p>
+            <p style={this.styles.errorText}>{this.props.errorMessage}</p>
           )}
         </div>
       </div>
