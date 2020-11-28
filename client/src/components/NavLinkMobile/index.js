@@ -16,13 +16,7 @@ class NavLinkMobile extends Component {
         }}
       >
         <Link
-          style={{
-            color: colors.secondary,
-            textAlign: `center`,
-            display: `flex`,
-            justifyContent: `center`,
-            fontWeight: `bold`,
-          }}
+          style={{ ...this.props.style, color: colors.secondary }}
           to={this.props.to}
         >
           {this.props.children === `Profile`

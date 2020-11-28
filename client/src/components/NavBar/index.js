@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Breakpoint } from "react-socks";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import API from "../../utils/API";
 
 import colors from "../../config/colors";
 
 import NavLinkMobile from "../NavLinkMobile";
+import NavLink from "../NavLink";
 
 class NavBar extends Component {
   constructor(props) {
@@ -57,6 +58,13 @@ class NavBar extends Component {
     },
   ];
 
+  mobileNavStyle = {
+    textAlign: `center`,
+    display: `flex`,
+    justifyContent: `center`,
+    fontWeight: `bold`,
+  };
+
   logOut = () => {
     API.logOut()
       .then(() => this.props.changeUser())
@@ -83,11 +91,25 @@ class NavBar extends Component {
                 style={{
                   display: `flex`,
                   flexDirection: `row`,
+                  justifyContent: `space-evenly`,
+                  backgroundColor: colors.mediumPrimary,
+                  borderBottom: `2px solid ${colors.secondary}`,
                 }}
               >
                 {this.pageLinks.map((pageLink, index) => (
-                  <div key={index} style={{ margin: `0 5px` }}>
-                    <Link to={pageLink.to}>{pageLink.name}</Link>
+                  <div
+                    key={index}
+                    style={{ display: `flex`, justifyContent: `space-between` }}
+                  >
+                    <NavLink
+                      style={this.mobileNavStyle}
+                      index={index}
+                      length={this.pageLinks.length}
+                      to={pageLink.to}
+                      username={this.props.currentUser.username}
+                    >
+                      {pageLink.name}
+                    </NavLink>
                   </div>
                 ))}
               </div>
@@ -110,6 +132,7 @@ class NavBar extends Component {
                   {this.pageLinks.map((pageLink, index) => (
                     <div key={index} style={{ margin: `5px 0` }}>
                       <NavLinkMobile
+                        style={this.mobileNavStyle}
                         index={index}
                         length={this.pageLinks.length}
                         to={pageLink.to}
@@ -122,13 +145,10 @@ class NavBar extends Component {
                   <div
                     onClick={this.logOut}
                     style={{
-                      color: colors.secondary,
-                      textAlign: `center`,
-                      display: `flex`,
-                      justifyContent: `center`,
+                      ...this.mobileNavStyle,
                       paddingTop: `3px, 0`,
-                      fontWeight: `bold`,
                       cursor: `pointer`,
+                      color: colors.secondary,
                     }}
                   >
                     <p style={{ marginBottom: `5px` }}>
@@ -142,11 +162,26 @@ class NavBar extends Component {
         ) : (
           <div>
             <Breakpoint medium up>
-              <Link to={`/about`}>About SuperHero Battle</Link>
-            </Breakpoint>
-
-            <Breakpoint small down>
-              <Link to={`/about`}>About SuperHero Battle</Link>
+              <div
+                style={{
+                  display: `flex`,
+                  flexDirection: `row`,
+                  justifyContent: `space-evenly`,
+                  backgroundColor: colors.mediumPrimary,
+                  borderBottom: `2px solid ${colors.secondary}`,
+                }}
+              >
+                <NavLink
+                  style={this.mobileNavStyle}
+                  index={0}
+                  length={1}
+                  to={
+                    this.props.location.pathname === `/about` ? `/` : `/about`
+                  }
+                >
+                  About SuperHero Battle
+                </NavLink>
+              </div>
             </Breakpoint>
           </div>
         )}
@@ -155,4 +190,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

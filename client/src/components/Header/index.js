@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 import { Breakpoint } from "react-socks";
 
 import "./style.css";
@@ -12,7 +13,7 @@ import AppLink from "../AppLink";
 
 import API from "../../utils/API";
 
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaInfoCircle } from "react-icons/fa";
 
 class Header extends Component {
   constructor(props) {
@@ -316,6 +317,19 @@ class Header extends Component {
                     <FaBars />
                   </div>
                 )}
+                {!this.props.loggedIn && (
+                  <div style={{ position: `absolute`, left: `-17.5%` }}>
+                    <Link
+                      to={
+                        this.props.location.pathname === `/about`
+                          ? `/`
+                          : `/about`
+                      }
+                    >
+                      <FaInfoCircle color={colors.black} />
+                    </Link>
+                  </div>
+                )}
                 <div>
                   <h4 style={this.styles.headerTitleText}>{this.title}</h4>
                 </div>
@@ -421,4 +435,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
