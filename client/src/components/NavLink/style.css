@@ -1,0 +1,8 @@
+.nav-link {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+.nav-link:hover {
+  color: var(--darkSecondary);
+}

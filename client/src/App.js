@@ -82,12 +82,12 @@ class App extends Component {
     return (
       <BreakpointProvider>
         <div>
-          <Header
-            changeUser={this.changeUser}
-            loggedIn={this.state.loggedIn}
-            currentUser={this.state.currentUser}
-          />
           <Router>
+            <Header
+              changeUser={this.changeUser}
+              loggedIn={this.state.loggedIn}
+              currentUser={this.state.currentUser}
+            />
             <div className={`main-body`}>
               <NavBar
                 currentUser={this.state.currentUser}

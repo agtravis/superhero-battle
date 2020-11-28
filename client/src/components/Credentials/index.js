@@ -21,7 +21,7 @@ class Credentials extends Component {
           backgroundColor: colors.primary,
           display: `flex`,
           justifyContent: `center`,
-          paddingBottom: `8px`,
+          paddingBottom: `15px`,
         }}
       >
         <div style={{ width: `60%` }}>
