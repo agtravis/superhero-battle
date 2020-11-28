@@ -83,7 +83,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div style={{}}>
+      <div>
         {this.props.loggedIn ? (
           <div onClick={this.hideNav}>
             <Breakpoint medium up>
@@ -126,7 +126,7 @@ class NavBar extends Component {
                     position: `absolute`,
                     left: `0`,
                     height: `auto`,
-                    width: window.innerWidth,
+                    width: `100%`,
                   }}
                 >
                   {this.pageLinks.map((pageLink, index) => (
