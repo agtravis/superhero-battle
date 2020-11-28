@@ -19,6 +19,7 @@ class Credentials extends Component {
       <div
         style={{
           width: `200px`,
+          height: `auto`,
           border: `solid 5px ${colors.primary}`,
           borderRadius: `15px`,
           position: `absolute`,
@@ -68,6 +69,7 @@ class Credentials extends Component {
                   style={{ width: `100px` }}
                   id={`${this.props.id}-username-mobile`}
                   handleChange={this.props.handleChange}
+                  handleSubmit={this.props.handleSubmit}
                   placeholder={`username`}
                   autoCapitalize={`none`}
                   autoCorrect={`off`}

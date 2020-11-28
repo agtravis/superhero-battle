@@ -74,7 +74,6 @@ class Header extends Component {
       password.value = ``;
       password.focus();
     } else {
-      console.log(`hey hey kids!`);
       API.findOneUserByName({ search: signUpDetails.username }).then(data => {
         if (
           data.data.length > 0 &&

@@ -81,7 +81,7 @@ class Credentials extends Component {
                   </AppButton>
                   <div style={{ width: `10px` }}></div>
                   <div style={{ paddingTop: `3px` }}>
-                    <AppLink onClick={this.props.close}>hide</AppLink>
+                    <AppLink onClick={this.props.close}>Hide</AppLink>
                   </div>
                 </div>
               </div>

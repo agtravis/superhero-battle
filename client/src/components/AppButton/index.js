@@ -3,13 +3,6 @@ import React, { Component } from "react";
 import "./style.css";
 
 class AppButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hover: false,
-    };
-  }
-
   render() {
     return (
       <div>

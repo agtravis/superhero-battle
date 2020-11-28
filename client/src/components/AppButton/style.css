@@ -3,7 +3,6 @@
   border-radius: 3px;
   color: var(--danger);
   background-color: var(--lightDanger);
-  /* font-weight: bold; */
 }
 .appButton:hover {
   background-color: var(--danger);

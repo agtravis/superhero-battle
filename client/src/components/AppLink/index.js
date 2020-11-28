@@ -3,22 +3,10 @@ import React, { Component } from "react";
 import "./style.css";
 
 class AppLink extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <div>
-        <p
-          style={{
-            transform: this.props.transform,
-            width: this.props.width,
-          }}
-          className={`appLink`}
-          onClick={this.props.onClick}
-        >
+        <p className={`appLink`} onClick={this.props.onClick}>
           {this.props.children}
         </p>
       </div>
