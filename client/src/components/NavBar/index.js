@@ -15,6 +15,37 @@ class NavBar extends Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    let touchstartY = 0;
+    let touchendY = 0;
+    let startTime;
+    const gestureZone = document.getElementById(`root`);
+    gestureZone.addEventListener(
+      `touchstart`,
+      function (event) {
+        startTime = new Date().getTime();
+        touchstartY = event.changedTouches[0].screenY;
+      },
+      false
+    );
+    gestureZone.addEventListener(
+      `touchend`,
+      function (event) {
+        const elapsedTime = new Date().getTime() - startTime;
+        touchendY = event.changedTouches[0].screenY;
+        if (elapsedTime <= 300) {
+          handleGesture(touchstartY, touchendY);
+        }
+      },
+      false
+    );
+    const handleGesture = (touchstartY, touchendY) => {
+      if (touchendY <= touchstartY && Math.abs(touchendY - touchstartY) > 100) {
+        this.hideNav();
+      }
+    };
+  }
+
   pageLinks = [
     {
       name: `Landing Page`,
