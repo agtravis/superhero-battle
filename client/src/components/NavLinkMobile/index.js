@@ -13,6 +13,7 @@ class NavLinkMobile extends Component {
       <div
         style={{
           borderBottom: `1px dashed ${colors.secondary}`,
+          paddingBottom: `3px`,
         }}
       >
         <Link
