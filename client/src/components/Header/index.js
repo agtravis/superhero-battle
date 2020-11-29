@@ -325,7 +325,7 @@ class Header extends Component {
                   </div>
                 )}
                 {!this.props.loggedIn && (
-                  <div style={{ position: `absolute`, left: `-17.5%` }}>
+                  <div style={{ position: `absolute`, left: `-12.5%` }}>
                     <Link
                       to={
                         this.props.location.pathname === `/about`
