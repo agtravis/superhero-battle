@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import colors from "../../config/colors";
 
 class AppInput extends Component {
