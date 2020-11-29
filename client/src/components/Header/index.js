@@ -105,8 +105,16 @@ class Header extends Component {
     this.setState({ error: ``, fieldIncomplete: `` });
     if (signInDetails.username.length === 0) {
       this.setState({ fieldIncomplete: `nousername` });
+      const username = document.getElementById(`login-username`)
+        ? document.getElementById(`login-username`)
+        : document.getElementById(`login-username-mobile`);
+      username.focus();
     } else if (signInDetails.password.length === 0) {
       this.setState({ fieldIncomplete: `nopassword` });
+      const password = document.getElementById(`login-password`)
+        ? document.getElementById(`login-password`)
+        : document.getElementById(`login-password-mobile`);
+      password.focus();
     } else {
       API.findOneUserByName({ search: signInDetails.username })
         .then(data => {
