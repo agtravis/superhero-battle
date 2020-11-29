@@ -1,39 +1,46 @@
 import React, { Component } from "react";
-
+import colors from "../../config/colors";
 import AppButton from "../AppButton";
 import AppLink from "../AppLink";
 import AppInput from "../AppInput";
 
-import colors from "../../config/colors";
-
 class Credentials extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  styles = {
+    buttonSpacerDiv: { width: `10px` },
+    credentialsButtonsContainer: {
+      display: `flex`,
+      flexDirection: `row`,
+      paddingTop: `2px`,
+    },
+    credentialsContainer: {
+      backgroundColor: colors.primary,
+      display: `flex`,
+      justifyContent: `center`,
+      paddingBottom: `15px`,
+      width: `100%`,
+    },
+    credentialsHider: { paddingTop: `3px` },
+    formInnerContainer: {
+      display: `flex`,
+      flexDirection: `row`,
+      justifyContent: `space-around`,
+    },
+    formOuterContainer: { width: `60%` },
+    input: { margin: `0px 5px` },
+  };
+
+  hiderButtonText = `Hide`;
 
   render() {
     return (
       <div
         className={`${this.props.id}-form`}
-        style={{
-          width: `100%`,
-          backgroundColor: colors.primary,
-          display: `flex`,
-          justifyContent: `center`,
-          paddingBottom: `15px`,
-        }}
+        style={this.styles.credentialsContainer}
       >
-        <div style={{ width: `60%` }}>
+        <div style={this.styles.formOuterContainer}>
           <form onSubmit={event => this.props.handleSubmit(event)}>
             {this.props.id === `login` && (
-              <div
-                style={{
-                  display: `flex`,
-                  flexDirection: `row`,
-                  justifyContent: `space-around`,
-                }}
-              >
+              <div style={this.styles.formInnerContainer}>
                 <AppInput
                   error={
                     this.props.error === `userdoesnotexist` ||
@@ -47,9 +54,10 @@ class Credentials extends Component {
                       : `Please enter a username`
                   }
                   fieldName={`username`}
-                  id={`${this.props.id}-username`}
                   handleChange={this.props.handleChange}
+                  id={`${this.props.id}-username`}
                   placeholder="username"
+                  style={this.styles.input}
                 />
                 <AppInput
                   error={
@@ -64,36 +72,27 @@ class Credentials extends Component {
                       : `Please enter a password`
                   }
                   fieldName={`password`}
-                  id={`${this.props.id}-password`}
-                  type="password"
                   handleChange={this.props.handleChange}
-                  placeholder="password"
+                  id={`${this.props.id}-password`}
+                  placeholder={`password`}
+                  style={this.styles.input}
+                  type={`password`}
                 />
-                <div
-                  style={{
-                    display: `flex`,
-                    flexDirection: `row`,
-                    paddingTop: `2px`,
-                  }}
-                >
-                  <AppButton width={80} type="submit">
+                <div style={this.styles.credentialsButtonsContainer}>
+                  <AppButton width={80} type={`submit`}>
                     {this.props.buttonName}
                   </AppButton>
-                  <div style={{ width: `10px` }}></div>
-                  <div style={{ paddingTop: `3px` }}>
-                    <AppLink onClick={this.props.close}>Hide</AppLink>
+                  <div style={this.styles.buttonSpacerDiv}></div>
+                  <div style={this.styles.credentialsHider}>
+                    <AppLink onClick={this.props.close}>
+                      {this.hiderButtonText}
+                    </AppLink>
                   </div>
                 </div>
               </div>
             )}
             {this.props.id === `signup` && (
-              <div
-                style={{
-                  display: `flex`,
-                  flexDirection: `row`,
-                  justifyContent: `space-around`,
-                }}
-              >
+              <div style={this.styles.formInnerContainer}>
                 <AppInput
                   error={
                     this.props.error === `useralreadyexists` ||
@@ -107,8 +106,8 @@ class Credentials extends Component {
                       : `Please enter a username`
                   }
                   fieldName={`username`}
-                  id={`${this.props.id}-username`}
                   handleChange={this.props.handleChange}
+                  id={`${this.props.id}-username`}
                   placeholder="username"
                 />
                 <AppInput
@@ -124,24 +123,20 @@ class Credentials extends Component {
                       : `Please enter a password`
                   }
                   fieldName={`password`}
-                  id={`${this.props.id}-password`}
-                  type="password"
                   handleChange={this.props.handleChange}
-                  placeholder="password"
+                  id={`${this.props.id}-password`}
+                  placeholder={`password`}
+                  type={`password`}
                 />
-                <div
-                  style={{
-                    display: `flex`,
-                    flexDirection: `row`,
-                    paddingTop: `2px`,
-                  }}
-                >
-                  <AppButton width={80} type="submit">
+                <div style={this.styles.credentialsButtonsContainer}>
+                  <AppButton width={80} type={`submit`}>
                     {this.props.buttonName}
                   </AppButton>
-                  <div style={{ width: `10px` }}></div>
-                  <div style={{ paddingTop: `3px` }}>
-                    <AppLink onClick={this.props.close}>hide</AppLink>
+                  <div style={this.styles.buttonSpacerDiv}></div>
+                  <div style={this.styles.credentialsHider}>
+                    <AppLink onClick={this.props.close}>
+                      {this.hiderButtonText}
+                    </AppLink>
                   </div>
                 </div>
               </div>
