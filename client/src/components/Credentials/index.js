@@ -21,7 +21,9 @@ class Credentials extends Component {
         style={this.styles.credentialsContainer}
       >
         <div style={this.styles.formOuterContainer}>
-          <form onSubmit={event => this.props.handleSubmit(event)}>
+          <form
+            onSubmit={event => this.props.handleSubmit(event, this.props.id)}
+          >
             {this.props.id === `login` && (
               <CredentialsForm
                 buttonName={this.props.buttonName}

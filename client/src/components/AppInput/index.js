@@ -8,7 +8,8 @@ class AppInput extends Component {
       (this.props.fieldName === `password` ||
         this.props.fieldName === `username`)
     ) {
-      this.props.handleSubmit(event);
+      let type = this.props.id.split(`-`)[0];
+      this.props.handleSubmit(event, type);
     }
   };
 

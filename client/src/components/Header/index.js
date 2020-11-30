@@ -19,101 +19,56 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: ``,
+      error: ``,
+      fieldIncomplete: ``,
       password: ``,
       showLogIn: false,
       showSignUp: false,
       showLogInMobile: false,
       showSignUpMobile: false,
       showNav: false,
-      error: ``,
-      fieldIncomplete: ``,
+      username: ``,
     };
   }
 
-  handleChange = (event, stateKey) => {
-    this.setState({ [stateKey]: event.target.value });
+  title = `Superhero Battle`;
+
+  styles = {
+    header: {
+      alignItems: `center`,
+      backgroundColor: colors.primary,
+      display: `flex`,
+      justifyContent: `space-between`,
+      padding: `10px 20px`,
+      position: `relative`,
+      zIndex: 1,
+    },
+    headerTitleText: {
+      color: colors.black,
+      fontFamily: `Impact, Charcoal, sans-serif`,
+    },
   };
 
-  logInSubmit = event => {
-    event.preventDefault();
-    const userDetails = {
-      username: this.state.username,
-      password: this.state.password,
-    };
-    this.logIn(userDetails);
+  addAndRemoveOneClass = (element, classToAdd, ClassToRemove) => {
+    element.classList.add(classToAdd);
+    element.classList.remove(ClassToRemove);
   };
 
-  newUserSubmit = event => {
-    event.preventDefault();
-    const userDetails = {
-      username: this.state.username,
-      password: this.state.password,
-    };
-    this.signUpUser(userDetails);
-  };
-
-  signUpUser = signUpDetails => {
-    this.setState({ error: ``, fieldIncomplete: `` });
-    if (signUpDetails.username.length === 0) {
-      this.setState({ fieldIncomplete: `nousername` });
-      const username = document.getElementById(`signup-username`)
-        ? document.getElementById(`signup-username`)
-        : document.getElementById(`signup-username-mobile`);
-      username.focus();
-    } else if (signUpDetails.password.length < 4) {
-      // } else if (
-      //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/.test(
-      //     signUpDetails.password
-      //   ) === false
-      // ) {
-      this.setState({ error: `regexfail` });
-      const password = document.getElementById(`signup-password`)
-        ? document.getElementById(`signup-password`)
-        : document.getElementById(`signup-password-mobile`);
-      password.value = ``;
-      password.focus();
-    } else {
-      API.findOneUserByName({ search: signUpDetails.username }).then(data => {
-        if (
-          data.data.length > 0 &&
-          signUpDetails.username === data.data[0].username
-        ) {
-          this.setState({ error: `useralreadyexists` });
-          const username = document.getElementById(`signup-username`)
-            ? document.getElementById(`signup-username`)
-            : document.getElementById(`signup-username-mobile`);
-          const password = document.getElementById(`signup-password`)
-            ? document.getElementById(`signup-password`)
-            : document.getElementById(`signup-password-mobile`);
-          password.value = ``;
-          this.setState({ password: `` });
-          username.focus();
-        } else {
-          API.newUser(signUpDetails)
-            .then(() => {
-              this.resetCredentials(`signup`);
-              this.logIn(signUpDetails);
-            })
-            .catch(err => console.error(err));
-        }
-      });
-    }
-  };
+  assignElementById = id =>
+    document.getElementById(id)
+      ? document.getElementById(id)
+      : document.getElementById(`${id}-mobile`)
+      ? document.getElementById(`${id}-mobile`)
+      : null;
 
   logIn = signInDetails => {
     this.setState({ error: ``, fieldIncomplete: `` });
     if (signInDetails.username.length === 0) {
       this.setState({ fieldIncomplete: `nousername` });
-      const username = document.getElementById(`login-username`)
-        ? document.getElementById(`login-username`)
-        : document.getElementById(`login-username-mobile`);
-      username.focus();
+      this.assignElementById(`login-username`).focus();
     } else if (signInDetails.password.length === 0) {
       this.setState({ fieldIncomplete: `nopassword` });
-      const password = document.getElementById(`login-password`)
-        ? document.getElementById(`login-password`)
-        : document.getElementById(`login-password-mobile`);
+      const password = this.assignElementById(`login-password`);
       password.focus();
     } else {
       API.findOneUserByName({ search: signInDetails.username })
@@ -137,28 +92,31 @@ class Header extends Component {
                     showSignUpMobile: false,
                     showLogInMobile: false,
                   });
-                  this.resetCredentials(`login`);
                   this.props.changeUser();
                 }
               })
-              .catch(err => {
+              .catch(() => {
                 this.setState({ error: `passworddoesnotmatch` });
-                const password = document.getElementById(`login-password`)
-                  ? document.getElementById(`login-password`)
-                  : document.getElementById(`login-password-mobile`);
+                const password = this.assignElementById(`login-password`);
                 password.value = ``;
                 password.focus();
               });
           } else {
             this.setState({ error: `userdoesnotexist` });
-            const username = document.getElementById(`login-username`)
-              ? document.getElementById(`login-username`)
-              : document.getElementById(`login-username-mobile`);
-            username.focus();
+            this.assignElementById(`login-username`).focus();
           }
         })
         .catch(err => console.error(err));
     }
+  };
+
+  logInSignUpSubmit = (event, type) => {
+    event.preventDefault();
+    const userDetails = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    type === `login` ? this.logIn(userDetails) : this.signUpUser(userDetails);
   };
 
   logOut = () => {
@@ -167,14 +125,13 @@ class Header extends Component {
       .catch(err => console.error(err));
   };
 
+  handleChange = (event, stateKey) => {
+    this.setState({ [stateKey]: event.target.value });
+  };
+
   resetCredentials = mode => {
-    if (document.getElementById(`${mode}-username`)) {
-      document.getElementById(`${mode}-username`).value = ``;
-      document.getElementById(`${mode}-password`).value = ``;
-    } else if (document.getElementById(`${mode}-username-mobile`)) {
-      document.getElementById(`${mode}-username-mobile`).value = ``;
-      document.getElementById(`${mode}-password-mobile`).value = ``;
-    }
+    this.assignElementById(`${mode}-username`).value = ``;
+    this.assignElementById(`${mode}-password`).value = ``;
     this.setState({
       username: ``,
       password: ``,
@@ -187,14 +144,12 @@ class Header extends Component {
     this.resetCredentials(`signup`);
     if (this.state.showSignUp) {
       this.showSignUp();
-      setTimeout(() => this.showLogInLogic(), 400);
+      setTimeout(() => this.showLogInSignUpLogic(`login`), 400);
     } else {
-      this.showLogInLogic();
+      this.showLogInSignUpLogic(`login`);
     }
     setTimeout(() => {
-      if (document.getElementById(`login-username`)) {
-        document.getElementById(`login-username`).focus();
-      }
+      this.assignElementById(`login-username`).focus();
     }, 500);
   };
 
@@ -205,6 +160,43 @@ class Header extends Component {
     this.setState({ showLogInMobile: !this.state.showLogInMobile });
   };
 
+  showLogInSignUpLogic = type => {
+    this.translateForm(document.getElementsByClassName(`${type}-form`)[0]);
+    type === `login`
+      ? this.setState({ showLogIn: !this.state.showLogIn })
+      : this.setState({ showSignUp: !this.state.showSignUp });
+  };
+
+  showNav = () => {
+    if (document.getElementsByClassName(`nav-mobile`)[0]) {
+      const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
+      navMobile.classList.contains(`translateNavMobile`)
+        ? this.addAndRemoveOneClass(
+            navMobile,
+            `translateNavMobileBack`,
+            `translateNavMobile`
+          )
+        : this.addAndRemoveOneClass(
+            navMobile,
+            `translateNavMobile`,
+            `translateNavMobileBack`
+          );
+    }
+  };
+
+  showSignUp = () => {
+    this.resetCredentials(`login`);
+    if (this.state.showLogIn) {
+      this.showLogIn();
+      setTimeout(() => this.showLogInSignUpLogic(`signup`), 400);
+    } else {
+      this.showLogInSignUpLogic(`signup`);
+    }
+    setTimeout(() => {
+      this.assignElementById(`signup-username`).focus();
+    }, 500);
+  };
+
   showSignUpMobile = () => {
     if (this.state.showLogInMobile) {
       this.setState({ showLogInMobile: false });
@@ -212,89 +204,47 @@ class Header extends Component {
     this.setState({ showSignUpMobile: !this.state.showSignUpMobile });
   };
 
-  showSignUp = () => {
-    this.resetCredentials(`login`);
-    if (this.state.showLogIn) {
-      this.showLogIn();
-      setTimeout(() => this.showSignUpLogic(), 400);
+  signUpUser = signUpDetails => {
+    this.setState({ error: ``, fieldIncomplete: `` });
+    if (signUpDetails.username.length === 0) {
+      this.setState({ fieldIncomplete: `nousername` });
+      this.assignElementById(`signup-username`).focus();
+    } else if (signUpDetails.password.length < 4) {
+      this.setState({ error: `regexfail` });
+      const password = this.assignElementById(`signup-password`);
+      password.value = ``;
+      password.focus();
     } else {
-      this.showSignUpLogic();
+      API.findOneUserByName({ search: signUpDetails.username }).then(data => {
+        if (
+          data.data.length > 0 &&
+          signUpDetails.username === data.data[0].username
+        ) {
+          this.setState({ error: `useralreadyexists` });
+          this.assignElementById(`signup-password`).value = ``;
+          this.setState({ password: `` });
+          this.assignElementById(`signup-username`).focus();
+        } else {
+          API.newUser(signUpDetails)
+            .then(() => {
+              this.resetCredentials(`signup`);
+              this.logIn(signUpDetails);
+            })
+            .catch(err => console.error(err));
+        }
+      });
     }
-    setTimeout(() => {
-      if (document.getElementById(`signup-username`)) {
-        document.getElementById(`signup-username`).focus();
-      }
-    }, 500);
   };
 
-  slideBody = isCredentialsShowing => {
+  translateForm = form => {
     const body = document.getElementsByClassName(`main-body`)[0];
-    if (!isCredentialsShowing) {
-      body.classList.remove(`translateBodyBack`);
-      body.classList.add(`translateBody`);
+    if (form.classList.contains(`translate`)) {
+      this.addAndRemoveOneClass(form, `translateBack`, `translate`);
+      this.addAndRemoveOneClass(body, `translateBodyBack`, `translateBody`);
     } else {
-      body.classList.add(`translateBodyBack`);
-      body.classList.remove(`translateBody`);
+      this.addAndRemoveOneClass(form, `translate`, `translateBack`);
+      this.addAndRemoveOneClass(body, `translateBody`, `translateBodyBack`);
     }
-  };
-
-  showLogInLogic = () => {
-    const logInForm = document.getElementsByClassName(`login-form`)[0];
-    if (!this.state.showLogIn) {
-      logInForm.classList.remove(`translateBack`);
-      logInForm.classList.add(`translate`);
-      this.slideBody(false);
-    } else {
-      logInForm.classList.remove(`translate`);
-      logInForm.classList.add(`translateBack`);
-      this.slideBody(true);
-    }
-    this.setState({ showLogIn: !this.state.showLogIn });
-  };
-
-  showSignUpLogic = () => {
-    const signUpForm = document.getElementsByClassName(`signup-form`)[0];
-    if (!this.state.showSignUp) {
-      signUpForm.classList.remove(`translateBack`);
-      signUpForm.classList.add(`translate`);
-      this.slideBody(false);
-    } else {
-      signUpForm.classList.remove(`translate`);
-      signUpForm.classList.add(`translateBack`);
-      this.slideBody(true);
-    }
-    this.setState({ showSignUp: !this.state.showSignUp });
-  };
-
-  showNav = () => {
-    if (document.getElementsByClassName(`nav-mobile`)[0]) {
-      const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
-      if (!navMobile.classList.contains(`translateNavMobile`)) {
-        navMobile.classList.add(`translateNavMobile`);
-        navMobile.classList.remove(`translateNavMobileBack`);
-      } else {
-        navMobile.classList.add(`translateNavMobileBack`);
-        navMobile.classList.remove(`translateNavMobile`);
-      }
-    }
-  };
-
-  title = `Superhero Battle`;
-
-  styles = {
-    header: {
-      backgroundColor: colors.primary,
-      display: `flex`,
-      justifyContent: `space-between`,
-      alignItems: `center`,
-      padding: `10px 20px`,
-      position: `relative`,
-      zIndex: 1,
-    },
-    headerTitleText: {
-      fontFamily: `Impact, Charcoal, sans-serif`,
-      color: colors.black,
-    },
   };
 
   render() {
@@ -392,7 +342,7 @@ class Header extends Component {
             <Credentials
               fieldIncomplete={this.state.fieldIncomplete}
               error={this.state.error}
-              handleSubmit={this.logInSubmit}
+              handleSubmit={this.logInSignUpSubmit}
               handleChange={this.handleChange}
               close={this.showLogIn}
               buttonName={`Log In!`}
@@ -403,7 +353,7 @@ class Header extends Component {
             <Credentials
               fieldIncomplete={this.state.fieldIncomplete}
               error={this.state.error}
-              handleSubmit={this.newUserSubmit}
+              handleSubmit={this.logInSignUpSubmit}
               handleChange={this.handleChange}
               close={this.showSignUp}
               buttonName={`Sign Up!`}
@@ -417,7 +367,7 @@ class Header extends Component {
               <CredentialsMobile
                 fieldIncomplete={this.state.fieldIncomplete}
                 error={this.state.error}
-                handleSubmit={this.logInSubmit}
+                handleSubmit={this.logInSignUpSubmit}
                 handleChange={this.handleChange}
                 close={this.showLogInMobile}
                 buttonName={`Log In!`}
@@ -428,7 +378,7 @@ class Header extends Component {
               <CredentialsMobile
                 fieldIncomplete={this.state.fieldIncomplete}
                 error={this.state.error}
-                handleSubmit={this.newUserSubmit}
+                handleSubmit={this.logInSignUpSubmit}
                 handleChange={this.handleChange}
                 close={this.showSignUpMobile}
                 buttonName={`Sign Up!`}
@@ -443,3 +393,10 @@ class Header extends Component {
 }
 
 export default withRouter(Header);
+
+// Code to switch password validation from 4 character minimum to 8, one lower, one upper, one number, one special
+// } else if (
+//   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/.test(
+//     signUpDetails.password
+//   ) === false
+// ) {

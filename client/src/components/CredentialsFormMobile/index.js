@@ -47,7 +47,7 @@ class CredentialsFormMobile extends Component {
         </div>
         <div style={{ marginTop: `10px` }}>
           <AppLink
-            onClick={event => this.props.handleSubmit(event)}
+            onClick={event => this.props.handleSubmit(event, this.props.id)}
             style={{ width: `100px` }}
             type={`submit`}
           >
