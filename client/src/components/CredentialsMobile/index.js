@@ -35,7 +35,7 @@ class Credentials extends Component {
         <div style={this.styles.closeButton}>
           <AppLink onClick={this.props.close}>X</AppLink>
         </div>
-        <form onSubmit={event => this.props.handleSubmit(event)}>
+        <form onSubmit={event => this.props.handleSubmit(event, this.props.id)}>
           {this.props.id === `login` && (
             <CredentialsFormMobile
               buttonName={this.props.buttonName}
