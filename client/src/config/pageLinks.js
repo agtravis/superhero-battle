@@ -1,11 +1,7 @@
 const pageLinks = [
   {
-    name: `Landing Page`,
-    to: `/`,
-  },
-  {
     name: `Home`,
-    to: `/home`,
+    to: `/`,
   },
   {
     name: `Profile`,

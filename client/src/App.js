@@ -18,6 +18,8 @@ import Leaderboard from "./pages/Leaderboard";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 
+import Screen from "./components/Screen";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -132,114 +134,120 @@ class App extends Component {
                 logOut={this.logOut}
               />
               <Switch>
-                <Route
-                  exact
-                  path="/"
-                  render={() => (
-                    <Index
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                      captain={this.state.roster[0]}
-                      recruit={this.state.roster[this.state.roster.length - 1]}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/home"
-                  render={() => (
-                    <Home
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                      battles={this.state.battles}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/fight"
-                  render={() => (
-                    <Fight
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                      roster={this.state.roster}
-                      fillUser={this.fillUser}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/fightsolo"
-                  render={() => (
-                    <FightSolo
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                      roster={this.state.roster}
-                      fillUser={this.fillUser}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/fightteam"
-                  render={() => (
-                    <FightTeam
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                      roster={this.state.roster}
-                      teams={this.state.teams}
-                      fillUser={this.fillUser}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/stats"
-                  render={() => (
-                    <Stats
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                      roster={this.state.roster}
-                      battles={this.state.battles}
-                      record={this.state.record}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/roster"
-                  render={() => (
-                    <Roster
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                      roster={this.state.roster}
-                      fillUser={this.fillUser}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/teams"
-                  render={() => (
-                    <Teams
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                      roster={this.state.roster}
-                      teams={this.state.teams}
-                      fillUser={this.fillUser}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/leaderboard"
-                  render={() => (
-                    <Leaderboard
-                      loggedIn={this.state.loggedIn}
-                      currentUser={this.state.currentUser}
-                    />
-                  )}
-                />
+                <Screen>
+                  {/* "/" is home */}
+                  <Route
+                    exact
+                    path="/"
+                    render={() => (
+                      <Index
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        captain={this.state.roster[0]}
+                        recruit={
+                          this.state.roster[this.state.roster.length - 1]
+                        }
+                      />
+                    )}
+                  />
+                  {/* "/home" is deprecated*/}
+                  <Route
+                    exact
+                    path="/home"
+                    render={() => (
+                      <Home
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        battles={this.state.battles}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/fight"
+                    render={() => (
+                      <Fight
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        roster={this.state.roster}
+                        fillUser={this.fillUser}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/fightsolo"
+                    render={() => (
+                      <FightSolo
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        roster={this.state.roster}
+                        fillUser={this.fillUser}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/fightteam"
+                    render={() => (
+                      <FightTeam
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        roster={this.state.roster}
+                        teams={this.state.teams}
+                        fillUser={this.fillUser}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/stats"
+                    render={() => (
+                      <Stats
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        roster={this.state.roster}
+                        battles={this.state.battles}
+                        record={this.state.record}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/roster"
+                    render={() => (
+                      <Roster
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        roster={this.state.roster}
+                        fillUser={this.fillUser}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/teams"
+                    render={() => (
+                      <Teams
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                        roster={this.state.roster}
+                        teams={this.state.teams}
+                        fillUser={this.fillUser}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/leaderboard"
+                    render={() => (
+                      <Leaderboard
+                        loggedIn={this.state.loggedIn}
+                        currentUser={this.state.currentUser}
+                      />
+                    )}
+                  />
+                </Screen>
               </Switch>
             </div>
           </Router>

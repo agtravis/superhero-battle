@@ -4,10 +4,14 @@
   --body-start-point: 0px;
   --nav-bar-start-point: -450px;
 }
-
 #header-container {
   position: relative;
 }
+/* @media only screen and (max-width: 768px) {
+  #header-container {
+    height: 700px;
+  } */
+/* } */
 .login-form {
   position: absolute;
   margin-top: var(--log-in-start-point);
