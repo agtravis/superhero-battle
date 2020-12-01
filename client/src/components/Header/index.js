@@ -286,9 +286,11 @@ class Header extends Component {
                   <div
                     style={{ ...this.styles.userButtons, flexDirection: `row` }}
                   >
-                    <AppButton onClick={() => this.showLogIn()}>
-                      Log In
-                    </AppButton>
+                    <div>
+                      <AppButton onClick={() => this.showLogIn()}>
+                        Log In
+                      </AppButton>
+                    </div>
                     <HorizontalSpacer width={10} />
                     <div style={{ padding: `2px` }}>
                       <AppLink onClick={() => this.showSignUp()}>
@@ -321,23 +323,20 @@ class Header extends Component {
               <Breakpoint medium up>
                 <div style={{ position: `relative` }}>
                   <div
-                    style={{
-                      ...this.styles.userButtons,
-                      flexDirection: `column`,
-                    }}
+                    style={{ ...this.styles.userButtons, flexDirection: `row` }}
                   >
-                    <div>
-                      <p>
-                        <em>{this.props.currentUser.username}</em>
-                      </p>
-                    </div>
-
                     <div
                       style={{ display: `flex`, justifyContent: `flex-end` }}
                     >
                       <AppButton onClick={() => this.props.logOut()}>
                         Log Out
                       </AppButton>
+                    </div>
+                    <HorizontalSpacer width={10} />
+                    <div>
+                      <p>
+                        <em>{this.props.currentUser.username}</em>
+                      </p>
                     </div>
                   </div>
                 </div>
