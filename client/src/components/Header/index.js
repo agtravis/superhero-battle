@@ -47,6 +47,7 @@ class Header extends Component {
     },
     userButtons: {
       display: `flex`,
+      flexDirection: `row`,
       position: `absolute`,
       top: `-25px`,
       left: `-140px`,
@@ -283,9 +284,7 @@ class Header extends Component {
             <div>
               <Breakpoint medium up>
                 <div style={{ position: `relative` }}>
-                  <div
-                    style={{ ...this.styles.userButtons, flexDirection: `row` }}
-                  >
+                  <div style={this.styles.userButtons}>
                     <div>
                       <AppButton onClick={() => this.showLogIn()}>
                         Log In
@@ -322,9 +321,7 @@ class Header extends Component {
             <div>
               <Breakpoint medium up>
                 <div style={{ position: `relative` }}>
-                  <div
-                    style={{ ...this.styles.userButtons, flexDirection: `row` }}
-                  >
+                  <div style={this.styles.userButtons}>
                     <div
                       style={{ display: `flex`, justifyContent: `flex-end` }}
                     >
