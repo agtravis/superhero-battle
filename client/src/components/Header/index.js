@@ -11,6 +11,7 @@ import AppLink from "../AppLink";
 import Credentials from "../Credentials";
 import CredentialsMobile from "../CredentialsMobile";
 import HorizontalSpacer from "../HorizontalSpacer";
+import VerticalSpacer from "../VerticalSpacer";
 
 class Header extends Component {
   constructor(props) {
@@ -43,6 +44,12 @@ class Header extends Component {
     headerTitleText: {
       color: colors.black,
       fontFamily: `Impact, Charcoal, sans-serif`,
+    },
+    userButtons: {
+      display: `flex`,
+      position: `absolute`,
+      top: `-25px`,
+      left: `-140px`,
     },
   };
 
@@ -228,13 +235,16 @@ class Header extends Component {
     return (
       <div id={`header-container`}>
         <div style={this.styles.header}>
-          <div>
+          <div style={{ position: `relative` }}>
             <Breakpoint medium up>
-              <img
-                alt={`spider-man`}
-                height={120}
-                src={`/spiderman_mcfarlane.png`}
-              />
+              <VerticalSpacer height={120} />
+              <div style={{ position: `absolute`, top: `0px` }}>
+                <img
+                  alt={`spider-man`}
+                  height={120}
+                  src={`/spiderman_mcfarlane.png`}
+                />
+              </div>
             </Breakpoint>
           </div>
           <div>
@@ -271,15 +281,21 @@ class Header extends Component {
           </div>
           {!this.props.loggedIn ? (
             <div>
-              <Breakpoint
-                medium
-                up
-                style={{ display: `flex`, flexDirection: `row` }}
-              >
-                <AppButton onClick={() => this.showLogIn()}>Log In</AppButton>
-                <HorizontalSpacer width={10} />
-                <div style={{ padding: `2px` }}>
-                  <AppLink onClick={() => this.showSignUp()}>Sign Up</AppLink>
+              <Breakpoint medium up>
+                <div style={{ position: `relative` }}>
+                  <div
+                    style={{ ...this.styles.userButtons, flexDirection: `row` }}
+                  >
+                    <AppButton onClick={() => this.showLogIn()}>
+                      Log In
+                    </AppButton>
+                    <HorizontalSpacer width={10} />
+                    <div style={{ padding: `2px` }}>
+                      <AppLink onClick={() => this.showSignUp()}>
+                        Sign Up
+                      </AppLink>
+                    </div>
+                  </div>
                 </div>
               </Breakpoint>
               <Breakpoint small down>
@@ -303,13 +319,27 @@ class Header extends Component {
           ) : (
             <div>
               <Breakpoint medium up>
-                <p>
-                  <em>{this.props.currentUser.username}</em>
-                </p>
-                <div style={{ display: `flex`, justifyContent: `flex-end` }}>
-                  <AppButton onClick={() => this.props.logOut()}>
-                    Log Out
-                  </AppButton>
+                <div style={{ position: `relative` }}>
+                  <div
+                    style={{
+                      ...this.styles.userButtons,
+                      flexDirection: `column`,
+                    }}
+                  >
+                    <div>
+                      <p>
+                        <em>{this.props.currentUser.username}</em>
+                      </p>
+                    </div>
+
+                    <div
+                      style={{ display: `flex`, justifyContent: `flex-end` }}
+                    >
+                      <AppButton onClick={() => this.props.logOut()}>
+                        Log Out
+                      </AppButton>
+                    </div>
+                  </div>
                 </div>
               </Breakpoint>
             </div>
