@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Breakpoint } from "react-socks";
-
+import { FaBars, FaInfoCircle } from "react-icons/fa";
 import "./style.css";
-
 import colors from "../../config/colors";
-
-import Credentials from "../Credentials";
-import CredentialsMobile from "../CredentialsMobile";
-import AppButton from "../AppButton";
-import AppLink from "../AppLink";
-
 import API from "../../utils/API";
 
-import { FaBars, FaInfoCircle } from "react-icons/fa";
+import AppButton from "../AppButton";
+import AppLink from "../AppLink";
+import Credentials from "../Credentials";
+import CredentialsMobile from "../CredentialsMobile";
+import HorizontalSpacer from "../HorizontalSpacer";
 
 class Header extends Component {
   constructor(props) {
@@ -47,11 +44,6 @@ class Header extends Component {
       color: colors.black,
       fontFamily: `Impact, Charcoal, sans-serif`,
     },
-  };
-
-  addAndRemoveOneClass = (element, classToAdd, ClassToRemove) => {
-    element.classList.add(classToAdd);
-    element.classList.remove(ClassToRemove);
   };
 
   assignElementById = id =>
@@ -119,12 +111,6 @@ class Header extends Component {
     type === `login` ? this.logIn(userDetails) : this.signUpUser(userDetails);
   };
 
-  logOut = () => {
-    API.logOut()
-      .then(() => this.props.changeUser())
-      .catch(err => console.error(err));
-  };
-
   handleChange = (event, stateKey) => {
     this.setState({ [stateKey]: event.target.value });
   };
@@ -165,23 +151,6 @@ class Header extends Component {
     type === `login`
       ? this.setState({ showLogIn: !this.state.showLogIn })
       : this.setState({ showSignUp: !this.state.showSignUp });
-  };
-
-  showNav = () => {
-    if (document.getElementsByClassName(`nav-mobile`)[0]) {
-      const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
-      navMobile.classList.contains(`translateNavMobile`)
-        ? this.addAndRemoveOneClass(
-            navMobile,
-            `translateNavMobileBack`,
-            `translateNavMobile`
-          )
-        : this.addAndRemoveOneClass(
-            navMobile,
-            `translateNavMobile`,
-            `translateNavMobileBack`
-          );
-    }
   };
 
   showSignUp = () => {
@@ -239,11 +208,19 @@ class Header extends Component {
   translateForm = form => {
     const body = document.getElementsByClassName(`main-body`)[0];
     if (form.classList.contains(`translate`)) {
-      this.addAndRemoveOneClass(form, `translateBack`, `translate`);
-      this.addAndRemoveOneClass(body, `translateBodyBack`, `translateBody`);
+      this.props.addAndRemoveOneClass(form, `translateBack`, `translate`);
+      this.props.addAndRemoveOneClass(
+        body,
+        `translateBodyBack`,
+        `translateBody`
+      );
     } else {
-      this.addAndRemoveOneClass(form, `translate`, `translateBack`);
-      this.addAndRemoveOneClass(body, `translateBody`, `translateBodyBack`);
+      this.props.addAndRemoveOneClass(form, `translate`, `translateBack`);
+      this.props.addAndRemoveOneClass(
+        body,
+        `translateBody`,
+        `translateBodyBack`
+      );
     }
   };
 
@@ -254,9 +231,9 @@ class Header extends Component {
           <div>
             <Breakpoint medium up>
               <img
-                src={`/spiderman_mcfarlane.png`}
                 alt={`spider-man`}
                 height={120}
+                src={`/spiderman_mcfarlane.png`}
               />
             </Breakpoint>
           </div>
@@ -266,15 +243,14 @@ class Header extends Component {
             </Breakpoint>
             <Breakpoint small down>
               <div id={`header-and-menu`} style={{ position: `relative` }}>
-                {this.props.loggedIn && (
+                {this.props.loggedIn ? (
                   <div
-                    onClick={this.showNav}
+                    onClick={this.props.showNav}
                     style={{ position: `absolute`, left: `-40%` }}
                   >
                     <FaBars />
                   </div>
-                )}
-                {!this.props.loggedIn && (
+                ) : (
                   <div style={{ position: `absolute`, left: `-12.5%` }}>
                     <Link
                       to={
@@ -301,7 +277,7 @@ class Header extends Component {
                 style={{ display: `flex`, flexDirection: `row` }}
               >
                 <AppButton onClick={() => this.showLogIn()}>Log In</AppButton>
-                <div style={{ width: `10px` }}></div>
+                <HorizontalSpacer width={10} />
                 <div style={{ padding: `2px` }}>
                   <AppLink onClick={() => this.showSignUp()}>Sign Up</AppLink>
                 </div>
@@ -317,7 +293,7 @@ class Header extends Component {
                   <AppLink onClick={() => this.showLogInMobile()}>
                     Log In
                   </AppLink>
-                  <div style={{ width: `10px` }}></div>
+                  <HorizontalSpacer width={10} />
                   <AppLink onClick={() => this.showSignUpMobile()}>
                     Sign Up
                   </AppLink>
@@ -331,7 +307,9 @@ class Header extends Component {
                   <em>{this.props.currentUser.username}</em>
                 </p>
                 <div style={{ display: `flex`, justifyContent: `flex-end` }}>
-                  <AppButton onClick={() => this.logOut()}>Log Out</AppButton>
+                  <AppButton onClick={() => this.props.logOut()}>
+                    Log Out
+                  </AppButton>
                 </div>
               </Breakpoint>
             </div>
@@ -340,23 +318,23 @@ class Header extends Component {
         <Breakpoint medium up>
           <div id={`login`}>
             <Credentials
-              fieldIncomplete={this.state.fieldIncomplete}
-              error={this.state.error}
-              handleSubmit={this.logInSignUpSubmit}
-              handleChange={this.handleChange}
-              close={this.showLogIn}
               buttonName={`Log In!`}
+              close={this.showLogIn}
+              error={this.state.error}
+              fieldIncomplete={this.state.fieldIncomplete}
+              handleChange={this.handleChange}
+              handleSubmit={this.logInSignUpSubmit}
               id={`login`}
             />
           </div>
           <div id={`signup`}>
             <Credentials
-              fieldIncomplete={this.state.fieldIncomplete}
-              error={this.state.error}
-              handleSubmit={this.logInSignUpSubmit}
-              handleChange={this.handleChange}
-              close={this.showSignUp}
               buttonName={`Sign Up!`}
+              close={this.showSignUp}
+              error={this.state.error}
+              fieldIncomplete={this.state.fieldIncomplete}
+              handleChange={this.handleChange}
+              handleSubmit={this.logInSignUpSubmit}
               id={`signup`}
             />
           </div>
@@ -376,12 +354,12 @@ class Header extends Component {
             )}
             {this.state.showSignUpMobile && (
               <CredentialsMobile
-                fieldIncomplete={this.state.fieldIncomplete}
-                error={this.state.error}
-                handleSubmit={this.logInSignUpSubmit}
-                handleChange={this.handleChange}
-                close={this.showSignUpMobile}
                 buttonName={`Sign Up!`}
+                close={this.showSignUpMobile}
+                error={this.state.error}
+                fieldIncomplete={this.state.fieldIncomplete}
+                handleChange={this.handleChange}
+                handleSubmit={this.logInSignUpSubmit}
                 id={`signup`}
               />
             )}

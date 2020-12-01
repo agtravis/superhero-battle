@@ -1,19 +1,37 @@
 import React, { Component } from "react";
 import { Breakpoint } from "react-socks";
 import { withRouter } from "react-router-dom";
-
-import API from "../../utils/API";
-
 import colors from "../../config/colors";
-
-import NavLinkMobile from "../NavLinkMobile";
+import pageLinks from "../../config/pageLinks";
 import NavLink from "../NavLink";
+import NavLinkMobile from "../NavLinkMobile";
 
 class NavBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  styles = {
+    mobileNavLinkStyle: {
+      display: `flex`,
+      fontWeight: `bold`,
+      justifyContent: `center`,
+      textAlign: `center`,
+    },
+    navContainerFull: {
+      backgroundColor: colors.mediumPrimary,
+      borderBottom: `2px solid ${colors.secondary}`,
+      display: `flex`,
+      flexDirection: `row`,
+      justifyContent: `space-evenly`,
+    },
+    navContainerMobile: {
+      backgroundColor: colors.mediumPrimary,
+      borderBottom: `2px solid ${colors.secondary}`,
+      display: `flex`,
+      flexDirection: `column`,
+      height: `auto`,
+      left: `0`,
+      position: `absolute`,
+      width: `100%`,
+    },
+  };
 
   componentDidMount() {
     let touchstartY = 0;
@@ -40,102 +58,32 @@ class NavBar extends Component {
       false
     );
     const handleGesture = (touchstartY, touchendY) => {
-      if (touchendY <= touchstartY && Math.abs(touchendY - touchstartY) > 100) {
-        this.hideNav();
+      if (
+        this.props.isNavShowing &&
+        touchendY <= touchstartY &&
+        Math.abs(touchendY - touchstartY) > 100
+      ) {
+        this.props.showNav();
       }
     };
   }
-
-  pageLinks = [
-    {
-      name: `Landing Page`,
-      to: `/`,
-    },
-    {
-      name: `Home`,
-      to: `/home`,
-    },
-    {
-      name: `Profile`,
-      to: `/profile`,
-    },
-    {
-      name: `Fight`,
-      to: `/fight`,
-    },
-    {
-      name: `Stats`,
-      to: `/stats`,
-    },
-    {
-      name: `Roster`,
-      to: `/roster`,
-    },
-    {
-      name: `Teams`,
-      to: `/teams`,
-    },
-    {
-      name: `Leader Board`,
-      to: `/leaderboard`,
-    },
-    {
-      name: `Search`,
-      to: `/search`,
-    },
-    {
-      name: `Settings`,
-      to: `/settings`,
-    },
-  ];
-
-  mobileNavStyle = {
-    textAlign: `center`,
-    display: `flex`,
-    justifyContent: `center`,
-    fontWeight: `bold`,
-  };
-
-  logOut = () => {
-    API.logOut()
-      .then(() => this.props.changeUser())
-      .catch(err => console.error(err));
-  };
-
-  hideNav = () => {
-    if (document.getElementsByClassName(`nav-mobile`)[0]) {
-      const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
-      if (navMobile.classList.contains(`translateNavMobile`)) {
-        navMobile.classList.add(`translateNavMobileBack`);
-        navMobile.classList.remove(`translateNavMobile`);
-      }
-    }
-  };
 
   render() {
     return (
       <div>
         {this.props.loggedIn ? (
-          <div onClick={this.hideNav}>
+          <div onClick={this.props.showNav}>
             <Breakpoint medium up>
-              <div
-                style={{
-                  display: `flex`,
-                  flexDirection: `row`,
-                  justifyContent: `space-evenly`,
-                  backgroundColor: colors.mediumPrimary,
-                  borderBottom: `2px solid ${colors.secondary}`,
-                }}
-              >
-                {this.pageLinks.map((pageLink, index) => (
+              <div style={this.styles.navContainerFull}>
+                {pageLinks.map((pageLink, index) => (
                   <div
                     key={index}
                     style={{ display: `flex`, justifyContent: `space-between` }}
                   >
                     <NavLink
-                      style={this.mobileNavStyle}
                       index={index}
-                      length={this.pageLinks.length}
+                      length={pageLinks.length}
+                      style={this.styles.mobileNavLinkStyle}
                       to={pageLink.to}
                       username={this.props.currentUser.username}
                     >
@@ -149,23 +97,14 @@ class NavBar extends Component {
               <div style={{ position: `relative` }}>
                 <div
                   className={`nav-mobile`}
-                  style={{
-                    backgroundColor: colors.mediumPrimary,
-                    borderBottom: `2px solid ${colors.secondary}`,
-                    display: `flex`,
-                    flexDirection: `column`,
-                    position: `absolute`,
-                    left: `0`,
-                    height: `auto`,
-                    width: `100%`,
-                  }}
+                  style={this.styles.navContainerMobile}
                 >
-                  {this.pageLinks.map((pageLink, index) => (
+                  {pageLinks.map((pageLink, index) => (
                     <div key={index} style={{ margin: `5px 0` }}>
                       <NavLinkMobile
-                        style={this.mobileNavStyle}
                         index={index}
-                        length={this.pageLinks.length}
+                        length={pageLinks.length}
+                        style={this.styles.mobileNavLinkStyle}
                         to={pageLink.to}
                         username={this.props.currentUser.username}
                       >
@@ -174,12 +113,12 @@ class NavBar extends Component {
                     </div>
                   ))}
                   <div
-                    onClick={this.logOut}
+                    onClick={this.props.logOut}
                     style={{
-                      ...this.mobileNavStyle,
-                      paddingTop: `3px, 0`,
-                      cursor: `pointer`,
+                      ...this.styles.mobileNavLinkStyle,
                       color: colors.secondary,
+                      cursor: `pointer`,
+                      paddingTop: `3px, 0`,
                     }}
                   >
                     <p style={{ marginBottom: `5px` }}>
@@ -193,19 +132,11 @@ class NavBar extends Component {
         ) : (
           <div>
             <Breakpoint medium up>
-              <div
-                style={{
-                  display: `flex`,
-                  flexDirection: `row`,
-                  justifyContent: `space-evenly`,
-                  backgroundColor: colors.mediumPrimary,
-                  borderBottom: `2px solid ${colors.secondary}`,
-                }}
-              >
+              <div style={this.styles.navContainerFull}>
                 <NavLink
-                  style={this.mobileNavStyle}
                   index={0}
                   length={1}
+                  style={this.styles.mobileNavLinkStyle}
                   to={
                     this.props.location.pathname === `/about` ? `/` : `/about`
                   }

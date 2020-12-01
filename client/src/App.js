@@ -29,12 +29,18 @@ class App extends Component {
       teams: [],
       battles: [],
       record: {},
+      isNavShowing: false,
     };
   }
 
   componentDidMount() {
     this.getUser();
   }
+
+  addAndRemoveOneClass = (element, classToAdd, ClassToRemove) => {
+    element.classList.add(classToAdd);
+    element.classList.remove(ClassToRemove);
+  };
 
   getUser = () => {
     API.getSessionUser()
@@ -75,6 +81,30 @@ class App extends Component {
     this.setState({ redirect: true });
   };
 
+  logOut = () => {
+    API.logOut()
+      .then(() => this.changeUser())
+      .catch(err => console.error(err));
+  };
+
+  showNav = () => {
+    if (document.getElementsByClassName(`nav-mobile`)[0]) {
+      const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
+      navMobile.classList.contains(`translateNavMobile`)
+        ? this.addAndRemoveOneClass(
+            navMobile,
+            `translateNavMobileBack`,
+            `translateNavMobile`
+          )
+        : this.addAndRemoveOneClass(
+            navMobile,
+            `translateNavMobile`,
+            `translateNavMobileBack`
+          );
+      this.setState({ isNavShowing: !this.state.isNavShowing });
+    }
+  };
+
   render() {
     if (this.state.redirect) {
       window.location.href = `/`;
@@ -87,12 +117,19 @@ class App extends Component {
               changeUser={this.changeUser}
               loggedIn={this.state.loggedIn}
               currentUser={this.state.currentUser}
+              addAndRemoveOneClass={this.addAndRemoveOneClass}
+              showNav={this.showNav}
+              logOut={this.logOut}
             />
             <div className={`main-body`}>
               <NavBar
                 currentUser={this.state.currentUser}
                 loggedIn={this.state.loggedIn}
                 changeUser={this.changeUser}
+                addAndRemoveOneClass={this.addAndRemoveOneClass}
+                showNav={this.showNav}
+                isNavShowing={this.state.isNavShowing}
+                logOut={this.logOut}
               />
               <Switch>
                 <Route
