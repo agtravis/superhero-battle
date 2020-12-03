@@ -29,8 +29,6 @@ class Header extends Component {
     };
   }
 
-  title = `Superhero Battle`;
-
   styles = {
     header: {
       alignItems: `center`,
@@ -250,7 +248,7 @@ class Header extends Component {
           </div>
           <div>
             <Breakpoint medium up>
-              <h1 style={this.styles.headerTitleText}>{this.title}</h1>
+              <h1 style={this.styles.headerTitleText}>{this.props.title}</h1>
             </Breakpoint>
             <Breakpoint small down>
               <div id={`header-and-menu`} style={{ position: `relative` }}>
@@ -275,7 +273,9 @@ class Header extends Component {
                   </div>
                 )}
                 <div>
-                  <h4 style={this.styles.headerTitleText}>{this.title}</h4>
+                  <h4 style={this.styles.headerTitleText}>
+                    {this.props.title}
+                  </h4>
                 </div>
               </div>
             </Breakpoint>
