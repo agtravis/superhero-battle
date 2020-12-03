@@ -4,10 +4,6 @@ const pageLinks = [
     to: `/`,
   },
   {
-    name: `Profile`,
-    to: `/profile`,
-  },
-  {
     name: `Fight`,
     to: `/fight`,
   },
