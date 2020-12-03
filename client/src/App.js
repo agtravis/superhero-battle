@@ -14,6 +14,8 @@ import FightTeam from "./pages/FightTeam";
 import Stats from "./pages/Stats";
 import Teams from "./pages/Teams";
 import Leaderboard from "./pages/Leaderboard";
+import About from "./pages/About";
+import RulesPage from "./pages/RulesPage";
 
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
@@ -34,6 +36,8 @@ class App extends Component {
       isNavShowing: false,
     };
   }
+
+  title = `Superhero Battle`;
 
   componentDidMount() {
     this.getUser();
@@ -122,6 +126,7 @@ class App extends Component {
               addAndRemoveOneClass={this.addAndRemoveOneClass}
               showNav={this.showNav}
               logOut={this.logOut}
+              title={this.title}
             />
             <div className={`main-body`}>
               <NavBar
@@ -147,7 +152,20 @@ class App extends Component {
                         recruit={
                           this.state.roster[this.state.roster.length - 1]
                         }
+                        title={this.title}
                       />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/about"
+                    render={() => <About title={this.title} />}
+                  />
+                  <Route
+                    exact
+                    path="/rules"
+                    render={() => (
+                      <RulesPage currentUser={this.state.currentUser} />
                     )}
                   />
                   {/* "/home" is deprecated*/}

@@ -35,6 +35,14 @@ const pageLinks = [
     name: `Settings`,
     to: `/settings`,
   },
+  {
+    name: `Rules`,
+    to: `/rules`,
+  },
+  {
+    name: `About`,
+    to: `/about`,
+  },
 ];
 
 export default pageLinks;

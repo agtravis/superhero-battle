@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Breakpoint } from "react-socks";
+import colors from "../../config/colors";
 
 class Screen extends Component {
   styles = {
     fullscreen: {
       // remove border
-      border: `1px solid black`,
+      border: `1px solid ${colors.secondary}`,
       display: `flex`,
       flexDirection: `column`,
       justifyContent: `center`,

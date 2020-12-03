@@ -141,7 +141,9 @@ class NavBar extends Component {
                     this.props.location.pathname === `/about` ? `/` : `/about`
                   }
                 >
-                  About SuperHero Battle
+                  {this.props.location.pathname === `/about`
+                    ? `Rules of the Game`
+                    : `About SuperHero Battle`}
                 </NavLink>
               </div>
             </Breakpoint>
