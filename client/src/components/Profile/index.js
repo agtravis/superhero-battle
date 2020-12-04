@@ -56,17 +56,17 @@ class Profile extends Component {
             </p>
             <p>
               A veteran of {this.state.profileData.fights} fights,{` `}
-              {this.signedInVsGeneric(
-                `you have won`,
-                `${this.state.profileData.username} has won`
-              )}
-              {` `}
-              {this.convertWinPercentage(
-                this.state.profileData.wins,
-                this.state.profileData.fights
-              )}
-              {` `}of the time.
+              {this.state.profileData.fights > 0
+                ? `${this.signedInVsGeneric(
+                    `you have won`,
+                    `${this.state.profileData.username} has won`
+                  )} ${this.convertWinPercentage(
+                    this.state.profileData.wins,
+                    this.state.profileData.fights
+                  )} of the time.`
+                : `you do not currently have a win percentage!`}
             </p>
+            <hr />
             <p>
               {this.signedInVsGeneric(
                 `Your`,
@@ -82,9 +82,10 @@ class Profile extends Component {
                   name={this.state.profileData.roster[0].name}
                 />
               ) : (
-                <p>You have nobody in your team!</p>
+                <p>You have nobody in your roster!</p>
               )}
             </div>
+            <hr />
             <p>
               {this.signedInVsGeneric(
                 `Your`,
@@ -113,8 +114,32 @@ class Profile extends Component {
                 <p>You have nobody in your team!</p>
               )}
             </div>
+            <hr />
             <div>
-              <LastBattleBasic battles={this.state.profileData.pastBattles} />
+              {this.state.profileData.pastBattles.length > 0 ? (
+                <LastBattleBasic battles={this.state.profileData.pastBattles} />
+              ) : (
+                <p>You have not fought any battles yet!</p>
+              )}
+            </div>
+            <hr />
+            <div>
+              <h2>Your Current Team:</h2>
+              {this.state.profileData.teams.length > 0 ? (
+                this.state.profileData.teams.map((teamMember, index) => (
+                  <div key={index}>
+                    <IndexPortrait
+                      title={`Team Member #${index + 1}`}
+                      image={teamMember.image.url}
+                      name={teamMember.name}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p>
+                  You do not have any members of your roster assigned to a team
+                </p>
+              )}
             </div>
           </div>
         )}

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-// import API from "../utils/API";
 import Profile from "../components/Profile";
-// import IndexPortrait from "../components/IndexPortrait";
 import Rules from "../components/Rules";
 
 class Index extends Component {
@@ -18,9 +16,6 @@ class Index extends Component {
               loggedIn={this.props.loggedIn}
               currentUser={this.props.currentUser}
               profileId={this.props.currentUser._id}
-
-              // captain={this.props.captain}
-              // recruit={this.props.recruit}
             />
           </div>
         ) : (
