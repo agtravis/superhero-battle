@@ -2,7 +2,9 @@
   --primary: #e2b340;
   --mediumPrimary: #f2dca6;
   --lightPrimary: #fcf6e9;
+  --extraLightPrimary: #fffaf0;
   --darkPrimary: #59430d;
+  --lightSecondary: #f0eff6;
   --secondary: #5b5194;
   --mediumSecondary: #a39cc9;
   --darkSecondary: #332d52;
@@ -20,6 +22,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: Tahoma, Geneva, sans-serif;
-  color: var(--black);
-  background-color: var(--lightPrimary);
+  color: var(--darkSecondary);
+  background-color: var(--extraLightPrimary);
 }

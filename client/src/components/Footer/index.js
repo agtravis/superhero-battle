@@ -8,9 +8,27 @@ class Footer extends Component {
         style={{
           marginTop: `auto`,
           borderTop: `1px solid ${colors.secondary}`,
+          paddingTop: `5px`,
+          backgroundColor: colors.primary,
         }}
       >
-        <p>FOOTER</p>
+        <p
+          style={{
+            textAlign: `center`,
+          }}
+        >
+          <a
+            style={{
+              color: colors.lightPrimary,
+              textDecoration: `none`,
+              textAlign: `center`,
+            }}
+            href={`https://agtravis.github.io/portfolio/`}
+            target={`_blank`}
+          >
+            &copy;2020 Alexander George Travis
+          </a>
+        </p>
       </div>
     );
   }
