@@ -10,7 +10,7 @@ class Screen extends Component {
       display: `flex`,
       flexDirection: `column`,
       justifyContent: `center`,
-      margin: `60px auto 0`,
+      margin: `60px auto 60px`,
       padding: `10px`,
       width: `70%`,
     },
