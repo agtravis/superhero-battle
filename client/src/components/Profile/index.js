@@ -77,9 +77,10 @@ class Profile extends Component {
             <div>
               {this.state.profileData.roster[0] ? (
                 <IndexPortrait
+                  character={this.state.profileData.roster[0]}
                   title={`Captain`}
-                  image={this.state.profileData.roster[0].image.url}
-                  name={this.state.profileData.roster[0].name}
+                  round
+                  showStats
                 />
               ) : (
                 <p>You have nobody in your roster!</p>
@@ -97,16 +98,13 @@ class Profile extends Component {
               {this.state.profileData.roster.length > 1 ? (
                 <IndexPortrait
                   title={`Latest Recruit`}
-                  image={
+                  character={
                     this.state.profileData.roster[
                       this.state.profileData.roster.length - 1
-                    ].image.url
+                    ]
                   }
-                  name={
-                    this.state.profileData.roster[
-                      this.state.profileData.roster.length - 1
-                    ].name
-                  }
+                  round
+                  showStats
                 />
               ) : this.state.profileData.roster[0] ? (
                 <p>You only have one team member!</p>
@@ -132,6 +130,7 @@ class Profile extends Component {
                       title={`Team Member #${index + 1}`}
                       image={teamMember.image.url}
                       name={teamMember.name}
+                      round
                     />
                   </div>
                 ))
@@ -144,24 +143,6 @@ class Profile extends Component {
           </div>
         )}
       </div>
-      //   <div style={{ display: `flex`, justifyContent: `space-between` }}>
-      //     {this.props.captain ? (
-      //       <IndexPortrait
-      //         title={`Captain`}
-      //         image={this.props.captain.image.url}
-      //         name={this.props.captain.name}
-      //       />
-      //     ) : null}
-      //     {this.props.recruit ? (
-      //       <IndexPortrait
-      //         title={`Latest Recruit`}
-      //         image={this.props.recruit.image.url}
-      //         name={this.props.recruit.name}
-      //       />
-      //     ) : (
-      //       <IndexPortrait title={false} />
-      //     )}
-      //     </div>
     );
   }
 }
