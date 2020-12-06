@@ -28,8 +28,10 @@ class NavBar extends Component {
       flexDirection: `column`,
       height: `auto`,
       left: `0`,
+      // paddingBottom: `2px`,
       position: `absolute`,
       width: `100%`,
+      zIndex: 5,
     },
   };
 
@@ -118,7 +120,7 @@ class NavBar extends Component {
                       ...this.styles.mobileNavLinkStyle,
                       color: colors.secondary,
                       cursor: `pointer`,
-                      paddingTop: `3px, 0`,
+                      paddingTop: `3px`,
                     }}
                   >
                     <p style={{ marginBottom: `5px` }}>
