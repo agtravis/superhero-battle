@@ -37,7 +37,7 @@ class Header extends Component {
       justifyContent: `space-between`,
       padding: `10px 20px`,
       position: `relative`,
-      zIndex: 1,
+      zIndex: 10,
     },
     headerTitleText: {
       color: colors.black,
