@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import LastBattleBasic from "../components/LastBattleBasic";
+// import LastBattleBasic from "../components/LastBattleBasic";
 
 class Home extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Home extends Component {
           {this.props.battles.length > 0 ? (
             <div>
               <h1>Last Battle:</h1>
-              <LastBattleBasic battles={this.props.battles} />
+              {/*<LastBattleBasic battles={this.props.battles} />*/}
             </div>
           ) : (
             <div>

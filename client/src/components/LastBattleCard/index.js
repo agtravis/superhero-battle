@@ -1,77 +1,64 @@
 import React, { Component } from "react";
-
-import LastBattleImage from "../LastBattleImage";
+import IndexPortraitSmall from "../IndexPortraitSmall";
 
 class LastBattleCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: null,
-    };
-  }
-
-  componentDidMount() {
-    const date = new Date(this.props.battle.date);
-    const dateArr = date.toDateString().split(` `);
-    const dateSentence = `${dateArr[1]} ${dateArr[2]}, ${dateArr[3]}`;
-    this.setState({ date: dateSentence });
-  }
+  convertDate = date => {
+    const dateArr = new Date(date).toDateString().split(` `);
+    return `${dateArr[1]} ${dateArr[2]}, ${dateArr[3]}`;
+  };
 
   render() {
     return (
       <div>
-        {this.state.date ? (
-          <div>
-            <h3>{this.state.date}</h3>
-            <div style={{ display: `flex`, justifyContent: `space-between` }}>
-              <div>
-                <h4>
-                  Challenger
-                  {this.props.battle.challengers.length > 1 ? `s` : null}
-                </h4>
-                {this.props.battle.challengers.map((challenger, index) => (
-                  <p key={index}>{challenger.name}</p>
-                ))}
-                {this.props.battle.challengers.map((challenger, index) => (
-                  <LastBattleImage
-                    key={index}
-                    src={challenger.image}
-                    style={{ width: `50px` }}
-                    alt={challenger.name}
-                  />
-                ))}
-              </div>
-              <div>
-                <h1>VS</h1>
-              </div>
-              <div>
-                <h4>
-                  Defender{this.props.battle.defenders.length > 1 ? `s` : null}
-                </h4>
-                {this.props.battle.defenders.map((defender, index) => (
-                  <p key={index}>{defender.name}</p>
-                ))}
-                {this.props.battle.defenders.map((defender, index) => (
-                  <LastBattleImage
-                    key={index}
-                    src={defender.image}
-                    style={{ width: `50px` }}
-                    alt={defender.name}
-                  />
-                ))}
-              </div>
-            </div>
+        <div>
+          <h3>
+            Your last battle was on {this.convertDate(this.props.battle.date)}{" "}
+            and you were
+            {this.props.battle.winner === `Challenger`
+              ? ` defeated!`
+              : ` the victor!`}
+          </h3>
+          <div style={{ display: `flex`, justifyContent: `space-between` }}>
             <div>
-              <h2>
-                {" "}
-                You were
-                {this.props.battle.winner === `Challenger`
-                  ? ` defeated!!!`
-                  : ` the victor!!!`}
-              </h2>
+              <h4>
+                {this.props.battle.challengers.length > 1
+                  ? `Opposing Team`
+                  : `Your Opponent`}
+              </h4>
+            </div>
+            <div></div>
+            <div>
+              <h4>
+                {this.props.battle.defenders.length > 1 ? `Your Team` : `You`}
+              </h4>
             </div>
           </div>
-        ) : null}
+          <div style={{ display: `flex`, justifyContent: `space-between` }}>
+            <div>
+              {this.props.battle.challengers.map((challenger, index) => (
+                <IndexPortraitSmall
+                  key={index}
+                  left
+                  src={challenger.image}
+                  name={challenger.name}
+                />
+              ))}
+            </div>
+            <div style={{ display: `flex`, alignItems: `center` }}>
+              <h1>VS</h1>
+            </div>
+            <div>
+              {this.props.battle.defenders.map((defender, index) => (
+                <IndexPortraitSmall
+                  key={index}
+                  right
+                  src={defender.image}
+                  name={defender.name}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
