@@ -61,7 +61,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        {/*remove these two buttons (violet & penance I)*/}
+        {/*remove these two buttons (violet & penance I)
         <button onClick={() => this.getNoImageCharacter(`violet`)}>
           violet
         </button>

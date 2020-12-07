@@ -41,7 +41,12 @@ class IndexPortraitImage extends Component {
       display: `flex`,
       height: this.props.size ? `${this.props.size}px` : `300px`,
       justifyContent: `center`,
-      width: this.props.size ? `${this.props.size}px` : `300px`,
+      marginLeft: !this.props.round ? `0px` : `auto`,
+      width: this.props.round
+        ? this.props.size
+          ? `${this.props.size}px`
+          : `300px`
+        : `${this.props.size * 0.75}px`,
     },
     noImageText: {
       marginBottom: `0px`,
