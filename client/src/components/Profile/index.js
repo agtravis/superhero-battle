@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import IndexPortrait from "../IndexPortrait";
-import LastBattleBasic from "../LastBattleBasic";
+import LastBattleCard from "../LastBattleCard";
 
 class Profile extends Component {
   constructor(props) {
@@ -115,7 +115,13 @@ class Profile extends Component {
             <hr />
             <div>
               {this.state.profileData.pastBattles.length > 0 ? (
-                <LastBattleBasic battles={this.state.profileData.pastBattles} />
+                <LastBattleCard
+                  battle={
+                    this.state.profileData.pastBattles[
+                      this.state.profileData.pastBattles.length - 1
+                    ]
+                  }
+                />
               ) : (
                 <p>You have not fought any battles yet!</p>
               )}
