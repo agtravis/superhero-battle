@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import SuperHeroAPI from "../../utils/SuperHeroAPI";
 import IndexPortrait from "../IndexPortrait";
 import LastBattleCard from "../LastBattleCard";
+import Team from "../Team";
 
 class Profile extends Component {
   constructor(props) {
@@ -33,6 +35,24 @@ class Profile extends Component {
     }
   };
 
+  // remove this function
+  getNoImageCharacter = name => {
+    SuperHeroAPI.findCharacterByName(name)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => console.error(err));
+  };
+
+  // remove this function
+  addCharacterToRoster = (user, character) => {
+    API.addCharacterToRoster(user, { characterId: character })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => console.error(err));
+  };
+
   signedInVsGeneric = (signedInVersion, genericVersion) =>
     this.props.profileId === this.props.currentUser._id
       ? signedInVersion
@@ -41,6 +61,21 @@ class Profile extends Component {
   render() {
     return (
       <div>
+        {/*remove these two buttons (violet & penance I)*/}
+        <button onClick={() => this.getNoImageCharacter(`violet`)}>
+          violet
+        </button>
+        <button
+          onClick={() =>
+            this.addCharacterToRoster(
+              `5fc589302a389525a8f26061`,
+              `5fa576213aa2c92da83fc40b`
+            )
+          }
+        >
+          Add Violet
+        </button>
+        {/** */}
         {this.state.profileData && (
           <div>
             <h2>
@@ -130,16 +165,7 @@ class Profile extends Component {
             <div>
               <h2>Your Current Team:</h2>
               {this.state.profileData.teams.length > 0 ? (
-                this.state.profileData.teams.map((teamMember, index) => (
-                  <div key={index}>
-                    <IndexPortrait
-                      title={`Team Member #${index + 1}`}
-                      image={teamMember.image.url}
-                      name={teamMember.name}
-                      round
-                    />
-                  </div>
-                ))
+                <Team team={this.state.profileData.teams} />
               ) : (
                 <p>
                   You do not have any members of your roster assigned to a team

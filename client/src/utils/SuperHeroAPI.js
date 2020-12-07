@@ -11,6 +11,9 @@ export default {
   loadContender(id) {
     return axios.get(`/api/character/${id}`);
   },
+  findCharacterByName(name) {
+    return axios.post(`/api/character/findbyname`, { name: name });
+  },
 };
 
 //   const randomNumber = Math.floor(Math.random() * 731) + 1;

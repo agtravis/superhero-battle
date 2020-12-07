@@ -22,18 +22,22 @@ class IndexPortraitImage extends Component {
     image: {
       borderRadius: this.props.round
         ? `${this.props.size ? this.props.size / 2 : 150}px`
-        : `0px`,
+        : `10px`,
       height: this.props.size ? `${this.props.size}px` : `300px`,
       objectFit: this.props.size ? `scale-down` : `none`,
       objectPosition: `center top`,
-      width: this.props.size ? `${this.props.size}px` : `300px`,
+      width: this.props.round
+        ? this.props.size
+          ? `${this.props.size}px`
+          : `300px`
+        : `auto`,
     },
     noImageDiv: {
       backgroundColor: colors.mediumPrimary,
       border: `1px solid ${colors.darkSecondary}`,
       borderRadius: this.props.round
         ? `${this.props.size ? this.props.size / 2 : 150}px`
-        : `0px`,
+        : `10px`,
       display: `flex`,
       height: this.props.size ? `${this.props.size}px` : `300px`,
       justifyContent: `center`,
@@ -56,16 +60,18 @@ class IndexPortraitImage extends Component {
       border: `1px solid ${colors.darkSecondary}`,
       borderRadius: `500px`,
       display: `flex`,
-      height: `50px`,
+      height: this.props.round ? `50px` : `25px`,
       justifyContent: `center`,
       padding: `5px`,
       position: `absolute`,
-      top: `${this.props.size ? this.props.size / 2 : 150}px`,
+      top: this.props.round
+        ? `${this.props.size ? this.props.size / 2 : 150}px`
+        : `75%`,
       width: `200px`,
     },
     textContainerBackground: {
       backgroundColor: colors.white,
-      opacity: `0.4`,
+      opacity: this.props.round ? `0.4` : `1`,
     },
     textContainerText: {
       fontWeight: `900`,
@@ -118,7 +124,7 @@ class IndexPortraitImage extends Component {
             <div
               style={{
                 ...this.styles.textContainer,
-                backgroundColor: colors.extraLightPrimary,
+                backgroundColor: colors.white,
               }}
             >
               <p style={this.styles.textContainerText}>

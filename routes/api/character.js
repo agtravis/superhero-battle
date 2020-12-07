@@ -11,6 +11,8 @@ router.route(`/`).get(characterController.randomCharacter);
 
 router.route(`/searchcharacter`).post(characterController.searchByInheritedId);
 
+router.route(`/findbyname`).post(characterController.findCharacterByName);
+
 router.route(`/:id`).get(characterController.getCharacter);
 
 module.exports = router;
