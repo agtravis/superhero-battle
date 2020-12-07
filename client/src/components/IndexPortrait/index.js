@@ -13,17 +13,17 @@ class IndexPortrait extends Component {
             <Breakpoint medium up>
               <div
                 style={{
+                  alignItems: `center`,
                   display: `flex`,
                   justifyContent: `space-around`,
-                  alignItems: `center`,
                 }}
               >
                 <IndexPortraitImage
-                  size={this.props.size}
-                  round={this.props.round}
                   character={this.props.character}
                   image={this.props.image}
                   name={this.props.name}
+                  round={this.props.round}
+                  size={this.props.size}
                 />
                 {this.props.showStats && (
                   <div>
@@ -35,17 +35,17 @@ class IndexPortrait extends Component {
             <Breakpoint small down>
               <div
                 style={{
+                  alignItems: `center`,
                   display: `flex`,
                   justifyContent: `space-around`,
-                  alignItems: `center`,
                 }}
               >
                 <IndexPortraitImage
-                  size={this.props.size}
                   round={this.props.round}
                   character={this.props.character}
-                  image={this.props.image}
                   name={this.props.name}
+                  image={this.props.image}
+                  size={this.props.size}
                 />
               </div>
             </Breakpoint>

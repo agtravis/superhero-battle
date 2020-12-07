@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 import API from "../utils/API";
 
-import RosterSlot from "../components/RosterSlot";
+import IndexPortrait from "../components/IndexPortrait";
 
 class Roster extends Component {
   constructor(props) {
@@ -122,16 +122,16 @@ class Roster extends Component {
             {this.props.roster.length < 1 ? (
               <div>
                 {!this.state.newCharacterLoaded ? (
-                  <>
+                  <div>
                     <p>You do not have anyone in your roster yet!</p>
                     <button onClick={() => this.getFirstTeamMember()}>
                       Click to get your first team member!
                     </button>{" "}
                     <p>Get full team</p>
-                    {this.props.roster.length < 3 ?
-                    <button onClick={() => this.getTeam()}>Cheat!</button> : null
-                    }
-                  </>
+                    {this.props.roster.length < 3 ? (
+                      <button onClick={() => this.getTeam()}>Cheat!</button>
+                    ) : null}
+                  </div>
                 ) : (
                   <div>
                     <p>{this.state.newCharacter.name}</p>
@@ -153,12 +153,10 @@ class Roster extends Component {
               </div>
             ) : (
               this.props.roster.map((character, index) => (
-                <RosterSlot
-                  key={index}
-                  index={index}
-                  character={character}
-                  removeFromRoster={this.removeFromRoster}
-                />
+                <div key={index}>
+                  <IndexPortrait character={character} showStats size={200} />
+                  {index < this.props.roster.length - 1 && <hr />}
+                </div>
               ))
             )}
           </div>
