@@ -28,4 +28,14 @@ module.exports = {
       .then(dbCharacter => res.json(dbCharacter))
       .catch(err => res.json(err));
   },
+  findCharacterByName: (req, res) => {
+    Character.find({
+      name: {
+        $regex: req.body.name,
+        $options: `i`,
+      },
+    })
+      .then(dbCharacter => res.json(dbCharacter))
+      .catch(err => res.json(err));
+  },
 };
