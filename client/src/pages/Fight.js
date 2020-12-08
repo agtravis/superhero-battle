@@ -1,41 +1,43 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+// import SuperHeroAPI from "../utils/SuperHeroAPI";
+// import fullList from "../utils/characters";
+import SoloOrTeam from "../components/FightFlow/SoloOrTeam";
 
 class Fight extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      redirect: null,
+      phase: 0,
+      isSoloFightMode: true,
     };
   }
 
-  componentDidMount() {
-    if (this.props.roster.length >= 731) {
-      this.setState({ redirect: `/roster` });
+  changePhase = direction => {
+    if (this.state.phase === 1) {
+      this.setState({ isSoloFightMode: true });
     }
-  }
+    this.setState({ phase: this.state.phase + direction });
+  };
+
+  toggle = stateName => this.setState({ [stateName]: !this.state[stateName] });
 
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
     }
-    if (this.state.redirect) {
-      return <Redirect to={this.state.redirect} />;
-    }
     return (
       <div>
-        <h1>Fight</h1>
-        {this.props.roster.length >= 1 ? (
-          <p>
-            How do you want to fight? <Link to={`/fightsolo`}>Solo Fight</Link>{" "}
-            or <Link to={`/fightteam`}>Team Fight</Link>
-          </p>
-        ) : (
+        <h2>Fight!</h2>
+        {this.state.phase === 0 && (
+          <SoloOrTeam
+            changePhase={this.changePhase}
+            toggle={this.toggle}
+            isSoloFightMode={this.isSoloFightMode}
+          />
+        )}
+        {this.state.phase === 1 && (
           <div>
-            <p>Nobody in your Roster!</p>
-            <p>
-              Click <Link to={`/roster`}>here</Link> to get a team captain!
-            </p>
+            <button onClick={() => this.changePhase(-1)}>Back</button>
           </div>
         )}
       </div>

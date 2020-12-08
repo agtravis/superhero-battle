@@ -1,10 +1,10 @@
 .appButton {
-  border: 2px solid var(--danger);
+  border: 2px solid var(--darkSecondary);
   border-radius: 3px;
-  color: var(--danger);
-  background-color: var(--lightDanger);
+  color: var(--darkSecondary);
+  background-color: var(--lightSecondary);
 }
 .appButton:hover {
-  background-color: var(--danger);
-  color: var(--lightDanger);
+  background-color: var(--secondary);
+  color: var(--lightSecondary);
 }
