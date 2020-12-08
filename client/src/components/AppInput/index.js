@@ -56,7 +56,7 @@ class AppInput extends Component {
           style={{
             ...this.styles.input,
             border: `${this.props.mode === `mobile` ? 1 : 2}px solid ${
-              this.props.error ? `red` : colors.darkPrimary
+              this.props.error ? `red` : colors.darkSecondary
             }`,
           }}
           type={this.props.type}

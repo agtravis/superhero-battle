@@ -1,6 +1,7 @@
 .appLink {
-  color: var(--danger);
+  color: var(--secondary);
   cursor: pointer;
+  font-weight: 900;
 }
 @media only screen and (min-width: 768px) {
   .appLink:hover {

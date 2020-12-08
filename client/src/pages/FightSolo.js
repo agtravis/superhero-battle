@@ -63,12 +63,12 @@ class SoloFight extends Component {
                   Get opponent
                 </button>
               ) : (
-                <>
+                <div>
                   <FighterTitleCard
                     title={`Challenger`}
                     character={this.state.nextOpponent}
                   />
-                </>
+                </div>
               )}
             </PreFightDivWrapper>
             <PreFightDivWrapper>
