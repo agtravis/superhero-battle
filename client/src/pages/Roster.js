@@ -101,12 +101,12 @@ class Roster extends Component {
 
     return (
       <div>
-        <h1>Roster</h1>
-        {this.props.loggedIn ? (
-          <p>{this.props.currentUser.username} signed in</p>
-        ) : (
-          <p>nobody signed in</p>
-        )}
+        <h1>Your Roster</h1>
+        <p>
+          ({this.props.roster.length}
+          /731 recruited ||{` `}
+          {((this.props.roster.length / 731) * 100).toFixed(2)}% complete)
+        </p>
         {this.props.roster.length >= 731 ? (
           <div>
             <h1>You have filled up your roster!</h1>
@@ -154,6 +154,7 @@ class Roster extends Component {
             ) : (
               this.props.roster.map((character, index) => (
                 <div key={index}>
+                  <h2 style={{ textAlign: `center` }}>{index + 1}</h2>
                   <IndexPortrait character={character} showStats size={200} />
                   {index < this.props.roster.length - 1 && <hr />}
                 </div>

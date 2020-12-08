@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import SuperHeroAPI from "../../utils/SuperHeroAPI";
 import IndexPortrait from "../IndexPortrait";
@@ -100,6 +101,12 @@ class Profile extends Component {
                     this.state.profileData.fights
                   )} of the time.`
                 : `you do not currently have a win percentage!`}
+            </p>
+            <p>
+              Your <Link to={`/roster`}>roster</Link> is{` `}
+              {((this.state.profileData.roster.length / 731) * 100).toFixed(2)}%
+              complete ({this.state.profileData.roster.length}
+              /731 recruited)
             </p>
             <hr />
             <p>
