@@ -62,37 +62,54 @@ class GetOpponent extends Component {
       >
         <h3>Get your opponent{!this.props.isSoloFightMode && `s`}!</h3>
         {this.state.isOpponentAboutToBeChosen && (
-          <AppButton onClick={() => this.chooseOpponent()}>Click</AppButton>
+          <div
+            style={{
+              display: `flex`,
+              justifyContent: `center`,
+            }}
+          >
+            <AppButton width={`200px`} onClick={() => this.chooseOpponent()}>
+              Reveal!
+            </AppButton>
+          </div>
         )}
         {this.state.isOpponentChosen && (
           <div>
             <div>
               {this.state.opposingTeam.map((character, index) => (
-                <div key={index}>
+                <div key={index} style={{ margin: `10px 0px` }}>
+                  {index !== 0 && <hr />}
                   <IndexPortrait round showStats character={character} />
                 </div>
               ))}
             </div>
-            <div style={{ display: `flex`, justifyContent: `center` }}>
-              <AppButton
-                style={{ margin: `0px auto` }}
-                onClick={() => this.nextPhase()}
-                width={`200px`}
-              >
-                Next
-              </AppButton>
-            </div>
-            <div style={{ display: `flex`, justifyContent: `center` }}>
-              <AppButton
-                style={{ margin: `0px auto` }}
-                onClick={() => this.props.changePhase(-1)}
-                width={`200px`}
-              >
-                Back
-              </AppButton>
-            </div>
           </div>
         )}
+        <div
+          style={{
+            display: `flex`,
+            justifyContent: `space-around`,
+
+            flexWrap: `wrap`,
+          }}
+        >
+          <AppButton
+            margin={`10px auto`}
+            onClick={() => this.props.changePhase(-1)}
+            width={`200px`}
+          >
+            Back
+          </AppButton>{" "}
+          {this.state.isOpponentChosen && (
+            <AppButton
+              margin={`10px auto`}
+              onClick={() => this.nextPhase()}
+              width={`200px`}
+            >
+              Next
+            </AppButton>
+          )}
+        </div>
       </div>
     );
   }

@@ -9,7 +9,16 @@ class IndexPortrait extends Component {
     return (
       <div>
         <div>
-          <div>
+          <div
+            style={{
+              cursor: this.props.onClick ? `pointer` : null,
+            }}
+            onClick={
+              this.props.onClick
+                ? () => this.props.onClick(this.props.character._id)
+                : null
+            }
+          >
             <Breakpoint medium up>
               <div
                 style={{
