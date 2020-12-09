@@ -11,6 +11,9 @@ class AppInput extends Component {
       let type = this.props.id.split(`-`)[0];
       this.props.handleSubmit(event, type);
     }
+    if (event.key === `Enter` && this.props.fieldName === `searchField`) {
+      this.props.handleSubmit();
+    }
   };
 
   styles = {
@@ -26,7 +29,9 @@ class AppInput extends Component {
       position: `absolute`,
     },
     input: {
-      backgroundColor: colors.lightPrimary,
+      backgroundColor: this.props.backgroundColor
+        ? this.props.backgroundColor
+        : colors.lightPrimary,
       borderRadius: `50px`,
       color: colors.darkPrimary,
       fontSize: this.props.mode === `mobile` ? `.5rem` : `inherit`,
@@ -45,7 +50,8 @@ class AppInput extends Component {
           autoCorrect={this.props.autoCorrect}
           id={`${this.props.id}`}
           onKeyUp={
-            this.props.mode === `mobile`
+            this.props.mode === `mobile` ||
+            this.props.fieldName === `searchField`
               ? event => this.handleKeyUp(event)
               : null
           }
