@@ -2,16 +2,22 @@ import React, { Component } from "react";
 import SuperHeroAPI from "../../../utils/SuperHeroAPI";
 import fullList from "../../../utils/characters";
 import AppButton from "../../AppButton";
+import IndexPortrait from "../../IndexPortrait";
 
 class GetOpponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpponentAboutToBeChosen: true,
-      isOpponentBeingChosen: false,
+      isOpponentChosen: false,
       opposingTeam: [],
     };
   }
+
+  nextPhase = () => {
+    this.props.setOpposingTeam(this.state.opposingTeam);
+    this.props.changePhase(1);
+  };
 
   chooseOpponent = () => {
     const currentRoster = this.props.roster;
@@ -41,7 +47,7 @@ class GetOpponent extends Component {
       .catch(err => console.error(err));
     this.setState({
       isOpponentAboutToBeChosen: false,
-      isOpponentBeingChosen: true,
+      isOpponentChosen: true,
     });
   };
 
@@ -58,7 +64,35 @@ class GetOpponent extends Component {
         {this.state.isOpponentAboutToBeChosen && (
           <AppButton onClick={() => this.chooseOpponent()}>Click</AppButton>
         )}
-        {this.state.isOpponentBeingChosen && <p>isOpponentBeingChosen</p>}
+        {this.state.isOpponentChosen && (
+          <div>
+            <div>
+              {this.state.opposingTeam.map((character, index) => (
+                <div key={index}>
+                  <IndexPortrait round showStats character={character} />
+                </div>
+              ))}
+            </div>
+            <div style={{ display: `flex`, justifyContent: `center` }}>
+              <AppButton
+                style={{ margin: `0px auto` }}
+                onClick={() => this.nextPhase()}
+                width={`200px`}
+              >
+                Next
+              </AppButton>
+            </div>
+            <div style={{ display: `flex`, justifyContent: `center` }}>
+              <AppButton
+                style={{ margin: `0px auto` }}
+                onClick={() => this.props.changePhase(-1)}
+                width={`200px`}
+              >
+                Back
+              </AppButton>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

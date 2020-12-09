@@ -10,12 +10,19 @@ class Fight extends Component {
     this.state = {
       phase: 0,
       isSoloFightMode: true,
+      opposingTeam: [],
     };
   }
 
+  setOpposingTeam = opposingTeam =>
+    this.setState({ opposingTeam: opposingTeam });
+
   changePhase = direction => {
-    if (this.state.phase === 1) {
+    if (this.state.phase === 1 && direction === -1) {
       this.setState({ isSoloFightMode: true });
+    }
+    if (this.state.phase === 2 && direction === -1) {
+      this.setState({ opposingTeam: [] });
     }
     this.setState({ phase: this.state.phase + direction });
   };
@@ -29,7 +36,18 @@ class Fight extends Component {
     return (
       <div>
         <div>
-          <p>Phase: {this.state.phase + 1}</p>
+          <p>
+            Phase: {this.state.phase + 1}
+            {this.state.phase >= 1 &&
+              `; Mode: ${this.state.isSoloFightMode ? `Solo` : `Team`}-Fight`}
+            {this.state.phase >= 2 &&
+              `; Opposing ${
+                this.state.isSoloFightMode ? `Fighter` : `Team`
+              }: ${this.state.opposingTeam.map(
+                (character, index) =>
+                  `${index !== 0 ? ` ` : ``}${character.name}`
+              )}`}
+          </p>
         </div>
         <h2>Fight!</h2>
         {this.state.phase === 0 && (
@@ -41,11 +59,13 @@ class Fight extends Component {
         )}
         {this.state.phase === 1 && (
           <GetOpponent
+            setOpposingTeam={this.setOpposingTeam}
+            changePhase={this.changePhase}
             isSoloFightMode={this.state.isSoloFightMode}
             roster={this.props.roster}
           />
         )}
-        {this.state.phase === 1 && (
+        {this.state.phase === 2 && (
           <div style={{ marginTop: `20px` }}>
             <button onClick={() => this.changePhase(-1)}>Back</button>
           </div>
