@@ -48,6 +48,7 @@ class AppInput extends Component {
         <input
           autoCapitalize={this.props.autoCapitalize}
           autoCorrect={this.props.autoCorrect}
+          autoComplete={`off`}
           id={`${this.props.id}`}
           onKeyUp={
             this.props.mode === `mobile` ||
