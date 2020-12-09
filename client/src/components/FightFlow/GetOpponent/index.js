@@ -68,7 +68,11 @@ class GetOpponent extends Component {
               justifyContent: `center`,
             }}
           >
-            <AppButton width={`200px`} onClick={() => this.chooseOpponent()}>
+            <AppButton
+              margin={`10px`}
+              width={`200px`}
+              onClick={() => this.chooseOpponent()}
+            >
               Reveal!
             </AppButton>
           </div>
@@ -90,7 +94,7 @@ class GetOpponent extends Component {
             display: `flex`,
             justifyContent: `space-around`,
 
-            flexWrap: `wrap`,
+            flexWrap: `wrap-reverse`,
           }}
         >
           <AppButton

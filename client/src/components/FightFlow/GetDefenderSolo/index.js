@@ -44,12 +44,13 @@ class GetDefenderSolo extends Component {
     this.props.changePhase(1);
   };
 
-  changeDefender = () => this.setState({ defender: {}, filteredResults: [] });
+  changeDefender = () =>
+    this.setState({ defender: {}, filteredResults: [], filtered: false });
 
   render() {
     return (
       <div>
-        <p>get defender solo</p>
+        <h4>Choose Your Fighter</h4>
         {!this.state.defender.name && (
           <div
             style={{
@@ -92,10 +93,10 @@ class GetDefenderSolo extends Component {
                 flexWrap: `wrap`,
               }}
             >
-              <AppButton onClick={this.confirmDefender}>
+              <AppButton margin={`10px 0px`} onClick={this.confirmDefender}>
                 Confirm {this.state.defender.name}!
               </AppButton>
-              <AppButton onClick={this.changeDefender}>
+              <AppButton margin={`10px 0px`} onClick={this.changeDefender}>
                 Choose Another Defender
               </AppButton>
             </div>
@@ -132,6 +133,15 @@ class GetDefenderSolo extends Component {
               <p>Search Returned No Results!</p>
             </div>
           )}
+        <div style={{ display: `flex`, justifyContent: `center` }}>
+          <AppButton
+            margin={`10px auto`}
+            onClick={() => this.props.changePhase(-1)}
+            width={`200px`}
+          >
+            Back
+          </AppButton>
+        </div>
       </div>
     );
   }
