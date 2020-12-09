@@ -42,10 +42,10 @@ class SoloOrTeam extends Component {
       margin: `auto`,
     },
     subContainer: {
-      margin: `auto`,
-      width: `25%`,
+      width: `175px`,
       display: `flex`,
-      alignItems: `center`,
+      alignItems: `space-around`,
+      justifyContent: `center`,
     },
     text: {
       fontSize: `1.5rem`,
@@ -55,7 +55,13 @@ class SoloOrTeam extends Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          display: `flex`,
+          flexDirection: `column`,
+          justifyContent: `center`,
+        }}
+      >
         <h3>How would you like to fight?</h3>
         <div style={this.styles.container}>
           <div style={this.styles.subContainer}>
@@ -67,7 +73,7 @@ class SoloOrTeam extends Component {
               SOLO
             </p>
           </div>
-          <div style={this.styles.subContainer}>
+          <div style={{ ...this.styles.subContainer, paddingTop: `9px` }}>
             <label className="switch">
               <input
                 onChange={() => this.toggleIsSoloFightMode()}

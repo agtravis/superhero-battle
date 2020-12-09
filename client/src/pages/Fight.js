@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GetOpponent from "../components/FightFlow/GetOpponent";
 // import SuperHeroAPI from "../utils/SuperHeroAPI";
 // import fullList from "../utils/characters";
 import SoloOrTeam from "../components/FightFlow/SoloOrTeam";
@@ -27,6 +28,9 @@ class Fight extends Component {
     }
     return (
       <div>
+        <div>
+          <p>Phase: {this.state.phase + 1}</p>
+        </div>
         <h2>Fight!</h2>
         {this.state.phase === 0 && (
           <SoloOrTeam
@@ -36,7 +40,13 @@ class Fight extends Component {
           />
         )}
         {this.state.phase === 1 && (
-          <div>
+          <GetOpponent
+            isSoloFightMode={this.state.isSoloFightMode}
+            roster={this.props.roster}
+          />
+        )}
+        {this.state.phase === 1 && (
+          <div style={{ marginTop: `20px` }}>
             <button onClick={() => this.changePhase(-1)}>Back</button>
           </div>
         )}
