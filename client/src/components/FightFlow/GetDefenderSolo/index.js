@@ -93,10 +93,18 @@ class GetDefenderSolo extends Component {
                 flexWrap: `wrap`,
               }}
             >
-              <AppButton margin={`10px 0px`} onClick={this.confirmDefender}>
+              <AppButton
+                width={`200px`}
+                margin={`10px 0px`}
+                onClick={this.confirmDefender}
+              >
                 Confirm {this.state.defender.name}!
               </AppButton>
-              <AppButton margin={`10px 0px`} onClick={this.changeDefender}>
+              <AppButton
+                width={`200px`}
+                margin={`10px 0px`}
+                onClick={this.changeDefender}
+              >
                 Choose Another Defender
               </AppButton>
             </div>

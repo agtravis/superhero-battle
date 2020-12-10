@@ -81,6 +81,7 @@ class Fight extends Component {
         <h2>Fight!</h2>
         {this.state.phase === 0 && (
           <SoloOrTeam
+            roster={this.props.roster}
             changePhase={this.changePhase}
             toggle={this.toggle}
             isSoloFightMode={this.isSoloFightMode}
@@ -102,7 +103,7 @@ class Fight extends Component {
           />
         )}
         {this.state.phase === 2 && !this.state.isSoloFightMode && (
-          <GetDefenderTeam />
+          <GetDefenderTeam team={this.props.team} />
         )}
 
         {this.state.phase === 3 && (

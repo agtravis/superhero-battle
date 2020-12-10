@@ -198,6 +198,7 @@ class App extends Component {
                             loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
                             roster={this.state.roster}
+                            team={this.state.teams}
                             fillUser={this.fillUser}
                           />
                         )}

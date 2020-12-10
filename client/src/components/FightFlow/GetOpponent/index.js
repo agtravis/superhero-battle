@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SuperHeroAPI from "../../../utils/SuperHeroAPI";
 import fullList from "../../../utils/characters";
 import AppButton from "../../AppButton";
-import IndexPortrait from "../../IndexPortrait";
+import Team from "../../Team";
 
 class GetOpponent extends Component {
   constructor(props) {
@@ -80,12 +80,9 @@ class GetOpponent extends Component {
         {this.state.isOpponentChosen && (
           <div>
             <div>
-              {this.state.opposingTeam.map((character, index) => (
-                <div key={index} style={{ margin: `10px 0px` }}>
-                  {index !== 0 && <hr />}
-                  <IndexPortrait round showStats character={character} />
-                </div>
-              ))}
+              {this.state.opposingTeam.length > 0 ? (
+                <Team team={this.state.opposingTeam} />
+              ) : null}
             </div>
           </div>
         )}

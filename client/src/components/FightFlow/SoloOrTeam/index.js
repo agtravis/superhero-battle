@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AppButton from "../../AppButton";
+import colors from "../../../config/colors";
 import "./style.css";
 
 class SoloOrTeam extends Component {
@@ -76,6 +77,7 @@ class SoloOrTeam extends Component {
           <div style={{ ...this.styles.subContainer, paddingTop: `9px` }}>
             <label className="switch">
               <input
+                disabled={this.props.roster.length < 3 ? true : false}
                 onChange={() => this.toggleIsSoloFightMode()}
                 type="checkbox"
               />
@@ -85,11 +87,28 @@ class SoloOrTeam extends Component {
           <div style={this.styles.subContainer}>
             <div>
               <p id={`team-text`} style={this.styles.text}>
-                TEAM
+                <span
+                  style={{
+                    color: this.props.roster.length < 3 && colors.danger,
+                  }}
+                >
+                  TEAM
+                </span>
               </p>
             </div>
           </div>
         </div>
+        {this.props.roster.length < 3 && (
+          <div
+            style={{
+              display: `flex`,
+              justifyContent: `center`,
+              color: colors.danger,
+            }}
+          >
+            <p>Roster must have at least 3 to form a team!</p>
+          </div>
+        )}
         <div style={{ display: `flex`, justifyContent: `center` }}>
           <AppButton
             style={{ margin: `0px auto` }}
