@@ -111,7 +111,7 @@ class SoloOrTeam extends Component {
         )}
         <div style={{ display: `flex`, justifyContent: `center` }}>
           <AppButton
-            style={{ margin: `0px auto` }}
+            margin={`10px 0`}
             onClick={() => this.nextPhase()}
             width={`200px`}
           >

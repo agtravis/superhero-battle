@@ -54,6 +54,13 @@ class Profile extends Component {
       .catch(err => console.error(err));
   };
 
+  // remove this function
+  emptyTeam = () => {
+    API.emptyTeam(this.props.currentUser._id)
+      .then()
+      .catch(err => console.error(err));
+  };
+
   signedInVsGeneric = (signedInVersion, genericVersion) =>
     this.props.profileId === this.props.currentUser._id
       ? signedInVersion
@@ -169,6 +176,9 @@ class Profile extends Component {
               )}
             </div>
             <hr />
+            {/*<div>
+              <button onClick={() => this.emptyTeam()}>Empty Team</button>
+            </div>*/}
             <div>
               <h2>Your Current Team:</h2>
               {this.state.profileData.teams.length > 0 ? (

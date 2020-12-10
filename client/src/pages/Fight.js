@@ -45,6 +45,8 @@ class Fight extends Component {
         return `${phase} - Get Your Challenger`;
       case 3:
         return `${phase} - Choose Your ${solo ? `Fighter` : `Team`}`;
+      case 4:
+        return `${phase} - Staging!`;
       default:
         return `${phase} - Choose Your Fighting Mode`;
     }
@@ -103,7 +105,13 @@ class Fight extends Component {
           />
         )}
         {this.state.phase === 2 && !this.state.isSoloFightMode && (
-          <GetDefenderTeam team={this.props.team} />
+          <GetDefenderTeam
+            roster={this.props.roster}
+            currentUser={this.props.currentUser}
+            team={this.props.team}
+            changePhase={this.changePhase}
+            setDefendingTeam={this.setDefendingTeam}
+          />
         )}
 
         {this.state.phase === 3 && (

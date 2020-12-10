@@ -1,26 +1,36 @@
 import React, { Component } from "react";
-import SuperHeroAPI from "../../../utils/SuperHeroAPI";
-import IndexPortrait from "../../IndexPortrait";
-import AppInput from "../../AppInput";
-import AppButton from "../../AppButton";
-import colors from "../../../config/colors";
+import colors from "../../config/colors";
+import SuperHeroAPI from "../../utils/SuperHeroAPI";
+import AppButton from "../AppButton";
+import AppInput from "../AppInput";
+import IndexPortrait from "../IndexPortrait";
 
-class GetDefenderSolo extends Component {
+class TeamSelection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      defender: {},
+      teamMember: {},
       searchField: ``,
       filteredResults: [],
+      roster: [],
     };
   }
+
+  componentDidMount() {
+    this.setState({ roster: this.props.roster });
+  }
+
+  clearForm = () => {
+    document.getElementById(`team-member-search`).value = ``;
+    this.setState({ searchField: ``, filteredResults: [], filtered: false });
+  };
 
   handleChange = (event, stateKey) => {
     this.setState({ [stateKey]: event.target.value });
   };
 
   handleSubmit = () => {
-    const filtered = this.props.roster.filter(character =>
+    const filtered = this.state.roster.filter(character =>
       character.name
         .toLowerCase()
         .includes(this.state.searchField.toLowerCase())
@@ -28,30 +38,25 @@ class GetDefenderSolo extends Component {
     this.setState({ filteredResults: filtered, filtered: true });
   };
 
-  clearForm = () => {
-    document.getElementById(`defender-search`).value = ``;
-    this.setState({ searchField: ``, filteredResults: [], filtered: false });
+  confirmTeamMember = () => {
+    this.props.addToTeam(this.state.teamMember);
+    this.props.toggleTeamSelector();
   };
 
-  getDefender = id => {
+  changeTeamMember = () =>
+    this.setState({ teamMember: {}, filteredResults: [], filtered: false });
+
+  getTeamMember = id => {
     SuperHeroAPI.loadContender(id)
-      .then(response => this.setState({ defender: response.data }))
+      .then(response => this.setState({ teamMember: response.data }))
       .catch(err => console.error(err));
   };
-
-  confirmDefender = () => {
-    this.props.setDefendingTeam([this.state.defender]);
-    this.props.changePhase(1);
-  };
-
-  changeDefender = () =>
-    this.setState({ defender: {}, filteredResults: [], filtered: false });
 
   render() {
     return (
       <div>
-        <h4>Choose Your Fighter</h4>
-        {!this.state.defender.name && (
+        <h4>Choose Your Team Member</h4>
+        {!this.state.teamMember.name && (
           <div
             style={{
               display: `flex`,
@@ -61,7 +66,7 @@ class GetDefenderSolo extends Component {
           >
             <AppButton onClick={this.clearForm}>Clear</AppButton>
             <AppInput
-              id={`defender-search`}
+              id={`team-member-search`}
               backgroundColor={colors.extraLightPrimary}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
@@ -70,7 +75,7 @@ class GetDefenderSolo extends Component {
             <AppButton onClick={this.handleSubmit}>Search</AppButton>
           </div>
         )}
-        {this.state.defender.name && (
+        {this.state.teamMember.name && (
           <div
             style={{
               display: `flex`,
@@ -80,8 +85,8 @@ class GetDefenderSolo extends Component {
           >
             <div style={{ cursor: `pointer`, marginBottom: `20px` }}>
               <IndexPortrait
-                character={this.state.defender}
-                onClick={this.confirmDefender}
+                character={this.state.teamMember}
+                onClick={this.confirmTeamMember}
                 round
                 showStats
               />
@@ -96,28 +101,28 @@ class GetDefenderSolo extends Component {
               <AppButton
                 width={`200px`}
                 margin={`10px 0px`}
-                onClick={this.confirmDefender}
+                onClick={this.confirmTeamMember}
               >
-                Confirm {this.state.defender.name}!
+                Confirm {this.state.teamMember.name}!
               </AppButton>
               <AppButton
                 width={`200px`}
                 margin={`10px 0px`}
-                onClick={this.changeDefender}
+                onClick={this.changeTeamMember}
               >
-                Choose Another Defender
+                Choose Another Team Member
               </AppButton>
             </div>
           </div>
         )}
-        {!this.state.defender.name &&
+        {!this.state.teamMember.name &&
           (this.state.filteredResults.length < 1 && !this.state.filtered
             ? this.props.roster.map((character, index) => (
                 <div key={index} style={{ margin: `10px 0px` }}>
                   {index !== 0 && <hr />}
                   <IndexPortrait
                     character={character}
-                    onClick={this.getDefender}
+                    onClick={this.getTeamMember}
                     round
                     showStats
                   />
@@ -128,23 +133,24 @@ class GetDefenderSolo extends Component {
                   {index !== 0 && <hr />}
                   <IndexPortrait
                     character={character}
-                    onClick={this.getDefender}
+                    onClick={this.getTeamMember}
                     round
                     showStats
                   />
                 </div>
               )))}
-        {!this.state.defender.name &&
+        {!this.state.teamMember.name &&
           this.state.filteredResults.length < 1 &&
           this.state.filtered && (
             <div>
               <p>Search Returned No Results!</p>
             </div>
           )}
+
         <div style={{ display: `flex`, justifyContent: `center` }}>
           <AppButton
             margin={`10px auto`}
-            onClick={() => this.props.changePhase(-1)}
+            onClick={() => this.props.toggleTeamSelector()}
             width={`200px`}
           >
             Back
@@ -155,4 +161,4 @@ class GetDefenderSolo extends Component {
   }
 }
 
-export default GetDefenderSolo;
+export default TeamSelection;
