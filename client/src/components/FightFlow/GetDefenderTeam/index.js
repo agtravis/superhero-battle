@@ -1,85 +1,168 @@
 import React, { Component } from "react";
+import API from "../../../utils/API";
+import AppButton from "../../AppButton";
 import Team from "../../Team";
+import TeamSelection from "../../TeamSelection";
 
 class GetDefenderTeam extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showTeamSelector: false,
       teamSelected: false,
+      team: [],
+      rosterAvailableForTeamSelection: [],
     };
   }
+
+  componentDidMount() {
+    API.getUserDetails(this.props.currentUser._id)
+      .then(response => this.setState({ team: response.data.teams }))
+      .catch(err => console.error(err));
+  }
+
+  inTeam = character => {
+    for (const member of this.state.team) {
+      if (member._id === character._id) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  adjustRoster = roster => roster.filter(character => this.inTeam(character));
+
+  removeFromTeam = characterId => {
+    const removed = this.state.team.filter(
+      character => character._id !== characterId
+    );
+    this.setState({ team: removed });
+  };
+
+  addToTeam = character => {
+    const team = this.state.team;
+    team.push(character);
+    this.setState({ team: team });
+  };
+
+  toggleTeamSelector = () => {
+    const available = this.adjustRoster(this.props.roster);
+    this.setState({ rosterAvailableForTeamSelection: available });
+    this.setState({ showTeamSelector: !this.state.showTeamSelector });
+  };
+
+  nextPhase = () => {
+    API.emptyTeam(this.props.currentUser._id)
+      .then(
+        API.addToTeam(this.props.currentUser._id, this.state.team[0])
+          .then(
+            API.addToTeam(this.props.currentUser._id, this.state.team[1])
+              .then(
+                API.addToTeam(this.props.currentUser._id, this.state.team[2])
+                  .then(() => {
+                    this.props.setDefendingTeam(this.state.team);
+
+                    this.props.changePhase(1);
+                  })
+                  .catch(err => console.error(err))
+              )
+              .catch(err => console.error(err))
+          )
+          .catch(err => console.error(err))
+      )
+      .catch(err => console.error(err));
+  };
+
   render() {
     return (
       <div>
         <h4>Choose Your Team</h4>
-        {!this.state.teamSelected && (
-          <div>
+        <div style={{ textAlign: `center` }}>
+          {!this.state.showTeamSelector && (
             <div>
               <h5>Your current team:</h5>
               <div>
-                {this.props.team.length > 0 ? (
-                  <Team team={this.props.team} />
-                ) : (
+                {this.state.team.length > 0 ? (
                   <div>
-                    <p>nobody in team</p>
-                    <p>
-                      Add GetDefenderSolo Component here, adjust props. On
-                      submit pushes to team.
-                    </p>
-                    <p>
-                      if team has 1 member, button to get 2nd member hides all
-                      other content using a state boolean and reveals back when
-                      chosen
-                    </p>
-                    <p>
-                      if team has 2 members, button to get 3rd member hides all
-                      other content using a state boolean and reveals back when
-                      chosen
-                    </p>
-                    <p>if team is full, button showing moves forward phase</p>
-                    <p>
-                      button above/below each member to remove that member from
-                      team
-                    </p>
+                    <div>
+                      <Team
+                        onClickRemove={id => this.removeFromTeam(id)}
+                        team={this.state.team}
+                      />
+                    </div>
+                    {this.state.team.length < 3 && this.state.team.length > 0 && (
+                      <div
+                        style={{
+                          marginTop:
+                            this.state.team.length === 1 ? `80px` : `20px`,
+                        }}
+                      >
+                        <p>Your team is short!</p>
+                        <AppButton
+                          margin={`10px 0`}
+                          width={`200px`}
+                          onClick={() => this.toggleTeamSelector()}
+                        >
+                          Add Another!
+                        </AppButton>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      display: `flex`,
+                      justifyContent: `center`,
+                      flexDirection: `column`,
+                    }}
+                  >
+                    <p>Your team is currently empty!</p>
+                    <AppButton
+                      margin={`10px 0`}
+                      width={`200px`}
+                      onClick={() => this.toggleTeamSelector()}
+                    >
+                      Get Team Leader!
+                    </AppButton>
                   </div>
                 )}
-                <div>
-                  {/*this.props.team[0] ? (
-                    <div>
-                      <p>{this.props.team[0].name}</p>
-                    </div>
-                  ) : (
-                    <div>
-                      <p>no team member</p>
-                    </div>
-                  )}
-                </div>
-                <div>
-                  {this.props.team[1] ? (
-                    <div>
-                      <p>{this.props.team[1].name}</p>
-                    </div>
-                  ) : (
-                    <div>
-                      <p>no team member</p>
-                    </div>
-                  )}
-                </div>
-                <div>
-                  {this.props.team[2] ? (
-                    <div>
-                      <p>{this.props.team[2].name}</p>
-                    </div>
-                  ) : (
-                    <div>
-                      <p>no team member</p>
-                    </div>
-                  )*/}
-                </div>
               </div>
             </div>
+          )}
+          {this.state.showTeamSelector && (
+            <div>
+              <TeamSelection
+                roster={this.state.rosterAvailableForTeamSelection}
+                addToTeam={this.addToTeam}
+                toggleTeamSelector={this.toggleTeamSelector}
+              />
+            </div>
+          )}
+          <div
+            style={{
+              display: `flex`,
+              justifyContent: `space-around`,
+              flexWrap: `wrap-reverse`,
+            }}
+          >
+            <AppButton
+              margin={`10px auto`}
+              onClick={() => this.props.changePhase(-1)}
+              width={`200px`}
+            >
+              Back
+            </AppButton>
+            {this.state.team.length === 3 && (
+              <AppButton
+                margin={`10px auto`}
+                onClick={() => this.nextPhase()}
+                width={`200px`}
+              >
+                Next
+              </AppButton>
+            )}
           </div>
-        )}
+        </div>
       </div>
     );
   }

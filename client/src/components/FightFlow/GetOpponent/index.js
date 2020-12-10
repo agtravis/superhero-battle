@@ -90,7 +90,7 @@ class GetOpponent extends Component {
           style={{
             display: `flex`,
             justifyContent: `space-around`,
-
+            marginTop: this.state.opposingTeam.length === 1 ? `80px` : `0px`,
             flexWrap: `wrap-reverse`,
           }}
         >
