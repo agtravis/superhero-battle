@@ -37,6 +37,10 @@
   transition: 0.4s;
 }
 
+input:disabled + .slider {
+  background-color: var(--danger);
+}
+
 input:checked + .slider {
   background-color: var(--secondary);
 }
