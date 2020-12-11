@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AppButton from "../components/AppButton";
+import Battle from "../components/FightFlow/Battle";
 import GetDefenderSolo from "../components/FightFlow/GetDefenderSolo";
 import GetDefenderTeam from "../components/FightFlow/GetDefenderTeam";
 import GetOpponent from "../components/FightFlow/GetOpponent";
@@ -59,31 +61,50 @@ class Fight extends Component {
     }
     return (
       <div>
-        {this.state.phase < 4 && (
+        {this.state.phase < 3 && (
           <div>
-            <div>
-              <p>
-                Phase:{" "}
-                {this.phaseText(this.state.phase, this.state.isSoloFightMode)}
-                {this.state.phase >= 1 &&
-                  `; Mode: ${
-                    this.state.isSoloFightMode ? `Solo` : `Team`
-                  }-Fight`}
-                {this.state.phase >= 2 &&
-                  `; Opposing ${
-                    this.state.isSoloFightMode ? `Fighter` : `Team`
-                  }: ${this.state.opposingTeam.map(
-                    (character, index) =>
-                      `${index !== 0 ? ` ` : ``}${character.name}`
-                  )}`}
-                {this.state.phase >= 3 &&
-                  `; Defending ${
-                    this.state.isSoloFightMode ? `Fighter` : `Team`
-                  }: ${this.state.defendingTeam.map(
-                    (character, index) =>
-                      `${index !== 0 ? ` ` : ``}${character.name}`
-                  )}`}
-              </p>
+            <div
+              style={{
+                display: `flex`,
+                justifyContent: `space-around`,
+                flexWrap: `wrap`,
+              }}
+            >
+              <div>
+                <p>
+                  Phase:{" "}
+                  {this.phaseText(this.state.phase, this.state.isSoloFightMode)}
+                  {this.state.phase >= 1 &&
+                    `; Mode: ${
+                      this.state.isSoloFightMode ? `Solo` : `Team`
+                    }-Fight`}
+                  {this.state.phase >= 2 &&
+                    `; Opposing ${
+                      this.state.isSoloFightMode ? `Fighter` : `Team`
+                    }: ${this.state.opposingTeam.map(
+                      (character, index) =>
+                        `${index !== 0 ? ` ` : ``}${character.name}`
+                    )}`}
+                  {this.state.phase >= 3 &&
+                    `; Defending ${
+                      this.state.isSoloFightMode ? `Fighter` : `Team`
+                    }: ${this.state.defendingTeam.map(
+                      (character, index) =>
+                        `${index !== 0 ? ` ` : ``}${character.name}`
+                    )}`}
+                </p>
+              </div>
+              {this.state.phase > 0 && (
+                <div>
+                  <AppButton
+                    margin={`10px auto`}
+                    onClick={() => this.changePhase(-1)}
+                    width={`200px`}
+                  >
+                    Back
+                  </AppButton>
+                </div>
+              )}
             </div>
             <h2>Fight!</h2>
           </div>
@@ -132,10 +153,11 @@ class Fight extends Component {
         )}
 
         {this.state.phase === 4 && (
-          <div style={{ marginTop: `20px` }}>
-            <p>Fight Component</p>
-            <button onClick={() => this.changePhase(-1)}>Back</button>
-          </div>
+          <Battle
+            currentUser={this.props.currentUser}
+            defenders={this.state.defendingTeam}
+            challengers={this.state.opposingTeam}
+          />
         )}
       </div>
     );

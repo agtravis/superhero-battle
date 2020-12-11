@@ -228,7 +228,7 @@ class FightMode extends Component {
           />
         ) : null}
         {this.state.victor ? (
-          <>
+          <div>
             {this.state.victor === `challenger` ? (
               <BattleOver
                 rosterFunction={this.attackerWin}
@@ -250,7 +250,7 @@ class FightMode extends Component {
                 currentUser={this.props.currentUser}
               />
             )}
-          </>
+          </div>
         ) : null}
       </div>
     );

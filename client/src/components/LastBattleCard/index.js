@@ -92,7 +92,7 @@ class LastBattleCard extends Component {
               onClick={() => this.props.changePhase(1)}
               width={`200px`}
             >
-              Next
+              FIGHT!
             </AppButton>
           </div>
         )}
