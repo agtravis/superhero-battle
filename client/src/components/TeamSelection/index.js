@@ -95,22 +95,22 @@ class TeamSelection extends Component {
               style={{
                 display: `flex`,
                 justifyContent: `space-around`,
-                flexWrap: `wrap`,
+                flexWrap: `wrap-reverse`,
               }}
             >
-              <AppButton
-                width={`200px`}
-                margin={`10px 0px`}
-                onClick={this.confirmTeamMember}
-              >
-                Confirm {this.state.teamMember.name}!
-              </AppButton>
               <AppButton
                 width={`200px`}
                 margin={`10px 0px`}
                 onClick={this.changeTeamMember}
               >
                 Choose Another Team Member
+              </AppButton>
+              <AppButton
+                width={`200px`}
+                margin={`10px 0px`}
+                onClick={this.confirmTeamMember}
+              >
+                Confirm {this.state.teamMember.name}!
               </AppButton>
             </div>
           </div>

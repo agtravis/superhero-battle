@@ -31,8 +31,10 @@ export default {
   removeCharacterFromRoster(id, characterId) {
     return axios.put(`/api/user/roster/remove/${id}`, characterId);
   },
-  addManyCharactersToRoster(id, characterIds) {
-    return axios.put(`/api/user/roster/addmany/${id}`, { ids: characterIds });
+  addManyCharactersToRoster(id, characterObjects) {
+    return axios.put(`/api/user/roster/addmany/${id}`, {
+      ids: characterObjects,
+    });
   },
   removeManyCharactersFromRoster(id, characterIds) {
     return axios.put(`/api/user/roster/removemany/${id}`, {

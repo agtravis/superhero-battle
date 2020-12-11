@@ -90,22 +90,22 @@ class GetDefenderSolo extends Component {
               style={{
                 display: `flex`,
                 justifyContent: `space-around`,
-                flexWrap: `wrap`,
+                flexWrap: `wrap-reverse`,
               }}
             >
-              <AppButton
-                width={`200px`}
-                margin={`10px 0px`}
-                onClick={this.confirmDefender}
-              >
-                Confirm {this.state.defender.name}!
-              </AppButton>
               <AppButton
                 width={`200px`}
                 margin={`10px 0px`}
                 onClick={this.changeDefender}
               >
                 Choose Another Defender
+              </AppButton>
+              <AppButton
+                width={`200px`}
+                margin={`10px 0px`}
+                onClick={this.confirmDefender}
+              >
+                Confirm {this.state.defender.name}!
               </AppButton>
             </div>
           </div>
