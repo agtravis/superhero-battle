@@ -5,6 +5,7 @@ import GetOpponent from "../components/FightFlow/GetOpponent";
 // import SuperHeroAPI from "../utils/SuperHeroAPI";
 // import fullList from "../utils/characters";
 import SoloOrTeam from "../components/FightFlow/SoloOrTeam";
+import LastBattleCard from "../components/LastBattleCard";
 
 class Fight extends Component {
   constructor(props) {
@@ -58,29 +59,35 @@ class Fight extends Component {
     }
     return (
       <div>
-        <div>
-          <p>
-            Phase:{" "}
-            {this.phaseText(this.state.phase, this.state.isSoloFightMode)}
-            {this.state.phase >= 1 &&
-              `; Mode: ${this.state.isSoloFightMode ? `Solo` : `Team`}-Fight`}
-            {this.state.phase >= 2 &&
-              `; Opposing ${
-                this.state.isSoloFightMode ? `Fighter` : `Team`
-              }: ${this.state.opposingTeam.map(
-                (character, index) =>
-                  `${index !== 0 ? ` ` : ``}${character.name}`
-              )}`}
-            {this.state.phase >= 3 &&
-              `; Defending ${
-                this.state.isSoloFightMode ? `Fighter` : `Team`
-              }: ${this.state.defendingTeam.map(
-                (character, index) =>
-                  `${index !== 0 ? ` ` : ``}${character.name}`
-              )}`}
-          </p>
-        </div>
-        <h2>Fight!</h2>
+        {this.state.phase < 4 && (
+          <div>
+            <div>
+              <p>
+                Phase:{" "}
+                {this.phaseText(this.state.phase, this.state.isSoloFightMode)}
+                {this.state.phase >= 1 &&
+                  `; Mode: ${
+                    this.state.isSoloFightMode ? `Solo` : `Team`
+                  }-Fight`}
+                {this.state.phase >= 2 &&
+                  `; Opposing ${
+                    this.state.isSoloFightMode ? `Fighter` : `Team`
+                  }: ${this.state.opposingTeam.map(
+                    (character, index) =>
+                      `${index !== 0 ? ` ` : ``}${character.name}`
+                  )}`}
+                {this.state.phase >= 3 &&
+                  `; Defending ${
+                    this.state.isSoloFightMode ? `Fighter` : `Team`
+                  }: ${this.state.defendingTeam.map(
+                    (character, index) =>
+                      `${index !== 0 ? ` ` : ``}${character.name}`
+                  )}`}
+              </p>
+            </div>
+            <h2>Fight!</h2>
+          </div>
+        )}
         {this.state.phase === 0 && (
           <SoloOrTeam
             roster={this.props.roster}
@@ -113,9 +120,20 @@ class Fight extends Component {
             setDefendingTeam={this.setDefendingTeam}
           />
         )}
-
         {this.state.phase === 3 && (
+          <LastBattleCard
+            battle={{
+              defenders: this.state.defendingTeam,
+              challengers: this.state.opposingTeam,
+            }}
+            isPreFightStaging
+            changePhase={this.changePhase}
+          />
+        )}
+
+        {this.state.phase === 4 && (
           <div style={{ marginTop: `20px` }}>
+            <p>Fight Component</p>
             <button onClick={() => this.changePhase(-1)}>Back</button>
           </div>
         )}
