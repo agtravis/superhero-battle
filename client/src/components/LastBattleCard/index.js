@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AppButton from "../AppButton";
 import IndexPortraitSmall from "../IndexPortraitSmall";
 
 class LastBattleCard extends Component {
@@ -11,13 +12,17 @@ class LastBattleCard extends Component {
     return (
       <div>
         <div>
-          <h3>
-            Your last battle was on {this.convertDate(this.props.battle.date)}{" "}
-            and you were
-            {this.props.battle.winner === `Challenger`
-              ? ` defeated!`
-              : ` the victor!`}
-          </h3>
+          {!this.props.isPreFightStaging ? (
+            <h3>
+              Your last battle was on {this.convertDate(this.props.battle.date)}{" "}
+              and you were
+              {this.props.battle.winner === `Challenger`
+                ? ` defeated!`
+                : ` the victor!`}
+            </h3>
+          ) : (
+            <h3>The Stage is Set for Battle!</h3>
+          )}
           <div style={{ display: `flex`, justifyContent: `space-between` }}>
             <div>
               <h4>
@@ -39,7 +44,11 @@ class LastBattleCard extends Component {
                 <IndexPortraitSmall
                   key={index}
                   left
-                  src={challenger.image}
+                  src={
+                    this.props.isPreFightStaging
+                      ? challenger.image.url
+                      : challenger.image
+                  }
                   name={challenger.name}
                 />
               ))}
@@ -52,13 +61,41 @@ class LastBattleCard extends Component {
                 <IndexPortraitSmall
                   key={index}
                   right
-                  src={defender.image}
+                  src={
+                    this.props.isPreFightStaging
+                      ? defender.image.url
+                      : defender.image
+                  }
                   name={defender.name}
                 />
               ))}
             </div>
           </div>
         </div>
+        {this.props.isPreFightStaging && (
+          <div
+            style={{
+              display: `flex`,
+              justifyContent: `space-around`,
+              flexWrap: `wrap-reverse`,
+            }}
+          >
+            <AppButton
+              margin={`10px auto`}
+              onClick={() => this.props.changePhase(-1)}
+              width={`200px`}
+            >
+              Back
+            </AppButton>
+            <AppButton
+              margin={`10px auto`}
+              onClick={() => this.props.changePhase(1)}
+              width={`200px`}
+            >
+              Next
+            </AppButton>
+          </div>
+        )}
       </div>
     );
   }

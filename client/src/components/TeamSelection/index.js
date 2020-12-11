@@ -153,7 +153,7 @@ class TeamSelection extends Component {
             onClick={() => this.props.toggleTeamSelector()}
             width={`200px`}
           >
-            Back
+            Back To Team
           </AppButton>
         </div>
       </div>
