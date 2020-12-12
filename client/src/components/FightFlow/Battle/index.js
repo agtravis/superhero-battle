@@ -81,6 +81,8 @@ class Battle extends Component {
         )}
         {this.state.round === 1 && this.state.isRoundCommenced && (
           <AnimatedRound
+            defenders={this.props.defenders}
+            challengers={this.props.challengers}
             round={this.props.round}
             isSoloFightMode={this.props.isSoloFightMode}
             statName={this.state.fightRoundStat}

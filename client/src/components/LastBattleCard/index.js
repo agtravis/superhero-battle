@@ -12,7 +12,7 @@ class LastBattleCard extends Component {
     return (
       <div>
         <div>
-          {!this.props.isPreFightStaging ? (
+          {!this.props.isPreFightStaging && !this.props.isDuringFight ? (
             <h3>
               Your last battle was on {this.convertDate(this.props.battle.date)}{" "}
               and you were
@@ -45,7 +45,7 @@ class LastBattleCard extends Component {
                   key={index}
                   left
                   src={
-                    this.props.isPreFightStaging
+                    this.props.isPreFightStaging || this.props.isDuringFight
                       ? challenger.image.url
                       : challenger.image
                   }
@@ -62,7 +62,7 @@ class LastBattleCard extends Component {
                   key={index}
                   right
                   src={
-                    this.props.isPreFightStaging
+                    this.props.isPreFightStaging || this.props.isDuringFight
                       ? defender.image.url
                       : defender.image
                   }
