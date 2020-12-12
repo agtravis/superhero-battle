@@ -66,8 +66,9 @@ class Fight extends Component {
             <div
               style={{
                 display: `flex`,
-                justifyContent: `space-around`,
-                flexWrap: `wrap`,
+                justifyContent: `center`,
+                flexDirection: `column`,
+                textAlign: `center`,
               }}
             >
               <div>
