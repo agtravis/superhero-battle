@@ -13,6 +13,8 @@ class Battle extends Component {
       isRoundCommenced: false,
       challengerRoundStatValue: null,
       defenderRoundStatValue: null,
+      defenderScore: 0,
+      challengerScore: 0,
     };
   }
 
@@ -69,6 +71,15 @@ class Battle extends Component {
     });
   };
 
+  roundOver = victor => {
+    victor === `defender`
+      ? this.setState({ defenderScore: this.state.defenderScore + 1 })
+      : this.setState({ challengerScore: this.state.challengerScore + 1 });
+    if (this.state.defenderScore < 2 && this.state.challengerScore < 2) {
+      this.setState({ round: this.state.round + 1 });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -88,6 +99,7 @@ class Battle extends Component {
             statName={this.state.fightRoundStat}
             defenderStat={this.state.defenderRoundStatValue}
             challengerStat={this.state.challengerRoundStatValue}
+            roundOver={this.roundOver}
           />
         )}
       </div>
