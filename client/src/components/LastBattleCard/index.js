@@ -20,9 +20,9 @@ class LastBattleCard extends Component {
                 ? ` defeated!`
                 : ` the victor!`}
             </h3>
-          ) : (
+          ) : !this.props.isDuringFight ? (
             <h3>The Stage is Set for Battle!</h3>
-          )}
+          ) : null}
           <div style={{ display: `flex`, justifyContent: `space-between` }}>
             <div>
               <h4>

@@ -37,6 +37,12 @@ class AnimatedRound extends Component {
     this.expand(`challengerWidth`, challengerStat);
   };
 
+  nextRound = () => {
+    this.state.defenderWidth >= this.state.challengerWidth
+      ? this.props.roundOver(`defender`)
+      : this.props.roundOver(`challenger`);
+  };
+
   expand = (character, max) => {
     let counter = 0;
     const timer = setInterval(() => {
@@ -83,19 +89,32 @@ class AnimatedRound extends Component {
           )}
         </div>
         <div style={{ display: `flex`, justifyContent: `space-between` }}>
+          <div style={{ width: `100%` }}>
+            <div
+              style={{
+                width: `${this.state.defenderWidth}%`,
+                height: `20px`,
+                border: `solid 1px ${colors.darkSecondary}`,
+                backgroundColor: `${colors.secondary}`,
+                borderRadius: `10px`,
+              }}
+            ></div>
+          </div>
           <div
             style={{
-              width: `${this.state.defenderWidth}%`,
-              height: `20px`,
-              border: `solid 1px ${colors.darkSecondary}`,
-              backgroundColor: `${colors.secondary}`,
-              borderRadius: `10px`,
+              width: `100px`,
+              fontSize: `.8rem`,
+              paddingLeft: `10px`,
+              marginLeft: `10px`,
+              borderLeft: `solid 1px ${colors.darkSecondary}`,
             }}
-          ></div>
-          <div>
-            {this.props.isSoloFightMode
-              ? this.state.defenderWidth.toFixed(2)
-              : (this.state.defenderWidth * 3).toFixed(2)}
+          >
+            <p>
+              {this.props.isSoloFightMode
+                ? this.state.defenderWidth.toFixed(2)
+                : (this.state.defenderWidth * 3).toFixed(2)}
+              {` `}/ {this.props.defenderStat}
+            </p>
           </div>
         </div>
         <div>
@@ -116,19 +135,32 @@ class AnimatedRound extends Component {
           )}
         </div>
         <div style={{ display: `flex`, justifyContent: `space-between` }}>
+          <div style={{ width: `100%` }}>
+            <div
+              style={{
+                width: `${this.state.challengerWidth}%`,
+                height: `20px`,
+                border: `solid 1px ${colors.darkSecondary}`,
+                backgroundColor: `${colors.secondary}`,
+                borderRadius: `10px`,
+              }}
+            ></div>
+          </div>
           <div
             style={{
-              width: `${this.state.challengerWidth}%`,
-              height: `20px`,
-              border: `solid 1px ${colors.darkSecondary}`,
-              backgroundColor: `${colors.secondary}`,
-              borderRadius: `10px`,
+              width: `100px`,
+              fontSize: `.8rem`,
+              paddingLeft: `10px`,
+              marginLeft: `10px`,
+              borderLeft: `solid 1px ${colors.darkSecondary}`,
             }}
-          ></div>
-          <div>
-            {this.props.isSoloFightMode
-              ? this.state.challengerWidth.toFixed(2)
-              : (this.state.challengerWidth * 3).toFixed(2)}
+          >
+            <p>
+              {this.props.isSoloFightMode
+                ? this.state.challengerWidth.toFixed(2)
+                : (this.state.challengerWidth * 3).toFixed(2)}
+              {` `}/ {this.props.challengerStat}
+            </p>
           </div>
         </div>
         {!this.state.commenced && (
@@ -137,8 +169,15 @@ class AnimatedRound extends Component {
           </AppButton>
         )}
         {this.state.defenderFinished && this.state.challengerFinished && (
-          <div>
+          <div style={{ display: `flex`, justifyContent: `center` }}>
             <p>Round {this.props.round} over!</p>
+            <AppButton
+              margin={`10px 0px`}
+              width={`200px`}
+              onClick={this.nextRound}
+            >
+              Next Round
+            </AppButton>
           </div>
         )}
       </div>
