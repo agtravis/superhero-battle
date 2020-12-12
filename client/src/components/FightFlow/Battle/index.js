@@ -76,13 +76,33 @@ class Battle extends Component {
       ? this.setState({ defenderScore: this.state.defenderScore + 1 })
       : this.setState({ challengerScore: this.state.challengerScore + 1 });
     if (this.state.defenderScore < 2 && this.state.challengerScore < 2) {
+      // if round === 1
+      // pick stat for challenger, feed props to round two animatedround
+      // if round === 2
+      // pick random stat
       this.setState({ round: this.state.round + 1 });
     }
+    // if [TEAM] score || [OTHERTEAM] score === 2
+    // add/remove characters to/from user, interact with DB for battles, wins, etc
+    // victory/defeat screen
+    // fight again redirects to fight (maybe option to pass same fighter?)
+    // home refreshes with redirect
   };
 
   render() {
     return (
       <div>
+        <div style={{ display: `flex`, justifyContent: `space-between` }}>
+          <div>
+            <p>Challenging: {this.state.challengerScore}</p>
+          </div>
+          <div>
+            <p> -- SCORE -- </p>
+          </div>
+          <div>
+            <p>Defending: {this.state.defenderScore}</p>
+          </div>
+        </div>
         {this.state.round === 1 && !this.state.isRoundCommenced && (
           <FightingStatsSelector
             round={this.state.round}

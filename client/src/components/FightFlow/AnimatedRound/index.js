@@ -76,7 +76,7 @@ class AnimatedRound extends Component {
           {this.state.defenderFinished && this.state.challengerFinished ? (
             <p>
               You had a handicap of{` `}
-              {this.state.defenderHandicap}
+              {this.state.defenderHandicap * 100}%
             </p>
           ) : (
             <p>
@@ -121,7 +121,7 @@ class AnimatedRound extends Component {
           {this.state.defenderFinished && this.state.challengerFinished ? (
             <p>
               They had a handicap of{` `}
-              {this.state.challengerHandicap}.
+              {this.state.challengerHandicap * 100}%.
             </p>
           ) : (
             <p>
@@ -169,15 +169,25 @@ class AnimatedRound extends Component {
           </AppButton>
         )}
         {this.state.defenderFinished && this.state.challengerFinished && (
-          <div style={{ display: `flex`, justifyContent: `center` }}>
-            <p>Round {this.props.round} over!</p>
-            <AppButton
-              margin={`10px 0px`}
-              width={`200px`}
-              onClick={this.nextRound}
-            >
-              Next Round
-            </AppButton>
+          <div
+            style={{
+              display: `flex`,
+              justifyContent: `center`,
+              flexDirection: `column`,
+            }}
+          >
+            <div>
+              <p>Round {this.props.round} over!</p>
+            </div>
+            <div>
+              <AppButton
+                margin={`10px 0px`}
+                width={`200px`}
+                onClick={this.nextRound}
+              >
+                Next Round
+              </AppButton>
+            </div>
           </div>
         )}
       </div>

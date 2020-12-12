@@ -52,22 +52,28 @@ class GetDefenderSolo extends Component {
       <div>
         <h4>Choose Your Fighter</h4>
         {!this.state.defender.name && (
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `space-around`,
-              flexWrap: `wrap`,
-            }}
-          >
-            <AppButton onClick={this.clearForm}>Clear</AppButton>
-            <AppInput
-              id={`defender-search`}
-              backgroundColor={colors.extraLightPrimary}
-              handleChange={this.handleChange}
-              handleSubmit={this.handleSubmit}
-              fieldName={`searchField`}
-            />
-            <AppButton onClick={this.handleSubmit}>Search</AppButton>
+          <div>
+            <div
+              style={{
+                display: `flex`,
+                justifyContent: `space-around`,
+                flexWrap: `wrap`,
+                marginBottom: `20px`,
+              }}
+            >
+              <AppButton onClick={this.clearForm}>Clear</AppButton>
+              <AppInput
+                id={`defender-search`}
+                backgroundColor={colors.extraLightPrimary}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+                fieldName={`searchField`}
+              />
+              <AppButton onClick={this.handleSubmit}>Search</AppButton>
+            </div>
+            <div>
+              <hr />
+            </div>
           </div>
         )}
         {this.state.defender.name && (
