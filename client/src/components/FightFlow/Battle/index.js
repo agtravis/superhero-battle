@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AnimatedRound from "../AnimatedRound";
 import FightingStatsSelector from "../FightingStatsSelector";
 
 class Battle extends Component {
@@ -60,7 +61,6 @@ class Battle extends Component {
   };
 
   fightWithThisStat = event => {
-    console.log(event.target.value);
     this.setState({
       fightRoundStat: event.target.value,
       challengerRoundStatValue: this.state.challengerStats[event.target.value],
@@ -80,11 +80,13 @@ class Battle extends Component {
           />
         )}
         {this.state.round === 1 && this.state.isRoundCommenced && (
-          <p>
-            You fight with {this.state.fightRoundStat}:{" "}
-            {this.state.defenderRoundStatValue} vs.{" "}
-            {this.state.challengerRoundStatValue}
-          </p>
+          <AnimatedRound
+            round={this.props.round}
+            isSoloFightMode={this.props.isSoloFightMode}
+            statName={this.state.fightRoundStat}
+            defenderStat={this.state.defenderRoundStatValue}
+            challengerStat={this.state.challengerRoundStatValue}
+          />
         )}
       </div>
     );

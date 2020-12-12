@@ -157,6 +157,7 @@ class Fight extends Component {
             currentUser={this.props.currentUser}
             defenders={this.state.defendingTeam}
             challengers={this.state.opposingTeam}
+            isSoloFightMode={this.state.isSoloFightMode}
           />
         )}
       </div>
