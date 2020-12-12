@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import colors from "../../../config/colors";
 import AppButton from "../../AppButton";
+import LastBattleCard from "../../LastBattleCard";
 
 class AnimatedRound extends Component {
   constructor(props) {
@@ -10,13 +12,23 @@ class AnimatedRound extends Component {
       defenderFinished: false,
       challengerFinished: false,
       commenced: false,
+      defenderHandicap: 0,
+      challengerHandicap: 0,
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      defenderHandicap: Math.random().toFixed(2),
+      challengerHandicap: Math.random().toFixed(2),
+    });
   }
 
   start = () => {
     this.setState({ commenced: true });
-    let defenderStat = this.props.defenderStat;
-    let challengerStat = this.props.challengerStat;
+    let defenderStat = this.props.defenderStat * this.state.defenderHandicap;
+    let challengerStat =
+      this.props.challengerStat * this.state.challengerHandicap;
     if (!this.props.isSoloFightMode) {
       defenderStat = defenderStat / 3;
       challengerStat = challengerStat / 3;
@@ -42,37 +54,91 @@ class AnimatedRound extends Component {
   render() {
     return (
       <div>
+        <LastBattleCard
+          isDuringFight
+          battle={{
+            defenders: this.props.defenders,
+            challengers: this.props.challengers,
+          }}
+        />
+        <h3>
+          Battling with
+          {this.props.statName[0].toUpperCase() +
+            this.props.statName.substring(1)}
+        </h3>
+        <div>
+          {this.state.defenderFinished && this.state.challengerFinished ? (
+            <p>
+              You had a handicap of{` `}
+              {this.state.defenderHandicap}
+            </p>
+          ) : (
+            <p>
+              You should{" "}
+              {this.props.defenderStat >= this.props.challengerStat
+                ? `win`
+                : `lose`}{" "}
+              with a rating of {this.props.defenderStat} {this.props.statName}.
+            </p>
+          )}
+        </div>
+        <div style={{ display: `flex`, justifyContent: `space-between` }}>
+          <div
+            style={{
+              width: `${this.state.defenderWidth}%`,
+              height: `20px`,
+              border: `solid 1px ${colors.darkSecondary}`,
+              backgroundColor: `${colors.secondary}`,
+              borderRadius: `10px`,
+            }}
+          ></div>
+          <div>
+            {this.props.isSoloFightMode
+              ? this.state.defenderWidth.toFixed(2)
+              : (this.state.defenderWidth * 3).toFixed(2)}
+          </div>
+        </div>
+        <div>
+          {this.state.defenderFinished && this.state.challengerFinished ? (
+            <p>
+              They had a handicap of{` `}
+              {this.state.challengerHandicap}.
+            </p>
+          ) : (
+            <p>
+              They should{" "}
+              {this.props.defenderStat >= this.props.challengerStat
+                ? `lose`
+                : `win`}{" "}
+              with a rating of {this.props.challengerStat} {this.props.statName}
+              .
+            </p>
+          )}
+        </div>
+        <div style={{ display: `flex`, justifyContent: `space-between` }}>
+          <div
+            style={{
+              width: `${this.state.challengerWidth}%`,
+              height: `20px`,
+              border: `solid 1px ${colors.darkSecondary}`,
+              backgroundColor: `${colors.secondary}`,
+              borderRadius: `10px`,
+            }}
+          ></div>
+          <div>
+            {this.props.isSoloFightMode
+              ? this.state.challengerWidth.toFixed(2)
+              : (this.state.challengerWidth * 3).toFixed(2)}
+          </div>
+        </div>
         {!this.state.commenced && (
           <AppButton width={`200px`} margin={`10px 0px`} onClick={this.start}>
             Fight!
           </AppButton>
         )}
-        <div>You</div>
-        <div
-          style={{
-            width: `${this.state.defenderWidth}%`,
-            height: `10px`,
-            border: `solid 1px black`,
-            backgroundColor: `green`,
-            borderRadius: `5px`,
-          }}
-        ></div>
-        <div>Them</div>
-        <div
-          style={{
-            width: `${this.state.challengerWidth}%`,
-            height: `10px`,
-            border: `solid 1px black`,
-            backgroundColor: `green`,
-            borderRadius: `5px`,
-          }}
-        ></div>
         {this.state.defenderFinished && this.state.challengerFinished && (
           <div>
-            <p>
-              Round {this.props.round} over, You had {this.props.defenderStat}{" "}
-              and They had {this.props.challengerStat} in {this.props.statName}
-            </p>
+            <p>Round {this.props.round} over!</p>
           </div>
         )}
       </div>
