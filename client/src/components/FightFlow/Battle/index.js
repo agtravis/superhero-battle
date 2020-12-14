@@ -201,17 +201,19 @@ class Battle extends Component {
   render() {
     return (
       <div>
-        <div style={{ display: `flex`, justifyContent: `space-between` }}>
-          <div>
-            <p>Challenging: {this.state.challengerScore}</p>
+        {this.state.round !== 4 && (
+          <div style={{ display: `flex`, justifyContent: `space-between` }}>
+            <div>
+              <p>Challenging: {this.state.challengerScore}</p>
+            </div>
+            <div>
+              <p> -- SCORE -- </p>
+            </div>
+            <div>
+              <p>Defending: {this.state.defenderScore}</p>
+            </div>
           </div>
-          <div>
-            <p> -- SCORE -- </p>
-          </div>
-          <div>
-            <p>Defending: {this.state.defenderScore}</p>
-          </div>
-        </div>
+        )}
         {this.state.round === 1 && !this.state.isRoundCommenced && (
           <FightingStatsSelector
             round={this.state.round}

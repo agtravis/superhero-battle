@@ -68,7 +68,7 @@ class AnimatedRound extends Component {
           }}
         />
         <h3>
-          Battling with
+          Battling with{` `}
           {this.props.statName[0].toUpperCase() +
             this.props.statName.substring(1)}
         </h3>
@@ -76,7 +76,7 @@ class AnimatedRound extends Component {
           {this.state.defenderFinished && this.state.challengerFinished ? (
             <p>
               You had a handicap of{` `}
-              {this.state.defenderHandicap * 100}%
+              {Math.floor(this.state.defenderHandicap * 100)}%
             </p>
           ) : (
             <p>
