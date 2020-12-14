@@ -9,7 +9,11 @@ class AppButton extends Component {
           value={this.props.value ? this.props.value : undefined}
           style={{ width: this.props.width, margin: this.props.margin }}
           className={`appButton`}
-          onClick={event => this.props.onClick(event)}
+          onClick={
+            this.props.value
+              ? event => this.props.onClick(event)
+              : this.props.onClick
+          }
         >
           {this.props.children}
         </button>

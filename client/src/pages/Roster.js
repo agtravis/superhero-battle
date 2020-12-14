@@ -4,6 +4,7 @@ import SuperHeroAPI from "../utils/SuperHeroAPI";
 import API from "../utils/API";
 
 import IndexPortrait from "../components/IndexPortrait";
+import AppButton from "../components/AppButton";
 
 class Roster extends Component {
   constructor(props) {
@@ -133,22 +134,52 @@ class Roster extends Component {
                     ) : null}
                   </div>
                 ) : (
-                  <div>
-                    <p>{this.state.newCharacter.name}</p>
-                    {this.state.newCharacter.image.url &&
-                    this.state.imageValid ? (
-                      <img
-                        src={this.state.newCharacter.image.url}
-                        alt={this.state.newCharacter.name}
-                        onError={() => this.noImage()}
+                  <div
+                    style={{
+                      display: `flex`,
+                      justifyContent: `center`,
+                      flexDirection: `column`,
+                    }}
+                  >
+                    <div>
+                      <IndexPortrait
+                        round
+                        showStats
+                        character={this.state.newCharacter}
                       />
-                    ) : (
-                      <p>No Image on File!</p>
-                    )}
-                    <button onClick={() => this.addToRoster()}>
-                      Add to Roster!
-                    </button>
+                    </div>
+                    <div
+                      style={{
+                        display: `flex`,
+                        justifyContent: `center`,
+                      }}
+                    >
+                      <AppButton
+                        width={`200px`}
+                        margin={`10px  0px`}
+                        onClick={this.addToRoster}
+                      >
+                        Add To Roster!
+                      </AppButton>
+                    </div>
                   </div>
+
+                  // <div>
+                  //   <p>{this.state.newCharacter.name}</p>
+                  //   {this.state.newCharacter.image.url &&
+                  //   this.state.imageValid ? (
+                  //     <img
+                  //       src={this.state.newCharacter.image.url}
+                  //       alt={this.state.newCharacter.name}
+                  //       onError={() => this.noImage()}
+                  //     />
+                  //   ) : (
+                  //     <p>No Image on File!</p>
+                  //   )}
+                  //   <button onClick={() => this.addToRoster()}>
+                  //     Add to Roster!
+                  //   </button>
+                  // </div>
                 )}
               </div>
             ) : (
