@@ -185,7 +185,7 @@ class AnimatedRound extends Component {
                 width={`200px`}
                 onClick={this.nextRound}
               >
-                {this.props.buttonText ? this.props.buttonText : `Next Round`}
+                Continue
               </AppButton>
             </div>
           </div>

@@ -17,6 +17,7 @@ class Battle extends Component {
       defenderScore: 0,
       challengerScore: 0,
       highestChallengerStat: { stat: `combat`, rating: 0 },
+      randomStat: null,
       won: false,
     };
   }
@@ -60,7 +61,11 @@ class Battle extends Component {
         highestChallengerStat.rating = value;
       }
     }
+    const keys = Object.keys(challengerStats);
+    const randomNum = Math.floor(Math.random() * keys.length);
+    const randomStat = keys[randomNum];
     this.setState({
+      randomStat: randomStat,
       highestChallengerStat: highestChallengerStat.stat,
       challengerStats: challengerStats,
       defenderStats: defenderStats,
@@ -103,37 +108,20 @@ class Battle extends Component {
       victor === `defender`
         ? this.setState({ defenderScore: this.state.defenderScore + 1 })
         : this.setState({ challengerScore: this.state.challengerScore + 1 });
+      this.setState({
+        fightRoundStat: this.state.randomStat,
+        isRoundCommenced: false,
+        round: this.state.round + 1,
+      });
     }
   };
 
-  roundOver = victor => {
-    // victor === `defender`
-    //   ? this.setState({ defenderScore: this.state.defenderScore + 1 })
-    //   : this.setState({ challengerScore: this.state.challengerScore + 1 });
-    // if (this.state.round === 1) {
-    //   this.setState({ fightWithThisStat: this.state.highestChallengerStat });
-    // }
-    // if (this.state.round < 2) {
-    //   const highestChallengerStat = this.state.highestChallengerStat;
-    //   for (const [key, value] of Object.entries(this.state.challengerStats)) {
-    //     if (value > highestChallengerStat.rating) {
-    //       highestChallengerStat.stat = key;
-    //       highestChallengerStat.rating = value;
-    //     }
-    //   }
-    //   this.setState({ highestChallengerStat: highestChallengerStat });
-    // } else if (this.state.defenderScore === 2) {
-    //   this.setState({ won: true });
-    //   this.defenderWin();
-    //   this.setState({ won: true });
-    // } else if (this.state.challengerScore === 2) {
-    //   this.challengerWin();
-    // } else {
-    //   const keys = Object.keys(this.state.challengerStats);
-    //   const randomNum = Math.floor(Math.random() * keys.length);
-    //   const randomStat = keys[randomNum];
-    //   this.setState({ fightRoundStat: randomStat });
-    // }
+  endRoundThree = victor => {
+    if (this.state.defenderScore === 1 && victor === `defender`) {
+      this.defenderWin();
+    } else if (this.state.challengerScore === 1 && victor === `challenger`) {
+      this.challengerWin();
+    }
   };
 
   challengerWin = () => {
@@ -148,11 +136,15 @@ class Battle extends Component {
           .then(() => {
             if (!this.props.isSoloFightMode) {
               API.emptyTeam(this.props.currentUser._id)
-                .then()
+                .then(() => {
+                  this.logBattle(`Challenger`);
+                })
                 .catch(err => console.error(err));
             } else {
               API.removeFromTeam(this.props.currentUser._id, ids[0])
-                .then()
+                .then(() => {
+                  this.logBattle(`Challenger`);
+                })
                 .catch(err => console.error(err));
             }
           })
@@ -170,9 +162,39 @@ class Battle extends Component {
     API.addManyCharactersToRoster(this.props.currentUser._id, ids)
       .then(() =>
         API.win(this.props.currentUser._id)
-          .then()
+          .then(() => {
+            this.logBattle(this.props.currentUser.username);
+          })
           .catch(err => console.error(err))
       )
+      .catch(err => console.error(err));
+  };
+
+  logBattle = winner => {
+    const details = {
+      date: Date.now(),
+      challengers: [],
+      defenders: [],
+      winner: winner,
+    };
+    for (const challenger of this.props.challengers) {
+      const individualDetails = {
+        id: challenger._id,
+        name: challenger.name,
+        image: challenger.image.url,
+      };
+      details.challengers.push(individualDetails);
+    }
+    for (const defender of this.props.defenders) {
+      const individualDetails = {
+        id: defender._id,
+        name: defender.name,
+        image: defender.image.url,
+      };
+      details.defenders.push(individualDetails);
+    }
+    API.logBattle(this.props.currentUser._id, details)
+      .then(() => this.setState({ round: 4 }))
       .catch(err => console.error(err));
   };
 
@@ -213,7 +235,6 @@ class Battle extends Component {
           <FightingStatsSelector
             predeterminedStat={this.state.fightRoundStat}
             round={this.state.round}
-            stats={this.state.defenderStats}
             fightWithThisStat={this.fightWithThisStat}
           />
         )}
@@ -229,33 +250,31 @@ class Battle extends Component {
             roundOver={this.endRoundTwo}
           />
         )}
-        {/*{!this.state.won ? (
+        {this.state.round === 3 && !this.state.isRoundCommenced && (
+          <FightingStatsSelector
+            isThirdRound
+            predeterminedStat={this.state.fightRoundStat}
+            round={this.state.round}
+            fightWithThisStat={this.fightWithThisStat}
+          />
+        )}
+        {this.state.round === 3 && this.state.isRoundCommenced && (
+          <AnimatedRound
+            defenders={this.props.defenders}
+            challengers={this.props.challengers}
+            round={this.props.round}
+            isSoloFightMode={this.props.isSoloFightMode}
+            statName={this.state.fightRoundStat}
+            defenderStat={this.state.defenderRoundStatValue}
+            challengerStat={this.state.challengerRoundStatValue}
+            roundOver={this.endRoundThree}
+          />
+        )}
+        {this.state.round === 4 && (
           <div>
-            {this.state.round === 3 && !this.state.isRoundCommenced && (
-              <FightingStatsSelector
-                isThirdRound
-                predeterminedStat={this.state.fightRoundStat}
-                round={this.state.round}
-                stats={this.state.defenderStats}
-                fightWithThisStat={this.fightWithThisStat}
-              />
-            )}
-            {this.state.round === 3 && this.state.isRoundCommenced && (
-              <AnimatedRound
-                defenders={this.props.defenders}
-                challengers={this.props.challengers}
-                round={this.props.round}
-                isSoloFightMode={this.props.isSoloFightMode}
-                statName={this.state.fightRoundStat}
-                defenderStat={this.state.defenderRoundStatValue}
-                challengerStat={this.state.challengerRoundStatValue}
-                roundOver={this.roundOver}
-              />
-            )}
+            <p>Battle summary component</p>
           </div>
-        ) : (
-          <p>GAME OVER</p>
-        )}*/}
+        )}
       </div>
     );
   }
