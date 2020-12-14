@@ -121,7 +121,7 @@ class AnimatedRound extends Component {
           {this.state.defenderFinished && this.state.challengerFinished ? (
             <p>
               They had a handicap of{` `}
-              {this.state.challengerHandicap * 100}%.
+              {Math.floor(this.state.challengerHandicap * 100)}%.
             </p>
           ) : (
             <p>
@@ -185,7 +185,7 @@ class AnimatedRound extends Component {
                 width={`200px`}
                 onClick={this.nextRound}
               >
-                Next Round
+                {this.props.buttonText ? this.props.buttonText : `Next Round`}
               </AppButton>
             </div>
           </div>
