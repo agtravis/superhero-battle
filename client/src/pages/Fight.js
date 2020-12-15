@@ -32,7 +32,6 @@ class Fight extends Component {
         previousTeam: this.props.location.state.defenders,
         rematch: true,
       });
-      console.log(this.props.location.state);
     }
   }
 
