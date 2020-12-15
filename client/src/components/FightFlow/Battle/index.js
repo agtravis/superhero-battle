@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../../../utils/API";
 import AnimatedRound from "../AnimatedRound";
 import FightingStatsSelector from "../FightingStatsSelector";
+import PostBattle from "../PostBattle";
 
 class Battle extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Battle extends Component {
       challengerScore: 0,
       highestChallengerStat: { stat: `combat`, rating: 0 },
       randomStat: null,
-      won: false,
+      winner: ``,
     };
   }
 
@@ -125,7 +126,7 @@ class Battle extends Component {
   };
 
   challengerWin = () => {
-    console.log(`challenger win`);
+    this.setState({ winner: `Challenger` });
     const ids = [];
     for (const defender of this.props.defenders) {
       ids.push(defender._id);
@@ -154,7 +155,7 @@ class Battle extends Component {
   };
 
   defenderWin = () => {
-    console.log(`defender win`);
+    this.setState({ winner: this.props.currentUser.username });
     const ids = [];
     for (const challenger of this.props.challengers) {
       ids.push(challenger._id);
@@ -273,9 +274,13 @@ class Battle extends Component {
           />
         )}
         {this.state.round === 4 && (
-          <div>
-            <p>Battle summary component</p>
-          </div>
+          <PostBattle
+            reset={this.props.reset}
+            defenders={this.props.defenders}
+            challengers={this.props.challengers}
+            isSoloFightMode={this.props.isSoloFightMode}
+            winner={this.state.winner}
+          />
         )}
       </div>
     );

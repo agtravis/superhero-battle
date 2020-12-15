@@ -154,7 +154,7 @@ class App extends Component {
                       <Route
                         exact
                         path="/"
-                        render={() => (
+                        render={routeProps => (
                           <Index
                             loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
@@ -163,13 +163,17 @@ class App extends Component {
                               this.state.roster[this.state.roster.length - 1]
                             }
                             title={this.title}
+                            getUser={this.getUser}
+                            {...routeProps}
                           />
                         )}
                       />
                       <Route
                         exact
                         path="/about"
-                        render={() => <About title={this.title} />}
+                        render={routeProps => (
+                          <About title={this.title} {...routeProps} />
+                        )}
                       />
                       <Route
                         exact
@@ -193,13 +197,14 @@ class App extends Component {
                       <Route
                         exact
                         path="/fight"
-                        render={() => (
+                        render={routeProps => (
                           <Fight
                             loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
                             roster={this.state.roster}
                             team={this.state.teams}
                             fillUser={this.fillUser}
+                            {...routeProps}
                           />
                         )}
                       />

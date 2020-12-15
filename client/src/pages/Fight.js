@@ -15,9 +15,25 @@ class Fight extends Component {
     this.state = {
       phase: 0,
       isSoloFightMode: true,
+      wasSoloFightMode: true,
       defendingTeam: [],
       opposingTeam: [],
+      previousTeam: [],
+      rematch: false,
     };
+  }
+
+  componentDidMount() {
+    if (this.props.location.state) {
+      this.setState({
+        phase: 1,
+        isSoloFightMode: this.props.location.state.isSoloFightMode,
+        wasSoloFightMode: this.props.location.state.isSoloFightMode,
+        previousTeam: this.props.location.state.defenders,
+        rematch: true,
+      });
+      console.log(this.props.location.state);
+    }
   }
 
   setDefendingTeam = defendingTeam =>
@@ -28,18 +44,22 @@ class Fight extends Component {
 
   changePhase = direction => {
     if (this.state.phase === 1 && direction === -1) {
-      this.setState({ isSoloFightMode: true });
+      this.setState({ isSoloFightMode: true, rematch: false });
     }
     if (this.state.phase === 2 && direction === -1) {
-      this.setState({ opposingTeam: [] });
+      this.setState({ opposingTeam: [], rematch: false });
     }
     if (this.state.phase === 3 && direction === -1) {
-      this.setState({ defendingTeam: [] });
+      this.setState({ defendingTeam: [], rematch: false });
     }
     this.setState({ phase: this.state.phase + direction });
   };
 
+  reset = () => this.setState({ phase: 1 });
+
   toggle = stateName => this.setState({ [stateName]: !this.state[stateName] });
+
+  setToggleFightMode = bool => this.setState({ isSoloFightMode: bool });
 
   phaseText = (phase, solo) => {
     phase += 1;
@@ -112,22 +132,29 @@ class Fight extends Component {
         )}
         {this.state.phase === 0 && (
           <SoloOrTeam
+            rematch={this.state.rematch}
+            wasSoloFightMode={this.state.wasSoloFightMode}
             roster={this.props.roster}
             changePhase={this.changePhase}
             toggle={this.toggle}
             isSoloFightMode={this.isSoloFightMode}
+            setToggleFightMode={this.setToggleFightMode}
           />
         )}
         {this.state.phase === 1 && (
           <GetOpponent
+            rematch={this.state.rematch}
             setOpposingTeam={this.setOpposingTeam}
             changePhase={this.changePhase}
+            wasSoloFightMode={this.state.wasSoloFightMode}
             isSoloFightMode={this.state.isSoloFightMode}
             roster={this.props.roster}
           />
         )}
         {this.state.phase === 2 && this.state.isSoloFightMode && (
           <GetDefenderSolo
+            rematch={this.state.rematch}
+            previousTeam={this.state.previousTeam}
             setDefendingTeam={this.setDefendingTeam}
             roster={this.props.roster}
             changePhase={this.changePhase}
@@ -135,6 +162,8 @@ class Fight extends Component {
         )}
         {this.state.phase === 2 && !this.state.isSoloFightMode && (
           <GetDefenderTeam
+            rematch={this.state.rematch}
+            previousTeam={this.state.previousTeam}
             roster={this.props.roster}
             currentUser={this.props.currentUser}
             team={this.props.team}
@@ -155,6 +184,7 @@ class Fight extends Component {
 
         {this.state.phase === 4 && (
           <Battle
+            reset={this.reset}
             currentUser={this.props.currentUser}
             defenders={this.state.defendingTeam}
             challengers={this.state.opposingTeam}

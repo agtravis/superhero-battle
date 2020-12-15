@@ -1,11 +1,37 @@
 import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
 import Profile from "../components/Profile";
 import Rules from "../components/Rules";
 
 class Index extends Component {
   render() {
+    if (this.props.location.state) {
+      if (this.props.location.state.type === `rematch`) {
+        return (
+          <Redirect
+            to={{
+              pathname: `/fight`,
+              state: { ...this.props.location.state },
+            }}
+          />
+        );
+      } else if (this.props.location.state.type === `refresh`) {
+        // this.props.getUser();
+        window.location.reload();
+      }
+    }
     return (
       <div>
+        <Link
+          to={{
+            pathname: "/about",
+            state: {
+              test: `hello`,
+            },
+          }}
+        >
+          LINK
+        </Link>
         <h1>
           Welcome
           {this.props.loggedIn ? ` ${this.props.currentUser.username}` : null}!

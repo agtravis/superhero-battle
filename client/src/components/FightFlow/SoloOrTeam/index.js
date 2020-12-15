@@ -11,6 +11,13 @@ class SoloOrTeam extends Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.rematch) {
+      this.props.setToggleFightMode(this.props.wasSoloFightMode);
+      this.props.changePhase(1);
+    }
+  }
+
   toggleIsSoloFightMode = () => {
     if (this.state.isSoloFightMode) {
       document

@@ -14,6 +14,12 @@ class GetDefenderSolo extends Component {
       filteredResults: [],
     };
   }
+  componentDidMount() {
+    if (this.props.rematch) {
+      this.props.setDefendingTeam(this.props.previousTeam);
+      this.props.changePhase(1);
+    }
+  }
 
   handleChange = (event, stateKey) => {
     this.setState({ [stateKey]: event.target.value });
