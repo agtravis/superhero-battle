@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import colors from "../../config/colors";
-import SuperHeroAPI from "../../utils/SuperHeroAPI";
-import AppButton from "../AppButton";
-import AppInput from "../AppInput";
-import IndexPortrait from "../IndexPortrait";
+import colors from "../../../config/colors";
+import SuperHeroAPI from "../../../utils/SuperHeroAPI";
+import AppButton from "../../AppButton";
+import AppInput from "../../AppInput";
+import IndexPortrait from "../../IndexPortrait";
 
 class TeamSelection extends Component {
   constructor(props) {
@@ -20,9 +20,23 @@ class TeamSelection extends Component {
     this.setState({ roster: this.props.roster });
   }
 
+  changeTeamMember = () =>
+    this.setState({ teamMember: {}, filteredResults: [], filtered: false });
+
   clearForm = () => {
     document.getElementById(`team-member-search`).value = ``;
     this.setState({ searchField: ``, filteredResults: [], filtered: false });
+  };
+
+  confirmTeamMember = () => {
+    this.props.addToTeam(this.state.teamMember);
+    this.props.toggleTeamSelector();
+  };
+
+  getTeamMember = id => {
+    SuperHeroAPI.loadContender(id)
+      .then(response => this.setState({ teamMember: response.data }))
+      .catch(err => console.error(err));
   };
 
   handleChange = (event, stateKey) => {
@@ -36,20 +50,6 @@ class TeamSelection extends Component {
         .includes(this.state.searchField.toLowerCase())
     );
     this.setState({ filteredResults: filtered, filtered: true });
-  };
-
-  confirmTeamMember = () => {
-    this.props.addToTeam(this.state.teamMember);
-    this.props.toggleTeamSelector();
-  };
-
-  changeTeamMember = () =>
-    this.setState({ teamMember: {}, filteredResults: [], filtered: false });
-
-  getTeamMember = id => {
-    SuperHeroAPI.loadContender(id)
-      .then(response => this.setState({ teamMember: response.data }))
-      .catch(err => console.error(err));
   };
 
   render() {

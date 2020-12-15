@@ -4,13 +4,20 @@ import IndexPortrait from "../IndexPortrait";
 import IndexPortraitSmall from "../IndexPortraitSmall";
 
 class Team extends Component {
+  styles = {
+    lowerCharactersContainer: {
+      display: `flex`,
+      justifyContent: `space-between`,
+      marginTop: `-35px`,
+    },
+  };
+
   render() {
     return (
       <div>
         {this.props.team[0] ? (
           <div>
             <IndexPortrait character={this.props.team[0]} size={150} />
-
             {this.props.onClickRemove && (
               <div style={{ display: `flex`, justifyContent: `center` }}>
                 <AppButton
@@ -30,13 +37,7 @@ class Team extends Component {
             <p>add</p>
           </div>
         ) : null}
-        <div
-          style={{
-            display: `flex`,
-            justifyContent: `space-between`,
-            marginTop: `-35px`,
-          }}
-        >
+        <div style={this.styles.lowerCharactersContainer}>
           <div>
             {this.props.team[1] && (
               <div>

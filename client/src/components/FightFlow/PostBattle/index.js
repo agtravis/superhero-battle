@@ -4,10 +4,9 @@ import AppButton from "../../AppButton";
 import Team from "../../Team";
 
 class PostBattle extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  closingHeaderText = () =>
+    this.props.isSoloFightMode ? `This recruit has` : `These recruits have`;
+
   render() {
     return (
       <div
@@ -19,14 +18,18 @@ class PostBattle extends Component {
       >
         <h3 style={{ textAlign: `center` }}>
           {this.props.winner === `Challenger`
-            ? `Commiserations ${this.props.currentUser.username}, you lost! These recruits have deserted you!:`
-            : `Congratulations ${this.props.currentUser.username}, you won! These recruits have joined you!:`}
+            ? `Commiserations ${
+                this.props.currentUser.username
+              }, you lost! ${this.closingHeaderText()} deserted you:`
+            : `Congratulations ${
+                this.props.currentUser.username
+              }, you won! ${this.closingHeaderText()} joined you:`}
         </h3>
         <Team
           team={
             this.props.winner === `Challenger`
-              ? this.props.challengers
-              : this.props.defenders
+              ? this.props.defenders
+              : this.props.challengers
           }
         />
         <div

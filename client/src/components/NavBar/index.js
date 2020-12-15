@@ -28,7 +28,6 @@ class NavBar extends Component {
       flexDirection: `column`,
       height: `auto`,
       left: `0`,
-      // paddingBottom: `2px`,
       position: `absolute`,
       width: `100%`,
       zIndex: 5,
