@@ -11,6 +11,7 @@ class About extends Component {
   render() {
     return (
       <div>
+        {this.props.location.state && <p>{this.props.location.state.test}</p>}
         <p>
           <em>{this.props.title}</em> was written and developed in entirety by
           myself. That said, there are various elements without which I could
