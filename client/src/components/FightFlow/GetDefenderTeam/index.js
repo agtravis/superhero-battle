@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../../utils/API";
 import AppButton from "../../AppButton";
 import Team from "../../Team";
-import TeamSelection from "../../TeamSelection";
+import TeamSelection from "../TeamSelection";
 
 class GetDefenderTeam extends Component {
   constructor(props) {

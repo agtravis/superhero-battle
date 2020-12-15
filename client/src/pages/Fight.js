@@ -35,12 +35,6 @@ class Fight extends Component {
     }
   }
 
-  setDefendingTeam = defendingTeam =>
-    this.setState({ defendingTeam: defendingTeam });
-
-  setOpposingTeam = opposingTeam =>
-    this.setState({ opposingTeam: opposingTeam });
-
   changePhase = direction => {
     if (this.state.phase === 1 && direction === -1) {
       this.setState({ isSoloFightMode: true, rematch: false });
@@ -53,12 +47,6 @@ class Fight extends Component {
     }
     this.setState({ phase: this.state.phase + direction });
   };
-
-  reset = () => this.setState({ phase: 1 });
-
-  toggle = stateName => this.setState({ [stateName]: !this.state[stateName] });
-
-  setToggleFightMode = bool => this.setState({ isSoloFightMode: bool });
 
   phaseText = (phase, solo) => {
     phase += 1;
@@ -73,6 +61,18 @@ class Fight extends Component {
         return `${phase} - Choose Your Fighting Mode`;
     }
   };
+
+  reset = () => this.setState({ phase: 1 });
+
+  setDefendingTeam = defendingTeam =>
+    this.setState({ defendingTeam: defendingTeam });
+
+  setOpposingTeam = opposingTeam =>
+    this.setState({ opposingTeam: opposingTeam });
+
+  setToggleFightMode = bool => this.setState({ isSoloFightMode: bool });
+
+  toggle = stateName => this.setState({ [stateName]: !this.state[stateName] });
 
   render() {
     if (!this.props.currentUser) {

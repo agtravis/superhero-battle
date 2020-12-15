@@ -6,13 +6,9 @@ import NetworkDetector from "./Hoc/NetworkDetector";
 import API from "./utils/API";
 
 import Index from "./pages/Index";
-import Home from "./pages/Home";
 import Roster from "./pages/Roster";
 import Fight from "./pages/Fight";
-import FightSolo from "./pages/FightSolo";
-import FightTeam from "./pages/FightTeam";
 import Stats from "./pages/Stats";
-import Teams from "./pages/Teams";
 import Leaderboard from "./pages/Leaderboard";
 import About from "./pages/About";
 import RulesPage from "./pages/RulesPage";
@@ -150,7 +146,6 @@ class App extends Component {
                   />
                   <Switch>
                     <Screen>
-                      {/* "/" is home */}
                       <Route
                         exact
                         path="/"
@@ -182,18 +177,6 @@ class App extends Component {
                           <RulesPage currentUser={this.state.currentUser} />
                         )}
                       />
-                      {/* "/home" is deprecated*/}
-                      <Route
-                        exact
-                        path="/home"
-                        render={() => (
-                          <Home
-                            loggedIn={this.state.loggedIn}
-                            currentUser={this.state.currentUser}
-                            battles={this.state.battles}
-                          />
-                        )}
-                      />
                       <Route
                         exact
                         path="/fight"
@@ -205,31 +188,6 @@ class App extends Component {
                             team={this.state.teams}
                             fillUser={this.fillUser}
                             {...routeProps}
-                          />
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/fightsolo"
-                        render={() => (
-                          <FightSolo
-                            loggedIn={this.state.loggedIn}
-                            currentUser={this.state.currentUser}
-                            roster={this.state.roster}
-                            fillUser={this.fillUser}
-                          />
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/fightteam"
-                        render={() => (
-                          <FightTeam
-                            loggedIn={this.state.loggedIn}
-                            currentUser={this.state.currentUser}
-                            roster={this.state.roster}
-                            teams={this.state.teams}
-                            fillUser={this.fillUser}
                           />
                         )}
                       />
@@ -254,19 +212,6 @@ class App extends Component {
                             loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
                             roster={this.state.roster}
-                            fillUser={this.fillUser}
-                          />
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/teams"
-                        render={() => (
-                          <Teams
-                            loggedIn={this.state.loggedIn}
-                            currentUser={this.state.currentUser}
-                            roster={this.state.roster}
-                            teams={this.state.teams}
                             fillUser={this.fillUser}
                           />
                         )}
