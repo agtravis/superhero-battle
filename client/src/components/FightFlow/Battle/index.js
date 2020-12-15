@@ -275,7 +275,7 @@ class Battle extends Component {
         )}
         {this.state.round === 4 && (
           <PostBattle
-            reset={this.props.reset}
+            currentUser={this.props.currentUser}
             defenders={this.props.defenders}
             challengers={this.props.challengers}
             isSoloFightMode={this.props.isSoloFightMode}

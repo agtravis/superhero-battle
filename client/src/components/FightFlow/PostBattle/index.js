@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import AppButton from "../../AppButton";
+import Team from "../../Team";
 
 class PostBattle extends Component {
   constructor(props) {
@@ -8,12 +10,34 @@ class PostBattle extends Component {
   }
   render() {
     return (
-      <div>
-        <p>{this.props.winner}</p>
+      <div
+        style={{
+          display: `flex`,
+          justifyContent: `center`,
+          flexDirection: `column`,
+        }}
+      >
+        <h3 style={{ textAlign: `center` }}>
+          {this.props.winner === `Challenger`
+            ? `Commiserations ${this.props.currentUser.username}, you lost! These recruits have deserted you!:`
+            : `Congratulations ${this.props.currentUser.username}, you won! These recruits have joined you!:`}
+        </h3>
+        <Team
+          team={
+            this.props.winner === `Challenger`
+              ? this.props.challengers
+              : this.props.defenders
+          }
+        />
         <div
-        // onClick={() => this.props.reset()}
+          style={{
+            marginTop: this.props.challengers.length > 1 ? `0px` : `80px`,
+            display: `flex`,
+            flexWrap: `wrap-reverse`,
+            justifyContent: `space-around`,
+          }}
         >
-          {this.props.winner !== `Challenger` ? (
+          {this.props.winner !== `Challenger` && (
             <Link
               to={{
                 pathname: "/",
@@ -24,18 +48,21 @@ class PostBattle extends Component {
                 },
               }}
             >
-              Fight again with the same line up!
-            </Link>
-          ) : (
-            <Link
-              to={{
-                pathname: "/",
-                type: `refresh`,
-              }}
-            >
-              Don't fight again
+              <AppButton margin={`10px 10px`} width={`200px`}>
+                Continue Fighting
+              </AppButton>
             </Link>
           )}
+          <Link
+            to={{
+              pathname: "/",
+              type: `refresh`,
+            }}
+          >
+            <AppButton margin={`10px 10px`} width={`200px`}>
+              Done Fighting
+            </AppButton>
+          </Link>
         </div>
       </div>
     );
