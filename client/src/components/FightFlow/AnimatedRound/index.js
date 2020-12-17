@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import colors from "../../../config/colors";
 import AppButton from "../../AppButton";
 import LastBattleCard from "../../LastBattleCard";
+import BattleGauge from "../BattleGauge";
 
 class AnimatedRound extends Component {
   constructor(props) {
@@ -72,97 +72,42 @@ class AnimatedRound extends Component {
           {this.props.statName[0].toUpperCase() +
             this.props.statName.substring(1)}
         </h3>
-        <div>
-          {this.state.defenderFinished && this.state.challengerFinished ? (
-            <p>
-              You had a handicap of{` `}
-              {Math.floor(this.state.defenderHandicap * 100)}%
-            </p>
-          ) : (
-            <p>
-              You should{" "}
-              {this.props.defenderStat >= this.props.challengerStat
-                ? `win`
-                : `lose`}{" "}
-              with a rating of {this.props.defenderStat} {this.props.statName}.
-            </p>
-          )}
-        </div>
-        <div style={{ display: `flex`, justifyContent: `space-between` }}>
-          <div style={{ width: `100%` }}>
-            <div
-              style={{
-                width: `${this.state.defenderWidth}%`,
-                height: `20px`,
-                border: `solid 1px ${colors.darkSecondary}`,
-                backgroundColor: `${colors.secondary}`,
-                borderRadius: `10px`,
-              }}
-            ></div>
-          </div>
-          <div
-            style={{
-              width: `100px`,
-              fontSize: `.8rem`,
-              paddingLeft: `10px`,
-              marginLeft: `10px`,
-              borderLeft: `solid 1px ${colors.darkSecondary}`,
-            }}
-          >
-            <p>
-              {this.props.isSoloFightMode
-                ? this.state.defenderWidth.toFixed(2)
-                : (this.state.defenderWidth * 3).toFixed(2)}
-              {` `}/ {this.props.defenderStat}
-            </p>
-          </div>
-        </div>
-        <div>
-          {this.state.defenderFinished && this.state.challengerFinished ? (
-            <p>
-              They had a handicap of{` `}
-              {Math.floor(this.state.challengerHandicap * 100)}%.
-            </p>
-          ) : (
-            <p>
-              They should{" "}
-              {this.props.defenderStat >= this.props.challengerStat
-                ? `lose`
-                : `win`}{" "}
-              with a rating of {this.props.challengerStat} {this.props.statName}
-              .
-            </p>
-          )}
-        </div>
-        <div style={{ display: `flex`, justifyContent: `space-between` }}>
-          <div style={{ width: `100%` }}>
-            <div
-              style={{
-                width: `${this.state.challengerWidth}%`,
-                height: `20px`,
-                border: `solid 1px ${colors.darkSecondary}`,
-                backgroundColor: `${colors.secondary}`,
-                borderRadius: `10px`,
-              }}
-            ></div>
-          </div>
-          <div
-            style={{
-              width: `100px`,
-              fontSize: `.8rem`,
-              paddingLeft: `10px`,
-              marginLeft: `10px`,
-              borderLeft: `solid 1px ${colors.darkSecondary}`,
-            }}
-          >
-            <p>
-              {this.props.isSoloFightMode
-                ? this.state.challengerWidth.toFixed(2)
-                : (this.state.challengerWidth * 3).toFixed(2)}
-              {` `}/ {this.props.challengerStat}
-            </p>
-          </div>
-        </div>
+        <BattleGauge
+          defenderFinished={this.state.defenderFinished}
+          challengerFinished={this.state.challengerFinished}
+          handicap={this.state.defenderHandicap}
+          won={
+            this.props.defenderStat * this.state.defenderHandicap >=
+            this.props.challengerStat * this.state.challengerHandicap
+          }
+          winOrLose={
+            this.props.defenderStat >= this.props.challengerStat
+              ? `win`
+              : `lose`
+          }
+          isSoloFightMode={this.props.isSoloFightMode}
+          width={this.state.defenderWidth}
+          defenderStat={this.props.defenderStat}
+          challengerStat={this.props.challengerStat}
+          stat={this.props.defenderStat}
+        />
+        <BattleGauge
+          defenderFinished={this.state.defenderFinished}
+          challengerFinished={this.state.challengerFinished}
+          handicap={this.state.challengerHandicap}
+          won={
+            this.props.defenderStat * this.state.defenderHandicap <
+            this.props.challengerStat * this.state.challengerHandicap
+          }
+          winOrLose={
+            this.props.defenderStat < this.props.challengerStat ? `win` : `lose`
+          }
+          isSoloFightMode={this.props.isSoloFightMode}
+          width={this.state.challengerWidth}
+          defenderStat={this.props.defenderStat}
+          challengerStat={this.props.challengerStat}
+          stat={this.props.challengerStat}
+        />
         {!this.state.commenced && (
           <AppButton width={`200px`} margin={`10px 0px`} onClick={this.start}>
             Fight!
