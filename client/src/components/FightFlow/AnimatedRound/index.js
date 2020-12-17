@@ -1,21 +1,29 @@
 import React, { Component } from "react";
 import AppButton from "../../AppButton";
-import LastBattleCard from "../../LastBattleCard";
 import BattleGauge from "../BattleGauge";
+import LastBattleCard from "../../LastBattleCard";
 
 class AnimatedRound extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      defenderWidth: 0,
-      challengerWidth: 0,
-      defenderFinished: false,
       challengerFinished: false,
-      commenced: false,
-      defenderHandicap: 0,
       challengerHandicap: 0,
+      challengerWidth: 0,
+      commenced: false,
+      defenderFinished: false,
+      defenderHandicap: 0,
+      defenderWidth: 0,
     };
   }
+
+  styles = {
+    nextRoundContainer: {
+      display: `flex`,
+      flexDirection: `column`,
+      justifyContent: `center`,
+    },
+  };
 
   componentDidMount() {
     this.setState({
@@ -23,25 +31,6 @@ class AnimatedRound extends Component {
       challengerHandicap: Math.random().toFixed(2),
     });
   }
-
-  start = () => {
-    this.setState({ commenced: true });
-    let defenderStat = this.props.defenderStat * this.state.defenderHandicap;
-    let challengerStat =
-      this.props.challengerStat * this.state.challengerHandicap;
-    if (!this.props.isSoloFightMode) {
-      defenderStat = defenderStat / 3;
-      challengerStat = challengerStat / 3;
-    }
-    this.expand(`defenderWidth`, defenderStat);
-    this.expand(`challengerWidth`, challengerStat);
-  };
-
-  nextRound = () => {
-    this.state.defenderWidth >= this.state.challengerWidth
-      ? this.props.roundOver(`defender`)
-      : this.props.roundOver(`challenger`);
-  };
 
   expand = (character, max) => {
     let counter = 0;
@@ -57,15 +46,34 @@ class AnimatedRound extends Component {
     }, 1);
   };
 
+  nextRound = () => {
+    this.state.defenderWidth >= this.state.challengerWidth
+      ? this.props.roundOver(`defender`)
+      : this.props.roundOver(`challenger`);
+  };
+
+  start = () => {
+    this.setState({ commenced: true });
+    let defenderStat = this.props.defenderStat * this.state.defenderHandicap;
+    let challengerStat =
+      this.props.challengerStat * this.state.challengerHandicap;
+    if (!this.props.isSoloFightMode) {
+      defenderStat = defenderStat / 3;
+      challengerStat = challengerStat / 3;
+    }
+    this.expand(`defenderWidth`, defenderStat);
+    this.expand(`challengerWidth`, challengerStat);
+  };
+
   render() {
     return (
       <div>
         <LastBattleCard
-          isDuringFight
           battle={{
             defenders: this.props.defenders,
             challengers: this.props.challengers,
           }}
+          isDuringFight
         />
         <h3>
           Battling with{` `}
@@ -73,62 +81,56 @@ class AnimatedRound extends Component {
             this.props.statName.substring(1)}
         </h3>
         <BattleGauge
-          defenderFinished={this.state.defenderFinished}
           challengerFinished={this.state.challengerFinished}
+          challengerStat={this.props.challengerStat}
+          defenderFinished={this.state.defenderFinished}
+          defenderStat={this.props.defenderStat}
           handicap={this.state.defenderHandicap}
-          won={
-            this.props.defenderStat * this.state.defenderHandicap >=
-            this.props.challengerStat * this.state.challengerHandicap
-          }
+          isSoloFightMode={this.props.isSoloFightMode}
+          stat={this.props.defenderStat}
+          width={this.state.defenderWidth}
           winOrLose={
             this.props.defenderStat >= this.props.challengerStat
               ? `win`
               : `lose`
           }
-          isSoloFightMode={this.props.isSoloFightMode}
-          width={this.state.defenderWidth}
-          defenderStat={this.props.defenderStat}
-          challengerStat={this.props.challengerStat}
-          stat={this.props.defenderStat}
+          won={
+            this.props.defenderStat * this.state.defenderHandicap >=
+            this.props.challengerStat * this.state.challengerHandicap
+          }
         />
         <BattleGauge
-          defenderFinished={this.state.defenderFinished}
           challengerFinished={this.state.challengerFinished}
+          challengerStat={this.props.challengerStat}
+          defenderFinished={this.state.defenderFinished}
+          defenderStat={this.props.defenderStat}
           handicap={this.state.challengerHandicap}
+          isSoloFightMode={this.props.isSoloFightMode}
+          stat={this.props.challengerStat}
+          width={this.state.challengerWidth}
+          winOrLose={
+            this.props.defenderStat < this.props.challengerStat ? `win` : `lose`
+          }
           won={
             this.props.defenderStat * this.state.defenderHandicap <
             this.props.challengerStat * this.state.challengerHandicap
           }
-          winOrLose={
-            this.props.defenderStat < this.props.challengerStat ? `win` : `lose`
-          }
-          isSoloFightMode={this.props.isSoloFightMode}
-          width={this.state.challengerWidth}
-          defenderStat={this.props.defenderStat}
-          challengerStat={this.props.challengerStat}
-          stat={this.props.challengerStat}
         />
         {!this.state.commenced && (
-          <AppButton width={`200px`} margin={`10px 0px`} onClick={this.start}>
+          <AppButton margin={`10px 0px`} onClick={this.start} width={`200px`}>
             Fight!
           </AppButton>
         )}
         {this.state.defenderFinished && this.state.challengerFinished && (
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `center`,
-              flexDirection: `column`,
-            }}
-          >
+          <div style={this.styles.nextRoundContainer}>
             <div>
               <p>Round {this.props.round} over!</p>
             </div>
             <div>
               <AppButton
                 margin={`10px 0px`}
-                width={`200px`}
                 onClick={this.nextRound}
+                width={`200px`}
               >
                 Continue
               </AppButton>

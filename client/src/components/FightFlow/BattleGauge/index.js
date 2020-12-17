@@ -2,10 +2,24 @@ import React, { Component } from "react";
 import colors from "../../../config/colors";
 
 class BattleGauge extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  styles = {
+    container: { display: `flex`, justifyContent: `space-between` },
+    gauge: {
+      backgroundColor: `${colors.secondary}`,
+      border: `solid 1px ${colors.darkSecondary}`,
+      borderRadius: `10px`,
+      height: `20px`,
+    },
+    gaugeContainer: { width: `100%` },
+    resultsContainer: {
+      borderLeft: `solid 1px ${colors.darkSecondary}`,
+      fontSize: `.8rem`,
+      marginLeft: `10px`,
+      paddingLeft: `10px`,
+      width: `100px`,
+    },
+  };
+
   render() {
     return (
       <div>
@@ -19,31 +33,21 @@ class BattleGauge extends Component {
             <p>Expected to {this.props.winOrLose}</p>
           )}
         </div>
-        <div style={{ display: `flex`, justifyContent: `space-between` }}>
-          <div style={{ width: `100%` }}>
+        <div style={this.styles.container}>
+          <div style={this.styles.gaugeContainer}>
             <div
-              style={{
-                width: `${this.props.width}%`,
-                height: `20px`,
-                border: `solid 1px ${colors.darkSecondary}`,
-                backgroundColor: `${colors.secondary}`,
-                borderRadius: `10px`,
-              }}
+              style={{ ...this.styles.gauge, width: `${this.props.width}%` }}
             ></div>
           </div>
           <div
             style={{
-              width: `100px`,
-              fontSize: `.8rem`,
-              paddingLeft: `10px`,
-              marginLeft: `10px`,
-              borderLeft: `solid 1px ${colors.darkSecondary}`,
+              ...this.styles.resultsContainer,
               borderBottom:
                 this.props.defenderFinished &&
                 this.props.challengerFinished &&
                 this.props.won
                   ? `solid 3px ${colors.darkSecondary}`
-                  : null,
+                  : `solid 3px ${colors.lightPrimary}`,
             }}
           >
             <p>
