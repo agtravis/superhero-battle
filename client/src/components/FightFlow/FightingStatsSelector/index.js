@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import AppButton from "../../AppButton";
 
 class FightingStatsSelector extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  styles = {
+    listContainer: {
+      listStyleType: `none`,
+    },
+  };
 
   capitalize = str => str[0].toUpperCase() + str.substring(1);
 
@@ -19,17 +20,13 @@ class FightingStatsSelector extends Component {
                 ? `For the bonus round, the ability is:`
                 : `Your opponent's best ability is:`}
             </h3>
-            <ul
-              style={{
-                listStyleType: `none`,
-              }}
-            >
+            <ul style={this.styles.listContainer}>
               <li>
                 <AppButton
-                  width={`200px`}
                   margin={`10px 0px`}
-                  value={this.props.predeterminedStat}
                   onClick={this.props.fightWithThisStat}
+                  value={this.props.predeterminedStat}
+                  width={`200px`}
                 >
                   {this.capitalize(this.props.predeterminedStat)}
                 </AppButton>
@@ -39,18 +36,14 @@ class FightingStatsSelector extends Component {
         ) : (
           <div>
             <h3>Choose your best ability for round {this.props.round}:</h3>
-            <ul
-              style={{
-                listStyleType: `none`,
-              }}
-            >
+            <ul style={this.styles.listContainer}>
               {Object.keys(this.props.stats).map((stat, index) => (
                 <li key={index} style={{ marginBottom: `5px` }}>
                   <AppButton
-                    value={stat}
-                    width={`200px`}
                     margin={`10px 0px`}
                     onClick={this.props.fightWithThisStat}
+                    value={stat}
+                    width={`200px`}
                   >
                     {this.capitalize(stat)}: {this.props.stats[stat]}
                   </AppButton>
