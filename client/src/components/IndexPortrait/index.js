@@ -1,32 +1,35 @@
 import React, { Component } from "react";
 import { Breakpoint } from "react-socks";
-import IndexPortraitStatsMobile from "../IndexPortraitStatsMobile";
-import IndexPortraitStats from "../IndexPortraitStats";
 import IndexPortraitImage from "../IndexPortraitImage";
+import IndexPortraitStats from "../IndexPortraitStats";
+import IndexPortraitStatsMobile from "../IndexPortraitStatsMobile";
 
 class IndexPortrait extends Component {
+  styles = {
+    container: {
+      cursor: this.props.onClick ? `pointer` : null,
+    },
+    imageContainer: {
+      alignItems: `center`,
+      display: `flex`,
+      justifyContent: `space-around`,
+    },
+  };
+
   render() {
     return (
       <div>
         <div>
           <div
-            style={{
-              cursor: this.props.onClick ? `pointer` : null,
-            }}
             onClick={
               this.props.onClick
                 ? () => this.props.onClick(this.props.character._id)
                 : null
             }
+            style={this.styles.container}
           >
             <Breakpoint medium up>
-              <div
-                style={{
-                  alignItems: `center`,
-                  display: `flex`,
-                  justifyContent: `space-around`,
-                }}
-              >
+              <div style={this.styles.imageContainer}>
                 <IndexPortraitImage
                   character={this.props.character}
                   image={this.props.image}
@@ -42,18 +45,12 @@ class IndexPortrait extends Component {
               </div>
             </Breakpoint>
             <Breakpoint small down>
-              <div
-                style={{
-                  alignItems: `center`,
-                  display: `flex`,
-                  justifyContent: `space-around`,
-                }}
-              >
+              <div style={this.styles.imageContainer}>
                 <IndexPortraitImage
-                  round={this.props.round}
                   character={this.props.character}
-                  name={this.props.name}
                   image={this.props.image}
+                  name={this.props.name}
+                  round={this.props.round}
                   size={this.props.size}
                 />
               </div>
