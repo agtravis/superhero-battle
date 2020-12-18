@@ -1,18 +1,15 @@
 import React, { Component } from "react";
-import colors from "../../../config/colors";
 import SuperHeroAPI from "../../../utils/SuperHeroAPI";
-import AppButton from "../../AppButton";
-import AppInput from "../../AppInput";
-import IndexPortrait from "../../IndexPortrait";
+import FilterForm from "../FilterForm";
 
 class TeamSelection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      teamMember: {},
-      searchField: ``,
       filteredResults: [],
       roster: [],
+      searchField: ``,
+      teamMember: {},
     };
   }
 
@@ -55,107 +52,22 @@ class TeamSelection extends Component {
   render() {
     return (
       <div>
-        <h4>Choose Your Team Member</h4>
-        {!this.state.teamMember.name && (
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `space-around`,
-              flexWrap: `wrap`,
-            }}
-          >
-            <AppButton onClick={this.clearForm}>Clear</AppButton>
-            <AppInput
-              id={`team-member-search`}
-              backgroundColor={colors.extraLightPrimary}
-              handleChange={this.handleChange}
-              handleSubmit={this.handleSubmit}
-              fieldName={`searchField`}
-            />
-            <AppButton onClick={this.handleSubmit}>Search</AppButton>
-          </div>
-        )}
-        {this.state.teamMember.name && (
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `center`,
-              flexDirection: `column`,
-            }}
-          >
-            <div style={{ cursor: `pointer`, marginBottom: `20px` }}>
-              <IndexPortrait
-                character={this.state.teamMember}
-                onClick={this.confirmTeamMember}
-                round
-                showStats
-              />
-            </div>
-            <div
-              style={{
-                display: `flex`,
-                justifyContent: `space-around`,
-                flexWrap: `wrap-reverse`,
-              }}
-            >
-              <AppButton
-                width={`200px`}
-                margin={`10px 0px`}
-                onClick={this.changeTeamMember}
-              >
-                Choose Another Team Member
-              </AppButton>
-              <AppButton
-                width={`200px`}
-                margin={`10px 0px`}
-                onClick={this.confirmTeamMember}
-              >
-                Confirm {this.state.teamMember.name}!
-              </AppButton>
-            </div>
-          </div>
-        )}
-        {!this.state.teamMember.name &&
-          (this.state.filteredResults.length < 1 && !this.state.filtered
-            ? this.props.roster.map((character, index) => (
-                <div key={index} style={{ margin: `10px 0px` }}>
-                  {index !== 0 && <hr />}
-                  <IndexPortrait
-                    character={character}
-                    onClick={this.getTeamMember}
-                    round
-                    showStats
-                  />
-                </div>
-              ))
-            : this.state.filteredResults.map((character, index) => (
-                <div key={index} style={{ margin: `10px 0px` }}>
-                  {index !== 0 && <hr />}
-                  <IndexPortrait
-                    character={character}
-                    onClick={this.getTeamMember}
-                    round
-                    showStats
-                  />
-                </div>
-              )))}
-        {!this.state.teamMember.name &&
-          this.state.filteredResults.length < 1 &&
-          this.state.filtered && (
-            <div>
-              <p>Search Returned No Results!</p>
-            </div>
-          )}
-
-        <div style={{ display: `flex`, justifyContent: `center` }}>
-          <AppButton
-            margin={`10px auto`}
-            onClick={() => this.props.toggleTeamSelector()}
-            width={`200px`}
-          >
-            Back To Team
-          </AppButton>
-        </div>
+        <FilterForm
+          title={`Team Member`}
+          character={this.state.teamMember}
+          clearForm={this.clearForm}
+          fieldName={`searchField`}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          id={`team-member-search`}
+          confirmCharacter={this.confirmTeamMember}
+          changeCharacter={this.changeTeamMember}
+          filteredResults={this.state.filteredResults}
+          filtered={this.state.filtered}
+          roster={this.props.roster}
+          getCharacter={this.getTeamMember}
+          toggleTeamSelector={this.props.toggleTeamSelector}
+        />
       </div>
     );
   }
