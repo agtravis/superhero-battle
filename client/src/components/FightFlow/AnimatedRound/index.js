@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { TailSpin } from "@agney/react-loading";
 import AppButton from "../../AppButton";
 import BattleGauge from "../BattleGauge";
 import LastBattleCard from "../../LastBattleCard";
+import { Breakpoint } from "react-socks";
 
 class AnimatedRound extends Component {
   constructor(props) {
@@ -18,6 +20,12 @@ class AnimatedRound extends Component {
   }
 
   styles = {
+    loadingSpinnerContainer: {
+      alignItems: `center`,
+      display: `flex`,
+      justifyContent: `center`,
+      position: `absolute`,
+    },
     nextRoundContainer: {
       display: `flex`,
       flexDirection: `column`,
@@ -121,6 +129,33 @@ class AnimatedRound extends Component {
             Fight!
           </AppButton>
         )}
+        {this.state.commenced &&
+          (!this.state.defenderFinished || !this.state.challengerFinished) && (
+            <div>
+              <Breakpoint medium up>
+                <div
+                  style={{
+                    ...this.styles.loadingSpinnerContainer,
+                    top: window.innerHeight / 2 - 90,
+                    left: window.innerWidth / 2 - 25,
+                  }}
+                >
+                  <TailSpin className={`loading-animation`} width={`50`} />
+                </div>
+              </Breakpoint>
+              <Breakpoint small down>
+                <div
+                  style={{
+                    ...this.styles.loadingSpinnerContainer,
+                    top: 100,
+                    left: window.innerWidth / 2 - 25,
+                  }}
+                >
+                  <TailSpin className={`loading-animation`} width={`50`} />
+                </div>
+              </Breakpoint>
+            </div>
+          )}
         {this.state.defenderFinished && this.state.challengerFinished && (
           <div style={this.styles.nextRoundContainer}>
             <div>
