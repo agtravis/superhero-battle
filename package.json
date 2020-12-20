@@ -31,6 +31,7 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "@agney/react-loading": "^0.1.2",
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^3.2.0",

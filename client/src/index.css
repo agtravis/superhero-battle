@@ -25,3 +25,15 @@ body {
   color: var(--darkSecondary);
   background-color: var(--extraLightPrimary);
 }
+
+.loading-animation {
+  stroke: var(--darkSecondary);
+}
+
+.loading-animation g circle {
+  fill: var(--darkSecondary);
+}
+
+.loading-animation defs linearGradient stop {
+  stop-color: var(--darkSecondary);
+}

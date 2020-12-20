@@ -47,9 +47,9 @@ class App extends Component {
 
   getUser = () => {
     API.getSessionUser()
-      .then(sessionUser => {
-        if (sessionUser.data.user) {
-          this.setState({ loggedIn: true, currentUser: sessionUser.data.user });
+      .then(response => {
+        if (response.data.user) {
+          this.setState({ loggedIn: true, currentUser: response.data.user });
           this.fillUser();
         } else {
           this.setState({
@@ -65,15 +65,15 @@ class App extends Component {
 
   fillUser = () => {
     API.getUserDetails(this.state.currentUser._id)
-      .then(dbUser => {
+      .then(response => {
         this.setState({
-          roster: dbUser.data.roster,
-          teams: dbUser.data.teams,
-          battles: dbUser.data.pastBattles,
+          roster: response.data.roster,
+          teams: response.data.teams,
+          battles: response.data.pastBattles,
           record: {
-            wins: dbUser.data.wins,
-            losses: dbUser.data.losses,
-            prestige: dbUser.data.prestige,
+            wins: response.data.wins,
+            losses: response.data.losses,
+            prestige: response.data.prestige,
           },
         });
       })
@@ -211,7 +211,6 @@ class App extends Component {
                           <Roster
                             loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
-                            roster={this.state.roster}
                             fillUser={this.fillUser}
                           />
                         )}
