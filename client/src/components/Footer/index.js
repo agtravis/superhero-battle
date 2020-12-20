@@ -2,28 +2,29 @@ import React, { Component } from "react";
 import colors from "../../config/colors";
 
 class Footer extends Component {
+  styles = {
+    container: {
+      backgroundColor: colors.primary,
+      borderTop: `1px solid ${colors.secondary}`,
+      marginTop: `auto`,
+      paddingTop: `5px`,
+    },
+    linkText: {
+      color: colors.lightPrimary,
+      textDecoration: `none`,
+    },
+    text: {
+      textAlign: `center`,
+    },
+  };
+
   render() {
     return (
-      <div
-        style={{
-          marginTop: `auto`,
-          borderTop: `1px solid ${colors.secondary}`,
-          paddingTop: `5px`,
-          backgroundColor: colors.primary,
-        }}
-      >
-        <p
-          style={{
-            textAlign: `center`,
-          }}
-        >
+      <div style={this.styles.container}>
+        <p style={this.styles.text}>
           <a
-            style={{
-              color: colors.lightPrimary,
-              textDecoration: `none`,
-              textAlign: `center`,
-            }}
             href={`https://agtravis.github.io/portfolio/`}
+            style={this.styles.linkText}
             target={`_blank`}
           >
             &copy;2020 Alexander George Travis

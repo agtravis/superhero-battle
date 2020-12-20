@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import AppButton from "../../AppButton";
 import colors from "../../../config/colors";
+import AppButton from "../../AppButton";
 import "./style.css";
 
 class SoloOrTeam extends Component {
@@ -11,12 +11,51 @@ class SoloOrTeam extends Component {
     };
   }
 
+  styles = {
+    alert: {
+      display: `flex`,
+      justifyContent: `center`,
+      color: colors.danger,
+    },
+    buttonContainer: { display: `flex`, justifyContent: `center` },
+    container: {
+      alignItems: `center`,
+      display: `flex`,
+      height: `300px`,
+      justifyContent: `center`,
+      margin: `auto`,
+      width: `75%`,
+    },
+    outerContainer: {
+      display: `flex`,
+      flexDirection: `column`,
+      justifyContent: `center`,
+    },
+    subContainer: {
+      alignItems: `space-around`,
+      display: `flex`,
+      justifyContent: `center`,
+      width: `175px`,
+    },
+    text: {
+      fontSize: `1.5rem`,
+      margin: `0px`,
+    },
+  };
+
   componentDidMount() {
     if (this.props.rematch) {
       this.props.setToggleFightMode(this.props.wasSoloFightMode);
       this.props.changePhase(1);
     }
   }
+
+  nextPhase = () => {
+    if (!this.state.isSoloFightMode) {
+      this.props.toggle(`isSoloFightMode`);
+    }
+    this.props.changePhase(1);
+  };
 
   toggleIsSoloFightMode = () => {
     if (this.state.isSoloFightMode) {
@@ -33,43 +72,9 @@ class SoloOrTeam extends Component {
     this.setState({ isSoloFightMode: !this.state.isSoloFightMode });
   };
 
-  nextPhase = () => {
-    if (!this.state.isSoloFightMode) {
-      this.props.toggle(`isSoloFightMode`);
-    }
-    this.props.changePhase(1);
-  };
-
-  styles = {
-    container: {
-      alignItems: `center`,
-      display: `flex`,
-      height: `300px`,
-      justifyContent: `center`,
-      width: `75%`,
-      margin: `auto`,
-    },
-    subContainer: {
-      width: `175px`,
-      display: `flex`,
-      alignItems: `space-around`,
-      justifyContent: `center`,
-    },
-    text: {
-      fontSize: `1.5rem`,
-      margin: `0px`,
-    },
-  };
-
   render() {
     return (
-      <div
-        style={{
-          display: `flex`,
-          flexDirection: `column`,
-          justifyContent: `center`,
-        }}
-      >
+      <div style={this.styles.outerContainer}>
         <h3>How would you like to fight?</h3>
         <div style={this.styles.container}>
           <div style={this.styles.subContainer}>
@@ -106,17 +111,11 @@ class SoloOrTeam extends Component {
           </div>
         </div>
         {this.props.roster.length < 3 && (
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `center`,
-              color: colors.danger,
-            }}
-          >
+          <div style={this.styles.alert}>
             <p>Roster must have at least 3 to form a team!</p>
           </div>
         )}
-        <div style={{ display: `flex`, justifyContent: `center` }}>
+        <div style={this.styles.buttonContainer}>
           <AppButton
             margin={`10px 0`}
             onClick={() => this.nextPhase()}

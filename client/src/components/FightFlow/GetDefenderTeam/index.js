@@ -8,18 +8,40 @@ class GetDefenderTeam extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showTeamSelector: false,
-      teamSelected: false,
-      team: [],
       rosterAvailableForTeamSelection: [],
+      showTeamSelector: false,
+      team: [],
+      teamSelected: false,
     };
   }
+
+  styles = {
+    buttonsContainer: {
+      display: `flex`,
+      flexWrap: `wrap-reverse`,
+      justifyContent: `space-around`,
+    },
+    container: { textAlign: `center` },
+    emptyTeamButtonsContainer: {
+      display: `flex`,
+      flexDirection: `column`,
+      justifyContent: `center`,
+    },
+  };
 
   componentDidMount() {
     API.getUserDetails(this.props.currentUser._id)
       .then(response => this.setState({ team: response.data.teams }))
       .catch(err => console.error(err));
   }
+
+  addToTeam = character => {
+    const team = this.state.team;
+    team.push(character);
+    this.setState({ team: team });
+  };
+
+  adjustRoster = roster => roster.filter(character => this.inTeam(character));
 
   inTeam = character => {
     for (const member of this.state.team) {
@@ -28,27 +50,6 @@ class GetDefenderTeam extends Component {
       }
     }
     return true;
-  };
-
-  adjustRoster = roster => roster.filter(character => this.inTeam(character));
-
-  removeFromTeam = characterId => {
-    const removed = this.state.team.filter(
-      character => character._id !== characterId
-    );
-    this.setState({ team: removed });
-  };
-
-  addToTeam = character => {
-    const team = this.state.team;
-    team.push(character);
-    this.setState({ team: team });
-  };
-
-  toggleTeamSelector = () => {
-    const available = this.adjustRoster(this.props.roster);
-    this.setState({ rosterAvailableForTeamSelection: available });
-    this.setState({ showTeamSelector: !this.state.showTeamSelector });
   };
 
   nextPhase = () => {
@@ -73,11 +74,26 @@ class GetDefenderTeam extends Component {
       .catch(err => console.error(err));
   };
 
+  removeFromTeam = characterId => {
+    const removed = this.state.team.filter(
+      character => character._id !== characterId
+    );
+    this.setState({ team: removed });
+  };
+
+  toggleTeamSelector = () => {
+    const available = this.adjustRoster(this.props.roster);
+    this.setState({
+      rosterAvailableForTeamSelection: available,
+      showTeamSelector: !this.state.showTeamSelector,
+    });
+  };
+
   render() {
     return (
       <div>
         <h4>Choose Your Team</h4>
-        <div style={{ textAlign: `center` }}>
+        <div style={this.styles.container}>
           {!this.state.showTeamSelector && (
             <div>
               <h5>Your current team:</h5>
@@ -100,8 +116,8 @@ class GetDefenderTeam extends Component {
                         <p>Your team is short!</p>
                         <AppButton
                           margin={`10px 0`}
-                          width={`200px`}
                           onClick={() => this.toggleTeamSelector()}
+                          width={`200px`}
                         >
                           Add Another!
                         </AppButton>
@@ -109,18 +125,12 @@ class GetDefenderTeam extends Component {
                     )}
                   </div>
                 ) : (
-                  <div
-                    style={{
-                      display: `flex`,
-                      justifyContent: `center`,
-                      flexDirection: `column`,
-                    }}
-                  >
+                  <div style={this.styles.emptyTeamButtonsContainer}>
                     <p>Your team is currently empty!</p>
                     <AppButton
                       margin={`10px 0`}
-                      width={`200px`}
                       onClick={() => this.toggleTeamSelector()}
+                      width={`200px`}
                     >
                       Get Team Leader!
                     </AppButton>
@@ -132,19 +142,13 @@ class GetDefenderTeam extends Component {
           {this.state.showTeamSelector && (
             <div>
               <TeamSelection
-                roster={this.state.rosterAvailableForTeamSelection}
                 addToTeam={this.addToTeam}
+                roster={this.state.rosterAvailableForTeamSelection}
                 toggleTeamSelector={this.toggleTeamSelector}
               />
             </div>
           )}
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `space-around`,
-              flexWrap: `wrap-reverse`,
-            }}
-          >
+          <div style={this.styles.buttonsContainer}>
             <AppButton
               margin={`10px auto`}
               onClick={() => this.props.changePhase(-1)}
