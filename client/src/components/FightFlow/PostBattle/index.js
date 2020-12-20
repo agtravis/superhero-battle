@@ -4,19 +4,28 @@ import AppButton from "../../AppButton";
 import Team from "../../Team";
 
 class PostBattle extends Component {
+  styles = {
+    container: {
+      display: `flex`,
+      flexDirection: `column`,
+      justifyContent: `center`,
+    },
+    endButtonsContainer: {
+      display: `flex`,
+      flexWrap: `wrap-reverse`,
+      justifyContent: `space-around`,
+      marginTop: this.props.challengers.length > 1 ? `0px` : `80px`,
+    },
+    header: { textAlign: `center` },
+  };
+
   closingHeaderText = () =>
     this.props.isSoloFightMode ? `This recruit has` : `These recruits have`;
 
   render() {
     return (
-      <div
-        style={{
-          display: `flex`,
-          justifyContent: `center`,
-          flexDirection: `column`,
-        }}
-      >
-        <h3 style={{ textAlign: `center` }}>
+      <div style={this.styles.container}>
+        <h3 style={this.styles.header}>
           {this.props.winner === `Challenger`
             ? `Commiserations ${
                 this.props.currentUser.username
@@ -32,22 +41,15 @@ class PostBattle extends Component {
               : this.props.challengers
           }
         />
-        <div
-          style={{
-            marginTop: this.props.challengers.length > 1 ? `0px` : `80px`,
-            display: `flex`,
-            flexWrap: `wrap-reverse`,
-            justifyContent: `space-around`,
-          }}
-        >
+        <div style={this.styles.endButtonsContainer}>
           {this.props.winner !== `Challenger` && (
             <Link
               to={{
                 pathname: "/",
                 state: {
-                  type: `rematch`,
                   defenders: this.props.defenders,
                   isSoloFightMode: this.props.isSoloFightMode,
+                  type: `rematch`,
                 },
               }}
             >

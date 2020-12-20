@@ -14,9 +14,21 @@ class GetOpponent extends Component {
     };
   }
 
-  nextPhase = () => {
-    this.props.setOpposingTeam(this.state.opposingTeam);
-    this.props.changePhase(1);
+  styles = {
+    buttonsContainer: {
+      display: `flex`,
+      flexWrap: `wrap-reverse`,
+      justifyContent: `space-around`,
+    },
+    container: {
+      display: `flex`,
+      flexDirection: `column`,
+      justifyContent: `center`,
+    },
+    revealButtonContainer: {
+      display: `flex`,
+      justifyContent: `center`,
+    },
   };
 
   chooseOpponent = () => {
@@ -51,23 +63,17 @@ class GetOpponent extends Component {
     });
   };
 
+  nextPhase = () => {
+    this.props.setOpposingTeam(this.state.opposingTeam);
+    this.props.changePhase(1);
+  };
+
   render() {
     return (
-      <div
-        style={{
-          display: `flex`,
-          flexDirection: `column`,
-          justifyContent: `center`,
-        }}
-      >
+      <div style={this.styles.container}>
         <h3>Get your opponent{!this.props.isSoloFightMode && `s`}!</h3>
         {this.state.isOpponentAboutToBeChosen && (
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `center`,
-            }}
-          >
+          <div style={this.styles.revealButtonContainer}>
             <AppButton
               margin={`10px`}
               width={`200px`}
@@ -88,10 +94,8 @@ class GetOpponent extends Component {
         )}
         <div
           style={{
-            display: `flex`,
-            justifyContent: `space-around`,
+            ...this.styles.buttonsContainer,
             marginTop: this.state.opposingTeam.length === 1 ? `80px` : `0px`,
-            flexWrap: `wrap-reverse`,
           }}
         >
           <AppButton
