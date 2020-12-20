@@ -17,6 +17,9 @@ class LastBattleCard extends Component {
       display: `flex`,
       justifyContent: `space-between`,
     },
+    text: {
+      textAlign: `center`,
+    },
     vsContainer: {
       alignItems: `center`,
       display: `flex`,
@@ -74,7 +77,7 @@ class LastBattleCard extends Component {
               ))}
             </div>
             <div style={this.styles.vsContainer}>
-              <h1>VS</h1>
+              <h1 style={this.styles.text}>VS</h1>
             </div>
             <div>
               {this.props.battle.defenders.map((defender, index) => (

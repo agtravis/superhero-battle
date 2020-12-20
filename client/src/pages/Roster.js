@@ -7,7 +7,6 @@ import IndexPortrait from "../components/IndexPortrait";
 import AppButton from "../components/AppButton";
 
 import { TailSpin } from "@agney/react-loading";
-import colors from "../config/colors";
 
 class Roster extends Component {
   constructor(props) {
@@ -109,17 +108,13 @@ class Roster extends Component {
         {!this.state.rosterLoaded ? (
           <div
             style={{
+              alignItems: `center`,
+              height: `400px`,
               display: `flex`,
               justifyContent: `center`,
             }}
           >
-            <TailSpin
-              className={`loading-animation`}
-              width={`100`}
-              style={{
-                backgroundColor: colors.lightPrimary,
-              }}
-            />
+            <TailSpin className={`loading-animation`} width={`150`} />
           </div>
         ) : (
           <div>
