@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import LoadingAnimation from "../components/LoadingAnimation";
 import Profile from "../components/Profile";
 import Rules from "../components/Rules";
 
@@ -21,11 +22,15 @@ class Index extends Component {
     }
     return (
       <div>
-        <h1>
-          Welcome
-          {this.props.loggedIn ? ` ${this.props.currentUser.username}` : null}!
-        </h1>
-        {this.props.loggedIn ? (
+        {this.props.loaded && (
+          <h1>
+            Welcome
+            {this.props.loggedIn ? ` ${this.props.currentUser.username}` : null}
+            !
+          </h1>
+        )}
+        {!this.props.loaded && <LoadingAnimation divHeight={400} size={150} />}
+        {this.props.loggedIn && this.props.loaded && (
           <div>
             <Profile
               loggedIn={this.props.loggedIn}
@@ -33,7 +38,8 @@ class Index extends Component {
               profileId={this.props.currentUser._id}
             />
           </div>
-        ) : (
+        )}
+        {!this.props.loggedIn && this.props.loaded && (
           <div>
             <p>
               {this.props.title} is a game in which you can face off all your

@@ -25,6 +25,7 @@ class App extends Component {
     this.state = {
       redirect: null,
       loggedIn: false,
+      loaded: false,
       currentUser: null,
       roster: [],
       teams: [],
@@ -46,13 +47,19 @@ class App extends Component {
   };
 
   getUser = () => {
+    this.setState({ loaded: false });
     API.getSessionUser()
       .then(response => {
         if (response.data.user) {
-          this.setState({ loggedIn: true, currentUser: response.data.user });
+          this.setState({
+            loggedIn: true,
+            currentUser: response.data.user,
+            loaded: true,
+          });
           this.fillUser();
         } else {
           this.setState({
+            loaded: true,
             loggedIn: false,
             currentUser: null,
             roster: [],
@@ -151,6 +158,7 @@ class App extends Component {
                         path="/"
                         render={routeProps => (
                           <Index
+                            loaded={this.state.loaded}
                             loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
                             captain={this.state.roster[0]}

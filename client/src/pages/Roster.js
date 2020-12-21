@@ -6,7 +6,8 @@ import API from "../utils/API";
 import IndexPortrait from "../components/IndexPortrait";
 import AppButton from "../components/AppButton";
 
-import { TailSpin } from "@agney/react-loading";
+import LoadingAnimation from "../components/LoadingAnimation";
+import RosterExists from "../components/RosterFlow/RosterExists";
 
 class Roster extends Component {
   constructor(props) {
@@ -104,18 +105,8 @@ class Roster extends Component {
     return (
       <div>
         <h1>Your Roster</h1>
-
         {!this.state.rosterLoaded ? (
-          <div
-            style={{
-              alignItems: `center`,
-              height: `400px`,
-              display: `flex`,
-              justifyContent: `center`,
-            }}
-          >
-            <TailSpin className={`loading-animation`} width={`150`} />
-          </div>
+          <LoadingAnimation divHeight={400} size={150} />
         ) : (
           <div>
             <p>
@@ -181,17 +172,7 @@ class Roster extends Component {
                     )}
                   </div>
                 ) : (
-                  this.state.roster.map((character, index) => (
-                    <div key={index}>
-                      <h2 style={{ textAlign: `center` }}>{index + 1}</h2>
-                      <IndexPortrait
-                        character={character}
-                        showStats
-                        size={200}
-                      />
-                      {index < this.state.roster.length - 1 && <hr />}
-                    </div>
-                  ))
+                  <RosterExists roster={this.state.roster} />
                 )}
               </div>
             )}
