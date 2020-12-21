@@ -9,6 +9,16 @@ class IndexPortraitImage extends Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    if (
+      (this.props.character &&
+        this.props.character.name !== prevProps.character.name) ||
+      (this.props.name && this.props.name !== prevProps.name)
+    ) {
+      this.setState({ imageValid: true });
+    }
+  }
+
   noImage = () => {
     this.setState({ imageValid: false });
   };
