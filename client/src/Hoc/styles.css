@@ -1,0 +1,8 @@
+.internet-error {
+  position: fixed;
+  z-index: 30;
+}
+
+.internet-error p {
+  margin: 0;
+}

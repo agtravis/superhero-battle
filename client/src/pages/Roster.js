@@ -108,8 +108,14 @@ class Roster extends Component {
         {!this.state.rosterLoaded ? (
           <LoadingAnimation divHeight={400} size={150} />
         ) : (
-          <div>
-            <p>
+          <div
+            style={{
+              display: `flex`,
+              justifyContent: `center`,
+              flexDirection: `column`,
+            }}
+          >
+            <p style={{ textAlign: `center` }}>
               ({this.state.roster.length}
               /731 recruited ||{` `}
               {((this.state.roster.length / 731) * 100).toFixed(2)}% complete)
