@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import localForage from "localforage";
 import API from "../utils/API";
+import "./styles.css";
 
 export default function (ComposedComponent) {
   class NetworkDetector extends Component {
