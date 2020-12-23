@@ -114,13 +114,17 @@ class RosterExists extends Component {
           </div>
         </div>
         <div style={{ height: `500px`, overflow: `scroll` }}>
-          {this.state.roster.map((character, index) => (
-            <div key={index}>
-              <h2 style={{ textAlign: `center` }}>{index + 1}</h2>
-              <IndexPortrait character={character} showStats size={200} />
-              {index < this.state.roster.length - 1 && <hr />}
-            </div>
-          ))}
+          {this.state.roster.map(
+            (character, index) =>
+              character && (
+                <div key={index}>
+                  <h2 style={{ textAlign: `center` }}>{index + 1}</h2>
+                  <IndexPortrait character={character} showStats size={200} />
+                  {this.state.roster[index + 1] &&
+                    index < this.state.roster.length - 1 && <hr />}
+                </div>
+              )
+          )}
         </div>
       </div>
     );
