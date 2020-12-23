@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import LoadingAnimation from "../components/LoadingAnimation";
+import PageTitle from "../components/PageTitle";
 import Profile from "../components/Profile";
 import Rules from "../components/Rules";
 
@@ -23,13 +23,15 @@ class Index extends Component {
     return (
       <div>
         {this.props.loaded && (
-          <h1>
+          <PageTitle>
             Welcome
-            {this.props.loggedIn ? ` ${this.props.currentUser.username}` : null}
-            !
-          </h1>
+            {this.props.loggedIn ? (
+              <em>{` ${this.props.currentUser.username}!`}</em>
+            ) : (
+              `!`
+            )}
+          </PageTitle>
         )}
-        {!this.props.loaded && <LoadingAnimation divHeight={400} size={150} />}
         {this.props.loggedIn && this.props.loaded && (
           <div>
             <Profile
@@ -51,6 +53,7 @@ class Index extends Component {
               the risk, the greater the reward. Recruit allies and defeat foes,
               and try to get everyone on your side!
             </p>
+            <p>Rules:</p>
             <Rules />
           </div>
         )}

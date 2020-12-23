@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
-import AppLink from "../AppLink";
+import colors from "../../config/colors";
 import IndexPortrait from "../IndexPortrait";
 import LastBattleCard from "../LastBattleCard";
 import Team from "../Team";
+import LoadingAnimation from "../LoadingAnimation";
 
 class Profile extends Component {
   constructor(props) {
@@ -19,6 +20,14 @@ class Profile extends Component {
       .then(response => this.setState({ profileData: response.data }))
       .catch(err => console.error(err));
   }
+
+  styles = {
+    rosterFactsContainer: {
+      display: `flex`,
+      justifyContent: `space-between`,
+      flexWrap: `wrap`,
+    },
+  };
 
   convertDate = datestamp => {
     const date = new Date(datestamp);
@@ -44,7 +53,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        {this.state.profileData && (
+        {this.state.profileData ? (
           <div>
             <h2>
               {this.signedInVsGeneric(
@@ -66,22 +75,46 @@ class Profile extends Component {
                   )} ${this.convertWinPercentage(
                     this.state.profileData.wins,
                     this.state.profileData.fights
-                  )} of the time.`
+                  )} - W ${this.state.profileData.wins} / L ${
+                    this.state.profileData.losses
+                  }.`
                 : `you do not currently have a win percentage!`}
             </p>
-            <div style={{ display: `flex` }}>
-              <p>Your </p>
-              <Link to={`/roster`} style={{ margin: `0px 5px` }}>
-                <AppLink>roster</AppLink>
-              </Link>
-              <p>
-                is{` `}
-                {((this.state.profileData.roster.length / 731) * 100).toFixed(
-                  2
-                )}
-                % complete ({this.state.profileData.roster.length}
-                /731 recruited)
-              </p>
+            <div style={this.styles.rosterFactsContainer}>
+              <div style={{ width: `400px` }}>
+                <p>
+                  Your{` `}
+                  <Link
+                    to={`/roster`}
+                    style={{
+                      color: colors.darkSecondary,
+                      fontWeight: `900`,
+                      textDecoration: `none`,
+                    }}
+                  >
+                    roster
+                  </Link>
+                  {` `}
+                  is{` `}
+                  {((this.state.profileData.roster.length / 731) * 100).toFixed(
+                    2
+                  )}
+                  % complete ({this.state.profileData.roster.length}
+                  /731 recruited)
+                  {this.state.profileData.pastBattles.length > 1
+                    ? `, with a recruitment ratio of ${(
+                        (this.state.profileData.roster.length - 1) /
+                        (this.state.profileData.pastBattles.length -
+                          731 * this.state.profileData.prestige)
+                      ).toFixed(2)}.`
+                    : `.`}
+                </p>
+              </div>
+              <div style={{ width: `200px` }}>
+                <p>
+                  Your prestige level: {this.state.profileData.prestige + 1}.
+                </p>
+              </div>
             </div>
             <hr />
             <h3>
@@ -153,6 +186,8 @@ class Profile extends Component {
               )}
             </div>
           </div>
+        ) : (
+          <LoadingAnimation divHeight={400} size={150} />
         )}
       </div>
     );

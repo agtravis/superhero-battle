@@ -4,7 +4,6 @@ class Rules extends Component {
   render() {
     return (
       <div>
-        <p>Rules:</p>
         <ul>
           <li>
             Start by drafting your captain. This is a randomly assigned

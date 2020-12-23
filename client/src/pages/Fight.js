@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import AppButton from "../components/AppButton";
 import Battle from "../components/FightFlow/Battle";
 import GetDefenderSolo from "../components/FightFlow/GetDefenderSolo";
@@ -8,6 +9,7 @@ import GetOpponent from "../components/FightFlow/GetOpponent";
 // import fullList from "../utils/characters";
 import SoloOrTeam from "../components/FightFlow/SoloOrTeam";
 import LastBattleCard from "../components/LastBattleCard";
+import PageTitle from "../components/PageTitle";
 
 class Fight extends Component {
   constructor(props) {
@@ -78,8 +80,18 @@ class Fight extends Component {
     if (!this.props.currentUser) {
       window.location.href = `/`;
     }
+    if (this.props.roster.length < 1) {
+      return (
+        <Redirect
+          to={{
+            pathname: `/roster`,
+          }}
+        />
+      );
+    }
     return (
       <div>
+        <PageTitle>The Arena</PageTitle>
         {this.state.phase < 3 && (
           <div>
             <div
@@ -126,7 +138,6 @@ class Fight extends Component {
                 </div>
               )}
             </div>
-            <h2>Fight!</h2>
           </div>
         )}
         {this.state.phase === 0 && (

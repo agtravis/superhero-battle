@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PageTitle from "../components/PageTitle";
 import Rules from "../components/Rules";
 
 class RulesPage extends Component {
@@ -8,6 +9,7 @@ class RulesPage extends Component {
     }
     return (
       <div>
+        <PageTitle>Rules of Play</PageTitle>
         <Rules />
       </div>
     );
