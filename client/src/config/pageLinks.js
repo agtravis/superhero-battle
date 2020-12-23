@@ -12,10 +12,6 @@ const pageLinks = [
     to: `/roster`,
   },
   {
-    name: `Stats`,
-    to: `/stats`,
-  },
-  {
     name: `Leader Board`,
     to: `/leaderboard`,
   },

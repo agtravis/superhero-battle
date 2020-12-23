@@ -8,7 +8,6 @@ import API from "./utils/API";
 import Index from "./pages/Index";
 import Roster from "./pages/Roster";
 import Fight from "./pages/Fight";
-import Stats from "./pages/Stats";
 import Leaderboard from "./pages/Leaderboard";
 import About from "./pages/About";
 import RulesPage from "./pages/RulesPage";
@@ -196,19 +195,6 @@ class App extends Component {
                             team={this.state.teams}
                             fillUser={this.fillUser}
                             {...routeProps}
-                          />
-                        )}
-                      />
-                      <Route
-                        exact
-                        path="/stats"
-                        render={() => (
-                          <Stats
-                            loggedIn={this.state.loggedIn}
-                            currentUser={this.state.currentUser}
-                            roster={this.state.roster}
-                            battles={this.state.battles}
-                            record={this.state.record}
                           />
                         )}
                       />

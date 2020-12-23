@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PageTitle from "../components/PageTitle";
 import API from "../utils/API";
 
 class Leaderboard extends Component {
@@ -42,7 +43,7 @@ class Leaderboard extends Component {
   render() {
     return (
       <div>
-        <h1>LEADERBOARD</h1>
+        <PageTitle>Leader Board</PageTitle>
         <table style={{ borderCollapse: `collapse` }}>
           <tbody>
             <tr>

@@ -1,5 +1,5 @@
 .appLink {
-  color: var(--secondary);
+  color: var(--darkSecondary);
   cursor: pointer;
   font-weight: 900;
 }

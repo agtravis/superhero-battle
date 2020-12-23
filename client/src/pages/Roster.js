@@ -8,6 +8,8 @@ import AppButton from "../components/AppButton";
 
 import LoadingAnimation from "../components/LoadingAnimation";
 import RosterExists from "../components/RosterFlow/RosterExists";
+import RosterEmpty from "../components/RosterFlow/RosterEmpty";
+import PageTitle from "../components/PageTitle";
 
 class Roster extends Component {
   constructor(props) {
@@ -32,6 +34,14 @@ class Roster extends Component {
       )
       .catch(err => console.error(err));
   }
+
+  styles = {
+    container: {
+      display: `flex`,
+      justifyContent: `center`,
+      flexDirection: `column`,
+    },
+  };
 
   noImage = () => {
     this.setState({ imageValid: false });
@@ -104,17 +114,11 @@ class Roster extends Component {
 
     return (
       <div>
-        <h1>Your Roster</h1>
+        <PageTitle>Your Roster</PageTitle>
         {!this.state.rosterLoaded ? (
           <LoadingAnimation divHeight={400} size={150} />
         ) : (
-          <div
-            style={{
-              display: `flex`,
-              justifyContent: `center`,
-              flexDirection: `column`,
-            }}
-          >
+          <div style={this.styles.container}>
             <p style={{ textAlign: `center` }}>
               ({this.state.roster.length}
               /731 recruited ||{` `}
@@ -135,17 +139,20 @@ class Roster extends Component {
                 {this.state.roster.length < 1 ? (
                   <div>
                     {!this.state.newCharacterLoaded ? (
-                      <div>
-                        <p>You do not have anyone in your roster yet!</p>
-                        <button onClick={() => this.getFirstTeamMember()}>
-                          Click to get your first team member!
-                        </button>{" "}
-                        <p>Get full team</p>
-                        {this.state.roster.length < 3 ? (
-                          <button onClick={() => this.getTeam()}>Cheat!</button>
-                        ) : null}
-                      </div>
+                      <RosterEmpty
+                        getFirstTeamMember={this.getFirstTeamMember}
+                      />
                     ) : (
+                      // <div>
+                      //   <p>You do not have anyone in your roster yet!</p>
+                      //   <button onClick={() => this.getFirstTeamMember()}>
+                      //     Click to get your first team member!
+                      //   </button>{" "}
+                      //   <p>Get full team</p>
+                      //   {this.state.roster.length < 3 ? (
+                      //     <button onClick={() => this.getTeam()}>Cheat!</button>
+                      //   ) : null}
+                      // </div>
                       <div
                         style={{
                           display: `flex`,

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PageTitle from "../components/PageTitle";
 import colors from "../config/colors";
 
 class About extends Component {
@@ -11,6 +12,9 @@ class About extends Component {
   render() {
     return (
       <div>
+        <PageTitle>
+          About <em>Superhero Battle</em>
+        </PageTitle>
         <p>
           <em>{this.props.title}</em> was written and developed in entirety by
           myself. That said, there are various elements without which I could
