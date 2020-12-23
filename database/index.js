@@ -1,9 +1,4 @@
-/* eslint-disable arrow-parens */
 "use strict";
-
-// IS THIS FILE DOING ANYTHING? DOESN'T CONNECT TO
-// process.env.MONGO_CONNECTION
-// can't find any imports
 
 const mongoose = require(`mongoose`);
 mongoose.Promise = global.Promise;
@@ -20,7 +15,7 @@ mongoose
   })
   .then(
     () => {
-      console.log(`Connected to Mongo`);
+      console.log(`Connected to Mongo 1234567890`);
     },
     err => {
       console.log(`error connecting to Mongo: `);
