@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 mongoose.connect(
-  process.env.MONGO_CONNECTION || `mongodb://localhost:27017/superherobattle`,
+  process.env.MONGO_CONNECTION || `mongodb://localhost/superherobattle`,
   {
     useUnifiedTopology: true,
     useNewUrlParser: true,

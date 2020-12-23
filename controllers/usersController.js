@@ -29,8 +29,7 @@ module.exports = {
     });
   },
   login: (req, res) => {
-    console.log(`$$$$$$$$$ id --------------------- username`);
-    console.log(`logged in`, req.user._id, req.user.username);
+    console.log(`logged in`, req.user);
     const userInfo = {
       username: req.user.username,
       id: req.user._id,
