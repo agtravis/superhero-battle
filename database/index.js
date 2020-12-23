@@ -1,6 +1,10 @@
 /* eslint-disable arrow-parens */
 "use strict";
 
+// IS THIS FILE DOING ANYTHING? DOESN'T CONNECT TO
+// process.env.MONGO_CONNECTION
+// can't find any imports
+
 const mongoose = require(`mongoose`);
 mongoose.Promise = global.Promise;
 
