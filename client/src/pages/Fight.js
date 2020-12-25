@@ -160,7 +160,7 @@ class Fight extends Component {
               <SoloOrTeam
                 rematch={this.state.rematch}
                 wasSoloFightMode={this.state.wasSoloFightMode}
-                roster={this.props.roster}
+                roster={this.state.roster}
                 changePhase={this.changePhase}
                 toggle={this.toggle}
                 isSoloFightMode={this.isSoloFightMode}
@@ -174,7 +174,7 @@ class Fight extends Component {
                 changePhase={this.changePhase}
                 wasSoloFightMode={this.state.wasSoloFightMode}
                 isSoloFightMode={this.state.isSoloFightMode}
-                roster={this.props.roster}
+                roster={this.state.roster}
               />
             )}
             {this.state.phase === 2 && this.state.isSoloFightMode && (
@@ -183,7 +183,7 @@ class Fight extends Component {
                 changePhase={this.changePhase}
                 previousTeam={this.state.previousTeam}
                 rematch={this.state.rematch}
-                roster={this.props.roster}
+                roster={this.state.roster}
                 setDefendingTeam={this.setDefendingTeam}
               />
             )}
@@ -191,7 +191,7 @@ class Fight extends Component {
               <GetDefenderTeam
                 rematch={this.state.rematch}
                 previousTeam={this.state.previousTeam}
-                roster={this.props.roster}
+                roster={this.state.roster}
                 currentUser={this.props.currentUser}
                 team={this.props.team}
                 changePhase={this.changePhase}
