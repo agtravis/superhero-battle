@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import AppButton from "../../AppButton";
-import IndexPortrait from "../../IndexPortrait";
+import RosterCard from "../RosterCard";
 
 class RosterExists extends Component {
   constructor(props) {
@@ -18,6 +17,22 @@ class RosterExists extends Component {
     }
     this.setState({ roster: roster });
   }
+
+  styles = {
+    mockLink: { cursor: `pointer` },
+    paginationContainer: {
+      display: `flex`,
+      flex: 1,
+      flexWrap: `wrap`,
+      justifyContent: `space-around`,
+    },
+    paginationNavContainer: {
+      flex: 1,
+      display: `flex`,
+      justifyContent: `space-around`,
+    },
+    rosterContainer: { height: `500px`, overflow: `scroll` },
+  };
 
   changePage = direction => {
     const roster = [];
@@ -51,30 +66,17 @@ class RosterExists extends Component {
   render() {
     return (
       <div>
-        <div
-          style={{
-            flex: 1,
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-around`,
-          }}
-        >
-          <div
-            style={{
-              flex: 1,
-              display: `flex`,
-              justifyContent: `space-around`,
-            }}
-          >
+        <div style={this.styles.paginationContainer}>
+          <div style={this.styles.paginationNavContainer}>
             <div>
               <p
-                style={{ cursor: `pointer` }}
+                style={this.styles.mockLink}
                 onClick={() => this.setRosterLocation(1)}
               >{`|<`}</p>
             </div>
             <div>
               <p
-                style={{ cursor: `pointer` }}
+                style={this.styles.mockLink}
                 onClick={
                   this.state.startingIndex >= 10
                     ? () => this.changePage(`prev`)
@@ -88,16 +90,10 @@ class RosterExists extends Component {
               this.props.roster.length / 10
             )}`}</p>
           </div>
-          <div
-            style={{
-              flex: 1,
-              display: `flex`,
-              justifyContent: `space-around`,
-            }}
-          >
+          <div style={this.styles.paginationNavContainer}>
             <div>
               <p
-                style={{ cursor: `pointer` }}
+                style={this.styles.mockLink}
                 onClick={
                   this.state.startingIndex + 10 <= this.props.roster.length - 1
                     ? () => this.changePage(`next`)
@@ -107,22 +103,23 @@ class RosterExists extends Component {
             </div>
             <div>
               <p
-                style={{ cursor: `pointer` }}
+                style={this.styles.mockLink}
                 onClick={() => this.setRosterLocation(731)}
               >{`>|`}</p>
             </div>
           </div>
         </div>
-        <div style={{ height: `500px`, overflow: `scroll` }}>
+        <div style={this.styles.rosterContainer}>
           {this.state.roster.map(
             (character, index) =>
               character && (
-                <div key={index}>
-                  <h2 style={{ textAlign: `center` }}>{index + 1}</h2>
-                  <IndexPortrait character={character} showStats size={200} />
-                  {this.state.roster[index + 1] &&
-                    index < this.state.roster.length - 1 && <hr />}
-                </div>
+                <RosterCard
+                  character={character}
+                  hr={index < this.state.roster.length - 1}
+                  index={index + this.state.startingIndex}
+                  key={index}
+                  nextCharacter={this.state.roster[index + 1]}
+                />
               )
           )}
         </div>
@@ -132,44 +129,3 @@ class RosterExists extends Component {
 }
 
 export default RosterExists;
-/*
-        <div
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-around`,
-          }}
-        >
-          <div>
-            <AppButton
-              width={`200px`}
-              margin={`10px 0px`}
-              onClick={
-                this.state.startingIndex >= 10
-                  ? () => this.changePage(`prev`)
-                  : null
-              }
-            >
-              Prev
-            </AppButton>
-          </div>
-          <div>
-            <p>
-              Page {this.state.startingIndex / 10 + 1} /{" "}
-              {Math.ceil(this.props.roster.length / 10)}
-            </p>
-          </div>
-          <div>
-            <AppButton
-              width={`200px`}
-              margin={`10px 0px`}
-              onClick={
-                this.state.startingIndex + 10 <= this.props.roster.length - 1
-                  ? () => this.changePage(`next`)
-                  : null
-              }
-            >
-              Next
-            </AppButton>
-          </div>
-        </div>*/

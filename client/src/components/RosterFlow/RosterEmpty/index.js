@@ -2,21 +2,19 @@ import React, { Component } from "react";
 import AppButton from "../../AppButton";
 
 class RosterEmpty extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  styles = {
+    container: {
+      alignItems: `center`,
+      display: `flex`,
+      flexDirection: `column`,
+      height: `400px`,
+      justifyContent: `space-evenly`,
+    },
+  };
+
   render() {
     return (
-      <div
-        style={{
-          display: `flex`,
-          flexDirection: `column`,
-          justifyContent: `space-evenly`,
-          height: `400px`,
-          alignItems: `center`,
-        }}
-      >
+      <div style={this.styles.container}>
         <div>
           <p>You currently have nobody in your roster!</p>
         </div>
