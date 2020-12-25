@@ -179,11 +179,12 @@ class Fight extends Component {
             )}
             {this.state.phase === 2 && this.state.isSoloFightMode && (
               <GetDefenderSolo
-                rematch={this.state.rematch}
-                previousTeam={this.state.previousTeam}
-                setDefendingTeam={this.setDefendingTeam}
-                roster={this.props.roster}
+                currentUser={this.props.currentUser}
                 changePhase={this.changePhase}
+                previousTeam={this.state.previousTeam}
+                rematch={this.state.rematch}
+                roster={this.props.roster}
+                setDefendingTeam={this.setDefendingTeam}
               />
             )}
             {this.state.phase === 2 && !this.state.isSoloFightMode && (

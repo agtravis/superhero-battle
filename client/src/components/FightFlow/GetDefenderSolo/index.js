@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import API from "../../../utils/API";
 import SuperHeroAPI from "../../../utils/SuperHeroAPI";
+import LoadingAnimation from "../../LoadingAnimation";
 import FilterForm from "../FilterForm";
 
 class GetDefenderSolo extends Component {
@@ -10,6 +12,8 @@ class GetDefenderSolo extends Component {
       filtered: false,
       filteredResults: [],
       searchField: ``,
+      rosterLoaded: false,
+      roster: [],
     };
   }
 
@@ -17,6 +21,12 @@ class GetDefenderSolo extends Component {
     if (this.props.rematch) {
       this.props.setDefendingTeam(this.props.previousTeam);
       this.props.changePhase(1);
+    } else {
+      API.getUserDetails(this.props.currentUser._id)
+        .then(response =>
+          this.setState({ rosterLoaded: true, roster: response.data.roster })
+        )
+        .catch(err => console.error(err));
     }
   }
 
@@ -44,7 +54,7 @@ class GetDefenderSolo extends Component {
   };
 
   handleSubmit = () => {
-    const filtered = this.props.roster.filter(character =>
+    const filtered = this.state.roster.filter(character =>
       character.name
         .toLowerCase()
         .includes(this.state.searchField.toLowerCase())
@@ -55,22 +65,26 @@ class GetDefenderSolo extends Component {
   render() {
     return (
       <div>
-        <FilterForm
-          title={`Fighter`}
-          character={this.state.defender}
-          clearForm={this.clearForm}
-          fieldName={`searchField`}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          id={`defender-search`}
-          confirmCharacter={this.confirmDefender}
-          changeCharacter={this.changeDefender}
-          filteredResults={this.state.filteredResults}
-          filtered={this.state.filtered}
-          roster={this.props.roster}
-          getCharacter={this.getDefender}
-          changePhase={this.props.changePhase}
-        />
+        {!this.state.rosterLoaded ? (
+          <LoadingAnimation divHeight={400} size={150} />
+        ) : (
+          <FilterForm
+            title={`Fighter`}
+            character={this.state.defender}
+            clearForm={this.clearForm}
+            fieldName={`searchField`}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            id={`defender-search`}
+            confirmCharacter={this.confirmDefender}
+            changeCharacter={this.changeDefender}
+            filteredResults={this.state.filteredResults}
+            filtered={this.state.filtered}
+            roster={this.state.roster}
+            getCharacter={this.getDefender}
+            changePhase={this.props.changePhase}
+          />
+        )}
       </div>
     );
   }
