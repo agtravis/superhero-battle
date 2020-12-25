@@ -3,13 +3,11 @@ import React, { Component } from "react";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 import API from "../utils/API";
 
-import IndexPortrait from "../components/IndexPortrait";
-import AppButton from "../components/AppButton";
-
 import LoadingAnimation from "../components/LoadingAnimation";
 import RosterExists from "../components/RosterFlow/RosterExists";
 import RosterEmpty from "../components/RosterFlow/RosterEmpty";
 import PageTitle from "../components/PageTitle";
+import CharacterLoaded from "../components/RosterFlow/CharacterLoaded";
 
 class Roster extends Component {
   constructor(props) {
@@ -28,12 +26,16 @@ class Roster extends Component {
   }
 
   componentDidMount() {
+    this.loadRoster();
+  }
+
+  loadRoster = () => {
     API.getUserDetails(this.props.currentUser._id)
       .then(response =>
         this.setState({ rosterLoaded: true, roster: response.data.roster })
       )
       .catch(err => console.error(err));
-  }
+  };
 
   styles = {
     container: {
@@ -63,7 +65,9 @@ class Roster extends Component {
       characterId: this.state.newCharacter._id,
     })
       .then(() => {
+        this.setState({ rosterLoaded: false });
         this.props.fillUser();
+        this.loadRoster();
       })
       .catch(err => console.error(err));
   };
@@ -143,45 +147,10 @@ class Roster extends Component {
                         getFirstTeamMember={this.getFirstTeamMember}
                       />
                     ) : (
-                      // <div>
-                      //   <p>You do not have anyone in your roster yet!</p>
-                      //   <button onClick={() => this.getFirstTeamMember()}>
-                      //     Click to get your first team member!
-                      //   </button>{" "}
-                      //   <p>Get full team</p>
-                      //   {this.state.roster.length < 3 ? (
-                      //     <button onClick={() => this.getTeam()}>Cheat!</button>
-                      //   ) : null}
-                      // </div>
-                      <div
-                        style={{
-                          display: `flex`,
-                          justifyContent: `center`,
-                          flexDirection: `column`,
-                        }}
-                      >
-                        <div>
-                          <IndexPortrait
-                            round
-                            showStats
-                            character={this.state.newCharacter}
-                          />
-                        </div>
-                        <div
-                          style={{
-                            display: `flex`,
-                            justifyContent: `center`,
-                          }}
-                        >
-                          <AppButton
-                            width={`200px`}
-                            margin={`10px  0px`}
-                            onClick={this.addToRoster}
-                          >
-                            Add To Roster!
-                          </AppButton>
-                        </div>
-                      </div>
+                      <CharacterLoaded
+                        newCharacter={this.state.newCharacter}
+                        addToRoster={this.addToRoster}
+                      />
                     )}
                   </div>
                 ) : (
