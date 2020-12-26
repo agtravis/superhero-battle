@@ -8,6 +8,7 @@ import RosterExists from "../components/RosterFlow/RosterExists";
 import RosterEmpty from "../components/RosterFlow/RosterEmpty";
 import PageTitle from "../components/PageTitle";
 import CharacterLoaded from "../components/RosterFlow/CharacterLoaded";
+import Prestige from "../components/RosterFlow/Prestige";
 
 class Roster extends Component {
   constructor(props) {
@@ -106,7 +107,9 @@ class Roster extends Component {
   prestige = () => {
     API.prestige(this.props.currentUser._id)
       .then(() => {
+        this.setState({ rosterLoaded: false });
         this.props.fillUser();
+        this.loadRoster();
       })
       .catch(err => console.error(err));
   };
@@ -128,36 +131,26 @@ class Roster extends Component {
               /731 recruited ||{` `}
               {((this.state.roster.length / 731) * 100).toFixed(2)}% complete)
             </p>
-            {this.state.roster.length >= 731 ? (
-              <div>
-                <h1>You have filled up your roster!</h1>
-                <p>
-                  <button onClick={() => this.prestige()}>Click</button> to
-                  Prestige!
-                </p>
-                <p>This will empty your roster but level up your Prestige!</p>
-              </div>
-            ) : (
-              <div>
-                {/*DELETE CHEAT BUTTON */}
-                {this.state.roster.length < 1 ? (
-                  <div>
-                    {!this.state.newCharacterLoaded ? (
-                      <RosterEmpty
-                        getFirstTeamMember={this.getFirstTeamMember}
-                      />
-                    ) : (
-                      <CharacterLoaded
-                        newCharacter={this.state.newCharacter}
-                        addToRoster={this.addToRoster}
-                      />
-                    )}
-                  </div>
-                ) : (
-                  <RosterExists roster={this.state.roster} />
-                )}
-              </div>
+            {this.state.roster.length >= 2 && (
+              <Prestige roster={this.state.roster} prestige={this.prestige} />
             )}
+            <div>
+              {/*DELETE CHEAT BUTTON */}
+              {this.state.roster.length < 1 ? (
+                <div>
+                  {!this.state.newCharacterLoaded ? (
+                    <RosterEmpty getFirstTeamMember={this.getFirstTeamMember} />
+                  ) : (
+                    <CharacterLoaded
+                      newCharacter={this.state.newCharacter}
+                      addToRoster={this.addToRoster}
+                    />
+                  )}
+                </div>
+              ) : (
+                <RosterExists roster={this.state.roster} />
+              )}
+            </div>
           </div>
         )}
       </div>
@@ -166,3 +159,12 @@ class Roster extends Component {
 }
 
 export default Roster;
+
+// <div>
+//   <h1>You have filled up your roster!</h1>
+//   <p>
+//     <button onClick={() => this.prestige()}>Click</button> to
+//     Prestige!
+//   </p>
+//   <p>This will empty your roster but level up your Prestige!</p>
+// </div>
