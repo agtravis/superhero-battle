@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PageTitle from "../components/PageTitle";
 import colors from "../config/colors";
+import PageTitle from "../components/PageTitle";
 
 class About extends Component {
   styles = {
@@ -9,6 +9,7 @@ class About extends Component {
       fontWeight: `900`,
     },
   };
+
   render() {
     return (
       <div>
@@ -30,8 +31,8 @@ class About extends Component {
           <li>
             The information and images for the characters are supplied by{" "}
             <a
-              style={this.styles.links}
               href={`https://superheroapi.com/`}
+              style={this.styles.links}
               target={`_blank`}
             >
               superheroapi.com
@@ -41,8 +42,8 @@ class About extends Component {
           <li>
             The game play is very similar to the style of play of{" "}
             <a
-              style={this.styles.links}
               href={`https://en.wikipedia.org/wiki/Top_Trumps`}
+              style={this.styles.links}
               target={`_blank`}
             >
               Top Trumps
@@ -52,8 +53,8 @@ class About extends Component {
           <li>
             Get in touch with me through my{` `}
             <a
-              style={this.styles.links}
               href={`https://agtravis.github.io/portfolio/`}
+              style={this.styles.links}
               target={`_blank`}
             >
               website

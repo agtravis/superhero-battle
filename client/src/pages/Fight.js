@@ -1,31 +1,30 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import API from "../utils/API";
 import AppButton from "../components/AppButton";
 import Battle from "../components/FightFlow/Battle";
 import GetDefenderSolo from "../components/FightFlow/GetDefenderSolo";
 import GetDefenderTeam from "../components/FightFlow/GetDefenderTeam";
 import GetOpponent from "../components/FightFlow/GetOpponent";
-// import SuperHeroAPI from "../utils/SuperHeroAPI";
-// import fullList from "../utils/characters";
-import SoloOrTeam from "../components/FightFlow/SoloOrTeam";
 import LastBattleCard from "../components/LastBattleCard";
 import LoadingAnimation from "../components/LoadingAnimation";
 import PageTitle from "../components/PageTitle";
+import PhaseText from "../components/FightFlow/PhaseText";
 import Prestige from "../components/RosterFlow/Prestige";
-import API from "../utils/API";
+import SoloOrTeam from "../components/FightFlow/SoloOrTeam";
 
 class Fight extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      phase: 0,
-      isSoloFightMode: true,
-      wasSoloFightMode: true,
       defendingTeam: [],
+      isSoloFightMode: true,
       opposingTeam: [],
       previousTeam: [],
+      phase: 0,
       rematch: false,
       roster: [],
+      wasSoloFightMode: true,
     };
   }
 
@@ -99,6 +98,15 @@ class Fight extends Component {
 
   toggle = stateName => this.setState({ [stateName]: !this.state[stateName] });
 
+  styles = {
+    phaseContainer: {
+      display: `flex`,
+      flexDirection: `column`,
+      justifyContent: `center`,
+      textAlign: `center`,
+    },
+  };
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -124,41 +132,13 @@ class Fight extends Component {
               <div>
                 {this.state.phase < 3 && (
                   <div>
-                    <div
-                      style={{
-                        display: `flex`,
-                        justifyContent: `center`,
-                        flexDirection: `column`,
-                        textAlign: `center`,
-                      }}
-                    >
-                      <div>
-                        <p>
-                          Phase:{" "}
-                          {this.phaseText(
-                            this.state.phase,
-                            this.state.isSoloFightMode
-                          )}
-                          {this.state.phase >= 1 &&
-                            `; Mode: ${
-                              this.state.isSoloFightMode ? `Solo` : `Team`
-                            }-Fight`}
-                          {this.state.phase >= 2 &&
-                            `; Opposing ${
-                              this.state.isSoloFightMode ? `Fighter` : `Team`
-                            }: ${this.state.opposingTeam.map(
-                              (character, index) =>
-                                `${index !== 0 ? ` ` : ``}${character.name}`
-                            )}`}
-                          {this.state.phase >= 3 &&
-                            `; Defending ${
-                              this.state.isSoloFightMode ? `Fighter` : `Team`
-                            }: ${this.state.defendingTeam.map(
-                              (character, index) =>
-                                `${index !== 0 ? ` ` : ``}${character.name}`
-                            )}`}
-                        </p>
-                      </div>
+                    <div style={this.styles.phaseContainer}>
+                      <PhaseText
+                        defendingTeam={this.state.defendingTeam}
+                        isSoloFightMode={this.state.isSoloFightMode}
+                        opposingTeam={this.state.opposingTeam}
+                        phase={this.state.phase}
+                      />
                       {this.state.phase > 0 && (
                         <div>
                           <AppButton
@@ -175,29 +155,29 @@ class Fight extends Component {
                 )}
                 {this.state.phase === 0 && (
                   <SoloOrTeam
-                    rematch={this.state.rematch}
-                    wasSoloFightMode={this.state.wasSoloFightMode}
-                    roster={this.state.roster}
                     changePhase={this.changePhase}
-                    toggle={this.toggle}
                     isSoloFightMode={this.isSoloFightMode}
+                    rematch={this.state.rematch}
+                    roster={this.state.roster}
                     setToggleFightMode={this.setToggleFightMode}
+                    toggle={this.toggle}
+                    wasSoloFightMode={this.state.wasSoloFightMode}
                   />
                 )}
                 {this.state.phase === 1 && (
                   <GetOpponent
-                    rematch={this.state.rematch}
-                    setOpposingTeam={this.setOpposingTeam}
                     changePhase={this.changePhase}
-                    wasSoloFightMode={this.state.wasSoloFightMode}
                     isSoloFightMode={this.state.isSoloFightMode}
+                    rematch={this.state.rematch}
                     roster={this.state.roster}
+                    setOpposingTeam={this.setOpposingTeam}
+                    wasSoloFightMode={this.state.wasSoloFightMode}
                   />
                 )}
                 {this.state.phase === 2 && this.state.isSoloFightMode && (
                   <GetDefenderSolo
-                    currentUser={this.props.currentUser}
                     changePhase={this.changePhase}
+                    currentUser={this.props.currentUser}
                     previousTeam={this.state.previousTeam}
                     rematch={this.state.rematch}
                     roster={this.state.roster}
@@ -206,33 +186,33 @@ class Fight extends Component {
                 )}
                 {this.state.phase === 2 && !this.state.isSoloFightMode && (
                   <GetDefenderTeam
-                    rematch={this.state.rematch}
-                    previousTeam={this.state.previousTeam}
-                    roster={this.state.roster}
-                    currentUser={this.props.currentUser}
-                    team={this.props.team}
                     changePhase={this.changePhase}
+                    currentUser={this.props.currentUser}
+                    previousTeam={this.state.previousTeam}
+                    rematch={this.state.rematch}
+                    roster={this.state.roster}
                     setDefendingTeam={this.setDefendingTeam}
+                    team={this.props.team}
                   />
                 )}
                 {this.state.phase === 3 && (
                   <LastBattleCard
                     battle={{
-                      defenders: this.state.defendingTeam,
                       challengers: this.state.opposingTeam,
+                      defenders: this.state.defendingTeam,
                     }}
-                    isPreFightStaging
                     changePhase={this.changePhase}
+                    isPreFightStaging
                   />
                 )}
 
                 {this.state.phase === 4 && (
                   <Battle
-                    reset={this.reset}
+                    challengers={this.state.opposingTeam}
                     currentUser={this.props.currentUser}
                     defenders={this.state.defendingTeam}
-                    challengers={this.state.opposingTeam}
                     isSoloFightMode={this.state.isSoloFightMode}
+                    reset={this.reset}
                   />
                 )}
               </div>
