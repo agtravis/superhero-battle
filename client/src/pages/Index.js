@@ -35,8 +35,8 @@ class Index extends Component {
         {this.props.loggedIn && this.props.loaded && (
           <div>
             <Profile
-              loggedIn={this.props.loggedIn}
               currentUser={this.props.currentUser}
+              loggedIn={this.props.loggedIn}
               profileId={this.props.currentUser._id}
             />
           </div>

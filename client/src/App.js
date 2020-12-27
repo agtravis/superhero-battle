@@ -1,48 +1,57 @@
 import React, { Component } from "react";
 import { BreakpointProvider } from "react-socks";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
-import NetworkDetector from "./Hoc/NetworkDetector";
-
 import API from "./utils/API";
-
-import Index from "./pages/Index";
-import Roster from "./pages/Roster";
-import Fight from "./pages/Fight";
-import Leaderboard from "./pages/Leaderboard";
+import NetworkDetector from "./Hoc/NetworkDetector";
 import About from "./pages/About";
+import Fight from "./pages/Fight";
+import Index from "./pages/Index";
+import Leaderboard from "./pages/Leaderboard";
+import Roster from "./pages/Roster";
 import RulesPage from "./pages/RulesPage";
-
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
-
 import Screen from "./components/Screen";
-import Footer from "./components/Footer";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      redirect: null,
-      loggedIn: false,
-      loaded: false,
+      battles: [],
       currentUser: null,
+      isNavShowing: false,
+      loaded: false,
+      loggedIn: false,
+      record: {},
+      redirect: null,
       roster: [],
       teams: [],
-      battles: [],
-      record: {},
-      isNavShowing: false,
     };
   }
-
-  title = `Superhero Battle`;
 
   componentDidMount() {
     this.getUser();
   }
 
+  styles = {
+    container: {
+      minHeight: `100vh`,
+      display: `flex`,
+      flexDirection: `column`,
+      justifyContent: `space-between`,
+    },
+  };
+
+  title = `Superhero Battle`;
+
   addAndRemoveOneClass = (element, classToAdd, ClassToRemove) => {
     element.classList.add(classToAdd);
     element.classList.remove(ClassToRemove);
+  };
+
+  changeUser = () => {
+    this.setState({ redirect: true });
   };
 
   getUser = () => {
@@ -86,10 +95,6 @@ class App extends Component {
       .catch(err => console.error(err));
   };
 
-  changeUser = () => {
-    this.setState({ redirect: true });
-  };
-
   logOut = () => {
     API.logOut()
       .then(() => this.changeUser())
@@ -122,14 +127,7 @@ class App extends Component {
       <BreakpointProvider>
         <div>
           <Router>
-            <div
-              style={{
-                minHeight: `100vh`,
-                display: `flex`,
-                flexDirection: `column`,
-                justifyContent: `space-between`,
-              }}
-            >
+            <div style={this.styles.container}>
               <div>
                 <Header
                   changeUser={this.changeUser}
@@ -157,15 +155,15 @@ class App extends Component {
                         path="/"
                         render={routeProps => (
                           <Index
+                            captain={this.state.roster[0]}
+                            currentUser={this.state.currentUser}
+                            getUser={this.getUser}
                             loaded={this.state.loaded}
                             loggedIn={this.state.loggedIn}
-                            currentUser={this.state.currentUser}
-                            captain={this.state.roster[0]}
                             recruit={
                               this.state.roster[this.state.roster.length - 1]
                             }
                             title={this.title}
-                            getUser={this.getUser}
                             {...routeProps}
                           />
                         )}
@@ -179,21 +177,12 @@ class App extends Component {
                       />
                       <Route
                         exact
-                        path="/rules"
-                        render={() => (
-                          <RulesPage currentUser={this.state.currentUser} />
-                        )}
-                      />
-                      <Route
-                        exact
                         path="/fight"
                         render={routeProps => (
                           <Fight
-                            loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
-                            roster={this.state.roster}
-                            team={this.state.teams}
                             fillUser={this.fillUser}
+                            team={this.state.teams}
                             {...routeProps}
                           />
                         )}
@@ -203,10 +192,16 @@ class App extends Component {
                         path="/roster"
                         render={() => (
                           <Roster
-                            loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
                             fillUser={this.fillUser}
                           />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/rules"
+                        render={() => (
+                          <RulesPage currentUser={this.state.currentUser} />
                         )}
                       />
                       <Route
