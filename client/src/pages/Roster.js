@@ -131,8 +131,11 @@ class Roster extends Component {
               /731 recruited ||{` `}
               {((this.state.roster.length / 731) * 100).toFixed(2)}% complete)
             </p>
-            {this.state.roster.length >= 2 && (
-              <Prestige roster={this.state.roster} prestige={this.prestige} />
+            {this.state.roster.length >= 731 && (
+              <div>
+                <Prestige roster={this.state.roster} prestige={this.prestige} />
+                <hr />
+              </div>
             )}
             <div>
               {/*DELETE CHEAT BUTTON */}

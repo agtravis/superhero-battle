@@ -20,7 +20,11 @@ class Prestige extends Component {
           }}
         >
           <div>
-            <p style={{ margin: `0` }}>Your Roster is full!</p>
+            <p style={{ margin: `0` }}>
+              {this.props.fromFightPage
+                ? `There are no characters left to fight!`
+                : `Your roster is full!`}
+            </p>
           </div>
           <div>
             <AppButton
@@ -34,8 +38,10 @@ class Prestige extends Component {
         </div>
         <div style={{ display: `flex`, justifyContent: `center` }}>
           <p style={{ textAlign: `center`, margin: `0` }}>
-            Clicking this button will empty your roster completely and level up
-            your prestige level!
+            <em>
+              Activating this will empty your roster completely and level up
+              your prestige!
+            </em>
           </p>
         </div>
       </div>
