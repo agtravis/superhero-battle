@@ -27,8 +27,8 @@ class RosterExists extends Component {
       justifyContent: `space-around`,
     },
     paginationNavContainer: {
-      flex: 1,
       display: `flex`,
+      flex: 1,
       justifyContent: `space-around`,
     },
     rosterContainer: { height: `500px`, overflow: `scroll` },
@@ -70,18 +70,18 @@ class RosterExists extends Component {
           <div style={this.styles.paginationNavContainer}>
             <div>
               <p
-                style={this.styles.mockLink}
                 onClick={() => this.setRosterLocation(1)}
+                style={this.styles.mockLink}
               >{`|<`}</p>
             </div>
             <div>
               <p
-                style={this.styles.mockLink}
                 onClick={
                   this.state.startingIndex >= 10
                     ? () => this.changePage(`prev`)
                     : null
                 }
+                style={this.styles.mockLink}
               >{`<<`}</p>
             </div>
           </div>
@@ -93,18 +93,18 @@ class RosterExists extends Component {
           <div style={this.styles.paginationNavContainer}>
             <div>
               <p
-                style={this.styles.mockLink}
                 onClick={
                   this.state.startingIndex + 10 <= this.props.roster.length - 1
                     ? () => this.changePage(`next`)
                     : null
                 }
+                style={this.styles.mockLink}
               >{`>>`}</p>
             </div>
             <div>
               <p
-                style={this.styles.mockLink}
                 onClick={() => this.setRosterLocation(731)}
+                style={this.styles.mockLink}
               >{`>|`}</p>
             </div>
           </div>
