@@ -3,24 +3,28 @@ import colors from "../../../config/colors";
 import AppButton from "../../AppButton";
 
 class Prestige extends Component {
+  styles = {
+    bottomRowContainer: { display: `flex`, justifyContent: `center` },
+    container: {
+      border: `5px dashed ${colors.darkSecondary}`,
+      marginBottom: `10px`,
+      padding: `10px`,
+    },
+    text: { margin: `0`, textAlign: `center` },
+    topRowContainer: {
+      alignItems: `center`,
+      display: `flex`,
+      flexWrap: `wrap`,
+      justifyContent: `space-around`,
+    },
+  };
+
   render() {
     return (
-      <div
-        style={{
-          border: `5px dashed ${colors.darkSecondary}`,
-          marginBottom: `10px`,
-          padding: `10px`,
-        }}
-      >
-        <div
-          style={{
-            display: `flex`,
-            justifyContent: `space-around`,
-            alignItems: `center`,
-          }}
-        >
+      <div style={this.styles.container}>
+        <div style={this.styles.topRowContainer}>
           <div>
-            <p style={{ margin: `0` }}>
+            <p style={this.styles.text}>
               {this.props.fromFightPage
                 ? `There are no characters left to fight!`
                 : `Your roster is full!`}
@@ -28,16 +32,16 @@ class Prestige extends Component {
           </div>
           <div>
             <AppButton
+              margin={`10px 0px`}
               onClick={() => this.props.prestige()}
               width={`200px`}
-              margin={`10px 0px`}
             >
               Prestige
             </AppButton>
           </div>
         </div>
-        <div style={{ display: `flex`, justifyContent: `center` }}>
-          <p style={{ textAlign: `center`, margin: `0` }}>
+        <div style={this.styles.bottomRowContainer}>
+          <p style={this.styles.text}>
             <em>
               Activating this will empty your roster completely and level up
               your prestige!
