@@ -25,6 +25,9 @@ export default {
   getTopScorers() {
     return axios.get(`/api/user/topscorers`);
   },
+  getTopScorersByPropertyName(property) {
+    return axios.post(`/api/user/topscorersbypropertyname`, property);
+  },
   addCharacterToRoster(id, characterId) {
     return axios.put(`/api/user/roster/add/${id}`, characterId);
   },
