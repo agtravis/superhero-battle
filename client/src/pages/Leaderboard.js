@@ -33,12 +33,67 @@ class Leaderboard extends Component {
   };
 
   componentDidMount() {
+    this.getTopScorers();
+  }
+
+  getTopScorers = () => {
     API.getTopScorers()
       .then(dbUsers => {
         this.setState({ topTen: dbUsers.data });
       })
       .catch(err => console.error(err));
-  }
+  };
+
+  sortByPropertyName = (propertyName, direction) => {
+    API.getTopScorersByPropertyName({
+      property: propertyName,
+      direction: direction,
+    })
+      .then(dbUsers => {
+        this.setState({
+          topTen: dbUsers.data.filter(
+            user => propertyName === `registered` || user[propertyName] > 0
+          ),
+        });
+      })
+      .catch(err => console.error(err));
+  };
+
+  findAll = async type => {
+    const response = await API.getAllUsers();
+    switch (type) {
+      case `percentage`:
+        this.percentageSort(response.data);
+        break;
+      case `roster`:
+        this.rosterLengthSort(response.data);
+        break;
+      case `username`:
+        this.usernameSort(response.data);
+        break;
+      default:
+        console.log(`invalid type`, response.data);
+    }
+  };
+
+  usernameSort = users => {
+    const sorted = users.sort((a, b) => a.username - b.username);
+    this.setState({ topTen: sorted });
+  };
+
+  percentageSort = users => {
+    const sorted = users
+      .filter(user => user.fights >= 1)
+      .sort((a, b) => b.wins / b.fights - a.wins / a.fights);
+    this.setState({ topTen: sorted.slice(0, 10) });
+  };
+
+  rosterLengthSort = users => {
+    const sorted = users
+      .filter(user => user.roster.length >= 1)
+      .sort((a, b) => b.roster.length - a.roster.length);
+    this.setState({ topTen: sorted.slice(0, 10) });
+  };
 
   render() {
     return (
@@ -47,15 +102,54 @@ class Leaderboard extends Component {
         <table style={{ borderCollapse: `collapse` }}>
           <tbody>
             <tr>
-              <th style={this.cellStyle}>Ranking</th>
-              <th style={this.cellStyle}>Username</th>
-              <th style={this.cellStyle}>Fighting Since</th>
-              <th style={this.cellStyle}>Battles</th>
-              <th style={this.cellStyle}>Wins</th>
-              <th style={this.cellStyle}>Losses</th>
-              <th style={this.cellStyle}>Win Percentage</th>
-              <th style={this.cellStyle}>Prestige Level</th>
-              <th style={this.cellStyle}>Currently in Roster</th>
+              <th style={this.cellStyle} onClick={() => this.getTopScorers()}>
+                Ranking
+              </th>
+              <th
+                style={this.cellStyle}
+                onClick={() => this.findAll(`username`)}
+              >
+                Username
+              </th>
+              <th
+                style={this.cellStyle}
+                onClick={() => this.sortByPropertyName(`registered`, `asc`)}
+              >
+                Fighting Since
+              </th>
+              <th
+                style={this.cellStyle}
+                onClick={() => this.sortByPropertyName(`fights`, `desc`)}
+              >
+                Battles
+              </th>
+              <th
+                style={this.cellStyle}
+                onClick={() => this.sortByPropertyName(`wins`, `desc`)}
+              >
+                Wins
+              </th>
+              <th
+                style={this.cellStyle}
+                onClick={() => this.sortByPropertyName(`losses`, `desc`)}
+              >
+                Losses
+              </th>
+              <th
+                style={this.cellStyle}
+                onClick={() => this.findAll(`percentage`)}
+              >
+                Win Percentage
+              </th>
+              <th
+                style={this.cellStyle}
+                onClick={() => this.sortByPropertyName(`prestige`, `desc`)}
+              >
+                Prestige Level
+              </th>
+              <th style={this.cellStyle} onClick={() => this.findAll(`roster`)}>
+                Currently in Roster
+              </th>
             </tr>
             {this.state.topTen
               ? this.state.topTen.map((user, index) => {

@@ -89,6 +89,13 @@ module.exports = {
       .then(dbUsers => res.json(dbUsers))
       .catch(err => res.status(errorResponseCode).json(err));
   },
+  getTopScorerByPropertyName: (req, res) => {
+    User.find()
+      .sort([[req.body.property, req.body.direction]])
+      .limit(10)
+      .then(dbUsers => res.json(dbUsers))
+      .catch(err => res.status(errorResponseCode).json(err));
+  },
   search: (req, res) => {
     User.find({
       username: {

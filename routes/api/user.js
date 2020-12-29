@@ -15,6 +15,9 @@ router
 router.route(`/all`).get(userController.findAll);
 router.route(`/findone`).post(userController.search);
 router.route(`/topscorers`).get(userController.getTopScorers);
+router
+  .route(`/topscorersbypropertyname`)
+  .post(userController.getTopScorerByPropertyName);
 
 router.route(`/search`).post(userController.search);
 
