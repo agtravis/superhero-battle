@@ -1,19 +1,27 @@
 import React, { Component } from "react";
+import { Breakpoint } from "react-socks";
+import LeaderBoardTable from "../components/LeaderBoardFlow/FullScreen/LeaderBoardTable";
+import LoadingAnimation from "../components/LoadingAnimation";
 import PageTitle from "../components/PageTitle";
 import API from "../utils/API";
+import colors from "../config/colors";
 
 class Leaderboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       topTen: null,
+      usersLoaded: false,
     };
   }
 
-  cellStyle = {
-    border: `1px solid black`,
-    padding: `.5em`,
-    textAlign: `center`,
+  styles = {
+    cellStyle: {
+      border: `1px solid ${colors.darkSecondary}`,
+      padding: `.5em`,
+      textAlign: `center`,
+      width: `25px`,
+    },
   };
 
   convertDate = datestamp => {
@@ -37,29 +45,34 @@ class Leaderboard extends Component {
   }
 
   getTopScorers = () => {
+    this.setState({ usersLoaded: false });
     API.getTopScorers()
       .then(dbUsers => {
-        this.setState({ topTen: dbUsers.data });
+        this.setState({ topTen: dbUsers.data, usersLoaded: true });
       })
       .catch(err => console.error(err));
   };
 
   sortByPropertyName = (propertyName, direction) => {
+    this.setState({ usersLoaded: false });
     API.getTopScorersByPropertyName({
       property: propertyName,
       direction: direction,
     })
       .then(dbUsers => {
+        const topTen = dbUsers.data.filter(
+          user => propertyName === `registered` || user[propertyName] > 0
+        );
         this.setState({
-          topTen: dbUsers.data.filter(
-            user => propertyName === `registered` || user[propertyName] > 0
-          ),
+          topTen: topTen,
+          usersLoaded: true,
         });
       })
       .catch(err => console.error(err));
   };
 
   findAll = async type => {
+    this.setState({ usersLoaded: false });
     const response = await API.getAllUsers();
     switch (type) {
       case `percentage`:
@@ -78,102 +91,51 @@ class Leaderboard extends Component {
 
   usernameSort = users => {
     const sorted = users.sort((a, b) => a.username - b.username);
-    this.setState({ topTen: sorted });
+    this.setState({ topTen: sorted, usersLoaded: true });
   };
 
   percentageSort = users => {
     const sorted = users
-      .filter(user => user.fights >= 1)
-      .sort((a, b) => b.wins / b.fights - a.wins / a.fights);
-    this.setState({ topTen: sorted.slice(0, 10) });
+      .filter(user => user.fights >= 20)
+      .sort((a, b) => b.wins / b.fights - a.wins / a.fights)
+      .slice(0, 10);
+    this.setState({ topTen: sorted, usersLoaded: true });
   };
 
   rosterLengthSort = users => {
     const sorted = users
       .filter(user => user.roster.length >= 1)
-      .sort((a, b) => b.roster.length - a.roster.length);
-    this.setState({ topTen: sorted.slice(0, 10) });
+      .sort((a, b) => b.roster.length - a.roster.length)
+      .slice(0, 10);
+    this.setState({ topTen: sorted, usersLoaded: true });
   };
 
   render() {
     return (
       <div>
         <PageTitle>Leader Board</PageTitle>
-        <table style={{ borderCollapse: `collapse` }}>
-          <tbody>
-            <tr>
-              <th style={this.cellStyle} onClick={() => this.getTopScorers()}>
-                Ranking
-              </th>
-              <th
-                style={this.cellStyle}
-                onClick={() => this.findAll(`username`)}
-              >
-                Username
-              </th>
-              <th
-                style={this.cellStyle}
-                onClick={() => this.sortByPropertyName(`registered`, `asc`)}
-              >
-                Fighting Since
-              </th>
-              <th
-                style={this.cellStyle}
-                onClick={() => this.sortByPropertyName(`fights`, `desc`)}
-              >
-                Battles
-              </th>
-              <th
-                style={this.cellStyle}
-                onClick={() => this.sortByPropertyName(`wins`, `desc`)}
-              >
-                Wins
-              </th>
-              <th
-                style={this.cellStyle}
-                onClick={() => this.sortByPropertyName(`losses`, `desc`)}
-              >
-                Losses
-              </th>
-              <th
-                style={this.cellStyle}
-                onClick={() => this.findAll(`percentage`)}
-              >
-                Win Percentage
-              </th>
-              <th
-                style={this.cellStyle}
-                onClick={() => this.sortByPropertyName(`prestige`, `desc`)}
-              >
-                Prestige Level
-              </th>
-              <th style={this.cellStyle} onClick={() => this.findAll(`roster`)}>
-                Currently in Roster
-              </th>
-            </tr>
-            {this.state.topTen
-              ? this.state.topTen.map((user, index) => {
-                  return (
-                    <tr key={index}>
-                      <td style={this.cellStyle}>{index + 1}</td>
-                      <td style={this.cellStyle}>{user.username}</td>
-                      <td style={this.cellStyle}>
-                        {this.convertDate(user.registered)}
-                      </td>
-                      <td style={this.cellStyle}>{user.fights}</td>
-                      <td style={this.cellStyle}>{user.wins}</td>
-                      <td style={this.cellStyle}>{user.losses}</td>
-                      <td style={this.cellStyle}>
-                        {this.convertWinPercentage(user.wins, user.fights)}
-                      </td>
-                      <td style={this.cellStyle}>{user.prestige}</td>
-                      <td style={this.cellStyle}>{user.roster.length}</td>
-                    </tr>
-                  );
-                })
-              : null}
-          </tbody>
-        </table>
+        {!this.state.usersLoaded ? (
+          <LoadingAnimation divHeight={400} size={150} />
+        ) : (
+          <div
+            style={{ width: `100%`, display: `flex`, justifyContent: `center` }}
+          >
+            <Breakpoint medium up>
+              <LeaderBoardTable
+                cellStyle={this.styles.cellStyle}
+                getTopScorers={this.getTopScorers}
+                findAll={this.findAll}
+                sortByPropertyName={this.sortByPropertyName}
+                topTen={this.state.topTen}
+                convertDate={this.convertDate}
+                convertWinPercentage={this.convertWinPercentage}
+              />
+            </Breakpoint>
+            <Breakpoint small down>
+              <p>small table</p>
+            </Breakpoint>
+          </div>
+        )}
       </div>
     );
   }

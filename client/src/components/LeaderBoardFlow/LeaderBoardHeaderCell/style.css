@@ -1,0 +1,7 @@
+.header-cell {
+  color: var(--secondary);
+}
+
+.header-cell:hover {
+  color: var(--darkSecondary);
+}
