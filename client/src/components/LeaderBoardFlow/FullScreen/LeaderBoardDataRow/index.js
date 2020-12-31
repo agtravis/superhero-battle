@@ -5,7 +5,6 @@ class LeaderBoardDataRow extends Component {
   rowData = [
     { data: this.props.index + 1 },
     { data: this.props.user.username },
-    // { data: this.props.convertDate(this.props.user.registered) },
     { data: this.props.user.fights },
     { data: this.props.user.wins },
     { data: this.props.user.losses },
