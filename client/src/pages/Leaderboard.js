@@ -236,9 +236,6 @@ class Leaderboard extends Component {
               metric={this.state.metric}
               headerCells={this.state.headerColumns}
               cellStyle={this.styles.cellStyle}
-              getTopScorers={this.getTopScorers}
-              findAll={this.findAll}
-              sortByPropertyName={this.sortByPropertyName}
               topTen={this.state.topTen}
               convertDate={this.convertDate}
               convertWinPercentage={this.convertWinPercentage}
