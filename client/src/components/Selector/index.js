@@ -8,7 +8,7 @@ class Selector extends Component {
       <div>
         <Select onChange={this.props.onChange}>
           {this.props.options.map((option, index) => (
-            <Option key={index} value={option.value} title={option.title} />
+            <Option key={index} title={option.title} value={option.value} />
           ))}
         </Select>
       </div>

@@ -1,30 +1,31 @@
 import React, { Component } from "react";
 import { Breakpoint } from "react-socks";
-import LeaderBoardTable from "../components/LeaderBoardFlow/FullScreen/LeaderBoardTable";
-import PageTitle from "../components/PageTitle";
 import API from "../utils/API";
 import colors from "../config/colors";
+import LeaderBoardTable from "../components/LeaderBoardFlow/FullScreen/LeaderBoardTable";
 import LeaderBoardTableMobile from "../components/LeaderBoardFlow/Mobile/LeaderBoardTableMobile";
+import PageTitle from "../components/PageTitle";
 
 class Leaderboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      headerColumns: [],
+      metric: `prestige`,
       topTen: null,
       usersLoaded: false,
-      metric: `prestige`,
-      headerColumns: [],
     };
   }
 
-  styles = {
-    cellStyle: {
-      border: `1px solid ${colors.darkSecondary}`,
-      padding: `.5em`,
-      textAlign: `center`,
-      width: `25px`,
-    },
-  };
+  componentDidMount() {
+    this.getTopScorers();
+    const headerColumns = [
+      this.headerCells[0],
+      this.headerCells[1],
+      this.headerCells[6],
+    ];
+    this.setState({ headerColumns: headerColumns });
+  }
 
   changeMetric = value => {
     let thirdColumnIndex;
@@ -90,15 +91,27 @@ class Leaderboard extends Component {
     }
   };
 
-  componentDidMount() {
-    this.getTopScorers();
-    const headerColumns = [
-      this.headerCells[0],
-      this.headerCells[1],
-      this.headerCells[6],
-    ];
-    this.setState({ headerColumns: headerColumns });
-  }
+  findAll = async type => {
+    this.setState({ usersLoaded: false });
+    try {
+      const response = await API.getAllUsers();
+      switch (type) {
+        case `percentage`:
+          this.percentageSort(response.data);
+          break;
+        case `roster`:
+          this.rosterLengthSort(response.data);
+          break;
+        case `username`:
+          this.usernameSort(response.data);
+          break;
+        default:
+          console.log(`invalid type`, response.data);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   getTopScorers = () => {
     this.setState({ usersLoaded: false });
@@ -107,6 +120,22 @@ class Leaderboard extends Component {
         this.setState({ topTen: dbUsers.data, usersLoaded: true });
       })
       .catch(err => console.error(err));
+  };
+
+  percentageSort = users => {
+    const sorted = users
+      .filter(user => user.fights >= 20)
+      .sort((a, b) => b.wins / b.fights - a.wins / a.fights)
+      .slice(0, 10);
+    this.setState({ topTen: sorted, usersLoaded: true });
+  };
+
+  rosterLengthSort = users => {
+    const sorted = users
+      .filter(user => user.roster.length >= 1)
+      .sort((a, b) => b.roster.length - a.roster.length)
+      .slice(0, 10);
+    this.setState({ topTen: sorted, usersLoaded: true });
   };
 
   sortByPropertyName = (propertyName, direction) => {
@@ -127,42 +156,8 @@ class Leaderboard extends Component {
       .catch(err => console.error(err));
   };
 
-  findAll = async type => {
-    this.setState({ usersLoaded: false });
-    const response = await API.getAllUsers();
-    switch (type) {
-      case `percentage`:
-        this.percentageSort(response.data);
-        break;
-      case `roster`:
-        this.rosterLengthSort(response.data);
-        break;
-      case `username`:
-        this.usernameSort(response.data);
-        break;
-      default:
-        console.log(`invalid type`, response.data);
-    }
-  };
-
   usernameSort = users => {
     const sorted = users.sort((a, b) => a.username - b.username);
-    this.setState({ topTen: sorted, usersLoaded: true });
-  };
-
-  percentageSort = users => {
-    const sorted = users
-      .filter(user => user.fights >= 20)
-      .sort((a, b) => b.wins / b.fights - a.wins / a.fights)
-      .slice(0, 10);
-    this.setState({ topTen: sorted, usersLoaded: true });
-  };
-
-  rosterLengthSort = users => {
-    const sorted = users
-      .filter(user => user.roster.length >= 1)
-      .sort((a, b) => b.roster.length - a.roster.length)
-      .slice(0, 10);
     this.setState({ topTen: sorted, usersLoaded: true });
   };
 
@@ -209,36 +204,50 @@ class Leaderboard extends Component {
     },
   ];
 
+  styles = {
+    cellStyle: {
+      border: `1px solid ${colors.darkSecondary}`,
+      color: colors.secondary,
+      padding: `.5em`,
+      textAlign: `center`,
+      width: `25px`,
+    },
+    subtitle: { textAlign: `center` },
+    tableContainer: {
+      display: `flex`,
+      justifyContent: `center`,
+      width: `100%`,
+    },
+  };
+
   render() {
     return (
       <div>
         <PageTitle>Leader Board</PageTitle>
-        <p style={{ textAlign: `center` }}>
+        <p style={this.styles.subtitle}>
           <em>- Sort by any metric -</em>
         </p>
-        <div
-          style={{ width: `100%`, display: `flex`, justifyContent: `center` }}
-        >
+        <div style={this.styles.tableContainer}>
           <Breakpoint medium up>
             <LeaderBoardTable
-              usersLoaded={this.state.usersLoaded}
-              headerCells={this.headerCells}
               cellStyle={this.styles.cellStyle}
-              topTen={this.state.topTen}
               convertDate={this.convertDate}
               convertWinPercentage={this.convertWinPercentage}
+              headerCells={this.headerCells}
+              topTen={this.state.topTen}
+              usersLoaded={this.state.usersLoaded}
             />
           </Breakpoint>
           <Breakpoint small down>
             <LeaderBoardTableMobile
-              usersLoaded={this.state.usersLoaded}
-              changeMetric={this.changeMetric}
-              metric={this.state.metric}
-              headerCells={this.state.headerColumns}
               cellStyle={this.styles.cellStyle}
-              topTen={this.state.topTen}
+              changeMetric={this.changeMetric}
               convertDate={this.convertDate}
               convertWinPercentage={this.convertWinPercentage}
+              headerCells={this.state.headerColumns}
+              metric={this.state.metric}
+              topTen={this.state.topTen}
+              usersLoaded={this.state.usersLoaded}
             />
           </Breakpoint>
         </div>

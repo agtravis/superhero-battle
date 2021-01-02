@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 
 class LeaderBoardTableCell extends Component {
+  styles = {
+    dataCell: {
+      fontSize: `.7rem`,
+      maxWidth: `25px`,
+      overflow: `hidden`,
+      textOverflow: `ellipsis`,
+      whiteSpace: `nowrap`,
+    },
+  };
+
   render() {
     return (
       <td
         style={{
           ...this.props.cellStyle,
-          fontSize: `.7rem`,
-          textOverflow: `ellipsis`,
-          maxWidth: `25px`,
-          overflow: `hidden`,
-          whiteSpace: `nowrap`,
+          ...this.styles.dataCell,
         }}
       >
         {this.props.children}

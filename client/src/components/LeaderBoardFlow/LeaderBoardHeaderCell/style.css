@@ -2,6 +2,6 @@
   color: var(--secondary);
 }
 
-.header-cell:hover {
+.header-cell div:hover {
   color: var(--darkSecondary);
 }
