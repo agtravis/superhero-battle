@@ -2,29 +2,32 @@ import React, { Component } from "react";
 import "./style.css";
 
 class LeaderBoardHeaderCell extends Component {
+  styles = {
+    headerCell: {
+      cursor: `pointer`,
+      height: `100px`,
+    },
+    headerCellContent: {
+      fontSize: `.7rem`,
+      transform: `rotate(-70deg)`,
+    },
+  };
+
   render() {
     return (
       <th
         className={`header-cell`}
-        style={{
-          ...this.props.cellStyle,
-          cursor: `pointer`,
-          height: `100px`,
-        }}
         onClick={
           this.props.onClick
             ? () => this.props.onClick(...this.props.params)
             : null
         }
+        style={{
+          ...this.props.cellStyle,
+          ...this.styles.headerCell,
+        }}
       >
-        <div
-          style={{
-            transform: `rotate(-70deg)`,
-            fontSize: `.7rem`,
-          }}
-        >
-          {this.props.title}
-        </div>
+        <div style={this.styles.headerCellContent}>{this.props.title}</div>
       </th>
     );
   }

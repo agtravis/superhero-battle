@@ -25,11 +25,11 @@ class LeaderBoardHeaderRow extends Component {
         {this.state.headerCells &&
           this.state.headerCells.map((current, index) => (
             <LeaderBoardHeaderCell
-              key={index}
               cellStyle={this.props.cellStyle}
+              key={index}
               onClick={current.onClick}
-              title={current.title}
               params={current.params}
+              title={current.title}
             />
           ))}
       </tr>

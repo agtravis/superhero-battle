@@ -14,6 +14,12 @@ class LeaderBoardDataRowMobile extends Component {
     this.setThirdColumn(this.props.metric);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.metric !== prevProps.metric) {
+      this.setThirdColumn(this.props.metric);
+    }
+  }
+
   setThirdColumn = metric => {
     const columns = [
       { data: this.props.index + 1 },
@@ -49,18 +55,12 @@ class LeaderBoardDataRowMobile extends Component {
     this.setState({ columns: columns, columnsLoaded: true });
   };
 
-  componentDidUpdate(prevProps) {
-    if (this.props.metric !== prevProps.metric) {
-      this.setThirdColumn(this.props.metric);
-    }
-  }
-
   render() {
     return (
       <tr>
         {this.state.columnsLoaded &&
           this.state.columns.map((data, i) => (
-            <LeaderBoardTableCell key={i} cellStyle={this.props.cellStyle}>
+            <LeaderBoardTableCell cellStyle={this.props.cellStyle} key={i}>
               {data.data}
             </LeaderBoardTableCell>
           ))}

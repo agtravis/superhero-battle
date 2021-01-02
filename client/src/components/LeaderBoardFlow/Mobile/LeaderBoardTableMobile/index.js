@@ -1,10 +1,19 @@
 import React, { Component } from "react";
+import LeaderBoardDataRowMobile from "../LeaderBoardDataRowMobile";
+import LeaderBoardHeaderRow from "../../FullScreen/LeaderBoardHeaderRow";
 import LoadingAnimation from "../../../LoadingAnimation";
 import Selector from "../../../Selector";
-import LeaderBoardHeaderRow from "../../FullScreen/LeaderBoardHeaderRow";
-import LeaderBoardDataRowMobile from "../LeaderBoardDataRowMobile";
 
 class LeaderBoardTableMobile extends Component {
+  styles = {
+    selectorContainer: {
+      display: `flex`,
+      justifyContent: `center`,
+      marginTop: `5px`,
+    },
+    tableContainer: { marginTop: `20px` },
+  };
+
   options = [
     { value: `none`, title: `Choose a Metric` },
     { value: `ranking`, title: `Ranking` },
@@ -20,38 +29,28 @@ class LeaderBoardTableMobile extends Component {
   render() {
     return (
       <div>
-        <div
-          style={{
-            display: `flex`,
-            justifyContent: `center`,
-            marginTop: `5px`,
-          }}
-        >
+        <div style={this.styles.selectorContainer}>
           <Selector options={this.options} onChange={this.props.changeMetric} />
         </div>
         {!this.props.usersLoaded ? (
           <LoadingAnimation divHeight={400} size={150} />
         ) : (
-          <div
-            style={{
-              marginTop: `20px`,
-            }}
-          >
+          <div style={this.styles.tableContainer}>
             <table>
               <tbody>
                 <LeaderBoardHeaderRow
-                  headerCells={this.props.headerCells}
                   cellStyle={this.props.cellStyle}
+                  headerCells={this.props.headerCells}
                 />
                 {this.props.topTen.map((user, index) => (
                   <LeaderBoardDataRowMobile
-                    metric={this.props.metric}
-                    key={index}
-                    index={index}
-                    user={user}
+                    cellStyle={this.props.cellStyle}
                     convertDate={this.props.convertDate}
                     convertWinPercentage={this.props.convertWinPercentage}
-                    cellStyle={this.props.cellStyle}
+                    index={index}
+                    key={index}
+                    metric={this.props.metric}
+                    user={user}
                   />
                 ))}
               </tbody>

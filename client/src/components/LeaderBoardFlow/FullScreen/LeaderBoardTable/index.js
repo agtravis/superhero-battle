@@ -1,33 +1,36 @@
 import React, { Component } from "react";
-import LoadingAnimation from "../../../LoadingAnimation";
 import LeaderBoardDataRow from "../LeaderBoardDataRow";
 import LeaderBoardHeaderRow from "../LeaderBoardHeaderRow";
+import LoadingAnimation from "../../../LoadingAnimation";
 
 class LeaderBoardTable extends Component {
+  styles = {
+    table: { borderCollapse: `collapse`, marginTop: `20px` },
+  };
+
   render() {
     return (
       <div>
         {!this.props.usersLoaded ? (
           <LoadingAnimation divHeight={400} size={150} />
         ) : (
-          <table style={{ borderCollapse: `collapse`, marginTop: `20px` }}>
+          <table style={this.styles.table}>
             <tbody>
               <LeaderBoardHeaderRow
-                headerCells={this.props.headerCells}
                 cellStyle={this.props.cellStyle}
+                headerCells={this.props.headerCells}
               />
-              {this.props.topTen
-                ? this.props.topTen.map((user, index) => (
-                    <LeaderBoardDataRow
-                      key={index}
-                      index={index}
-                      user={user}
-                      convertDate={this.props.convertDate}
-                      convertWinPercentage={this.props.convertWinPercentage}
-                      cellStyle={this.props.cellStyle}
-                    />
-                  ))
-                : null}
+              {this.props.topTen &&
+                this.props.topTen.map((user, index) => (
+                  <LeaderBoardDataRow
+                    cellStyle={this.props.cellStyle}
+                    convertDate={this.props.convertDate}
+                    convertWinPercentage={this.props.convertWinPercentage}
+                    index={index}
+                    key={index}
+                    user={user}
+                  />
+                ))}
             </tbody>
           </table>
         )}
