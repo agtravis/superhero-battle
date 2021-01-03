@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AppButton from "../AppButton";
 import IndexPortraitSmall from "../IndexPortraitSmall";
+import ProfileCardHeader from "../Profile/ProfileCardHeader";
 
 class LastBattleCard extends Component {
   styles = {
@@ -36,14 +37,14 @@ class LastBattleCard extends Component {
       <div>
         <div>
           {!this.props.isPreFightStaging && !this.props.isDuringFight ? (
-            <h3>
+            <ProfileCardHeader>
               Your last battle was on {this.convertDate(this.props.battle.date)}{" "}
               and you were
               {this.props.battle.winner === `Challenger`
                 ? ` defeated`
                 : ` the victor`}
               :
-            </h3>
+            </ProfileCardHeader>
           ) : !this.props.isDuringFight ? (
             <h3>The Stage is Set for Battle!</h3>
           ) : null}
