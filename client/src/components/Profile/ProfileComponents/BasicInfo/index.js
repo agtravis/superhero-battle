@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import colors from "../../../../config/colors";
+import ProfileCardHeader from "../../ProfileCardHeader";
 
 class BasicInfo extends Component {
   styles = {
     rosterFactsContainer: {
       display: `flex`,
-      justifyContent: `space-between`,
       flexWrap: `wrap`,
+      justifyContent: `space-between`,
     },
   };
 
@@ -30,13 +31,13 @@ class BasicInfo extends Component {
   render() {
     return (
       <div>
-        <h3>
+        <ProfileCardHeader>
           {this.props.signedInVsGeneric(
             `Your`,
             `${this.props.profileData.username}'s`
           )}
           {` `}Profile
-        </h3>
+        </ProfileCardHeader>
         <p>
           Fighting since {this.convertDate(this.props.profileData.registered)}
         </p>

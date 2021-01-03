@@ -1,0 +1,8 @@
+.appButton-carousel {
+  border: none;
+  color: var(--secondary);
+  background-color: var(--extraLightPrimary);
+}
+.appButton-carousel:hover {
+  color: var(--darkSecondary);
+}

@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import IndexPortrait from "../../../IndexPortrait";
+import ProfileCardHeader from "../../ProfileCardHeader";
 
 class Captain extends Component {
   render() {
     return (
       <div>
-        <h3>
+        <ProfileCardHeader>
           {this.props.signedInVsGeneric(
             `Your`,
             `${this.props.profileData.username}'s`
           )}
           {` `}Captain:
-        </h3>
+        </ProfileCardHeader>
         <div>
           {this.props.profileData.roster[0] ? (
             <IndexPortrait
