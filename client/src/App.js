@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Screen from "./components/Screen";
+import SearchPage from "./pages/Search";
 
 class App extends Component {
   constructor(props) {
@@ -209,6 +210,16 @@ class App extends Component {
                         path="/leaderboard"
                         render={() => (
                           <Leaderboard
+                            loggedIn={this.state.loggedIn}
+                            currentUser={this.state.currentUser}
+                          />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/search"
+                        render={() => (
+                          <SearchPage
                             loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
                           />

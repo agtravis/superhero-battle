@@ -221,6 +221,9 @@ class Leaderboard extends Component {
   };
 
   render() {
+    if (!this.props.currentUser) {
+      window.location.href = `/`;
+    }
     return (
       <div>
         <PageTitle>Leader Board</PageTitle>
