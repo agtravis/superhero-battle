@@ -1,14 +1,4 @@
 import React, { Component } from "react";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-  ButtonFirst,
-  ButtonLast,
-} from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
 import "./style.css";
 import BasicInfo from "../ProfileComponents/BasicInfo";
 import Captain from "../ProfileComponents/Captain";
@@ -33,6 +23,7 @@ class ProfileMobile extends Component {
       justifyContent: `space-evenly`,
       marginTop: `20px`,
     },
+    mockLink: { cursor: `pointer` },
     pagination: {
       marginBottom: `50px`,
       textAlign: `center`,
@@ -42,11 +33,29 @@ class ProfileMobile extends Component {
     },
   };
 
+  componentDidMount() {
+    const controlDiv = document.getElementById(`profile-buttons`);
+    controlDiv.addEventListener(`click`, () => {
+      clearInterval(interval);
+    });
+    const interval = setInterval(() => {
+      this.changePage(`up`);
+    }, 3000);
+  }
+
   changePage = direction => {
-    if (direction === `up` && this.state.page < 5) {
-      this.setState({ page: this.state.page + 1 });
-    } else if (direction === `down` && this.state.page > 1) {
-      this.setState({ page: this.state.page - 1 });
+    if (direction === `up`) {
+      if (this.state.page < 5) {
+        this.setState({ page: this.state.page + 1 });
+      } else {
+        this.setState({ page: 1 });
+      }
+    } else if (direction === `down`) {
+      if (this.state.page > 1) {
+        this.setState({ page: this.state.page - 1 });
+      } else {
+        this.setState({ page: 5 });
+      }
     } else if (direction === `start`) {
       this.setState({ page: 1 });
     } else if (direction === `end`) {
@@ -56,71 +65,71 @@ class ProfileMobile extends Component {
 
   render() {
     return (
-      <CarouselProvider
-        naturalSlideWidth={100}
-        naturalSlideHeight={125}
-        totalSlides={5}
-      >
-        <div style={this.styles.buttonsContainer}>
-          <ButtonFirst
+      <div>
+        <div id={`profile-buttons`} style={this.styles.buttonsContainer}>
+          <p
+            style={this.styles.mockLink}
             onClick={() => this.changePage(`start`)}
             className={`appButton-carousel`}
-          >{`|<`}</ButtonFirst>
-          <ButtonBack
+          >{`|<`}</p>
+          <p
+            style={this.styles.mockLink}
             onClick={() => this.changePage(`down`)}
             className={`appButton-carousel`}
-          >{`<<`}</ButtonBack>
-          <ButtonNext
+          >{`<<`}</p>
+          <p
+            style={this.styles.mockLink}
             onClick={() => this.changePage(`up`)}
             className={`appButton-carousel`}
-          >{`>>`}</ButtonNext>
-          <ButtonLast
+          >{`>>`}</p>
+          <p
+            style={this.styles.mockLink}
             onClick={() => this.changePage(`end`)}
             className={`appButton-carousel`}
-          >{`>|`}</ButtonLast>
+          >{`>|`}</p>
         </div>
         <div style={this.styles.pagination}>
           <p>{this.state.page} / 5</p>
         </div>
-        <Slider>
-          <Slide index={0}>
-            <div style={this.styles.basicInfo}>
-              <BasicInfo
-                profileData={this.props.profileData}
-                signedInVsGeneric={this.props.signedInVsGeneric}
-              />
-            </div>
-          </Slide>
-          <Slide index={1}>
-            <Captain
+        {this.state.page === 1 && (
+          <div style={this.styles.basicInfo}>
+            <BasicInfo
               profileData={this.props.profileData}
               signedInVsGeneric={this.props.signedInVsGeneric}
             />
-          </Slide>
-          <Slide index={2}>
-            <LatestRecruit
+          </div>
+        )}
+
+        {this.state.page === 2 && (
+          <Captain
+            profileData={this.props.profileData}
+            signedInVsGeneric={this.props.signedInVsGeneric}
+          />
+        )}
+
+        {this.state.page === 3 && (
+          <LatestRecruit
+            profileData={this.props.profileData}
+            signedInVsGeneric={this.props.signedInVsGeneric}
+          />
+        )}
+        {this.state.page === 4 && (
+          <div style={this.styles.slideContainers}>
+            <LastBattle
               profileData={this.props.profileData}
               signedInVsGeneric={this.props.signedInVsGeneric}
             />
-          </Slide>
-          <Slide index={3}>
-            <div style={this.styles.slideContainers}>
-              <LastBattle
-                profileData={this.props.profileData}
-                signedInVsGeneric={this.props.signedInVsGeneric}
-              />
-            </div>
-          </Slide>
-          <Slide index={4}>
-            <div style={this.styles.slideContainers}>
-              <CurrentTeam
-                profileData={this.props.profileData}
-                signedInVsGeneric={this.props.signedInVsGeneric}
-              />
-            </div>
-          </Slide>
-        </Slider>
-      </CarouselProvider>
+          </div>
+        )}
+        {this.state.page === 5 && (
+          <div style={this.styles.slideContainers}>
+            <CurrentTeam
+              profileData={this.props.profileData}
+              signedInVsGeneric={this.props.signedInVsGeneric}
+            />
+          </div>
+        )}
+      </div>
     );
   }
 }
