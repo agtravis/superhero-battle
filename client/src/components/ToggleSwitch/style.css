@@ -55,6 +55,6 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-.fight-mode-bolder {
+.switch-bolder {
   font-weight: 900;
 }

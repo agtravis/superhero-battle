@@ -10,6 +10,7 @@ class ProfileMobile extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      interval: null,
       page: 1,
     };
   }
@@ -41,6 +42,11 @@ class ProfileMobile extends Component {
     const interval = setInterval(() => {
       this.changePage(`up`);
     }, 3000);
+    this.setState({ interval: interval });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval);
   }
 
   changePage = direction => {
