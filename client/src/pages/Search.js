@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SearchForm from "../components/SearchForm";
+import ToggleSwitch from "../components/ToggleSwitch";
 import API from "../utils/API";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 
@@ -13,27 +14,6 @@ class SearchPage extends Component {
       results: [],
     };
   }
-
-  styles = {
-    container: {
-      alignItems: `center`,
-      display: `flex`,
-      height: `100px`,
-      justifyContent: `center`,
-      margin: `auto`,
-      width: `75%`,
-    },
-    subContainer: {
-      alignItems: `space-around`,
-      display: `flex`,
-      justifyContent: `center`,
-      width: `200px`,
-    },
-    text: {
-      fontSize: `1.5rem`,
-      margin: `0px`,
-    },
-  };
 
   clearForm = () => {
     document.getElementById(`user-search`).value = ``;
@@ -63,21 +43,6 @@ class SearchPage extends Component {
 
   toggleSearchMode = () => {
     this.clearForm();
-    if (this.state.isUserSearch) {
-      document
-        .getElementById(`user-search-text`)
-        .classList.remove(`fight-mode-bolder`);
-      document
-        .getElementById(`character-search-text`)
-        .classList.add(`fight-mode-bolder`);
-    } else {
-      document
-        .getElementById(`user-search-text`)
-        .classList.add(`fight-mode-bolder`);
-      document
-        .getElementById(`character-search-text`)
-        .classList.remove(`fight-mode-bolder`);
-    }
     this.setState({ isUserSearch: !this.state.isUserSearch });
   };
 
@@ -87,28 +52,12 @@ class SearchPage extends Component {
     }
     return (
       <div>
-        <div style={this.styles.container}>
-          <div style={this.styles.subContainer}>
-            <p
-              className={`fight-mode-bolder`}
-              id={`user-search-text`}
-              style={this.styles.text}
-            >
-              USER
-            </p>
-          </div>
-          <div style={{ ...this.styles.subContainer, paddingTop: `9px` }}>
-            <label className="switch">
-              <input onChange={() => this.toggleSearchMode()} type="checkbox" />
-              <span className="slider"></span>
-            </label>
-          </div>
-          <div style={this.styles.subContainer}>
-            <p id={`character-search-text`} style={this.styles.text}>
-              HERO
-            </p>
-          </div>
-        </div>
+        <ToggleSwitch
+          leftText={`USER`}
+          rightText={`HERO`}
+          height={`100px`}
+          toggleFunction={this.toggleSearchMode}
+        />
         <SearchForm
           clearForm={this.clearForm}
           fieldName={`searchField`}
