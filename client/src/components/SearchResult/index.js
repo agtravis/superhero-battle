@@ -50,7 +50,7 @@ class SearchResult extends Component {
   };
 
   styles = {
-    container: { display: `flex`, height: `75px` },
+    container: { display: `flex`, minHeight: `75px` },
     image: {
       borderRadius: `30px`,
       height: `60px`,
