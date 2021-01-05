@@ -55,9 +55,16 @@ class LeaderBoardDataRowMobile extends Component {
     this.setState({ columns: columns, columnsLoaded: true });
   };
 
+  styles = {
+    row: { cursor: `pointer` },
+  };
+
   render() {
     return (
-      <tr>
+      <tr
+        style={this.styles.row}
+        onClick={() => this.props.onClick(this.props.user._id)}
+      >
         {this.state.columnsLoaded &&
           this.state.columns.map((data, i) => (
             <LeaderBoardTableCell cellStyle={this.props.cellStyle} key={i}>

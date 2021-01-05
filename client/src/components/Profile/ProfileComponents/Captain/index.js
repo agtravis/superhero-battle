@@ -21,7 +21,14 @@ class Captain extends Component {
               showStats
             />
           ) : (
-            <p>You have nobody in your roster!</p>
+            <p>
+              {this.props.signedInVsGeneric(
+                `You have `,
+                `${this.props.profileData.username} has `
+              )}
+              nobody in
+              {this.props.signedInVsGeneric(` your`, ` their`)} roster!
+            </p>
           )}
         </div>
       </div>

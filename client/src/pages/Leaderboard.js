@@ -5,6 +5,7 @@ import colors from "../config/colors";
 import LeaderBoardTable from "../components/LeaderBoardFlow/FullScreen/LeaderBoardTable";
 import LeaderBoardTableMobile from "../components/LeaderBoardFlow/Mobile/LeaderBoardTableMobile";
 import PageTitle from "../components/PageTitle";
+import { Redirect } from "react-router-dom";
 
 class Leaderboard extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Leaderboard extends Component {
       metric: `prestige`,
       topTen: null,
       usersLoaded: false,
+      userId: null,
     };
   }
 
@@ -122,6 +124,8 @@ class Leaderboard extends Component {
       .catch(err => console.error(err));
   };
 
+  loadUser = userId => this.setState({ userId: userId });
+
   percentageSort = users => {
     const sorted = users
       .filter(user => user.fights >= 20)
@@ -224,6 +228,18 @@ class Leaderboard extends Component {
     if (!this.props.currentUser) {
       window.location.href = `/`;
     }
+    if (this.state.userId) {
+      return (
+        <Redirect
+          to={{
+            pathname: `/profile`,
+            state: {
+              userId: this.state.userId,
+            },
+          }}
+        />
+      );
+    }
     return (
       <div>
         <PageTitle>Leader Board</PageTitle>
@@ -237,6 +253,7 @@ class Leaderboard extends Component {
               convertDate={this.convertDate}
               convertWinPercentage={this.convertWinPercentage}
               headerCells={this.headerCells}
+              onClick={this.loadUser}
               topTen={this.state.topTen}
               usersLoaded={this.state.usersLoaded}
             />
@@ -249,6 +266,7 @@ class Leaderboard extends Component {
               convertWinPercentage={this.convertWinPercentage}
               headerCells={this.state.headerColumns}
               metric={this.state.metric}
+              onClick={this.loadUser}
               topTen={this.state.topTen}
               usersLoaded={this.state.usersLoaded}
             />

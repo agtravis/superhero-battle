@@ -45,7 +45,11 @@ class BasicInfo extends Component {
           A veteran of {this.props.profileData.fights} fights,{` `}
           {this.props.profileData.fights > 0
             ? `${this.props.signedInVsGeneric(
-                `you have won`,
+                `
+                ${this.props.signedInVsGeneric(
+                  `You have`,
+                  `${this.props.profileData.username} has`
+                )} won`,
                 `${this.props.profileData.username} has won`
               )} ${this.convertWinPercentage(
                 this.props.profileData.wins,
@@ -53,12 +57,20 @@ class BasicInfo extends Component {
               )} - W ${this.props.profileData.wins} / L ${
                 this.props.profileData.losses
               }.`
-            : `you do not currently have a win percentage!`}
+            : `
+            ${this.props.signedInVsGeneric(
+              `You do`,
+              `${this.props.profileData.username} does`
+            )} not currently have a win percentage!`}
         </p>
         <div style={this.styles.rosterFactsContainer}>
           <div style={{ width: `400px` }}>
             <p>
-              Your{` `}
+              {this.props.signedInVsGeneric(
+                `Your`,
+                `${this.props.profileData.username}'s`
+              )}
+              {` `}
               <Link
                 to={`/roster`}
                 style={{
@@ -84,7 +96,14 @@ class BasicInfo extends Component {
             </p>
           </div>
           <div style={{ width: `200px` }}>
-            <p>Your prestige level: {this.props.profileData.prestige + 1}.</p>
+            <p>
+              {this.props.signedInVsGeneric(
+                `Your`,
+                `${this.props.profileData.username}'s`
+              )}
+              {` `}
+              prestige level: {this.props.profileData.prestige + 1}.
+            </p>
           </div>
         </div>
       </div>

@@ -50,6 +50,7 @@ class LeaderBoardTableMobile extends Component {
                     index={index}
                     key={index}
                     metric={this.props.metric}
+                    onClick={this.props.onClick}
                     user={user}
                   />
                 ))}

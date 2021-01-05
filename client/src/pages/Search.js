@@ -4,15 +4,19 @@ import SuperHeroAPI from "../utils/SuperHeroAPI";
 import SearchForm from "../components/SearchForm";
 import SearchResult from "../components/SearchResult";
 import ToggleSwitch from "../components/ToggleSwitch";
+import LoadingAnimation from "../components/LoadingAnimation";
+import { Redirect } from "react-router-dom";
 
 class SearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: false,
       isUserSearch: true,
       searched: false,
       searchField: ``,
       results: [],
+      userId: null,
     };
   }
 
@@ -31,21 +35,31 @@ class SearchPage extends Component {
   };
 
   handleSubmit = () => {
-    this.setState({ search: false });
+    this.setState({ searched: false, isLoading: true });
     if (this.state.isUserSearch) {
       API.findOneUserByName({ search: this.state.searchField })
         .then(response => {
-          this.setState({ results: response.data, searched: `user` });
+          this.setState({
+            results: response.data,
+            searched: `user`,
+            isLoading: false,
+          });
         })
         .catch(err => console.error(err));
     } else {
       SuperHeroAPI.findCharacterByName(this.state.searchField)
         .then(response => {
-          this.setState({ results: response.data, searched: `hero` });
+          this.setState({
+            results: response.data,
+            searched: `hero`,
+            isLoading: false,
+          });
         })
         .catch(err => console.error(err));
     }
   };
+
+  loadUser = userId => this.setState({ userId: userId });
 
   toggleSearchMode = () => {
     this.clearForm();
@@ -55,6 +69,18 @@ class SearchPage extends Component {
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
+    }
+    if (this.state.userId) {
+      return (
+        <Redirect
+          to={{
+            pathname: `/profile`,
+            state: {
+              userId: this.state.userId,
+            },
+          }}
+        />
+      );
     }
     return (
       <div>
@@ -71,6 +97,9 @@ class SearchPage extends Component {
           handleSubmit={this.handleSubmit}
           id={`user-search`}
         />
+        {this.state.isLoading && (
+          <LoadingAnimation divHeight={400} size={150} />
+        )}
         {this.state.searched === `user` &&
           this.state.results.map((user, index) => (
             <SearchResult
@@ -78,6 +107,8 @@ class SearchPage extends Component {
               index={index}
               key={index}
               name={user.username}
+              onClick={this.loadUser}
+              userId={user._id}
               prestige={user.prestige + 1}
               registered={this.convertDate(user.registered)}
               rosterLength={user.roster.length}

@@ -50,7 +50,11 @@ class SearchResult extends Component {
   };
 
   styles = {
-    container: { display: `flex`, minHeight: `75px` },
+    container: {
+      cursor: `pointer`,
+      display: `flex`,
+      minHeight: `75px`,
+    },
     image: {
       borderRadius: `30px`,
       height: `60px`,
@@ -82,7 +86,10 @@ class SearchResult extends Component {
     return (
       <div>
         {this.props.index !== 0 && <hr />}
-        <div style={this.styles.container}>
+        <div
+          style={this.styles.container}
+          onClick={() => this.props.onClick(this.props.userId)}
+        >
           <div style={this.styles.imageContainer}>
             {!this.state.imageLoaded && (
               <LoadingAnimation divHeight={60} size={50} />

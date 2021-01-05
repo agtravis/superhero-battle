@@ -18,9 +18,16 @@ class LeaderBoardDataRow extends Component {
     { data: this.props.user.roster.length },
   ];
 
+  styles = {
+    row: { cursor: `pointer` },
+  };
+
   render() {
     return (
-      <tr>
+      <tr
+        style={this.styles.row}
+        onClick={() => this.props.onClick(this.props.user._id)}
+      >
         {this.rowData.map((data, i) => (
           <LeaderBoardTableCell key={i} cellStyle={this.props.cellStyle}>
             {data.data}
