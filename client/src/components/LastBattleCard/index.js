@@ -32,18 +32,23 @@ class LastBattleCard extends Component {
     return `${dateArr[1]} ${dateArr[2]}, ${dateArr[3]}`;
   };
 
+  signedInVsGeneric = (signedIn, generic) =>
+    this.props.signedInVsGeneric
+      ? this.props.signedInVsGeneric(signedIn, generic)
+      : signedIn;
+
   render() {
     return (
       <div>
         <div>
           {!this.props.isPreFightStaging && !this.props.isDuringFight ? (
             <ProfileCardHeader>
-              {this.props.signedInVsGeneric(
+              {this.signedInVsGeneric(
                 `Your`,
                 `${this.props.profileData.username}'s`
               )}{" "}
               last battle was on {this.convertDate(this.props.battle.date)} and
-              {this.props.signedInVsGeneric(` you `, ` they `)} were
+              {this.signedInVsGeneric(` you `, ` they `)} were
               {this.props.battle.winner === `Challenger`
                 ? ` defeated`
                 : ` the victor`}
@@ -58,16 +63,16 @@ class LastBattleCard extends Component {
                 {this.props.battle.challengers.length > 1
                   ? `Opposing Team`
                   : `
-                  ${this.props.signedInVsGeneric(`Your`, `Their`)} Opponent`}
+                  ${this.signedInVsGeneric(`Your`, `Their`)} Opponent`}
               </h4>
             </div>
             <div>
               <h4>
                 {this.props.battle.defenders.length > 1
                   ? `
-                ${this.props.signedInVsGeneric(`Your`, `Their`)} Team`
+                ${this.signedInVsGeneric(`Your`, `Their`)} Team`
                   : `
-                ${this.props.signedInVsGeneric(`You`, `Them`)}`}
+                ${this.signedInVsGeneric(`You`, `Them`)}`}
               </h4>
             </div>
           </div>
