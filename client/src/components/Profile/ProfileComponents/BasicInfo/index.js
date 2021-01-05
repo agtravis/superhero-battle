@@ -47,7 +47,7 @@ class BasicInfo extends Component {
             ? `${this.props.signedInVsGeneric(
                 `
                 ${this.props.signedInVsGeneric(
-                  `You have`,
+                  `you have`,
                   `${this.props.profileData.username} has`
                 )} won`,
                 `${this.props.profileData.username} has won`
