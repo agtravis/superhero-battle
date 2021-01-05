@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import API from "../utils/API";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 import SearchForm from "../components/SearchForm";
@@ -59,7 +60,13 @@ class SearchPage extends Component {
     }
   };
 
-  loadUser = userId => this.setState({ userId: userId });
+  loadUser = userId => {
+    const { history } = this.props;
+    if (history) {
+      history.push(`/search`);
+    }
+    this.setState({ userId: userId });
+  };
 
   toggleSearchMode = () => {
     this.clearForm();
@@ -131,4 +138,4 @@ class SearchPage extends Component {
   }
 }
 
-export default SearchPage;
+export default withRouter(SearchPage);
