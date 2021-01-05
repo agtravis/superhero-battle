@@ -38,8 +38,12 @@ class LastBattleCard extends Component {
         <div>
           {!this.props.isPreFightStaging && !this.props.isDuringFight ? (
             <ProfileCardHeader>
-              Your last battle was on {this.convertDate(this.props.battle.date)}{" "}
-              and you were
+              {this.props.signedInVsGeneric(
+                `Your`,
+                `${this.props.profileData.username}'s`
+              )}{" "}
+              last battle was on {this.convertDate(this.props.battle.date)} and
+              {this.props.signedInVsGeneric(` you `, ` they `)} were
               {this.props.battle.winner === `Challenger`
                 ? ` defeated`
                 : ` the victor`}
@@ -53,12 +57,17 @@ class LastBattleCard extends Component {
               <h4>
                 {this.props.battle.challengers.length > 1
                   ? `Opposing Team`
-                  : `Your Opponent`}
+                  : `
+                  ${this.props.signedInVsGeneric(`Your`, `Their`)} Opponent`}
               </h4>
             </div>
             <div>
               <h4>
-                {this.props.battle.defenders.length > 1 ? `Your Team` : `You`}
+                {this.props.battle.defenders.length > 1
+                  ? `
+                ${this.props.signedInVsGeneric(`Your`, `Their`)} Team`
+                  : `
+                ${this.props.signedInVsGeneric(`You`, `Them`)}`}
               </h4>
             </div>
           </div>

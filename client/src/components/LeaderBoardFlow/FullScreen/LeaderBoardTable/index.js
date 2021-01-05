@@ -23,6 +23,7 @@ class LeaderBoardTable extends Component {
               {this.props.topTen &&
                 this.props.topTen.map((user, index) => (
                   <LeaderBoardDataRow
+                    onClick={this.props.onClick}
                     cellStyle={this.props.cellStyle}
                     convertDate={this.props.convertDate}
                     convertWinPercentage={this.props.convertWinPercentage}

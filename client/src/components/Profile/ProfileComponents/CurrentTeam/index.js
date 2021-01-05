@@ -16,7 +16,12 @@ class CurrentTeam extends Component {
         {this.props.profileData.teams.length > 0 ? (
           <Team team={this.props.profileData.teams} />
         ) : (
-          <p>You do not have any members of your roster assigned to a team</p>
+          <p>
+            {this.props.signedInVsGeneric(`You `, `They `)}do not have any
+            members of
+            {this.props.signedInVsGeneric(` your `, ` their `)}roster assigned
+            to a team
+          </p>
         )}
       </div>
     );

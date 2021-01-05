@@ -25,9 +25,21 @@ class LatestRecruit extends Component {
               showStats
             />
           ) : this.props.profileData.roster[0] ? (
-            <p>You only have one team member!</p>
+            <p>
+              {this.props.signedInVsGeneric(
+                `You only have `,
+                `${this.props.profileData.username} only has `
+              )}
+              one recruit!
+            </p>
           ) : (
-            <p>You have nobody in your team!</p>
+            <p>
+              {this.props.signedInVsGeneric(
+                `You have `,
+                `${this.props.profileData.username} has `
+              )}
+              no recruits!
+            </p>
           )}
         </div>
       </div>
