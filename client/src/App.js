@@ -15,6 +15,7 @@ import NavBar from "./components/NavBar";
 import Screen from "./components/Screen";
 import SearchPage from "./pages/Search";
 import ProfilePage from "./pages/ProfilePage";
+import Character from "./pages/Character";
 
 class App extends Component {
   constructor(props) {
@@ -232,6 +233,16 @@ class App extends Component {
                         path="/profile"
                         render={routeProps => (
                           <ProfilePage
+                            currentUser={this.state.currentUser}
+                            {...routeProps}
+                          />
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/character"
+                        render={routeProps => (
+                          <Character
                             currentUser={this.state.currentUser}
                             {...routeProps}
                           />

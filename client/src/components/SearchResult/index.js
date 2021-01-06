@@ -88,7 +88,7 @@ class SearchResult extends Component {
         {this.props.index !== 0 && <hr />}
         <div
           style={this.styles.container}
-          onClick={() => this.props.onClick(this.props.userId)}
+          onClick={() => this.props.onClick(this.props.param)}
         >
           <div style={this.styles.imageContainer}>
             {!this.state.imageLoaded && (
