@@ -12,6 +12,7 @@ class SearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      character: null,
       isLoading: false,
       isUserSearch: true,
       searched: false,
@@ -19,6 +20,10 @@ class SearchPage extends Component {
       results: [],
       userId: null,
     };
+  }
+
+  componentDidMount() {
+    document.getElementById(`user-search`).focus();
   }
 
   clearForm = () => {
@@ -68,9 +73,18 @@ class SearchPage extends Component {
     this.setState({ userId: userId });
   };
 
+  loadCharacter = character => {
+    const { history } = this.props;
+    if (history) {
+      history.push(`/search`);
+    }
+    this.setState({ character: character });
+  };
+
   toggleSearchMode = () => {
     this.clearForm();
     this.setState({ isUserSearch: !this.state.isUserSearch });
+    document.getElementById(`user-search`).focus();
   };
 
   render() {
@@ -84,6 +98,18 @@ class SearchPage extends Component {
             pathname: `/profile`,
             state: {
               userId: this.state.userId,
+            },
+          }}
+        />
+      );
+    }
+    if (this.state.character) {
+      return (
+        <Redirect
+          to={{
+            pathname: `/character`,
+            state: {
+              character: this.state.character,
             },
           }}
         />
@@ -115,7 +141,7 @@ class SearchPage extends Component {
               key={index}
               name={user.username}
               onClick={this.loadUser}
-              userId={user._id}
+              param={user._id}
               prestige={user.prestige + 1}
               registered={this.convertDate(user.registered)}
               rosterLength={user.roster.length}
@@ -130,6 +156,8 @@ class SearchPage extends Component {
               info={hero.connections[`group-affiliation`]}
               key={index}
               name={hero.name}
+              onClick={this.loadCharacter}
+              param={hero}
               type={`hero`}
             />
           ))}
