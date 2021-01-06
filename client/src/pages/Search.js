@@ -14,9 +14,9 @@ class SearchPage extends Component {
     this.state = {
       character: null,
       isLoading: false,
-      isUserSearch: true,
+      isUserSearch: false,
       searched: false,
-      searchField: ``,
+      searchField: `Spider-Man`,
       results: [],
       userId: null,
     };
@@ -24,6 +24,7 @@ class SearchPage extends Component {
 
   componentDidMount() {
     document.getElementById(`user-search`).focus();
+    this.handleSubmit();
   }
 
   clearForm = () => {

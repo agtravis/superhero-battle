@@ -1,19 +1,9 @@
 import React, { Component } from "react";
+import Appearance from "../components/CharacterFlow/Appearance";
 import ImageAndStats from "../components/CharacterFlow/ImageAndStats";
 import PageTitle from "../components/PageTitle";
 
 class Character extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.character !== prevProps.character) {
-      this.setState({ imageValid: true });
-    }
-  }
-
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -25,6 +15,7 @@ class Character extends Component {
           <PageTitle>{character.name}</PageTitle>
         </div>
         <ImageAndStats character={character} />
+        <Appearance appearance={character.appearance} />
       </div>
     );
   }
