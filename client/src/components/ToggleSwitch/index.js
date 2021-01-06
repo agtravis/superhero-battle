@@ -7,9 +7,6 @@ class ToggleSwitch extends Component {
     super(props);
     this.state = {
       isLeft: true,
-      searchField: ``,
-      searched: false,
-      results: [],
     };
   }
 
