@@ -7,8 +7,11 @@ export default {
   getUserDetails(id) {
     return axios.get(`/api/user/${id}`);
   },
-  checkPassword(password) {
-    return axios.post(`/api/user/checkpassword`, { password: password });
+  changePassword(user) {
+    return axios.post(`/api/user/changepassword`, {
+      id: user.id,
+      password: user.newPassword,
+    });
   },
   logIn(userCredentials) {
     return axios.post(`/api/user/login`, userCredentials);

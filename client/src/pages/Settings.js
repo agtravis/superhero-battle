@@ -13,19 +13,38 @@ class Settings extends Component {
     };
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
+  componentDidMount() {
     API.getUserDetails(this.props.currentUser._id)
       .then(response => {
-        bcrypt.compare(this.state.old, response.data.password, (err, res) => {
-          if (err) {
-            console.error(err);
-          } else {
-            console.log(res);
-          }
-        });
+        console.log(response.data);
       })
       .catch(err => console.error(err));
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    if (this.state.new.length < 1) {
+      console.log(`new password not long enough`);
+    } else {
+      API.getUserDetails(this.props.currentUser._id)
+        .then(response => {
+          bcrypt.compare(this.state.old, response.data.password, (err, res) => {
+            if (err) {
+              console.error(err);
+            } else if (res) {
+              API.changePassword({
+                id: this.props.currentUser._id,
+                newPassword: this.state.new,
+              })
+                .then(response => console.log(response.data))
+                .catch(err => console.error(err));
+            } else {
+              console.log(`password does not match`);
+            }
+          });
+        })
+        .catch(err => console.error(err));
+    }
   };
 
   handleChange = (value, type) => this.setState({ [type]: value });
