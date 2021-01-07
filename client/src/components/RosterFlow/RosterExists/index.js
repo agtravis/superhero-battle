@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import RosterCard from "../RosterCard";
 
 class RosterExists extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      character: null,
       roster: [],
       startingIndex: 0,
     };
@@ -48,6 +50,8 @@ class RosterExists extends Component {
     this.setState({ roster: roster, startingIndex: startingIndex });
   };
 
+  loadCharacter = character => this.setState({ character: character });
+
   setRosterLocation = slot => {
     if (slot > this.props.roster.length) {
       slot = this.props.roster.length;
@@ -64,6 +68,18 @@ class RosterExists extends Component {
   };
 
   render() {
+    if (this.state.character) {
+      return (
+        <Redirect
+          to={{
+            pathname: `/character`,
+            state: {
+              character: this.state.character,
+            },
+          }}
+        />
+      );
+    }
     return (
       <div>
         <div style={this.styles.paginationContainer}>
@@ -119,6 +135,7 @@ class RosterExists extends Component {
                   index={index + this.state.startingIndex}
                   key={index}
                   nextCharacter={this.state.roster[index + 1]}
+                  onClick={this.loadCharacter}
                 />
               )
           )}
