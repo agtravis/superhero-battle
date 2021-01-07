@@ -12,6 +12,8 @@ router
   .post(userController.newUser)
   .get(userController.userInSession);
 
+router.route(`/checkpassword`).post(userController.checkPassword);
+
 router.route(`/all`).get(userController.findAll);
 router.route(`/findone`).post(userController.search);
 router.route(`/topscorers`).get(userController.getTopScorers);

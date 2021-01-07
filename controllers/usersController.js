@@ -28,6 +28,11 @@ module.exports = {
       }
     });
   },
+  checkPassword: (req, res) => {
+    // currently this just sends back the object that was sent in the request
+    // {old, new, hashed}
+    res.send(req.body);
+  },
   login: (req, res) => {
     console.log(`logged in`, req.user._id, req.user.username);
     const userInfo = {
