@@ -21,17 +21,14 @@ class ImageAndStats extends Component {
       display: `flex`,
       flexWrap: `wrap`,
       justifyContent: `space-evenly`,
-      margin: `50px 0px`,
     },
     image: { borderRadius: `10px`, width: `100%` },
     imageContainer: { width: `350px` },
     statsContainer: {
-      alignItems: `center`,
       display: `flex`,
-      height: ` 350px`,
       justifyContent: `center`,
       padding: `20px`,
-      width: `350px`,
+      width: `200px`,
     },
   };
 
