@@ -12,7 +12,7 @@ router
   .post(userController.newUser)
   .get(userController.userInSession);
 
-router.route(`/checkpassword`).post(userController.checkPassword);
+router.route(`/changepassword`).post(userController.changePassword);
 
 router.route(`/all`).get(userController.findAll);
 router.route(`/findone`).post(userController.search);

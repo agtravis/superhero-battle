@@ -2,6 +2,7 @@
 
 const User = require(`../database/models/User`);
 const mongoose = require(`mongoose`);
+const bcrypt = require(`bcryptjs`);
 
 const errorResponseCode = 422;
 
@@ -28,10 +29,21 @@ module.exports = {
       }
     });
   },
-  checkPassword: (req, res) => {
-    // currently this just sends back the object that was sent in the request
-    // {old, new, hashed}
-    res.send(req.body);
+  changePassword: (req, res) => {
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash(req.body.password, salt, function (err, hash) {
+        User.updateOne(
+          { _id: mongoose.Types.ObjectId(req.body.id) },
+          {
+            $set: {
+              password: hash,
+            },
+          }
+        )
+          .then(dbUser => res.json(dbUser))
+          .catch(err => res.json(err));
+      });
+    });
   },
   login: (req, res) => {
     console.log(`logged in`, req.user._id, req.user.username);
