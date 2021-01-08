@@ -1,31 +1,75 @@
 import React, { Component } from "react";
-import AppButton from "../components/AppButton";
-import AppInput from "../components/AppInput";
-import PageTitle from "../components/PageTitle";
-import API from "../utils/API";
 import bcrypt from "bcryptjs";
+import API from "../utils/API";
+import AppButton from "../components/AppButton";
+import ErrorMessagePasswordChange from "../components/SettingsFlow/ErrorMessagePasswordChange";
+import PasswordInputs from "../components/SettingsFlow/PasswordInputs";
+import PageTitle from "../components/PageTitle";
 
 class Settings extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      errorMessage: null,
+      error: false,
       new: ``,
       newAgain: ``,
       old: ``,
-      showOldInput: false,
-      showNewInput: false,
-      showStartButton: true,
       passwordChanged: false,
-      error: false,
-      errorMessage: null,
+      showNewInput: false,
+      showOldInput: false,
+      showStartButton: true,
     };
   }
+
+  styles = {
+    container: {
+      alignItems: `center`,
+      display: `flex`,
+      flexDirection: `column`,
+      textAlign: `center`,
+    },
+    formsContainer: {
+      alignItems: `center`,
+      display: `flex`,
+      flexDirection: `column`,
+      minHeight: `330px`,
+      width: `70%`,
+    },
+    formsSubContainer: { marginTop: `50px`, width: `100%` },
+    completeText: { color: `green` },
+  };
+
+  cancel = event => {
+    event.preventDefault();
+    this.setState({
+      error: false,
+      errorMessage: null,
+      new: ``,
+      newAgain: ``,
+      old: ``,
+      passwordChanged: false,
+      showNewInput: false,
+      showOldInput: false,
+      showStartButton: true,
+    });
+  };
+
+  handleChange = (event, field) =>
+    this.setState({ [field]: event.target.value });
 
   setError = message => {
     if (message) {
       this.setState({ error: true, errorMessage: message });
+      document.getElementById(`change-password-field`).focus();
     } else {
       this.setState({ error: false, errorMessage: null });
+    }
+  };
+
+  toggle = states => {
+    for (const state of states) {
+      this.setState({ [state]: !this.state[state] });
     }
   };
 
@@ -71,73 +115,61 @@ class Settings extends Component {
     }
   };
 
-  handleChange = (event, field) =>
-    this.setState({ [field]: event.target.value });
-
-  toggle = states => {
-    for (const state of states) {
-      this.setState({ [state]: !this.state[state] });
-    }
-  };
-
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
     }
     return (
-      <div>
+      <div style={this.styles.container}>
         <PageTitle>Settings</PageTitle>
-        {this.state.showStartButton && (
-          <div>
-            <AppButton
-              onClick={() => this.toggle([`showOldInput`, `showStartButton`])}
-            >
-              Change Password
-            </AppButton>
-          </div>
-        )}
-        {this.state.showOldInput && (
-          <div>
-            <form onSubmit={event => this.verifyOldPassword(event)}>
-              <p>Enter your old password</p>
-              <AppInput
-                value={this.state.old}
+        <div style={this.styles.formsContainer}>
+          <div style={this.styles.formsSubContainer}>
+            {this.state.showStartButton && !this.state.passwordChanged && (
+              <div>
+                <AppButton
+                  onClick={() =>
+                    this.toggle([`showOldInput`, `showStartButton`])
+                  }
+                >
+                  Change Password
+                </AppButton>
+              </div>
+            )}
+            {this.state.showOldInput && (
+              <PasswordInputs
+                buttonName={`Continue`}
                 handleChange={this.handleChange}
-                fieldName={`old`}
+                inputs={[{ value: this.state.old, fieldName: `old` }]}
+                onSubmit={this.verifyOldPassword}
+                title={`Enter your old password:`}
               />
-              <AppButton type={`submit`}>Continue</AppButton>
-            </form>
-          </div>
-        )}
-        {this.state.showNewInput && (
-          <div>
-            <form onSubmit={event => this.verifyNewPassword(event)}>
-              <p>Enter your new password</p>
-              <AppInput
-                value={this.state.new}
+            )}
+            {this.state.showNewInput && (
+              <PasswordInputs
+                buttonName={`Change Password`}
+                cancel={this.cancel}
                 handleChange={this.handleChange}
-                fieldName={`new`}
+                inputs={[
+                  { value: this.state.new, fieldName: `new` },
+                  { value: this.state.newAgain, fieldName: `newAgain` },
+                ]}
+                onSubmit={this.verifyNewPassword}
+                subtitle={`Re-enter your new password:`}
+                title={`Enter your new password:`}
               />
-              <p>Enter your new password again</p>
-              <AppInput
-                value={this.state.newAgain}
-                handleChange={this.handleChange}
-                fieldName={`newAgain`}
+            )}
+            {this.state.error && (
+              <ErrorMessagePasswordChange
+                errorMessage={this.state.errorMessage}
               />
-              <AppButton type={`submit`}>Change Password</AppButton>
-            </form>
+            )}
+            {this.state.passwordChanged && (
+              <div>
+                <p style={this.styles.completeText}>Password Changed</p>
+              </div>
+            )}
           </div>
-        )}
-        {this.state.error && (
-          <div>
-            <p>{this.state.errorMessage}</p>
-          </div>
-        )}
-        {this.state.passwordChanged && (
-          <div>
-            <p>Password Changed</p>
-          </div>
-        )}
+        </div>
       </div>
     );
   }
