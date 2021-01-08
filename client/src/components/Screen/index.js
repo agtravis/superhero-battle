@@ -16,7 +16,7 @@ class Screen extends Component {
       width: `70%`,
     },
     mobile: {
-      overflow: `scroll`,
+      overflow: `auto`,
       padding: `5px`,
       width: `100%`,
     },

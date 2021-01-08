@@ -7,6 +7,7 @@ import SearchResult from "../components/SearchResult";
 import ToggleSwitch from "../components/ToggleSwitch";
 import LoadingAnimation from "../components/LoadingAnimation";
 import { Redirect } from "react-router-dom";
+import PageTitle from "../components/PageTitle";
 
 class SearchPage extends Component {
   constructor(props) {
@@ -117,6 +118,7 @@ class SearchPage extends Component {
     }
     return (
       <div>
+        <PageTitle>Search</PageTitle>
         <ToggleSwitch
           height={`100px`}
           leftText={`USER`}
