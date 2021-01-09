@@ -17,6 +17,7 @@ import SearchPage from "./pages/Search";
 import ProfilePage from "./pages/ProfilePage";
 import Character from "./pages/Character";
 import Settings from "./pages/Settings";
+import NotFound from "./pages/NotFound";
 
 class App extends Component {
   constructor(props) {
@@ -152,8 +153,8 @@ class App extends Component {
                     isNavShowing={this.state.isNavShowing}
                     logOut={this.logOut}
                   />
-                  <Switch>
-                    <Screen>
+                  <Screen>
+                    <Switch>
                       <Route
                         exact
                         path="/"
@@ -256,8 +257,11 @@ class App extends Component {
                           <Settings currentUser={this.state.currentUser} />
                         )}
                       />
-                    </Screen>
-                  </Switch>
+                      <Route
+                        render={routeProps => <NotFound {...routeProps} />}
+                      />
+                    </Switch>
+                  </Screen>
                 </div>
               </div>
               <Footer />
