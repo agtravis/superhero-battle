@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import bcrypt from "bcryptjs";
 import API from "../utils/API";
 import AppButton from "../components/AppButton";
 import ErrorMessagePasswordChange from "../components/SettingsFlow/ErrorMessagePasswordChange";
@@ -101,17 +100,20 @@ class Settings extends Component {
       this.setError(`Please enter a password`);
     } else {
       this.setError();
-      API.getUserDetails(this.props.currentUser._id).then(response => {
-        bcrypt.compare(this.state.old, response.data.password, (err, res) => {
-          if (err) {
-            console.error(err);
-          } else if (res === false) {
+      API.checkPassword({
+        userId: this.props.currentUser._id,
+        old: this.state.old,
+      })
+        .then(response => {
+          if (response.data === false) {
             this.setError(`Password is incorrect`);
-          } else if (res === true) {
+          } else if (response.data === true) {
             this.toggle([`showOldInput`, `showNewInput`]);
+          } else {
+            console.log(response);
           }
-        });
-      });
+        })
+        .catch(err => console.error(err));
     }
   };
 
