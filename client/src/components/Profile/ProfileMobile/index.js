@@ -17,7 +17,7 @@ class ProfileMobile extends Component {
 
   styles = {
     basicInfo: {
-      padding: `25px 15px 0px`,
+      padding: `0px 15px`,
     },
     buttonsContainer: {
       display: `flex`,
@@ -26,7 +26,6 @@ class ProfileMobile extends Component {
     },
     mockLink: { cursor: `pointer` },
     pagination: {
-      marginBottom: `50px`,
       textAlign: `center`,
     },
     slideContainers: {
@@ -51,7 +50,7 @@ class ProfileMobile extends Component {
 
   changePage = direction => {
     if (direction === `up`) {
-      if (this.state.page < 5) {
+      if (this.state.page < 4) {
         this.setState({ page: this.state.page + 1 });
       } else {
         this.setState({ page: 1 });
@@ -60,12 +59,12 @@ class ProfileMobile extends Component {
       if (this.state.page > 1) {
         this.setState({ page: this.state.page - 1 });
       } else {
-        this.setState({ page: 5 });
+        this.setState({ page: 4 });
       }
     } else if (direction === `start`) {
       this.setState({ page: 1 });
     } else if (direction === `end`) {
-      this.setState({ page: 5 });
+      this.setState({ page: 4 });
     }
   };
 
@@ -95,11 +94,15 @@ class ProfileMobile extends Component {
           >{`>|`}</p>
         </div>
         <div style={this.styles.pagination}>
-          <p>{this.state.page} / 5</p>
+          <p>{this.state.page} / 4</p>
         </div>
         {this.state.page === 1 && (
           <div style={this.styles.basicInfo}>
             <BasicInfo
+              profileData={this.props.profileData}
+              signedInVsGeneric={this.props.signedInVsGeneric}
+            />
+            <LastBattle
               profileData={this.props.profileData}
               signedInVsGeneric={this.props.signedInVsGeneric}
             />
@@ -120,14 +123,6 @@ class ProfileMobile extends Component {
           />
         )}
         {this.state.page === 4 && (
-          <div style={this.styles.slideContainers}>
-            <LastBattle
-              profileData={this.props.profileData}
-              signedInVsGeneric={this.props.signedInVsGeneric}
-            />
-          </div>
-        )}
-        {this.state.page === 5 && (
           <div style={this.styles.slideContainers}>
             <CurrentTeam
               profileData={this.props.profileData}
