@@ -29,6 +29,19 @@ module.exports = {
       }
     });
   },
+  checkPassword: (req, res) => {
+    User.findById(req.body.userId)
+      .then(dbUser => {
+        bcrypt.compare(req.body.old, dbUser.password, (err, response) => {
+          if (err) {
+            res.send(err);
+          } else {
+            res.send(response);
+          }
+        });
+      })
+      .catch(err => res.status(errorResponseCode).json(err));
+  },
   changePassword: (req, res) => {
     bcrypt.genSalt(10, function (err, salt) {
       bcrypt.hash(req.body.password, salt, function (err, hash) {
