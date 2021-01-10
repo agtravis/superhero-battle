@@ -33,12 +33,16 @@ class Rules extends Component {
             An algorithm decides who wins each round, and the same algorithm is
             applied evenly to both contenders. However the algorithm is based on
             the value of the attribute, so while there is an element of chance,
-            you should still be strategic!
+            you should still be strategic! The algorithm works by throwing out a
+            random handicap for each team, so in a 100 vs 10 showdown, it's not
+            guaranteed!
           </li>
           <li>
             If you are defeated, your team member will leave your team, however
             if you win, your opponent will be recruited into your team, and you
-            will be able to use that character in your next battle!
+            will be able to use that character in your next battle! If you quit
+            the battle before it is over, you will avoid the "L" but you will
+            still lose your heros.
           </li>
           <li>
             The game is over when you collect all 731 characters in the

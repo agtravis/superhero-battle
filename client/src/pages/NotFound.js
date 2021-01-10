@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import PageTitle from "../components/PageTitle";
 
 class NotFound extends Component {
+  styles = {
+    mockLink: { fontWeight: `900`, cursor: `pointer` },
+  };
+
   render() {
     return (
       <div>
@@ -10,7 +14,7 @@ class NotFound extends Component {
           Could not find <em>{this.props.location.pathname}</em>. Please{` `}
           <span
             onClick={() => this.props.history.goBack()}
-            style={{ fontWeight: `900`, cursor: `pointer` }}
+            style={this.styles.mockLink}
           >
             go back
           </span>
