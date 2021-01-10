@@ -15,6 +15,7 @@ class Battle extends Component {
       defenderScore: 0,
       defenderStats: null,
       fightRoundStat: null,
+      finished: false,
       highestChallengerStat: { stat: `combat`, rating: 0 },
       isRoundCommenced: false,
       randomStat: null,
@@ -31,8 +32,20 @@ class Battle extends Component {
     this.setStats();
   }
 
+  componentWillUnmount() {
+    if (this.state.finished === false) {
+      const ids = [];
+      for (const defender of this.props.defenders) {
+        ids.push(defender._id);
+      }
+      API.removeManyCharactersFromRoster(this.props.currentUser._id, ids)
+        .then()
+        .catch(err => console.error(err));
+    }
+  }
+
   challengerWin = () => {
-    this.setState({ winner: `Challenger` });
+    this.setState({ winner: `Challenger`, finished: true });
     const ids = [];
     for (const defender of this.props.defenders) {
       ids.push(defender._id);
@@ -67,7 +80,7 @@ class Battle extends Component {
   };
 
   defenderWin = () => {
-    this.setState({ winner: this.props.currentUser.username });
+    this.setState({ winner: this.props.currentUser.username, finished: true });
     const ids = [];
     for (const challenger of this.props.challengers) {
       ids.push(challenger._id);

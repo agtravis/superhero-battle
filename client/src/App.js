@@ -23,12 +23,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      battles: [],
       currentUser: null,
       isNavShowing: false,
       loaded: false,
       loggedIn: false,
-      record: {},
       redirect: null,
       roster: [],
       teams: [],
@@ -89,12 +87,6 @@ class App extends Component {
         this.setState({
           roster: response.data.roster,
           teams: response.data.teams,
-          battles: response.data.pastBattles,
-          record: {
-            wins: response.data.wins,
-            losses: response.data.losses,
-            prestige: response.data.prestige,
-          },
         });
       })
       .catch(err => console.error(err));
