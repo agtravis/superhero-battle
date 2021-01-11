@@ -16,7 +16,12 @@ class SearchForm extends Component {
   render() {
     return (
       <div style={this.styles.searchFormContainer}>
-        <AppButton onClick={this.props.clearForm}>Clear</AppButton>
+        <AppButton
+          id={`search-form-clear-button`}
+          onClick={this.props.clearForm}
+        >
+          Clear
+        </AppButton>
         <AppInput
           backgroundColor={colors.extraLightPrimary}
           fieldName={this.props.fieldName}
@@ -24,7 +29,12 @@ class SearchForm extends Component {
           handleSubmit={this.props.handleSubmit}
           id={this.props.id}
         />
-        <AppButton onClick={this.props.handleSubmit}>Search</AppButton>
+        <AppButton
+          id={`search-form-search-button`}
+          onClick={this.props.handleSubmit}
+        >
+          Search
+        </AppButton>
       </div>
     );
   }

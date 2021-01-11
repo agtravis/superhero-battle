@@ -128,6 +128,7 @@ class GetDefenderTeam extends Component {
                           >
                             <p>Your team is short!</p>
                             <AppButton
+                              id={`team-short-add-another-button`}
                               margin={`10px 0`}
                               onClick={() => this.toggleTeamSelector()}
                               width={`200px`}
@@ -141,6 +142,7 @@ class GetDefenderTeam extends Component {
                     <div style={this.styles.emptyTeamButtonsContainer}>
                       <p>Your team is currently empty!</p>
                       <AppButton
+                        id={`get-team-leader-button`}
                         margin={`10px 0`}
                         onClick={() => this.toggleTeamSelector()}
                         width={`200px`}
@@ -163,6 +165,7 @@ class GetDefenderTeam extends Component {
             )}
             <div style={this.styles.buttonsContainer}>
               <AppButton
+                id={`get-defender-team-back-button`}
                 margin={`10px auto`}
                 onClick={() => this.props.changePhase(-1)}
                 width={`200px`}
@@ -171,6 +174,7 @@ class GetDefenderTeam extends Component {
               </AppButton>
               {this.state.team.length === 3 && (
                 <AppButton
+                  id={`get-defender-team-next-button`}
                   margin={`10px auto`}
                   onClick={() => this.nextPhase()}
                   width={`200px`}

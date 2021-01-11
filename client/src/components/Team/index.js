@@ -21,6 +21,7 @@ class Team extends Component {
             {this.props.onClickRemove && (
               <div style={{ display: `flex`, justifyContent: `center` }}>
                 <AppButton
+                  id={`team-remove-one-button`}
                   margin={`10px 0`}
                   width={`200px`}
                   onClick={() =>
@@ -49,6 +50,7 @@ class Team extends Component {
                 {this.props.onClickRemove && (
                   <div>
                     <AppButton
+                      id={`team-remove-two-button`}
                       margin={`10px 0`}
                       width={`100px`}
                       onClick={() =>
@@ -73,6 +75,7 @@ class Team extends Component {
                 {this.props.onClickRemove && (
                   <div>
                     <AppButton
+                      id={`team-remove-three-button`}
                       margin={`10px 0`}
                       width={`100px`}
                       onClick={() =>

@@ -142,6 +142,7 @@ class Fight extends Component {
                       {this.state.phase > 0 && (
                         <div>
                           <AppButton
+                            id={`fight-back-button`}
                             margin={`10px auto`}
                             onClick={() => this.changePhase(-1)}
                             width={`200px`}
