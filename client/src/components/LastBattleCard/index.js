@@ -24,6 +24,8 @@ class LastBattleCard extends Component {
     vsContainer: {
       alignItems: `center`,
       display: `flex`,
+      position: `relative`,
+      top: `-30px`,
     },
   };
 
