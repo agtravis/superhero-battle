@@ -23,6 +23,7 @@ class FightingStatsSelector extends Component {
             <ul style={this.styles.listContainer}>
               <li>
                 <AppButton
+                  id={`fight-with-this-stat-button`}
                   margin={`10px 0px`}
                   onClick={this.props.fightWithThisStat}
                   value={this.props.predeterminedStat}
@@ -40,6 +41,7 @@ class FightingStatsSelector extends Component {
               {Object.keys(this.props.stats).map((stat, index) => (
                 <li key={index} style={{ marginBottom: `5px` }}>
                   <AppButton
+                    id={`fight-with-this-stat-button-${index}`}
                     margin={`10px 0px`}
                     onClick={this.props.fightWithThisStat}
                     value={stat}

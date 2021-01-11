@@ -75,6 +75,7 @@ class GetOpponent extends Component {
         {this.state.isOpponentAboutToBeChosen && (
           <div style={this.styles.revealButtonContainer}>
             <AppButton
+              id={`get-opponent-reveal-button`}
               margin={`10px`}
               width={`200px`}
               onClick={() => this.chooseOpponent()}
@@ -99,6 +100,7 @@ class GetOpponent extends Component {
           }}
         >
           <AppButton
+            id={`get-opponent-back-button`}
             margin={`10px auto`}
             onClick={() => this.props.changePhase(-1)}
             width={`200px`}
@@ -107,6 +109,7 @@ class GetOpponent extends Component {
           </AppButton>{" "}
           {this.state.isOpponentChosen && (
             <AppButton
+              id={`get-opponent-next-button`}
               margin={`10px auto`}
               onClick={() => this.nextPhase()}
               width={`200px`}

@@ -118,6 +118,7 @@ class LastBattleCard extends Component {
         {this.props.isPreFightStaging && (
           <div style={this.styles.buttonsContainer}>
             <AppButton
+              id={`last-battle-card-back-button`}
               margin={`10px auto`}
               onClick={() => this.props.changePhase(-1)}
               width={`200px`}
@@ -125,6 +126,7 @@ class LastBattleCard extends Component {
               Back
             </AppButton>
             <AppButton
+              id={`last-battle-card-fight-button`}
               margin={`10px auto`}
               onClick={() => this.props.changePhase(1)}
               width={`200px`}

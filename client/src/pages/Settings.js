@@ -129,6 +129,7 @@ class Settings extends Component {
             {this.state.showStartButton && !this.state.passwordChanged && (
               <div>
                 <AppButton
+                  id={`settings-change-password-button`}
                   onClick={() =>
                     this.toggle([`showOldInput`, `showStartButton`])
                   }

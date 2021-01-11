@@ -19,7 +19,10 @@ class RosterEmpty extends Component {
           <p>You currently have nobody in your roster!</p>
         </div>
         <div>
-          <AppButton onClick={this.props.getFirstTeamMember}>
+          <AppButton
+            id={`roster-empty-button`}
+            onClick={this.props.getFirstTeamMember}
+          >
             Get Your First Team Member
           </AppButton>
         </div>

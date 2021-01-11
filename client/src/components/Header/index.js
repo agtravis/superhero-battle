@@ -286,7 +286,10 @@ class Header extends Component {
                 <div style={{ position: `relative` }}>
                   <div style={this.styles.userButtons}>
                     <div>
-                      <AppButton onClick={() => this.showLogIn()}>
+                      <AppButton
+                        id={`log-in-button`}
+                        onClick={() => this.showLogIn()}
+                      >
                         Log In
                       </AppButton>
                     </div>
@@ -325,7 +328,10 @@ class Header extends Component {
                     <div
                       style={{ display: `flex`, justifyContent: `flex-end` }}
                     >
-                      <AppButton onClick={() => this.props.logOut()}>
+                      <AppButton
+                        id={`log-out-button`}
+                        onClick={() => this.props.logOut()}
+                      >
                         Log Out
                       </AppButton>
                     </div>

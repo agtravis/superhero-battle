@@ -43,7 +43,11 @@ class CredentialsForm extends Component {
           type={`password`}
         />
         <div style={this.styles.credentialsButtonsContainer}>
-          <AppButton width={80} type={`submit`}>
+          <AppButton
+            width={80}
+            type={`submit`}
+            id={`credentials-submit-${this.props.buttonName}`}
+          >
             {this.props.buttonName}
           </AppButton>
           <div style={this.styles.buttonSpacerDiv}></div>

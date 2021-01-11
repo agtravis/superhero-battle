@@ -79,6 +79,7 @@ class SoloOrTeam extends Component {
         )}
         <div style={this.styles.buttonContainer}>
           <AppButton
+            id={`solo-or-team-next-button`}
             margin={`10px 0`}
             onClick={() => this.nextPhase()}
             width={`200px`}

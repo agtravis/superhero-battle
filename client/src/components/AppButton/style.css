@@ -1,10 +1,30 @@
+:root {
+  --button-speed: 0.3s;
+}
+
 .appButton {
   border: 2px solid var(--darkSecondary);
   border-radius: 3px;
   color: var(--darkSecondary);
   background-color: var(--lightSecondary);
 }
-.appButton:hover {
+
+.translateButton {
+  -webkit-transition: var(--button-speed);
+  -moz-transition: var(--button-speed);
+  -ms-transition: var(--button-speed);
+  -o-transition: var(--button-speed);
+  transition: var(--button-speed);
   background-color: var(--secondary);
   color: var(--lightSecondary);
+}
+
+.translateBackButton {
+  -webkit-transition: var(--button-speed);
+  -moz-transition: var(--button-speed);
+  -ms-transition: var(--button-speed);
+  -o-transition: var(--button-speed);
+  transition: var(--button-speed);
+  background-color: var(--lightSecondary);
+  color: var(--darkSecondary);
 }
