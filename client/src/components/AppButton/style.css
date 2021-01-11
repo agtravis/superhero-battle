@@ -8,10 +8,6 @@
   color: var(--darkSecondary);
   background-color: var(--lightSecondary);
 }
-/* .appButton:hover {
-  background-color: var(--secondary);
-  color: var(--lightSecondary);
-} */
 
 .translateButton {
   -webkit-transition: var(--button-speed);
