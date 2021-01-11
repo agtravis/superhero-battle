@@ -32,7 +32,7 @@ mongoose.connect(
 // Sessions
 app.use(
   session({
-    secret: process.env.HASH_KEY || `shattered-rocks`, // pick a random string to make the hash that is generated secure
+    secret: `shattered-rocks`, // pick a random string to make the hash that is generated secure
     store: new MongoStore({ mongooseConnection: dbConnection }),
     resave: false, // required
     saveUninitialized: false, // required
