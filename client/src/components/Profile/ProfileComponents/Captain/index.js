@@ -3,6 +3,13 @@ import IndexPortrait from "../../../IndexPortrait";
 import ProfileCardHeader from "../../ProfileCardHeader";
 
 class Captain extends Component {
+  styles = {
+    clickable: { cursor: this.props.loadCharacter && `pointer` },
+  };
+
+  loadCharacter = character =>
+    this.props.loadCharacter && this.props.loadCharacter(character);
+
   render() {
     return (
       <div>
@@ -13,7 +20,10 @@ class Captain extends Component {
           )}
           {` `}Captain:
         </ProfileCardHeader>
-        <div>
+        <div
+          style={this.styles.clickable}
+          onClick={() => this.loadCharacter(this.props.profileData.roster[0])}
+        >
           {this.props.profileData.roster[0] ? (
             <IndexPortrait
               character={this.props.profileData.roster[0]}

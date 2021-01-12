@@ -31,12 +31,14 @@ class Profile extends Component {
           <div>
             <Breakpoint medium up>
               <ProfileFullScreen
+                loadCharacter={this.props.loadCharacter}
                 profileData={this.state.profileData}
                 signedInVsGeneric={this.signedInVsGeneric}
               />
             </Breakpoint>
             <Breakpoint small down>
               <ProfileMobile
+                loadCharacter={this.props.loadCharacter}
                 profileData={this.state.profileData}
                 signedInVsGeneric={this.signedInVsGeneric}
               />

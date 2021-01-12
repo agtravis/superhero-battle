@@ -3,6 +3,13 @@ import IndexPortrait from "../../../IndexPortrait";
 import ProfileCardHeader from "../../ProfileCardHeader";
 
 class LatestRecruit extends Component {
+  styles = {
+    clickable: { cursor: this.props.loadCharacter && `pointer` },
+  };
+
+  loadCharacter = character =>
+    this.props.loadCharacter && this.props.loadCharacter(character);
+
   render() {
     return (
       <div>
@@ -13,7 +20,16 @@ class LatestRecruit extends Component {
           )}
           {` `}Latest Recruit:
         </ProfileCardHeader>
-        <div>
+        <div
+          style={this.styles.clickable}
+          onClick={() =>
+            this.loadCharacter(
+              this.props.profileData.roster[
+                this.props.profileData.roster.length - 1
+              ]
+            )
+          }
+        >
           {this.props.profileData.roster.length > 1 ? (
             <IndexPortrait
               character={

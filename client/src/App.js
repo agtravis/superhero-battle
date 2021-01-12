@@ -187,10 +187,11 @@ class App extends Component {
                       <Route
                         exact
                         path="/roster"
-                        render={() => (
+                        render={routeProps => (
                           <Roster
                             currentUser={this.state.currentUser}
                             fillUser={this.fillUser}
+                            {...routeProps}
                           />
                         )}
                       />

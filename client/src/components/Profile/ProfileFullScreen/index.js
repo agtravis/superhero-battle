@@ -15,11 +15,13 @@ class ProfileFullScreen extends Component {
         />
         <hr />
         <Captain
+          loadCharacter={this.props.loadCharacter}
           profileData={this.props.profileData}
           signedInVsGeneric={this.props.signedInVsGeneric}
         />
         <hr />
         <LatestRecruit
+          loadCharacter={this.props.loadCharacter}
           profileData={this.props.profileData}
           signedInVsGeneric={this.props.signedInVsGeneric}
         />

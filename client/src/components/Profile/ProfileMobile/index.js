@@ -111,6 +111,7 @@ class ProfileMobile extends Component {
 
         {this.state.page === 2 && (
           <Captain
+            loadCharacter={this.props.loadCharacter}
             profileData={this.props.profileData}
             signedInVsGeneric={this.props.signedInVsGeneric}
           />
@@ -118,6 +119,7 @@ class ProfileMobile extends Component {
 
         {this.state.page === 3 && (
           <LatestRecruit
+            loadCharacter={this.props.loadCharacter}
             profileData={this.props.profileData}
             signedInVsGeneric={this.props.signedInVsGeneric}
           />
