@@ -5,6 +5,21 @@ import Profile from "../components/Profile";
 import Rules from "../components/Rules";
 
 class Index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      character: null,
+    };
+  }
+
+  loadCharacter = character => {
+    const { history } = this.props;
+    if (history) {
+      history.push(`/`);
+    }
+    this.setState({ character: character });
+  };
+
   render() {
     if (this.props.location.state) {
       if (this.props.location.state.type === `rematch`) {
@@ -19,6 +34,18 @@ class Index extends Component {
       } else if (this.props.location.state.type === `refresh`) {
         window.location.reload();
       }
+    }
+    if (this.state.character) {
+      return (
+        <Redirect
+          to={{
+            pathname: `/character`,
+            state: {
+              character: this.state.character,
+            },
+          }}
+        />
+      );
     }
     return (
       <div>
@@ -36,6 +63,7 @@ class Index extends Component {
           <div>
             <Profile
               currentUser={this.props.currentUser}
+              loadCharacter={this.loadCharacter}
               loggedIn={this.props.loggedIn}
               profileId={this.props.currentUser._id}
             />
