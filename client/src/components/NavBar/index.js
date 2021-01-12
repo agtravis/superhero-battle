@@ -17,6 +17,7 @@ class NavBar extends Component {
     navContainerFull: {
       backgroundColor: colors.mediumPrimary,
       borderBottom: `2px solid ${colors.secondary}`,
+      boxShadow: `0px -12px 10px 10px ${colors.secondary}`,
       display: `flex`,
       flexDirection: `row`,
       justifyContent: `space-evenly`,
@@ -24,6 +25,7 @@ class NavBar extends Component {
     navContainerMobile: {
       backgroundColor: colors.mediumPrimary,
       borderBottom: `2px solid ${colors.secondary}`,
+      boxShadow: `0px -12px 10px 10px ${colors.secondary}`,
       display: `flex`,
       flexDirection: `column`,
       height: `auto`,
