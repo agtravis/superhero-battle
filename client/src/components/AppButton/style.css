@@ -1,5 +1,6 @@
 :root {
   --button-speed: 0.3s;
+  --quick-button-speed: 0.2s;
 }
 
 .appButton {
@@ -27,4 +28,14 @@
   transition: var(--button-speed);
   background-color: var(--lightSecondary);
   color: var(--darkSecondary);
+}
+
+.translateClickButton {
+  -webkit-transition: var(--quick-button-speed);
+  -moz-transition: var(--quick-button-speed);
+  -ms-transition: var(--quick-button-speed);
+  -o-transition: var(--quick-button-speed);
+  transition: var(--quick-button-speed);
+  background-color: var(--darkSecondary);
+  color: var(--lightSecondary);
 }

@@ -10,7 +10,24 @@ class AppButton extends Component {
   };
   unHover = () => {
     document.getElementById(this.props.id).classList.remove(`translateButton`);
+    document
+      .getElementById(this.props.id)
+      .classList.remove(`translateClickButton`);
     document.getElementById(this.props.id).classList.add(`translateBackButton`);
+  };
+  mouseDown = () => {
+    document
+      .getElementById(this.props.id)
+      .classList.remove(`translateBackButton`);
+    document
+      .getElementById(this.props.id)
+      .classList.add(`translateClickButton`);
+  };
+  mouseUp = () => {
+    document
+      .getElementById(this.props.id)
+      .classList.remove(`translateClickButton`);
+    document.getElementById(this.props.id).classList.add(`translateButton`);
   };
 
   render() {
@@ -20,6 +37,8 @@ class AppButton extends Component {
           id={this.props.id}
           onMouseEnter={() => this.hover()}
           onMouseLeave={() => this.unHover()}
+          onMouseDown={() => this.mouseDown()}
+          onMouseUp={() => this.mouseUp()}
           value={this.props.value ? this.props.value : undefined}
           style={{ width: this.props.width, margin: this.props.margin }}
           className={`appButton`}
