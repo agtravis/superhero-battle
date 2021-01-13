@@ -38,3 +38,25 @@ body {
 .loading-animation defs linearGradient stop {
   stop-color: var(--darkSecondary);
 }
+
+.main-body {
+  width: 100%;
+}
+
+#whole-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.body-scroll {
+  min-height: 100vh;
+}
+
+.body-no-scroll {
+  min-height: auto;
+}
+
+.no-scroll {
+  position: fixed;
+}

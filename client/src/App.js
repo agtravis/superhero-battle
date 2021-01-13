@@ -101,17 +101,33 @@ class App extends Component {
   showNav = () => {
     if (document.getElementsByClassName(`nav-mobile`)[0]) {
       const navMobile = document.getElementsByClassName(`nav-mobile`)[0];
-      navMobile.classList.contains(`translateNavMobile`)
-        ? this.addAndRemoveOneClass(
-            navMobile,
-            `translateNavMobileBack`,
-            `translateNavMobile`
-          )
-        : this.addAndRemoveOneClass(
-            navMobile,
-            `translateNavMobile`,
-            `translateNavMobileBack`
-          );
+      const mainBody = document.getElementsByClassName(`main-body`)[0];
+      const wholeContainer = document.getElementById(`whole-container`);
+      if (navMobile.classList.contains(`translateNavMobile`)) {
+        this.addAndRemoveOneClass(
+          navMobile,
+          `translateNavMobileBack`,
+          `translateNavMobile`
+        );
+        mainBody.classList.remove(`no-scroll`);
+        this.addAndRemoveOneClass(
+          wholeContainer,
+          `body-scroll`,
+          `body-no-scroll`
+        );
+      } else {
+        this.addAndRemoveOneClass(
+          navMobile,
+          `translateNavMobile`,
+          `translateNavMobileBack`
+        );
+        mainBody.classList.add(`no-scroll`);
+        this.addAndRemoveOneClass(
+          wholeContainer,
+          `body-no-scroll`,
+          `body-scroll`
+        );
+      }
       this.setState({ isNavShowing: !this.state.isNavShowing });
     }
   };
@@ -124,7 +140,8 @@ class App extends Component {
       <BreakpointProvider>
         <div>
           <Router>
-            <div style={this.styles.container}>
+            <div id={`whole-container`} className={`body-scroll`}>
+              {/*style={this.styles.container}>*/}
               <div>
                 <Header
                   changeUser={this.changeUser}
