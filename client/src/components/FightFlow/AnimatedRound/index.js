@@ -88,6 +88,7 @@ class AnimatedRound extends Component {
           handicap={this.state.defenderHandicap}
           isSoloFightMode={this.props.isSoloFightMode}
           stat={this.props.defenderStat}
+          isUser
           width={this.state.defenderWidth}
           winOrLose={
             this.props.defenderStat >= this.props.challengerStat

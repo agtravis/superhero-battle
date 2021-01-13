@@ -26,11 +26,14 @@ class BattleGauge extends Component {
         <div>
           {this.props.defenderFinished && this.props.challengerFinished ? (
             <p>
-              Handicap:{` `}
+              {this.props.isUser ? `Your ` : `Enemy `}handicap was:{` `}
               {Math.floor(this.props.handicap * 100)}%
             </p>
           ) : (
-            <p>Expected to {this.props.winOrLose}</p>
+            <p>
+              {this.props.isUser ? `You ` : `They `}are expected to{" "}
+              {this.props.winOrLose}
+            </p>
           )}
         </div>
         <div style={this.styles.container}>
@@ -45,9 +48,8 @@ class BattleGauge extends Component {
               borderBottom:
                 this.props.defenderFinished &&
                 this.props.challengerFinished &&
-                this.props.won
-                  ? `solid 3px ${colors.darkSecondary}`
-                  : `solid 3px ${colors.lightPrimary}`,
+                this.props.won &&
+                `solid 3px ${colors.darkSecondary}`,
             }}
           >
             <p>
