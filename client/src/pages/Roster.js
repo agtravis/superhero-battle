@@ -7,6 +7,7 @@ import PageTitle from "../components/PageTitle";
 import Prestige from "../components/RosterFlow/Prestige";
 import RosterEmpty from "../components/RosterFlow/RosterEmpty";
 import RosterExists from "../components/RosterFlow/RosterExists";
+import AppButton from "../components/AppButton";
 
 class Roster extends Component {
   constructor(props) {
@@ -25,6 +26,11 @@ class Roster extends Component {
   }
 
   styles = {
+    buttonsContainer: {
+      display: `flex`,
+      flexWrap: `wrap`,
+      justifyContent: `space-evenly`,
+    },
     container: {
       display: `flex`,
       justifyContent: `center`,
@@ -74,6 +80,16 @@ class Roster extends Component {
       .catch(err => console.error(err));
   };
 
+  sortRoster = direction => {
+    const roster = [...this.state.roster];
+    if (direction === `a-z`) {
+      roster.sort((a, b) => (a.name > b.name ? 1 : -1));
+    } else {
+      roster.sort((a, b) => (a.name > b.name ? -1 : 1));
+    }
+    this.setState({ roster: roster });
+  };
+
   render() {
     if (!this.props.currentUser) {
       window.location.href = `/`;
@@ -109,7 +125,35 @@ class Roster extends Component {
                   )}
                 </div>
               ) : (
-                <RosterExists roster={this.state.roster} />
+                <div>
+                  <div style={this.styles.buttonsContainer}>
+                    <AppButton
+                      id={`recruitment`}
+                      margin={`10px 5px`}
+                      onClick={this.loadRoster}
+                      width={`170px`}
+                    >
+                      Recruitment Date
+                    </AppButton>
+                    <AppButton
+                      id={`a-z`}
+                      margin={`10px 5px`}
+                      onClick={() => this.sortRoster(`a-z`)}
+                      width={`170px`}
+                    >
+                      A-Z
+                    </AppButton>
+                    <AppButton
+                      id={`z-a`}
+                      margin={`10px 5px`}
+                      onClick={() => this.sortRoster(`z-a`)}
+                      width={`170px`}
+                    >
+                      Z-A
+                    </AppButton>
+                  </div>
+                  <RosterExists roster={this.state.roster} />
+                </div>
               )}
             </div>
           </div>

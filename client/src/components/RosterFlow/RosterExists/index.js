@@ -13,12 +13,22 @@ class RosterExists extends Component {
   }
 
   componentDidMount() {
+    this.resetRoster();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.roster !== prevProps.roster) {
+      this.resetRoster();
+    }
+  }
+
+  resetRoster = () => {
     const roster = [];
     for (let i = 0; i < 10; ++i) {
       roster.push(this.props.roster[i]);
     }
     this.setState({ roster: roster });
-  }
+  };
 
   styles = {
     mockLink: { cursor: `pointer` },
