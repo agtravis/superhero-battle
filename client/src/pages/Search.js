@@ -23,6 +23,10 @@ class SearchPage extends Component {
     };
   }
 
+  styles = {
+    resultsContainer: { maxHeight: `500px`, overflow: `scroll` },
+  };
+
   componentDidMount() {
     document.getElementById(`user-search`).focus();
   }
@@ -135,34 +139,41 @@ class SearchPage extends Component {
         {this.state.isLoading && (
           <LoadingAnimation divHeight={400} size={150} />
         )}
-        {this.state.searched === `user` &&
-          this.state.results.map((user, index) => (
-            <SearchResult
-              image={user.roster[0]}
-              index={index}
-              key={index}
-              name={user.username}
-              onClick={this.loadUser}
-              param={user._id}
-              prestige={user.prestige + 1}
-              registered={this.convertDate(user.registered)}
-              rosterLength={user.roster.length}
-              type={`user`}
-            />
-          ))}
-        {this.state.searched === `hero` &&
-          this.state.results.map((hero, index) => (
-            <SearchResult
-              image={hero.image.url}
-              index={index}
-              info={hero.connections[`group-affiliation`]}
-              key={index}
-              name={hero.name}
-              onClick={this.loadCharacter}
-              param={hero}
-              type={`hero`}
-            />
-          ))}
+        {this.state.searched === `user` && (
+          <div style={this.styles.resultsContainer}>
+            {this.state.results.map((user, index) => (
+              <SearchResult
+                image={user.roster[0]}
+                index={index}
+                key={index}
+                name={user.username}
+                onClick={this.loadUser}
+                param={user._id}
+                prestige={user.prestige + 1}
+                registered={this.convertDate(user.registered)}
+                rosterLength={user.roster.length}
+                type={`user`}
+              />
+            ))}
+          </div>
+        )}
+
+        {this.state.searched === `hero` && (
+          <div style={this.styles.resultsContainer}>
+            {this.state.results.map((hero, index) => (
+              <SearchResult
+                image={hero.image.url}
+                index={index}
+                info={hero.connections[`group-affiliation`]}
+                key={index}
+                name={hero.name}
+                onClick={this.loadCharacter}
+                param={hero}
+                type={`hero`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     );
   }

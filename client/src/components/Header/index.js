@@ -24,7 +24,7 @@ class Header extends Component {
       showSignUp: false,
       showLogInMobile: false,
       showSignUpMobile: false,
-      showNav: false,
+      // showNav: false,
       username: ``,
     };
   }
