@@ -62,22 +62,18 @@ class GetDefenderTeam extends Component {
   };
 
   nextPhase = () => {
+    const ids = [];
+    for (const member of this.state.team) {
+      ids.push(member);
+    }
     API.emptyTeam(this.props.currentUser._id)
       .then(
-        API.addToTeam(this.props.currentUser._id, this.state.team[0])
-          .then(
-            API.addToTeam(this.props.currentUser._id, this.state.team[1])
-              .then(
-                API.addToTeam(this.props.currentUser._id, this.state.team[2])
-                  .then(() => {
-                    this.props.setDefendingTeam(this.state.team);
+        API.addManyCharactersToTeam(this.props.currentUser._id, ids)
+          .then(() => {
+            this.props.setDefendingTeam(this.state.team);
 
-                    this.props.changePhase(1);
-                  })
-                  .catch(err => console.error(err))
-              )
-              .catch(err => console.error(err))
-          )
+            this.props.changePhase(1);
+          })
           .catch(err => console.error(err))
       )
       .catch(err => console.error(err));
