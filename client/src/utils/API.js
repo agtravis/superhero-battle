@@ -43,9 +43,9 @@ export default {
   removeCharacterFromRoster(id, characterId) {
     return axios.put(`/api/user/roster/remove/${id}`, characterId);
   },
-  addManyCharactersToRoster(id, characterObjects) {
+  addManyCharactersToRoster(id, characterIds) {
     return axios.put(`/api/user/roster/addmany/${id}`, {
-      ids: characterObjects,
+      ids: characterIds,
     });
   },
   removeManyCharactersFromRoster(id, characterIds) {
@@ -55,6 +55,11 @@ export default {
   },
   addToTeam(id, characterId) {
     return axios.put(`/api/user/team/add/${id}`, { characterId: characterId });
+  },
+  addManyCharactersToTeam(id, characterIds) {
+    return axios.put(`/api/user/team/addmany/${id}`, {
+      ids: characterIds,
+    });
   },
   removeFromTeam(id, characterId) {
     return axios.put(`/api/user/team/remove/${id}`, {
