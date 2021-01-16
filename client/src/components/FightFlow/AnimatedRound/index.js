@@ -118,12 +118,7 @@ class AnimatedRound extends Component {
           }
         />
         {!this.state.commenced && (
-          <AppButton
-            id={`fight-button`}
-            margin={`10px 0px`}
-            onClick={this.start}
-            width={`200px`}
-          >
+          <AppButton id={`fight-button`} onClick={this.start}>
             Fight!
           </AppButton>
         )}
@@ -133,12 +128,7 @@ class AnimatedRound extends Component {
               <p>Round {this.props.round} over!</p>
             </div>
             <div>
-              <AppButton
-                id={`fight-continue-button`}
-                margin={`10px 0px`}
-                onClick={this.nextRound}
-                width={`200px`}
-              >
+              <AppButton id={`fight-continue-button`} onClick={this.nextRound}>
                 Continue
               </AppButton>
             </div>

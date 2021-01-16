@@ -56,7 +56,6 @@ class PostBattle extends Component {
               <AppButton
                 id={`post-battle-continue-button`}
                 margin={`10px 10px`}
-                width={`200px`}
               >
                 Continue Fighting
               </AppButton>
@@ -68,11 +67,7 @@ class PostBattle extends Component {
               type: `refresh`,
             }}
           >
-            <AppButton
-              id={`post-battle-done-button`}
-              margin={`10px 10px`}
-              width={`200px`}
-            >
+            <AppButton id={`post-battle-done-button`} margin={`10px 10px`}>
               Done Fighting
             </AppButton>
           </Link>

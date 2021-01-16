@@ -145,7 +145,6 @@ class Fight extends Component {
                             id={`fight-back-button`}
                             margin={`10px auto`}
                             onClick={() => this.changePhase(-1)}
-                            width={`200px`}
                           >
                             Back
                           </AppButton>

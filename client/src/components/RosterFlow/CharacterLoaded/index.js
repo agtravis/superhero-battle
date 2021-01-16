@@ -24,9 +24,7 @@ class CharacterLoaded extends Component {
         <div style={this.styles.buttonContainer}>
           <AppButton
             id={`character-loaded-add-button`}
-            margin={`10px  0px`}
             onClick={this.props.addToRoster}
-            width={`200px`}
           >
             Add To Roster!
           </AppButton>

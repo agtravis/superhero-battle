@@ -51,17 +51,13 @@ class FilterForm extends Component {
             <div style={this.styles.chosenButtonsContainer}>
               <AppButton
                 id={`change-character-button`}
-                margin={`10px 0px`}
                 onClick={this.props.changeCharacter}
-                width={`200px`}
               >
                 Choose Another {this.props.title}
               </AppButton>
               <AppButton
                 id={`confirm-character-button`}
-                margin={`10px 0px`}
                 onClick={this.props.confirmCharacter}
-                width={`200px`}
               >
                 Confirm {this.props.character.name}!
               </AppButton>
@@ -105,7 +101,6 @@ class FilterForm extends Component {
               id={`filter-form-back-button`}
               margin={`10px auto`}
               onClick={() => this.props.changePhase(-1)}
-              width={`200px`}
             >
               Back
             </AppButton>
@@ -114,7 +109,6 @@ class FilterForm extends Component {
               id={`filter-form-back-to-team-button`}
               margin={`10px auto`}
               onClick={() => this.props.toggleTeamSelector()}
-              width={`200px`}
             >
               Back To Team
             </AppButton>

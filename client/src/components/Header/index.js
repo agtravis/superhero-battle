@@ -288,7 +288,9 @@ class Header extends Component {
                     <div>
                       <AppButton
                         id={`log-in-button`}
+                        margin={`0px`}
                         onClick={() => this.showLogIn()}
+                        width={`auto`}
                       >
                         Log In
                       </AppButton>
@@ -330,7 +332,9 @@ class Header extends Component {
                     >
                       <AppButton
                         id={`log-out-button`}
+                        margin={`0px`}
                         onClick={() => this.props.logOut()}
+                        width={`auto`}
                       >
                         Log Out
                       </AppButton>

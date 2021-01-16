@@ -24,10 +24,8 @@ class FightingStatsSelector extends Component {
               <li>
                 <AppButton
                   id={`fight-with-this-stat-button`}
-                  margin={`10px 0px`}
                   onClick={this.props.fightWithThisStat}
                   value={this.props.predeterminedStat}
-                  width={`200px`}
                 >
                   {this.capitalize(this.props.predeterminedStat)}
                 </AppButton>
@@ -42,10 +40,8 @@ class FightingStatsSelector extends Component {
                 <li key={index} style={{ marginBottom: `5px` }}>
                   <AppButton
                     id={`fight-with-this-stat-button-${index}`}
-                    margin={`10px 0px`}
                     onClick={this.props.fightWithThisStat}
                     value={stat}
-                    width={`200px`}
                   >
                     {this.capitalize(stat)}: {this.props.stats[stat]}
                   </AppButton>
