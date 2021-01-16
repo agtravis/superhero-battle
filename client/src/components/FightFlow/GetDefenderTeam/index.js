@@ -125,9 +125,7 @@ class GetDefenderTeam extends Component {
                             <p>Your team is short!</p>
                             <AppButton
                               id={`team-short-add-another-button`}
-                              margin={`10px 0`}
                               onClick={() => this.toggleTeamSelector()}
-                              width={`200px`}
                             >
                               Add Another!
                             </AppButton>
@@ -139,9 +137,7 @@ class GetDefenderTeam extends Component {
                       <p>Your team is currently empty!</p>
                       <AppButton
                         id={`get-team-leader-button`}
-                        margin={`10px 0`}
                         onClick={() => this.toggleTeamSelector()}
-                        width={`200px`}
                       >
                         Get Team Leader!
                       </AppButton>
@@ -164,7 +160,6 @@ class GetDefenderTeam extends Component {
                 id={`get-defender-team-back-button`}
                 margin={`10px auto`}
                 onClick={() => this.props.changePhase(-1)}
-                width={`200px`}
               >
                 Back
               </AppButton>
@@ -173,7 +168,6 @@ class GetDefenderTeam extends Component {
                   id={`get-defender-team-next-button`}
                   margin={`10px auto`}
                   onClick={() => this.nextPhase()}
-                  width={`200px`}
                 >
                   Next
                 </AppButton>

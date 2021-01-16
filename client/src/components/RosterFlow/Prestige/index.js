@@ -33,9 +33,7 @@ class Prestige extends Component {
           <div>
             <AppButton
               id={`prestige-button`}
-              margin={`10px 0px`}
               onClick={() => this.props.prestige()}
-              width={`200px`}
             >
               Prestige
             </AppButton>

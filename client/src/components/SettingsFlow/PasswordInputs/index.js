@@ -35,18 +35,12 @@ class PasswordInputs extends Component {
             </div>
           ))}
           <div style={this.styles.buttonsContainer}>
-            <AppButton
-              id={`password-button`}
-              margin={`10px 0px`}
-              type={`submit`}
-              width={`170px`}
-            >
+            <AppButton id={`password-button`} type={`submit`} width={`170px`}>
               {this.props.buttonName}
             </AppButton>
             {this.props.cancel && (
               <AppButton
                 id={`password-cancel-button`}
-                margin={`10px 0px`}
                 onClick={this.props.cancel}
                 type={`button`}
                 width={`170px`}

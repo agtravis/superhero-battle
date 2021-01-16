@@ -121,7 +121,6 @@ class LastBattleCard extends Component {
               id={`last-battle-card-back-button`}
               margin={`10px auto`}
               onClick={() => this.props.changePhase(-1)}
-              width={`200px`}
             >
               Back
             </AppButton>
@@ -129,7 +128,6 @@ class LastBattleCard extends Component {
               id={`last-battle-card-fight-button`}
               margin={`10px auto`}
               onClick={() => this.props.changePhase(1)}
-              width={`200px`}
             >
               FIGHT!
             </AppButton>

@@ -22,6 +22,7 @@ class RosterEmpty extends Component {
           <AppButton
             id={`roster-empty-button`}
             onClick={this.props.getFirstTeamMember}
+            width={`auto`}
           >
             Get Your First Team Member
           </AppButton>

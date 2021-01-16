@@ -44,7 +44,8 @@ class CredentialsForm extends Component {
         />
         <div style={this.styles.credentialsButtonsContainer}>
           <AppButton
-            width={80}
+            width={`80px`}
+            margin={`0px`}
             type={`submit`}
             id={`credentials-submit-${this.props.buttonName}`}
           >

@@ -40,7 +40,10 @@ class AppButton extends Component {
           onMouseDown={() => this.mouseDown()}
           onMouseUp={() => this.mouseUp()}
           value={this.props.value ? this.props.value : undefined}
-          style={{ width: this.props.width, margin: this.props.margin }}
+          style={{
+            width: this.props.width ? this.props.width : `200px`,
+            margin: this.props.margin ? this.props.margin : `10px 0px`,
+          }}
           className={`appButton`}
           onClick={
             this.props.value
