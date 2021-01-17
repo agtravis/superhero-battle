@@ -43,7 +43,7 @@ class RosterExists extends Component {
       flex: 1,
       justifyContent: `space-around`,
     },
-    rosterContainer: { height: `500px`, overflow: `scroll` },
+    rosterContainer: { height: `375px`, overflow: `auto` },
   };
 
   changePage = direction => {
