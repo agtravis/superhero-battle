@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Rules extends Component {
   styles = {
-    container: { maxHeight: `500px`, overflow: `scroll`, paddingTop: `30px` },
+    container: { maxHeight: `500px`, overflow: `auto`, paddingTop: `30px` },
   };
   render() {
     return (
