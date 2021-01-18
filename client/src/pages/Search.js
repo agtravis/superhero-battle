@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
+import colors from "../config/colors";
 import API from "../utils/API";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
 import SearchForm from "../components/SearchForm";
 import SearchResult from "../components/SearchResult";
 import ToggleSwitch from "../components/ToggleSwitch";
 import LoadingAnimation from "../components/LoadingAnimation";
-import { Redirect } from "react-router-dom";
 import PageTitle from "../components/PageTitle";
 
 class SearchPage extends Component {
@@ -25,6 +25,11 @@ class SearchPage extends Component {
 
   styles = {
     resultsContainer: { maxHeight: `500px`, overflow: `auto` },
+    resultsText: {
+      display: `flex`,
+      justifyContent: `center`,
+      textAlign: `center`,
+    },
   };
 
   componentDidMount() {
@@ -33,7 +38,7 @@ class SearchPage extends Component {
 
   clearForm = () => {
     document.getElementById(`user-search`).value = ``;
-    this.setState({ searchField: `` });
+    this.setState({ searchField: ``, searched: false });
   };
 
   convertDate = date => {
@@ -139,6 +144,28 @@ class SearchPage extends Component {
         {this.state.isLoading && (
           <LoadingAnimation divHeight={400} size={150} />
         )}
+        {this.state.searched !== false && this.state.results.length < 1 && (
+          <div style={this.styles.resultsText}>
+            <p>
+              Your search for a{" "}
+              {this.state.searched === `user` ? `username ` : `hero's name `}
+              containing{` `}
+              <em>"{this.state.searchField}"</em> returned no results. Try
+              again?
+            </p>
+          </div>
+        )}
+        {this.state.searched !== false && this.state.results.length > 0 && (
+          <div
+            style={{
+              ...this.styles.resultsText,
+              borderBottom: `1px solid ${colors.darkSecondary}`,
+              marginBottom: `24px`,
+            }}
+          >
+            <p>Your search returned {this.state.results.length} results:</p>
+          </div>
+        )}
         {this.state.searched === `user` && (
           <div className={`custom-scroll`} style={this.styles.resultsContainer}>
             {this.state.results.map((user, index) => (
@@ -157,7 +184,6 @@ class SearchPage extends Component {
             ))}
           </div>
         )}
-
         {this.state.searched === `hero` && (
           <div className={`custom-scroll`} style={this.styles.resultsContainer}>
             {this.state.results.map((hero, index) => (
