@@ -22,6 +22,11 @@ export default {
   logOut() {
     return axios.post(`/api/user/logout`);
   },
+  makeCaptain(userId, characterId) {
+    return axios.put(`/api/user/makecaptain/${userId}`, {
+      characterId: characterId,
+    });
+  },
   newUser(signUpDetails) {
     return axios.post(`/api/user`, signUpDetails);
   },
@@ -43,6 +48,7 @@ export default {
   removeCharacterFromRoster(id, characterId) {
     return axios.put(`/api/user/roster/remove/${id}`, characterId);
   },
+  // change these next two to objects
   addManyCharactersToRoster(id, characterIds) {
     return axios.put(`/api/user/roster/addmany/${id}`, {
       ids: characterIds,

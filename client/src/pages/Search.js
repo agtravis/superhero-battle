@@ -24,7 +24,7 @@ class SearchPage extends Component {
   }
 
   styles = {
-    resultsContainer: { maxHeight: `500px`, overflow: `scroll` },
+    resultsContainer: { maxHeight: `500px`, overflow: `auto` },
   };
 
   componentDidMount() {
@@ -140,7 +140,7 @@ class SearchPage extends Component {
           <LoadingAnimation divHeight={400} size={150} />
         )}
         {this.state.searched === `user` && (
-          <div style={this.styles.resultsContainer}>
+          <div className={`custom-scroll`} style={this.styles.resultsContainer}>
             {this.state.results.map((user, index) => (
               <SearchResult
                 image={user.roster[0]}
@@ -159,7 +159,7 @@ class SearchPage extends Component {
         )}
 
         {this.state.searched === `hero` && (
-          <div style={this.styles.resultsContainer}>
+          <div className={`custom-scroll`} style={this.styles.resultsContainer}>
             {this.state.results.map((hero, index) => (
               <SearchResult
                 image={hero.image.url}
