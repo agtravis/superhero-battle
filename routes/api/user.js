@@ -60,6 +60,8 @@ router.route(`/win/:id`).put(userController.win);
 
 router.route(`/prestige/:id`).put(userController.prestige);
 
+router.route(`/makecaptain/:id`).put(userController.makeCaptain);
+
 module.exports = router;
 
 // when a post is created, use this to push it to the array

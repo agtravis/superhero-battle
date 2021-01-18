@@ -27,7 +27,7 @@ class RosterExists extends Component {
     for (let i = 0; i < 10; ++i) {
       roster.push(this.props.roster[i]);
     }
-    this.setState({ roster: roster });
+    this.setState({ roster: roster, startingIndex: 0 });
   };
 
   styles = {
@@ -135,7 +135,7 @@ class RosterExists extends Component {
             </div>
           </div>
         </div>
-        <div style={this.styles.rosterContainer}>
+        <div className={`custom-scroll`} style={this.styles.rosterContainer}>
           {this.state.roster.map(
             (character, index) =>
               character && (

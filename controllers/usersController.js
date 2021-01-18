@@ -206,6 +206,25 @@ module.exports = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
   },
+  makeCaptain: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      {
+        $pull: { roster: req.body.characterId },
+      }
+    )
+      .then(() => {
+        User.updateOne(
+          { _id: mongoose.Types.ObjectId(req.params.id) },
+          {
+            $push: { roster: { $each: [req.body.characterId], $position: 0 } },
+          }
+        )
+          .then(dbUser => res.json(dbUser))
+          .catch(err => res.json(err));
+      })
+      .catch(err => res.json(err));
+  },
   win: (req, res) => {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },

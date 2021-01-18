@@ -6,7 +6,7 @@ class Rules extends Component {
   };
   render() {
     return (
-      <div style={this.styles.container}>
+      <div className={`custom-scroll`} style={this.styles.container}>
         <ul>
           <li>
             Start by drafting your captain. This is a randomly assigned
