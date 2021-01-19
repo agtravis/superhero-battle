@@ -184,7 +184,11 @@ class Header extends Component {
     if (signUpDetails.username.length === 0) {
       this.setState({ fieldIncomplete: `nousername` });
       this.assignElementById(`signup-username`).focus();
-    } else if (signUpDetails.password.length < 4) {
+    } else if (
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/.test(
+        signUpDetails.password
+      ) === false
+    ) {
       this.setState({ error: `regexfail` });
       const password = this.assignElementById(`signup-password`);
       password.value = ``;
@@ -407,10 +411,3 @@ class Header extends Component {
 }
 
 export default withRouter(Header);
-
-// Code to switch password validation from 4 character minimum to 8, one lower, one upper, one number, one special
-// } else if (
-//   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/.test(
-//     signUpDetails.password
-//   ) === false
-// ) {
