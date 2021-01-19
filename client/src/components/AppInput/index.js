@@ -24,8 +24,13 @@ class AppInput extends Component {
       textAlign: `center`,
     },
     errorText: {
+      backgroundColor: colors.lightDanger,
+      border: `2px solid red`,
+      borderRadius: `5px`,
       color: `red`,
       fontSize: `.6rem`,
+      marginTop: `5px`,
+      padding: `5px`,
       position: `absolute`,
     },
     input: {

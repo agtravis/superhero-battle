@@ -21,7 +21,7 @@ class Credentials extends Component {
       border: `solid 5px ${colors.primary}`,
       borderRadius: `15px`,
       boxShadow: `0px 0px 40px grey`,
-      height: `auto`,
+      height: `345px`,
       left: window.innerWidth / 2 - 100,
       position: `absolute`,
       top: 25,
@@ -89,7 +89,7 @@ class Credentials extends Component {
               }
               errorMessagePassword={
                 this.props.error
-                  ? `Password must be at least 4 characters`
+                  ? `Password must be at least  8 characters, and contain at least one upper case letter, one lower case letter, one number, and one special character`
                   : `Please enter a password`
               }
               handleChange={this.props.handleChange}
