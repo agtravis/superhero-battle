@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ToggleSwitch from "../../ToggleSwitch";
 import PropertyValue from "../PropertyValue";
+import ToggleSwitch from "../../ToggleSwitch";
 
 class Appearance extends Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class Appearance extends Component {
   };
 
   toggleUnits = () => this.setState({ isImperial: !this.state.isImperial });
+
   render() {
     const appearance = this.props.appearance;
     return (
@@ -20,9 +21,9 @@ class Appearance extends Component {
         <div style={this.styles.headerContainer}>
           <h3>Appearance:</h3>
           <ToggleSwitch
+            height={`50px`}
             leftText={`Imperial`}
             rightText={`Metric`}
-            height={`50px`}
             toggleFunction={this.toggleUnits}
           />
         </div>

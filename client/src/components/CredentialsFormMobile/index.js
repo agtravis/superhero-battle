@@ -34,7 +34,6 @@ class CredentialsFormMobile extends Component {
               id={`${this.props.id}-username-mobile`}
               mode={`mobile`}
               placeholder={`username`}
-              style={{ width: `100px` }}
             />
           </div>
           <div>
@@ -42,7 +41,6 @@ class CredentialsFormMobile extends Component {
               error={this.props.errorPassword}
               errorMessage={this.props.errorMessagePassword}
               fieldName={`password`}
-              style={{ width: `100px` }}
               handleChange={this.props.handleChange}
               handleSubmit={this.props.handleSubmit}
               id={`${this.props.id}-password-mobile`}
@@ -52,15 +50,12 @@ class CredentialsFormMobile extends Component {
             />
           </div>
         </div>
-        <div style={{ marginTop: `10px` }}>
-          <AppLink
-            onClick={event => this.props.handleSubmit(event, this.props.id)}
-            style={{ width: `100px` }}
-            type={`submit`}
-          >
-            {this.props.buttonName}
-          </AppLink>
-        </div>
+        <AppLink
+          onClick={event => this.props.handleSubmit(event, this.props.id)}
+          type={`submit`}
+        >
+          {this.props.buttonName}
+        </AppLink>
       </div>
     );
   }
