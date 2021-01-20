@@ -1,17 +1,11 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Breakpoint } from "react-socks";
-import { FaBars, FaInfoCircle } from "react-icons/fa";
 import "./style.css";
-import colors from "../../config/colors";
 import API from "../../utils/API";
-
-import AppButton from "../AppButton";
-import AppLink from "../AppLink";
 import Credentials from "../Credentials";
 import CredentialsMobile from "../CredentialsMobile";
-import HorizontalSpacer from "../HorizontalSpacer";
-import VerticalSpacer from "../VerticalSpacer";
+import HeaderComponent from "./HeaderComponent";
 
 class Header extends Component {
   constructor(props) {
@@ -24,33 +18,9 @@ class Header extends Component {
       showSignUp: false,
       showLogInMobile: false,
       showSignUpMobile: false,
-      // showNav: false,
       username: ``,
     };
   }
-
-  styles = {
-    header: {
-      alignItems: `center`,
-      backgroundColor: colors.primary,
-      display: `flex`,
-      justifyContent: `space-between`,
-      padding: `10px 20px`,
-      position: `relative`,
-      zIndex: 10,
-    },
-    headerTitleText: {
-      color: colors.black,
-      fontFamily: `Impact, Charcoal, sans-serif`,
-    },
-    userButtons: {
-      display: `flex`,
-      flexDirection: `row`,
-      position: `absolute`,
-      top: `-25px`,
-      left: `-140px`,
-    },
-  };
 
   assignElementById = id =>
     document.getElementById(id)
@@ -237,124 +207,18 @@ class Header extends Component {
   render() {
     return (
       <div id={`header-container`}>
-        <div style={this.styles.header}>
-          <div style={{ position: `relative` }}>
-            <Breakpoint medium up>
-              <VerticalSpacer height={120} />
-              <div style={{ position: `absolute`, top: `0px` }}>
-                <img
-                  alt={`spider-man`}
-                  height={120}
-                  src={`/spiderman_mcfarlane.png`}
-                />
-              </div>
-            </Breakpoint>
-          </div>
-          <div>
-            <Breakpoint medium up>
-              <h1 style={this.styles.headerTitleText}>{this.props.title}</h1>
-            </Breakpoint>
-            <Breakpoint small down>
-              <div id={`header-and-menu`} style={{ position: `relative` }}>
-                {this.props.loggedIn ? (
-                  <div
-                    onClick={this.props.showNav}
-                    style={{ position: `absolute`, left: `-40%` }}
-                  >
-                    <FaBars />
-                  </div>
-                ) : (
-                  <div style={{ position: `absolute`, left: `-12.5%` }}>
-                    <Link
-                      to={
-                        this.props.location.pathname === `/about`
-                          ? `/`
-                          : `/about`
-                      }
-                    >
-                      <FaInfoCircle color={colors.black} />
-                    </Link>
-                  </div>
-                )}
-                <div>
-                  <h4 style={this.styles.headerTitleText}>
-                    {this.props.title}
-                  </h4>
-                </div>
-              </div>
-            </Breakpoint>
-          </div>
-          {!this.props.loggedIn ? (
-            <div>
-              <Breakpoint medium up>
-                <div style={{ position: `relative` }}>
-                  <div style={this.styles.userButtons}>
-                    <div>
-                      <AppButton
-                        id={`log-in-button`}
-                        margin={`0px`}
-                        onClick={() => this.showLogIn()}
-                        width={`auto`}
-                      >
-                        Log In
-                      </AppButton>
-                    </div>
-                    <HorizontalSpacer width={10} />
-                    <div style={{ padding: `2px` }}>
-                      <AppLink onClick={() => this.showSignUp()}>
-                        Sign Up
-                      </AppLink>
-                    </div>
-                  </div>
-                </div>
-              </Breakpoint>
-              <Breakpoint small down>
-                <div
-                  style={{
-                    display: `flex`,
-                    flexDirection: `row`,
-                    paddingTop: `8px`,
-                  }}
-                >
-                  <AppLink onClick={() => this.showLogInMobile()}>
-                    Log In
-                  </AppLink>
-                  <HorizontalSpacer width={10} />
-                  <AppLink onClick={() => this.showSignUpMobile()}>
-                    Sign Up
-                  </AppLink>
-                </div>
-              </Breakpoint>
-            </div>
-          ) : (
-            <div>
-              <Breakpoint medium up>
-                <div style={{ position: `relative` }}>
-                  <div style={this.styles.userButtons}>
-                    <div
-                      style={{ display: `flex`, justifyContent: `flex-end` }}
-                    >
-                      <AppButton
-                        id={`log-out-button`}
-                        margin={`0px`}
-                        onClick={() => this.props.logOut()}
-                        width={`auto`}
-                      >
-                        Log Out
-                      </AppButton>
-                    </div>
-                    <HorizontalSpacer width={10} />
-                    <div>
-                      <p>
-                        <em>{this.props.currentUser.username}</em>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Breakpoint>
-            </div>
-          )}
-        </div>
+        <HeaderComponent
+          currentUser={this.props.currentUser}
+          loggedIn={this.props.loggedIn}
+          logOut={this.props.logOut}
+          pathname={this.props.location.pathname}
+          showLogIn={this.showLogIn}
+          showLogInMobile={this.showLogInMobile}
+          showSignUp={this.showSignUp}
+          showSignUpMobile={this.showSignUpMobile}
+          showNav={this.props.showNav}
+          title={this.props.title}
+        />
         <Breakpoint medium up>
           <div id={`login`}>
             <Credentials

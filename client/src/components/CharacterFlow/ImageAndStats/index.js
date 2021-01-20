@@ -42,10 +42,10 @@ class ImageAndStats extends Component {
         <div style={this.styles.imageContainer}>
           {this.state.imageValid ? (
             <img
-              style={this.styles.image}
-              src={this.props.character.image.url}
               alt={this.props.character.name}
               onError={() => this.noImage()}
+              src={this.props.character.image.url}
+              style={this.styles.image}
             />
           ) : (
             <p>No image!</p>

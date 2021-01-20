@@ -66,7 +66,6 @@ class Credentials extends Component {
               id={this.props.id}
             />
           )}
-
           {this.props.id === `signup` && (
             <CredentialsFormMobile
               buttonName={this.props.buttonName}

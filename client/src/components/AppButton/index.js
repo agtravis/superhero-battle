@@ -34,22 +34,22 @@ class AppButton extends Component {
     return (
       <div>
         <button
+          className={`appButton`}
           id={this.props.id}
           onMouseEnter={() => this.hover()}
           onMouseLeave={() => this.unHover()}
           onMouseDown={() => this.mouseDown()}
           onMouseUp={() => this.mouseUp()}
-          value={this.props.value ? this.props.value : undefined}
-          style={{
-            width: this.props.width ? this.props.width : `200px`,
-            margin: this.props.margin ? this.props.margin : `10px 0px`,
-          }}
-          className={`appButton`}
           onClick={
             this.props.value
               ? event => this.props.onClick(event)
               : this.props.onClick
           }
+          style={{
+            width: this.props.width ? this.props.width : `200px`,
+            margin: this.props.margin ? this.props.margin : `10px 0px`,
+          }}
+          value={this.props.value ? this.props.value : undefined}
         >
           {this.props.children}
         </button>
