@@ -6,6 +6,7 @@ class Stat extends Component {
       fontWeight: `900`,
     },
   };
+
   render() {
     return (
       <div>

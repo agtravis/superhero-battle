@@ -4,15 +4,17 @@ class Rules extends Component {
   styles = {
     container: { maxHeight: `500px`, overflow: `auto`, paddingTop: `30px` },
   };
+
   render() {
     return (
       <div className={`custom-scroll`} style={this.styles.container}>
         <ul>
           <li>
             Start by drafting your captain. This is a randomly assigned
-            character gifted to you. Your captain is always the longest
+            character gifted to you. Your captain is usually the longest
             surviving member of your team, and has no advantages over any other
-            character.
+            character. If you like, once you have more than one in your roster,
+            you can re-assign your captain.
           </li>
           <li>
             Once you have one member of your team, you are ready to fight! You

@@ -5,11 +5,27 @@ import ProfileCardHeader from "../../ProfileCardHeader";
 
 class BasicInfo extends Component {
   styles = {
+    prestigeText: {
+      margin: `0px`,
+    },
+    prestigeTextContainer: {
+      alignItems: `center`,
+      border: `1px dotted ${colors.darkSecondary}`,
+      display: `flex`,
+      justifyContent: `center`,
+      width: `200px`,
+    },
     rosterFactsContainer: {
       display: `flex`,
       flexWrap: `wrap`,
       justifyContent: `space-between`,
     },
+    rosterLink: {
+      color: colors.darkSecondary,
+      fontWeight: `900`,
+      textDecoration: `none`,
+    },
+    rosterTextContainer: { width: `400px` },
   };
 
   convertDate = datestamp => {
@@ -64,21 +80,14 @@ class BasicInfo extends Component {
             )} not currently have a win percentage!`}
         </p>
         <div style={this.styles.rosterFactsContainer}>
-          <div style={{ width: `400px` }}>
+          <div style={this.styles.rosterTextContainer}>
             <p>
               {this.props.signedInVsGeneric(
                 `Your`,
                 `${this.props.profileData.username}'s`
               )}
               {` `}
-              <Link
-                to={`/roster`}
-                style={{
-                  color: colors.darkSecondary,
-                  fontWeight: `900`,
-                  textDecoration: `none`,
-                }}
-              >
+              <Link to={`/roster`} style={this.styles.rosterLink}>
                 roster
               </Link>
               {` `}
@@ -95,8 +104,8 @@ class BasicInfo extends Component {
                 : `.`}
             </p>
           </div>
-          <div style={{ width: `200px` }}>
-            <p>
+          <div style={this.styles.prestigeTextContainer}>
+            <p style={this.styles.prestigeText}>
               {this.props.signedInVsGeneric(
                 `Your`,
                 `${this.props.profileData.username}'s`
