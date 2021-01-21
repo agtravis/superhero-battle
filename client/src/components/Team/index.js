@@ -5,6 +5,7 @@ import IndexPortraitSmall from "../IndexPortraitSmall";
 
 class Team extends Component {
   styles = {
+    captainButtonContainer: { display: `flex`, justifyContent: `center` },
     lowerCharactersContainer: {
       display: `flex`,
       justifyContent: `space-between`,
@@ -19,7 +20,7 @@ class Team extends Component {
           <div>
             <IndexPortrait character={this.props.team[0]} size={150} />
             {this.props.onClickRemove && (
-              <div style={{ display: `flex`, justifyContent: `center` }}>
+              <div style={this.styles.captainButtonContainer}>
                 <AppButton
                   id={`team-remove-one-button`}
                   onClick={() =>

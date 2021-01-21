@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import "./style.css";
 import BasicInfo from "../ProfileComponents/BasicInfo";
 import Captain from "../ProfileComponents/Captain";
-import LatestRecruit from "../ProfileComponents/LatestRecruit";
-import LastBattle from "../ProfileComponents/LastBattle";
 import CurrentTeam from "../ProfileComponents/CurrentTeam";
+import LastBattle from "../ProfileComponents/LastBattle";
+import LatestRecruit from "../ProfileComponents/LatestRecruit";
+import VerticalSpacer from "../../VerticalSpacer";
 
 class ProfileMobile extends Component {
   constructor(props) {
@@ -102,6 +103,7 @@ class ProfileMobile extends Component {
               profileData={this.props.profileData}
               signedInVsGeneric={this.props.signedInVsGeneric}
             />
+            <VerticalSpacer height={38} />
             <LastBattle
               profileData={this.props.profileData}
               signedInVsGeneric={this.props.signedInVsGeneric}

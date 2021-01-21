@@ -2,15 +2,17 @@ import React, { Component } from "react";
 import Stat from "../Stat";
 
 class IndexPortraitStatsMobile extends Component {
+  styles = {
+    container: {
+      display: `flex`,
+      justifyContent: `space-around`,
+      marginTop: `10px`,
+    },
+  };
+
   render() {
     return (
-      <div
-        style={{
-          display: `flex`,
-          justifyContent: `space-around`,
-          marginTop: `10px`,
-        }}
-      >
+      <div style={this.styles.container}>
         <div>
           <Stat
             left

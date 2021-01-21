@@ -22,14 +22,6 @@ class RosterExists extends Component {
     }
   }
 
-  resetRoster = () => {
-    const roster = [];
-    for (let i = 0; i < 10; ++i) {
-      roster.push(this.props.roster[i]);
-    }
-    this.setState({ roster: roster, startingIndex: 0 });
-  };
-
   styles = {
     mockLink: { cursor: `pointer` },
     paginationContainer: {
@@ -61,6 +53,14 @@ class RosterExists extends Component {
   };
 
   loadCharacter = character => this.setState({ character: character });
+
+  resetRoster = () => {
+    const roster = [];
+    for (let i = 0; i < 10; ++i) {
+      roster.push(this.props.roster[i]);
+    }
+    this.setState({ roster: roster, startingIndex: 0 });
+  };
 
   setRosterLocation = slot => {
     if (slot > this.props.roster.length) {
