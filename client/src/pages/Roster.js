@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
+import AppButton from "../components/AppButton";
 import CharacterLoaded from "../components/RosterFlow/CharacterLoaded";
 import LoadingAnimation from "../components/LoadingAnimation";
 import PageTitle from "../components/PageTitle";
 import Prestige from "../components/RosterFlow/Prestige";
 import RosterEmpty from "../components/RosterFlow/RosterEmpty";
 import RosterExists from "../components/RosterFlow/RosterExists";
-import AppButton from "../components/AppButton";
 
 class Roster extends Component {
   constructor(props) {

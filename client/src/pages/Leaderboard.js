@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import { Breakpoint } from "react-socks";
 import API from "../utils/API";
 import colors from "../config/colors";
 import LeaderBoardTable from "../components/LeaderBoardFlow/FullScreen/LeaderBoardTable";
 import LeaderBoardTableMobile from "../components/LeaderBoardFlow/Mobile/LeaderBoardTableMobile";
 import PageTitle from "../components/PageTitle";
-import { Redirect } from "react-router-dom";
 
 class Leaderboard extends Component {
   constructor(props) {

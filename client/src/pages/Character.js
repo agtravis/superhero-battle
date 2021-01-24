@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import API from "../utils/API";
 import AppButton from "../components/AppButton";
 import Appearance from "../components/CharacterFlow/Appearance";
 import Biography from "../components/CharacterFlow/Biography";
 import Connections from "../components/CharacterFlow/Connections";
 import ImageAndStats from "../components/CharacterFlow/ImageAndStats";
-import Work from "../components/CharacterFlow/Work";
 import PageTitle from "../components/PageTitle";
-import { Redirect } from "react-router-dom";
+import Work from "../components/CharacterFlow/Work";
 
 class Character extends Component {
   constructor(props) {

@@ -154,11 +154,7 @@ class Header extends Component {
     if (signUpDetails.username.length === 0) {
       this.setState({ fieldIncomplete: `nousername` });
       this.assignElementById(`signup-username`).focus();
-    } else if (
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/.test(
-        signUpDetails.password
-      ) === false
-    ) {
+    } else if (this.props.passwordCheck(signUpDetails.password) === false) {
       this.setState({ error: `regexfail` });
       const password = this.assignElementById(`signup-password`);
       password.value = ``;

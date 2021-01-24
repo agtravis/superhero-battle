@@ -4,20 +4,20 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import API from "./utils/API";
 import NetworkDetector from "./Hoc/NetworkDetector";
 import About from "./pages/About";
+import Character from "./pages/Character";
 import Fight from "./pages/Fight";
 import Index from "./pages/Index";
 import Leaderboard from "./pages/Leaderboard";
+import NotFound from "./pages/NotFound";
+import ProfilePage from "./pages/ProfilePage";
 import Roster from "./pages/Roster";
 import RulesPage from "./pages/RulesPage";
+import SearchPage from "./pages/Search";
+import Settings from "./pages/Settings";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Screen from "./components/Screen";
-import SearchPage from "./pages/Search";
-import ProfilePage from "./pages/ProfilePage";
-import Character from "./pages/Character";
-import Settings from "./pages/Settings";
-import NotFound from "./pages/NotFound";
 
 class App extends Component {
   constructor(props) {
@@ -37,15 +37,6 @@ class App extends Component {
     this.getUser();
   }
 
-  styles = {
-    container: {
-      minHeight: `100vh`,
-      display: `flex`,
-      flexDirection: `column`,
-      justifyContent: `space-between`,
-    },
-  };
-
   title = `Superhero Battle`;
 
   addAndRemoveOneClass = (element, classToAdd, ClassToRemove) => {
@@ -55,6 +46,17 @@ class App extends Component {
 
   changeUser = () => {
     this.setState({ redirect: true });
+  };
+
+  fillUser = () => {
+    API.getUserDetails(this.state.currentUser._id)
+      .then(response => {
+        this.setState({
+          roster: response.data.roster,
+          teams: response.data.teams,
+        });
+      })
+      .catch(err => console.error(err));
   };
 
   getUser = () => {
@@ -81,22 +83,16 @@ class App extends Component {
       .catch(err => console.error(err));
   };
 
-  fillUser = () => {
-    API.getUserDetails(this.state.currentUser._id)
-      .then(response => {
-        this.setState({
-          roster: response.data.roster,
-          teams: response.data.teams,
-        });
-      })
-      .catch(err => console.error(err));
-  };
-
   logOut = () => {
     API.logOut()
       .then(() => this.changeUser())
       .catch(err => console.error(err));
   };
+
+  passwordCheck = userPassword =>
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/.test(
+      userPassword
+    );
 
   showNav = () => {
     if (document.getElementsByClassName(`nav-mobile`)[0]) {
@@ -141,26 +137,26 @@ class App extends Component {
         <div>
           <Router>
             <div id={`whole-container`} className={`body-scroll`}>
-              {/*style={this.styles.container}>*/}
               <div>
                 <Header
-                  changeUser={this.changeUser}
-                  loggedIn={this.state.loggedIn}
-                  currentUser={this.state.currentUser}
                   addAndRemoveOneClass={this.addAndRemoveOneClass}
-                  showNav={this.showNav}
+                  changeUser={this.changeUser}
+                  currentUser={this.state.currentUser}
+                  loggedIn={this.state.loggedIn}
                   logOut={this.logOut}
+                  passwordCheck={this.passwordCheck}
+                  showNav={this.showNav}
                   title={this.title}
                 />
                 <div className={`main-body`}>
                   <NavBar
-                    currentUser={this.state.currentUser}
-                    loggedIn={this.state.loggedIn}
-                    changeUser={this.changeUser}
                     addAndRemoveOneClass={this.addAndRemoveOneClass}
-                    showNav={this.showNav}
+                    changeUser={this.changeUser}
+                    currentUser={this.state.currentUser}
                     isNavShowing={this.state.isNavShowing}
+                    loggedIn={this.state.loggedIn}
                     logOut={this.logOut}
+                    showNav={this.showNav}
                   />
                   <Screen>
                     <Switch>
@@ -224,7 +220,6 @@ class App extends Component {
                         path="/leaderboard"
                         render={routeProps => (
                           <Leaderboard
-                            loggedIn={this.state.loggedIn}
                             currentUser={this.state.currentUser}
                             {...routeProps}
                           />
@@ -234,10 +229,7 @@ class App extends Component {
                         exact
                         path="/search"
                         render={() => (
-                          <SearchPage
-                            loggedIn={this.state.loggedIn}
-                            currentUser={this.state.currentUser}
-                          />
+                          <SearchPage currentUser={this.state.currentUser} />
                         )}
                       />
                       <Route
@@ -264,7 +256,10 @@ class App extends Component {
                         exact
                         path="/settings"
                         render={() => (
-                          <Settings currentUser={this.state.currentUser} />
+                          <Settings
+                            currentUser={this.state.currentUser}
+                            passwordCheck={this.passwordCheck}
+                          />
                         )}
                       />
                       <Route
