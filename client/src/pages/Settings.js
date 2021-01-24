@@ -75,11 +75,7 @@ class Settings extends Component {
   verifyNewPassword = event => {
     event.preventDefault();
     this.setError();
-    if (
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/.test(
-        this.state.new
-      ) === false
-    ) {
+    if (this.props.passwordCheck(this.state.new) === false) {
       this.setError(
         `Password must be at least  8 characters, and contain at least one upper case letter, one lower case letter, one number, and one special character`
       );

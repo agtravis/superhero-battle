@@ -205,7 +205,6 @@ class Fight extends Component {
                     isPreFightStaging
                   />
                 )}
-
                 {this.state.phase === 4 && (
                   <Battle
                     challengers={this.state.opposingTeam}

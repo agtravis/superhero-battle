@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Redirect, withRouter } from "react-router-dom";
-import colors from "../config/colors";
 import API from "../utils/API";
 import SuperHeroAPI from "../utils/SuperHeroAPI";
+import colors from "../config/colors";
+import LoadingAnimation from "../components/LoadingAnimation";
+import PageTitle from "../components/PageTitle";
 import SearchForm from "../components/SearchForm";
 import SearchResult from "../components/SearchResult";
 import ToggleSwitch from "../components/ToggleSwitch";
-import LoadingAnimation from "../components/LoadingAnimation";
-import PageTitle from "../components/PageTitle";
 
 class SearchPage extends Component {
   constructor(props) {
