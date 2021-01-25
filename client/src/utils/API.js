@@ -1,14 +1,21 @@
 import axios from "axios";
 
 export default {
-  getSessionUser() {
-    return axios.get(`/api/user`);
+  addCharacterToRoster(id, characterId) {
+    return axios.put(`/api/user/roster/add/${id}`, characterId);
   },
-  getUserDetails(id) {
-    return axios.get(`/api/user/${id}`);
+  addManyCharactersToRoster(id, characterIds) {
+    return axios.put(`/api/user/roster/addmany/${id}`, {
+      ids: characterIds,
+    });
   },
-  checkPassword(user) {
-    return axios.post(`/api/user/checkpassword`, user);
+  addManyCharactersToTeam(id, members) {
+    return axios.put(`/api/user/team/addmany/${id}`, {
+      characters: members,
+    });
+  },
+  addToTeam(id, characterId) {
+    return axios.put(`/api/user/team/add/${id}`, { characterId: characterId });
   },
   changePassword(user) {
     return axios.post(`/api/user/changepassword`, {
@@ -16,11 +23,41 @@ export default {
       password: user.newPassword,
     });
   },
+  checkPassword(user) {
+    return axios.post(`/api/user/checkpassword`, user);
+  },
+  emptyTeam(id) {
+    return axios.put(`/api/user/team/empty/${id}`);
+  },
+  findOneUserByName(username) {
+    return axios.post(`/api/user/findone`, username);
+  },
+  getAllUsers() {
+    return axios.get(`/api/user/all`);
+  },
+  getSessionUser() {
+    return axios.get(`/api/user`);
+  },
+  getTopScorers() {
+    return axios.get(`/api/user/topscorers`);
+  },
+  getTopScorersByPropertyName(property) {
+    return axios.post(`/api/user/topscorersbypropertyname`, property);
+  },
+  getUserDetails(id) {
+    return axios.get(`/api/user/${id}`);
+  },
+  logBattle(id, battle) {
+    return axios.put(`api/user/logbattle/${id}`, { battle: battle });
+  },
   logIn(userCredentials) {
     return axios.post(`/api/user/login`, userCredentials);
   },
   logOut() {
     return axios.post(`/api/user/logout`);
+  },
+  lose(id) {
+    return axios.put(`/api/user/lose/${id}`);
   },
   makeCaptain(userId, characterId) {
     return axios.put(`/api/user/makecaptain/${userId}`, {
@@ -30,28 +67,15 @@ export default {
   newUser(signUpDetails) {
     return axios.post(`/api/user`, signUpDetails);
   },
-  getAllUsers() {
-    return axios.get(`/api/user/all`);
-  },
-  findOneUserByName(username) {
-    return axios.post(`/api/user/findone`, username);
-  },
-  getTopScorers() {
-    return axios.get(`/api/user/topscorers`);
-  },
-  getTopScorersByPropertyName(property) {
-    return axios.post(`/api/user/topscorersbypropertyname`, property);
-  },
-  addCharacterToRoster(id, characterId) {
-    return axios.put(`/api/user/roster/add/${id}`, characterId);
+  prestige(id) {
+    return axios.put(`/api/user/prestige/${id}`);
   },
   removeCharacterFromRoster(id, characterId) {
     return axios.put(`/api/user/roster/remove/${id}`, characterId);
   },
-  // change these next two to objects
-  addManyCharactersToRoster(id, characterIds) {
-    return axios.put(`/api/user/roster/addmany/${id}`, {
-      ids: characterIds,
+  removeFromTeam(id, characterId) {
+    return axios.put(`/api/user/team/remove/${id}`, {
+      characterId: characterId,
     });
   },
   removeManyCharactersFromRoster(id, characterIds) {
@@ -59,32 +83,7 @@ export default {
       ids: characterIds,
     });
   },
-  addToTeam(id, characterId) {
-    return axios.put(`/api/user/team/add/${id}`, { characterId: characterId });
-  },
-  addManyCharactersToTeam(id, characterIds) {
-    return axios.put(`/api/user/team/addmany/${id}`, {
-      ids: characterIds,
-    });
-  },
-  removeFromTeam(id, characterId) {
-    return axios.put(`/api/user/team/remove/${id}`, {
-      characterId: characterId,
-    });
-  },
-  emptyTeam(id) {
-    return axios.put(`/api/user/team/empty/${id}`);
-  },
-  lose(id) {
-    return axios.put(`/api/user/lose/${id}`);
-  },
   win(id) {
     return axios.put(`/api/user/win/${id}`);
-  },
-  prestige(id) {
-    return axios.put(`/api/user/prestige/${id}`);
-  },
-  logBattle(id, battle) {
-    return axios.put(`api/user/logbattle/${id}`, { battle: battle });
   },
 };

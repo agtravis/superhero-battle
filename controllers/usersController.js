@@ -147,7 +147,7 @@ module.exports = {
   addManyCharactersToTeam: (req, res) => {
     User.updateOne(
       { _id: mongoose.Types.ObjectId(req.params.id) },
-      { $push: { teams: { $each: req.body.ids } } }
+      { $push: { teams: { $each: req.body.characters } } }
     )
       .then(dbUser => res.json(dbUser))
       .catch(err => res.json(err));
@@ -275,43 +275,3 @@ module.exports = {
       .catch(err => res.json(err));
   },
 };
-
-// router.put(`/post/:id`, (req, res) => {
-//   User.updateOne(
-//     { _id: mongoose.Types.ObjectId(req.params.id) },
-//     {
-//       $push: { posts: req.body.id },
-//     }
-//   )
-//     .populate(`posts`)
-//     .then(dbUser => res.json(dbUser))
-//     .catch(err => res.json(err));
-// });
-
-// create: (req, res) => {
-//   db.User.create(req.body)
-//     .then(dbModel => res.json(dbModel))
-//     .catch(err => res.status(errorResponseCode).json(err));
-// },
-// updateNewPost: (req, res) => {
-//   db.User.updateOne(
-//     { _id: mongoose.Types.ObjectId(req.params.id) },
-//     {
-//       $push: { posts: req.body.id },
-//     }
-//   )
-//     .populate(`posts`)
-//     .then(dbModel => res.json(dbModel))
-//     .catch(err => res.status(errorResponseCode).json(err));
-// },
-// removePostFromUser: (req, res) => {
-//   db.User.updateOne(
-//     { _id: mongoose.Types.ObjectId(req.params.id) },
-//     {
-//       $pull: { posts: mongoose.Types.ObjectId(req.body.id) },
-//     }
-//   )
-//     .populate(`posts`)
-//     .then(dbModel => res.json(dbModel))
-//     .catch(err => res.status(errorResponseCode).json(err));
-// },

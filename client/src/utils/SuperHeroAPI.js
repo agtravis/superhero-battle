@@ -1,31 +1,16 @@
 import axios from "axios";
-// import characters from "./characters";
 
 export default {
-  getRandomNewCharacter() {
-    return axios.get(`/api/character`);
+  findCharacterByName(name) {
+    return axios.post(`/api/character/findbyname`, { name: name });
   },
   getNewOpponent(id) {
     return axios.post(`/api/character/searchcharacter`, { id: id });
   },
+  getRandomNewCharacter() {
+    return axios.get(`/api/character`);
+  },
   loadContender(id) {
     return axios.get(`/api/character/${id}`);
   },
-  findCharacterByName(name) {
-    return axios.post(`/api/character/findbyname`, { name: name });
-  },
 };
-
-//   const randomNumber = Math.floor(Math.random() * 731) + 1;
-//   return new Promise((resolve, reject) => {
-//     if (characters[randomNumber]) {
-//       resolve(characters[randomNumber]);
-//     } else {
-//       const errorObject = {
-//         msg: "An error occured",
-//         error: `character not found`,
-//       };
-//       reject(errorObject);
-//     }
-//   });
-// },
