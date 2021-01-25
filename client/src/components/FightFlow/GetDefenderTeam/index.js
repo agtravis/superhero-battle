@@ -62,13 +62,13 @@ class GetDefenderTeam extends Component {
   };
 
   nextPhase = () => {
-    const ids = [];
+    const members = [];
     for (const member of this.state.team) {
-      ids.push(member);
+      members.push(member);
     }
     API.emptyTeam(this.props.currentUser._id)
       .then(
-        API.addManyCharactersToTeam(this.props.currentUser._id, ids)
+        API.addManyCharactersToTeam(this.props.currentUser._id, members)
           .then(() => {
             this.props.setDefendingTeam(this.state.team);
 
