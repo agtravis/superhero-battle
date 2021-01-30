@@ -12,10 +12,8 @@ const path = require(`path`);
 const portNum = 3001;
 const PORT = process.env.PORT || portNum;
 
-// Route requires
 const routes = require(`./routes`);
 
-// MIDDLEWARE
 app.use(morgan(`dev`));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -29,22 +27,18 @@ mongoose.connect(
   }
 );
 
-// Sessions
 app.use(
   session({
-    secret: `shattered-rocks`, // pick a random string to make the hash that is generated secure
+    secret: `shattered-rocks`,
     store: new MongoStore({ mongooseConnection: dbConnection }),
-    resave: false, // required
-    saveUninitialized: false, // required
+    resave: false,
+    saveUninitialized: false,
   })
 );
 
-// Passport
 app.use(passport.initialize());
-app.use(passport.session()); // calls the deserializeUser
+app.use(passport.session());
 
-// Routes
-// app.use(`/user`, user);
 app.use(routes);
 
 if (process.env.NODE_ENV === `production`) {
@@ -57,7 +51,6 @@ app.get(`*`, (req, res) => {
   res.sendFile(path.join(__dirname, `index.html`));
 });
 
-// Starting Server
 app.listen(PORT, () => {
   console.log(`App listening on PORT: ${PORT}`);
 });
