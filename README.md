@@ -2,9 +2,9 @@
 
 ### UML
 
-![BIYUML](https://docs.google.com/drawings/d/e/2PACX-1vSn7Ae5_DEMKfFeBasGRrjnMF-4EigTO_C89iPNr5PXpUJg5JpzvzRZV3M_GiquUE6Y3PVLLvYAI_H1/pub?w=1512&h=722)
+![SuperHeroBattleUML](https://docs.google.com/drawings/d/e/2PACX-1vSn7Ae5_DEMKfFeBasGRrjnMF-4EigTO_C89iPNr5PXpUJg5JpzvzRZV3M_GiquUE6Y3PVLLvYAI_H1/pub?w=1512&h=722)
 
-Check out the repo [here](https://github.com/agtravis/book-it-yourself), and see the app in operation [here](https://book-it-yourself.herokuapp.com/).
+Check out the repo [here](https://github.com/agtravis/superhero-battle), and see the app in operation [here](https://agtravis-superhero-battle.herokuapp.com/).
 
 This app runs in the browser - see [Setup](#setup) below for instructions on how to use.
 
@@ -21,18 +21,26 @@ This app runs in the browser - see [Setup](#setup) below for instructions on how
 
 ## About
 
-Book-it-yourself is an app that connects artists and promoters across the globe. The inspiration for our project came from the 90's publication Book Your Own Fuc-in Life. This publication was instrumental in the 90's to help connect bands and promoters across the world. Unfortunately with the rise in technology in the 2000's the publication went away, and it in turn made it harder for artists to connect with other artists and promoters... Until now! With Book-it-Yourself artists and promoters around the globe have the ability to all be connected on one app. Users can search for and connect with other individuals, explore posts all around the globe based on location or type of post. The time has come for artists to take back the ability to Book Your Own Fuc-in Life!!!
+Superhero Battle is a full MERN stack progressive web application (pwa), featuring user authentication, css animations, off-line detection and capabilities, and was written using ReactJS and class components.
+
+Superhero Battle is a game in which you can face off all your favorite heroes and villains against eachother!
+
+There are 731 characters from all sides, and all franchises. You can fight solo, or you can form a team and go all in: the greater the risk, the greater the reward. Recruit allies and defeat foes, and try to get everyone on your side!
+
+Superhero Battle was written and developed in entirety by myself. That said, there are various elements without which I could not have created this game:
+
+- Any and all intellectual property featured (i.e. the characters) is owned by its respective copyright holder. I do not pretend to own any rights to the characters I am using. There is no advertising on my page, and I do not profit from the characters' usage in any way.
+- The information and images for the characters are supplied by superheroapi.com.
+- The game play is very similar to the style of play of Top Trumps, which is the inspiration for this game.
+- Get in touch with me through my website.
 
 ## Screenshots
 
-![Screenshot (154)](https://github.com/agtravis/book-it-yourself/blob/master/client/src/assets/images/indexcap.PNG?raw=true)\
-Above is the main log in screen on desktop. The styling is based off of the old Publication Book Your Own Fuc-in Life.
-![Screenshot (155)](https://github.com/agtravis/book-it-yourself/blob/master/client/src/assets/images/indexmcap.PNG?raw=true)\
-Above is the log in screen on mobile. One key functionality about the App that will be explained more in this Readme is the ability for the app to be a downloadable web app, as mobile is the preferred use of application
-![Screenshot (156)](https://github.com/agtravis/book-it-yourself/blob/master/client/src/assets/images/feedcap.PNG?raw=true)\
-Above is an example of layout responsiveness with an Ipad on feed.
-![Screenshot (157)](https://github.com/agtravis/book-it-yourself/blob/master/client/src/assets/images/profilecap.PNG?raw=true)\
-Example of user profile above.
+![Features](./client/public/screenshots/SuperheroBattleFeatures.gif)
+Some of the features of the app in action, showing the log in/log out capability with password validation (and updating password), the ability to search for users and characters, how the user's character roster functions and displays, and a table of user stats, ranked and organizable.
+
+![Battle Mode](./client/public/screenshots/SuperheroBattleFight.gif)
+Shows the fight flow, focusing on Team mode, shows changing a team member, and a victory followed by defeat.
 
 ## Technologies
 
