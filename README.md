@@ -36,10 +36,10 @@ Superhero Battle was written and developed in entirety by myself. That said, the
 
 ## Screenshots
 
-![Features](./client/public/screenshots/SuperheroBattleFeatures.gif)
+![Features](./client/public/screenshots/SuperheroBattleFeatures.gif)  
 Some of the features of the app in action, showing the log in/log out capability with password validation (and updating password), the ability to search for users and characters, how the user's character roster functions and displays, and a table of user stats, ranked and organizable.
 
-![Battle Mode](./client/public/screenshots/SuperheroBattleFight.gif)
+![Battle Mode](./client/public/screenshots/SuperheroBattleFight.gif)  
 Shows the fight flow, focusing on Team mode, shows changing a team member, and a victory followed by defeat.
 
 ## Technologies
