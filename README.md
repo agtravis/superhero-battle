@@ -1,6 +1,6 @@
 # Superhero Battle
 
-### UML
+## UML
 
 ![SuperHeroBattleUML](https://docs.google.com/drawings/d/e/2PACX-1vSn7Ae5_DEMKfFeBasGRrjnMF-4EigTO_C89iPNr5PXpUJg5JpzvzRZV3M_GiquUE6Y3PVLLvYAI_H1/pub?w=1512&h=722)
 
@@ -36,11 +36,17 @@ Superhero Battle was written and developed in entirety by myself. That said, the
 
 ## Screenshots
 
-![Features](./client/public/screenshots/SuperheroBattleFeatures.gif)  
+### Features
+
 Some of the features of the app in action, showing the log in/log out capability with password validation (and updating password), the ability to search for users and characters, how the user's character roster functions and displays, and a table of user stats, ranked and organizable.
 
-![Battle Mode](./client/public/screenshots/SuperheroBattleFight.gif)  
+![Features](./client/public/screenshots/SuperheroBattleFeatures.gif)
+
+### Battle Mode
+
 Shows the fight flow, focusing on Team mode, shows changing a team member, and a victory followed by defeat.
+
+![Battle Mode](./client/public/screenshots/SuperheroBattleFight.gif)
 
 ## Technologies
 
@@ -55,7 +61,8 @@ This app was built with :
 
 ```js
 "dependencies": {
-    "axios": "^0.19.2",
+    "@agney/react-loading": "^0.1.2",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^3.2.0",
     "express": "^4.17.1",
@@ -66,7 +73,9 @@ This app was built with :
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "react-calendar": "^3.0.1"
+    "react-icons": "^4.1.0",
+    "react-socks": "^2.1.0",
+    "request": "^2.88.2"
   }
 ```
 
@@ -77,7 +86,7 @@ This app was built with :
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "localforage": "^1.7.3",
     "react": "^16.13.1",
@@ -85,83 +94,26 @@ This app was built with :
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
-  },
+  }
 ```
 
 ## Code Examples
 
-### localForage
+### Offline capabilities
 
-`localForage` is a library for IndexedDB. It makes utilizing this feature of the browser much easier to enable offline functionality. This runs in parallel with the fact that the app is a Progressive Web App (specifically installable).
+This app has the ability to detect whether or not the user has a connection to the internet, however, at present it does nothing with that information besides alerting the user to that fact with a conditionally rendered component indicating as such. It does this via the `NetworkDetector` - there's a big chunk of code, but click [here](https://github.com/agtravis/superhero-battle/blob/master/client/src/Hoc/NetworkDetector.jsx) to see it.
 
-This app uses localForage for two main parts of its UI - keeping the user in session, and allowing the user to make posts while offline, and it does this by effectively using the local storage feature.
-
-When a user makes a post, the code first checks to see if the browser is online:
-
-```js
- if (navigator.onLine) {
-```
-
-If it is, it will perform a regular database `POST` using `mongoose` through the model schema for our `MongoDB` database. Once the post is confirmed, the user ID is then used to `PUT` the user collection and `$push` the post `._id` to the array of posts stored in the user collection (to enable a `population` when called upon). Similarly, when the user deletes their post, an equivalent `$pull` - `PUT` is made to remove it, but leave the other posts intact.
-
-If the browser is offline, an object is created to be `POST`ed later, and then here's how the code looks:
-
-```js
-localForage
-  .getItem("postKey")
-  .then(value => {
-    postArr.push(postObj);
-    if (value && value.length > 0) {
-      for (const post of value) {
-        postArr.push(post);
-      }
-    }
-    localForage
-      .setItem(`postKey`, postArr)
-      .then(value => {
-        console.log(`localForage success - post stored offline!`);
-        this.setState({ offlineSuccess: true });
-        console.log(value);
-      })
-      .catch(err => console.error(err));
-  })
-  .catch(err => console.error(err));
-```
-
-The code first gets the key from the local storage. It will be an array, if it is not already, so this first block checks to see if it exists and if it has a length, and if so takes each post already there and pushes them to a new array (`postArr`). If there is nothing there in storage, it doesn't attempt to retrieve anything.
-
-Next it then uses `setItem` to write a new object to the storage, and using the same key name ensure the old data is overwritten. Finally, when the new key exists, the state of the component is adjusted (in this case so a success message appears to the user).
-
-The really interesting part is how the app knows when to try to post the stored data. We have a component called `NetworkDetector`, there's too much code to paste in here, but click [here](https://github.com/agtravis/book-it-yourself/blob/master/client/src/Hoc/NetworkDetector.jsx) to see it.
-
-Now instead of exporting `App` by itself, we first import that component in app.js, and then when we export app we run it as an argument through the NetworkDetector, like so:
+Instead of exporting `App` by itself, we first import that component in app.js, and then when we export app we run it as an argument through the NetworkDetector, like so:
 
 ```js
 export default NetworkDetector(App);
 ```
 
-This file will check to see with event listeners and by pinging google.com to see if the app is online. If it finds that it is online, a function called `backOnline` is called. Again, the code is long, so click on the link to view it, but the interesting parts are:
-
-```js
-localForage
-    .iterate((value, key, iterationNumber) => {
-        if (key === `postKey`) {
-            for (const post of value) {
-                API.addPost(post.post).then(postDb => {
-                    API.updateUserNewPost(post.user, { id: postDb.data._id })
-```
-
-which ensures first we are looking at the right key, then loops through the array and for each post makes the `POST` request and subsequent `PUT` push, and then:
-
-```js
-localForage.removeItem(`postKey`);
-```
-
-Ensures there are no lingering posts to get duplicated.
+While I am doing nothing with this offline capability, it is primed to do so at a future date, with the addition of JavaScript functions contained within the dependency `localForage`. Please see the repo for another app I have written [Book-It-Yourself](https://github.com/agtravis/book-it-yourself) to see this dependency in action.
 
 ### ServiceWorker
 
-React comes with a built in service worker. It was really important for our application to take full advantage of this as the intended purpose for this app is to be a downloadable mobile web app.
+React comes with a built in service worker. It is really important for this application to take full advantage of this feature as the intended purpose for this app is to be a downloadable mobile (progressive) web app.
 
 ```js
 function checkValidServiceWorker(swUrl, config) {
@@ -225,6 +177,77 @@ function registerValidSW(swUrl, config) {
 
 Now we have registered the service worker which has updated the precached content. The previous service worker will continue to run until all tabs are close. When all content has been precached the app has the ability to work for offline use.
 
+The main reason for writing this app was to generate reasons for me to learn and write creative front and back end communication. Here are a couple of examples of these `routes` and how they work. I'll start at the very back end, `server.js`:
+
+```js
+const app = express();
+const routes = require(`./routes`);
+app.use(routes);
+```
+
+These 3 lines (omitting the other lines in between) first call an instance of an express app into the `app` variable, so that we can do all sorts of things with the app, such as run a load of middleware through it. The first thing we do is import the file that contains the routes and tell the app about those routes via the `use` method.
+
+```js
+const router = require(`express`).Router();
+const apiRoutes = require(`./api`);
+router.use(`/api`, apiRoutes);
+```
+
+Inside the `routes` file, there is very little code. I have set the routes up such that they are broken into smaller files and indexed accordingly. This will help to keep the code simple and readable to humans. The basic breakdown of each file follows the same pattern we see in this root index file. The first line calls an instance of the router; the second gets literally the first part of the pathname of the route (and more practically all routes that have been grouped together in an individual file); the third tells that instance of the router about all those other routes, along with how to precede it as a string. This router will then be exported at the end of the file.
+
+### /api/user/team/addmany/:id
+
+This is the route that I will demonstrate. Ultimately we end up with a route that is as above, but due to breaking this up as previously mentioned, I have a file for each `api.js`, `user.js`, and `team.js`, because there are multiple routes that all use those paths before doing independent things. By the time we get to `team.js`, this is what that actual route looks like:
+
+```js
+router.route(`/addmany/:id`).put(userController.addManyCharactersToTeam);
+```
+
+where `/:id` is a route parameter variable which will be, in this instance, the ID of the user to update via `PUT`. I have all my actual methods being exported from a `controller` file, again due to conventions set to make code more legible to humans. Here is that method as in the controller file:
+
+```js
+  addManyCharactersToTeam: (req, res) => {
+    User.updateOne(
+      { _id: mongoose.Types.ObjectId(req.params.id) },
+      { $push: { teams: { $each: req.body.characters } } }
+    )
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.status(errorResponseCode).json(err));
+  },
+```
+
+The method is being supplied with multiple pieces of data in different ways. The user ID as mentioned as a parameter (accessed via `req.params.id`), and also some data in the `req.body`. I'll detail that data in a moment, but for now suffice it to say that `req.body.characters` is an array.
+
+So the User (which is a model set forth in `database/models/User.js` and imported into the controller) is told to update one user in the database, located by the unique `_id` property that `mongodb` uses, and then `$push`es into that defined user property (teams) `$each` of the items in the array sent in the body of the put request.
+
+That completes the back end part of this route. Now to the front end, inside the `utils` folder as a subdirectory of `React`'s standard `client/src` file structure, and as part of the `API.js` file, we have the following code:
+
+```js
+  addManyCharactersToTeam(id, members) {
+    return axios.put(`/api/user/team/addmany/${id}`, {
+      characters: members,
+    });
+  }
+```
+
+This method takes the 2 pieces of data, again the user id and the array, and structures it to be sent to the back end in the way we have discussed. We can see here that the data `members`, which is an array, is in fact made a value of a property `characters`, so that it can be accessed on the back end. Now we are ready to actually call this method as a part of the app. Here is a segment of code with this in operation:
+
+```js
+    const members = [];
+    for (const member of this.state.team) {
+      members.push(member);
+    }
+    API.emptyTeam(this.props.currentUser._id)
+      .then(
+        API.addManyCharactersToTeam(this.props.currentUser._id, members)
+          .then(() => {
+            // ...
+```
+
+It is not necessary to show the full code, but the idea can be communicated. This is a function where the user has selected characters to make a team with which to fight a team battle. The function itself is actually a callback function of another API request which first empties the array property which is to be repopulated.
+
+All the backend routes follow the same pattern, following the MVC (Model, View, Controller) convention.
+
 ## Setup
 
 If the user just wants to use the app, all they have to do is sign up for an account!
@@ -233,7 +256,7 @@ If the user has forked the repo and wants to see the code and potentially make c
 
 ## Features
 
-This Progressive Web Application has offline abilities, is responsive and features encrypted user passwords.
+This Progressive Web Application has offline abilities, is responsive and features encrypted user passwords, and has a few css animations thrown in for good measure.
 
 ### Passport
 
@@ -261,7 +284,6 @@ userSchema.pre(`save`, function (next) {
     next();
   } else {
     console.log(`hashPassword in pre save`);
-
     this.password = this.hashPassword(this.password);
     next();
   }
@@ -274,9 +296,8 @@ When a user logs in, passport will put the user object into req.session.passport
 
 ```js
 const passport = require("./passport");
-
 app.use(passport.initialize());
-app.use(passport.session()); // calls serializeUser and deserializeUser
+app.use(passport.session());
 ```
 
 These lines of code run on every request. serializeUser stores the user id to req.session.passport.user = {id:’..’}. While deserializeUser will check to see if this user is saved in the database, and if it is found it assigns it to the request as req.user = {user object}.
@@ -289,4 +310,4 @@ Chat.......
 
 ## Contact
 
-Created by [@agtravis](https://agtravis.github.io/portfolio) | [@ddhoang21](https://ddhoang21.github.io/My-Portfolio/) | [@FrantzCFelix](https://github.com/FrantzCFelix) | [@Issouf03](https:///) | [@remyguts](https:///)| [@resousa](https://github.com/resousa/)
+Created by [@agtravis](https://agtravis.github.io/portfolio)
