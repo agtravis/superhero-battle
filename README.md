@@ -177,6 +177,8 @@ function registerValidSW(swUrl, config) {
 
 Now we have registered the service worker which has updated the precached content. The previous service worker will continue to run until all tabs are close. When all content has been precached the app has the ability to work for offline use.
 
+### Database Interactions
+
 The main reason for writing this app was to generate reasons for me to learn and write creative front and back end communication. Here are a couple of examples of these `routes` and how they work. I'll start at the very back end, `server.js`:
 
 ```js
@@ -248,11 +250,75 @@ It is not necessary to show the full code, but the idea can be communicated. Thi
 
 All the backend routes follow the same pattern, following the MVC (Model, View, Controller) convention.
 
+### CSS Animations
+
+The principle for all CSS animations are the same. Set a starting condition `A`, set a finishing condition `B`, and then set how to get from `A` to `B` with a transition. This is done by applying and removing `classes`. The key factor with my app was getting this to work with `React` components.
+
+Here is the function inside my `Header` component that does the hard work:
+
+```js
+translateForm = form => {
+  const body = document.getElementsByClassName(`main-body`)[0];
+  if (form.classList.contains(`translate`)) {
+    this.props.addAndRemoveOneClass(form, `translateBack`, `translate`);
+    this.props.addAndRemoveOneClass(body, `translateBodyBack`, `translateBody`);
+  } else {
+    this.props.addAndRemoveOneClass(form, `translate`, `translateBack`);
+    this.props.addAndRemoveOneClass(body, `translateBody`, `translateBodyBack`);
+  }
+};
+```
+
+The classes for the transition look more complicated than they are, essentially they have to account for cross-browser compatibility with multiple lines that all say the same thing - how long the transition takes. Then they set a property value to end up at. The transition will start at either whatever is currently specified in the styling for the target element, or at the default value (usually just zero), and end up at this new value.
+
+```css
+.translate {
+  -webkit-transition: var(--log-in-speed);
+  -moz-transition: var(--log-in-speed);
+  -ms-transition: var(--log-in-speed);
+  -o-transition: var(--log-in-speed);
+  transition: var(--log-in-speed);
+  margin-top: 0px;
+}
+.translateBack {
+  -webkit-transition: var(--log-in-speed);
+  -moz-transition: var(--log-in-speed);
+  -ms-transition: var(--log-in-speed);
+  -o-transition: var(--log-in-speed);
+  transition: var(--log-in-speed);
+  margin-top: var(--log-in-start-point);
+}
+```
+
+I have defined a lot of variables in the root CSS file in the client subdirectory folder `src` so they can be easily changed if necessary.
+
+Next you basically define a trigger that adds the new class. We do this with an event listener, which in `React` is a prop defined as `onClick` (or whatever relates to the event you are working with). So in my component, I have an element that, when clicked, calls the above function, and passes to it to which element to apply the transition, in this case either the sign up or log in form (defined by the `id` of the form elsewhere).
+
+It then uses a conditional to see what state the form is currently in (`A` or `B`), and then either transitions or reverts the form accordingly. In this example, the animation of the form also requires the animation of the rest of the body (here named body but actually only the body's descendents after this point in the code), so this is applied also.
+
+I use the function `addAndRemoveOneClass` so frequently that I have `DRY`ed out my codebase and prop-drilled it through to wherever is necessary, if I was using functional components, I would be using `context` for this.
+
 ## Setup
 
 If the user just wants to use the app, all they have to do is sign up for an account!
 
-If the user has forked the repo and wants to see the code and potentially make changes to it, they should run `npm -i` or `npm install` in the terminal at the server level. This will automatically run the package.json dependencies at both back and front end levels. Then if the user wants they can run `npm run seed` to populate the database with a few users and posts.
+If the user has forked the repo and wants to see the code and potentially make changes to it, they should run `npm -i` or `npm install` in the terminal at the server level. This will automatically run the package.json dependencies at both back and front end levels. Then in order to set up the local MongoDB with characters, the user should use the command `npm run seed` to populate the database.
+
+If the user intends to deploy on **Heroku** then in the `package.json` file, locate the following line:
+
+```js
+"heroku-postbuild": "npm run build",
+```
+
+and replace it with:
+
+```js
+"heroku-postbuild": "npm run build && npm run seed"
+```
+
+remembering to remove that extra code before the next push to master. This runs the seed file in production, a necessary step if creating your own new database, however if not removed and a user has used any IDs from this database in their account, the new population will all have new autogenerated IDs and the old will be deleted, creating bugs and returning failed or empty requests. This is the main disadvantage of using MongoDB as opposed to SQL, where you can designate IDs. An alternative would be to search the database on a different property when required, but this might take up more processing power depending on the context.
+
+Another alternative would be to provide a central database for any user to access for any purpose, potentially with permission and financial restrictions. This would essentially be an API, and in fact the data I am using is from (as mentioned) `superheroapi`. My reason for copying the freely available information is so that my app, heavily dependent on the third party, would continue to function should that API cease to exist.
 
 ## Features
 
@@ -303,10 +369,6 @@ app.use(passport.session());
 These lines of code run on every request. serializeUser stores the user id to req.session.passport.user = {id:’..’}. While deserializeUser will check to see if this user is saved in the database, and if it is found it assigns it to the request as req.user = {user object}.
 
 ## Status & Future Development
-
-Maps.......
-
-Chat.......
 
 ## Contact
 
