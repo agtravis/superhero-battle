@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@agney/react-loading": "^0.1.2",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "bcryptjs": "^2.4.3",
     "connect-mongo": "^3.2.0",
     "express": "^4.17.1",
