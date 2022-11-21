@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "@agney/react-loading": "^0.1.2",
