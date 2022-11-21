@@ -41,7 +41,7 @@
     "localforage": "^1.7.3",
     "mongoose": "^5.9.7",
     "morgan": "^1.10.0",
-    "passport": "^0.4.1",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "react-icons": "^4.1.0",
     "react-socks": "^2.1.0",
